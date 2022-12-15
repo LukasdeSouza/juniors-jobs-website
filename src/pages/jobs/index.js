@@ -4,6 +4,7 @@ import JobsBox from '../../components/box'
 import NavMenu from '../../components/navMenu'
 
 import { Container } from '@mui/material'
+import PaginationJobs from '../../components/pagination'
 
 
 const JobsPage = () => {
@@ -11,6 +12,7 @@ const JobsPage = () => {
     <Container>
       <NavMenu />
       <JobsBox />
+      <PaginationJobs />
     </Container>
   )
 }
