@@ -1,6 +1,8 @@
 import { Avatar, Stack, Typography } from '@mui/material'
 import React from 'react'
 
+import './style.css'
+
 const JobsStack = ({ title, description, salary, local }) => {
   return (
     <Stack flexDirection={'row'}
@@ -16,24 +18,29 @@ const JobsStack = ({ title, description, salary, local }) => {
       <Avatar sx={{ mr: 3, height: "69px", width: "69px" }} />
       <Stack flexDirection={'column'} >
         <Typography
-          sx={{ fontFamily: "sans-serif", fontWeight: 700, fontSize: 16 }}>
+          className='default-font'
+          sx={{ fontWeight: 700, fontSize: 16 }}>
           {title}
         </Typography>
         <Typography variant='body2'
-          sx={{ fontFamily: "sans-serif", fontWeight: 500 }}>
+          className='default-font'
+          sx={{ fontWeight: 500 }}>
           {description}
         </Typography>
         <Stack flexDirection={'row'} mt={2} justifyContent={'space-between'}>
           <Typography variant='caption'
-            sx={{ fontFamily: "sans-serif", fontSize: 10, color: 'green' }}>
+            className='default-font'
+            sx={{ fontSize: 10, color: 'green' }}>
             {salary}
           </Typography>
           <Typography variant='caption'
-            sx={{ fontFamily: "sans-serif", fontSize: 10 }}>
+            className='default-font'
+            sx={{ fontSize: 10 }}>
             {local}
           </Typography>
           <Typography variant='caption'
-            sx={{ fontFamily: "sans-serif", fontSize: 10, fontWeight: 700 }}>
+            className='default-font'
+            sx={{ fontSize: 10, fontWeight: 700 }}>
             Me Candidatar
           </Typography>
         </Stack>
