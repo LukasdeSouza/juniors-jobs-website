@@ -42,12 +42,12 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      <PaginationJobs page={jobsStore.state.page} onChange={() => {
+      {/* <PaginationJobs page={jobsStore.state.page} onChange={() => {
         jobsStore.state.page(jobsStore.state.page++)
         controller.getAllJobs()
       }
       }
-      />
+      /> */}
     </>
   )
 }
