@@ -3,10 +3,16 @@ import React from 'react'
 import Pagination from '@mui/material/Pagination';
 import { Stack } from '@mui/material';
 
-const PaginationJobs = () => {
+const PaginationJobs = ({ page }) => {
+
   return (
     <Stack alignItems={'center'} mt={4}>
-      <Pagination count={3} size='small' />
+      <Pagination
+        page={page}
+        count={3}
+        color={'success'}
+        size='small'
+      />
     </Stack>
   )
 }
