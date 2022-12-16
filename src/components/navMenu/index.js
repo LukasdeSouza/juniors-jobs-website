@@ -6,7 +6,9 @@ import './style.css'
 
 const NavMenu = () => {
   return (
-    <Stack flexDirection={'row'} justifyContent={'space-evenly'}>
+    <Stack flexDirection={'row'} justifyContent={'space-evenly'}
+      mt={2}
+    >
       <Typography
         className='default-font'
         sx={{ fontFamily: 'Segoe UI', fontSize: 14, fontWeight: 700 }}>
