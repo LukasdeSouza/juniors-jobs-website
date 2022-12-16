@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 class JobsController {
   constructor(store) {
     this.store = store
@@ -14,8 +13,9 @@ class JobsController {
         response.json())
       .then(data =>
         this.store.setState('jobsList', data))
-      .catch(error =>
-        console.log(error))
+      .catch(() =>
+        this.store.setState('error', true))
+
       .finally(() =>
         this.store.setLoading(false))
   }

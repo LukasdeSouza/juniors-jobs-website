@@ -13,28 +13,28 @@ const NavMenu = () => {
     <Stack
       flexDirection={'row'}
       justifyContent={'space-evenly'}
-      mt={2}
+      p={2}
       mb={8}
     >
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <PlaceIcon sx={{ mr: 1 }} color='success' />
+        <PlaceIcon sx={{ mr: 1 }} color='info' />
         <Typography
           className='default-font'
-          sx={{ fontFamily: 'Segoe UI', fontSize: 14 }}>
+          sx={{ fontSize: 14 }}>
           Vagas Presenciais</Typography>
       </Stack>
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <PublicIcon sx={{ mr: 1 }} color='success' />
+        <PublicIcon sx={{ mr: 1 }} color='warning' />
         <Typography
           className='default-font'
-          sx={{ fontFamily: 'Segoe UI', fontSize: 14 }}>
+          sx={{ fontSize: 14 }}>
           Vagas Remotas</Typography>
       </Stack>
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <FlightIcon sx={{ mr: 1 }} color='success' />
+        <FlightIcon sx={{ mr: 1 }} color='secondary' />
         <Typography
           className='default-font'
-          sx={{ fontFamily: 'Segoe UI', fontSize: 14 }}>
+          sx={{ fontSize: 14 }}>
           Vagas Exterior</Typography>
       </Stack>
 

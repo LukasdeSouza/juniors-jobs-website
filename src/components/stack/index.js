@@ -3,6 +3,8 @@ import React from 'react'
 
 import './style.css'
 
+import PicProfile from '../../assets/undraw_pic_profile_re_7g2h.svg'
+
 const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, link }) => {
   return (
     <Stack flexDirection={'row'}
@@ -10,45 +12,46 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
         mt: 2,
         p: 2,
         minWidth: '524px',
-        height: '129px',
-        borderRadius: 2,
-        border: '1px solid #d9d4a8',
-        backgroundColor: "#ebe5b2",
+        height: '125px',
+        borderRadius: 6,
+        border: '0.8px solid lightgrey',
+        backgroundColor: "#eff3f3",
       }}>
       <Avatar sx={{
         mr: 3, height: "69px", width: "69px"
       }}
-        src={urlImage} />
-      <Stack flexDirection={'column'} minWidth={'424px'}>
+        src={urlImage ? urlImage : PicProfile} />
+      <Stack
+        flexDirection={'column'}
+        minWidth={'424px'}>
         <Typography
           className='default-font'
-          color={'success'}
-          sx={{ fontWeight: 700, fontSize: 16 }}>
+          sx={{ fontWeight: 700 }}>
           {title}
         </Typography>
-        <Typography variant='body2'
+        <Typography variant
           color={'#656273'}
           className='default-font'
-          sx={{ fontWeight: 500 }}>
+          sx={{ fontWeight: 500, fontSize: 12 }}>
           {description}
         </Typography>
         <Stack flexDirection={'row'}
           justifyContent={'space-between'}
-          mt={2} >
-          <Typography variant='caption'
-            color={'#758918'}
+          mt={1} >
+          <Typography variant
+            color={'#ed6c02'}
             className='default-font'
             sx={{ fontSize: 12, color: 'green' }}>
             {tecnologies}
           </Typography>
           <Stack alignItems={'flex-end'}>
-            <Typography variant='caption'
+            <Typography variant
               color={'#758918'}
               className='default-font'
               sx={{ fontSize: 12, color: 'green' }}>
               R${salary}
             </Typography>
-            <Typography variant='caption'
+            <Typography variant
               color={'#656273'}
               className='default-font'
               sx={{ fontSize: 12 }}>
@@ -57,15 +60,15 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           </Stack>
         </Stack>
         <Button
-          variant='contained' fullWidth color={'success'}>
+          variant='contained'
+          fullWidth
+          sx={{ bgcolor: '#ffd00f', mt: 1 }}>
           <Link
             href={link}
             underline='none'
-            variant='body2'
-            className='default-font'
-            color={'#eee'}
+            color={'#333'}
             sx={{ fontSize: 12, fontWeight: 700 }}>
-            Me Candidatar
+            <Typography variant className='default-font'>Me Candidatar</Typography>
           </Link>
         </Button>
       </Stack>

@@ -4,7 +4,8 @@ class JobsStore {
 
   state = {
     jobsList: [],
-    page: 0
+    page: 0,
+    error: false
   }
   loading = false
 
