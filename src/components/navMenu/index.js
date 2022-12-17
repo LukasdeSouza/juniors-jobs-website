@@ -14,7 +14,7 @@ const NavMenu = () => {
       flexDirection={'row'}
       justifyContent={'space-evenly'}
       p={2}
-      mb={8}
+      mb={2}
     >
       <Stack flexDirection={'row'} alignItems={'center'}>
         <PlaceIcon sx={{ mr: 1 }} color='info' />
