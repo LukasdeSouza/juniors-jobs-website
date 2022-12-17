@@ -3,6 +3,7 @@ import React from 'react'
 import { Stack } from '@mui/material'
 
 import JobsStack from '../stack'
+
 import '../../styles/global.css'
 
 const JobsBox = ({ urlImage, title, description, tecnologies, salary, local, link }) => {

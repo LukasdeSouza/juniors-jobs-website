@@ -5,6 +5,7 @@ class JobsStore {
   state = {
     jobsList: [],
     page: 0,
+    openDrawer: false,
     error: false
   }
   loading = false
