@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { observer } from 'mobx-react-lite'
 
-import { Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
+import { Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 import JobsBox from '../../components/box'
@@ -15,9 +15,9 @@ import JobsRegister from '../../components/register'
 import JobsController from '../../controller/jobsController'
 
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
+import Logo from '../../assets/logo_size.jpg'
 
 import './styles.css'
-import { Box } from '@mui/system';
 
 const JobsPage = observer(() => {
 
@@ -31,6 +31,7 @@ const JobsPage = observer(() => {
 
   return (
     <>
+      <img src={Logo} alt="" style={{ width: '100px' }} />
       <NavMenu />
       <JobsRegister onClick={() => jobsStore.setState('openDrawer', true)} />
       {jobsStore.state.error && < ErrorImage />}
