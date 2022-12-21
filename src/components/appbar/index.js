@@ -27,7 +27,7 @@ const AppBarNavigation = () => {
           ml={2}>
           Vagas
         </Link>
-        <Link href='/'
+        <Link href='/register'
           underline='hover'
           color={'#fff'}
           fontSize={14}
