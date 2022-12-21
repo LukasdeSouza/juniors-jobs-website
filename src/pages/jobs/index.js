@@ -24,19 +24,6 @@ const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
 
-  const [postNewJob, setPostNewJob] = useState(
-    {
-      urlImage: String,
-      title: String,
-      description: String,
-      tecnologies: String,
-      salary: String,
-      local: String,
-      link: String,
-      pagination: Number
-    }
-  )
-
   useEffect(() => {
     controller.getAllJobs()
   }, [])
@@ -134,10 +121,6 @@ const JobsPage = observer(() => {
                 // placeholder='www.vagaparainscricao.com'
                 onChange={(e) => jobsStore.setState('link', e.target.value)} />
               <Typography variant='caption' mt={1}>Página</Typography>
-              <TextField size='small'
-                placeholder='Não preencher'
-                onChange={(e) => jobsStore.setState('pagination', e.target.value)} />
-              {postNewJob.urlImage}
               <Button variant='contained'
                 onClick={onSave}
                 sx={{ backgroundColor: '#363535', mt: 2 }}>Salvar</Button>
