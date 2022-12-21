@@ -50,14 +50,14 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
             justifyContent={'space-between'}
             mt={1} >
             <Typography variant
-              color={'#ed6c02'}
+              color={'#504e4d'}
               className='default-font'
               sx={{ fontSize: 12, color: 'green' }}>
               {tecnologies}
             </Typography>
             <Stack alignItems={'flex-end'}>
               <Typography variant
-                color={'#758918'}
+                color={'#4e4f4d'}
                 className='default-font'
                 sx={{ fontSize: 12, color: 'green' }}>
                 R${salary}
@@ -73,11 +73,11 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           <Button
             variant='contained'
             fullWidth
-            sx={{ bgcolor: '#ffd00f', mt: 1 }}>
+            sx={{ backgroundColor: '#4f4f4f', mt: 1 }}>
             <Link
               href={link}
               underline='none'
-              color={'#333'}
+              color={'#fff'}
               sx={{ fontSize: 12, fontWeight: 700 }}>
               <Typography variant className='default-font'>Me Candidatar</Typography>
             </Link>

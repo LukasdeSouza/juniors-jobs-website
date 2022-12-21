@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { observer } from 'mobx-react-lite'
@@ -24,10 +24,40 @@ const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
 
+  const [postNewJob, setPostNewJob] = useState(
+    {
+      urlImage: String,
+      title: String,
+      description: String,
+      tecnologies: String,
+      salary: String,
+      local: String,
+      link: String,
+      pagination: Number
+    }
+  )
+
   useEffect(() => {
     controller.getAllJobs()
   }, [])
 
+  const postNewJobObj = {
+    urlImage: jobsStore.state.urlImage,
+    title: jobsStore.state.title,
+    description: jobsStore.state.description,
+    tecnologies: jobsStore.state.tecnologies,
+    salary: jobsStore.state.salary,
+    local: jobsStore.state.local,
+    link: jobsStore.state.link,
+    pagination: jobsStore.state.pagination
+  }
+
+  const onSave = () => {
+    controller.postNewJob(postNewJobObj)
+    jobsStore.setState('openDrawer', false)
+    controller.getAllJobs()
+    alert('Nova Vaga Criada com Sucesso')
+  }
 
   return (
     <>
@@ -65,35 +95,52 @@ const JobsPage = observer(() => {
             }
           }}
         >
-          <Box p={1.5} width={305}>
+          <Box p={2} width={305}>
             <Stack flexDirection={'row'} alignItems={'center'} p={1}>
-              <AddToQueueIcon color='warning' />
-              <Typography className='default-font'
-                sx={{ ml: 2, fontSize: 14 }}>
+              {/* <AddToQueueIcon color='warning' /> */}
+              <Typography
+                sx={{ ml: 2, fontSize: 16 }}>
                 Cadastro de Nova Vaga
               </Typography>
             </Stack>
             <Divider />
             <Stack flexDirection={'column'} mt={2}>
               <Typography variant='caption'>Logo da Empresa (URL)</Typography>
-              <TextField size='small' placeholder='www.urlogodampresa.com/logo.png' />
+              <TextField size='small'
+                // placeholder='www.urlogodampresa.com/logo.png'
+                onChange={(e) => jobsStore.setState('urlImage', e.target.value)} />
               <Typography variant='caption' mt={1}>Título da Vaga</Typography>
-              <TextField size='small' placeholder='Desenvolvedor FullStack' />
+              <TextField size='small'
+                // placeholder='Desenvolvedor FullStack'
+                onChange={(e) => jobsStore.setState('title', e.target.value)} />
               <Typography variant='caption' mt={1}>Mini Descrição</Typography>
-              <TextField size='small' placeholder='Júnior / Pleno / Sênior' />
+              <TextField size='small'
+                // placeholder='Jr /Pleno/ CLT/PJ'
+                onChange={(e) => jobsStore.setState('description', e.target.value)} />
               <Typography variant='caption' mt={1}>Stacks/ Tecnologias</Typography>
-              <TextField size='small' placeholder='JavaScript / Java / Node.JS/ C#' />
+              <TextField size='small'
+                // placeholder='JavaScript / Java'
+                onChange={(e) => jobsStore.setState('tecnologies', e.target.value)} />
               <Typography variant='caption' mt={1}>Salário</Typography>
-              <TextField size='small' placeholder='R$ 2000' />
+              <TextField size='small'
+                // placeholder='R$ 2000'
+                onChange={(e) => jobsStore.setState('salary', e.target.value)} />
               <Typography variant='caption' mt={1}>Local</Typography>
-              <TextField size='small' placeholder='Remote/Híbrido ou Local Presencial' />
+              <TextField size='small'
+                // placeholder='Remote/Híbrido ou Local Presencial'
+                onChange={(e) => jobsStore.setState('local', e.target.value)} />
               <Typography variant='caption' mt={1}>Link da Vaga</Typography>
-              <TextField size='small' placeholder='www.vagaparainscricao.com' />
+              <TextField size='small'
+                // placeholder='www.vagaparainscricao.com'
+                onChange={(e) => jobsStore.setState('link', e.target.value)} />
               <Typography variant='caption' mt={1}>Página</Typography>
-              <TextField size='small' placeholder='Não preencher' />
+              <TextField size='small'
+                placeholder='Não preencher'
+                onChange={(e) => jobsStore.setState('pagination', e.target.value)} />
+              {postNewJob.urlImage}
               <Button variant='contained'
-                color='warning'
-                sx={{ mt: 2 }}>Salvar</Button>
+                onClick={onSave}
+                sx={{ backgroundColor: '#363535', mt: 2 }}>Salvar</Button>
             </Stack>
           </Box>
         </Drawer>

@@ -4,6 +4,15 @@ class JobsStore {
 
   state = {
     jobsList: [],
+    postJobsList: [],
+    urlImage: '',
+    title: '',
+    description: '',
+    tecnologies: '',
+    salary: '',
+    local: '',
+    link: '',
+    pagination: 0,
     page: 0,
     openDrawer: false,
     error: false

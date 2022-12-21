@@ -1,5 +1,6 @@
-import { Button, Stack } from '@mui/material'
+import { Button, Stack, Typography } from '@mui/material'
 import React from 'react'
+import '../../styles/global.css'
 
 const JobsRegister = ({ onClick }) => {
   return (
@@ -7,8 +8,8 @@ const JobsRegister = ({ onClick }) => {
       <Button
         variant='contained'
         onClick={onClick}
-        sx={{ bgcolor: "#f08731" }}>
-        Adicionar nova Vaga
+        sx={{ backgroundColor: '#363535' }}>
+        <Typography variant className='default-font'>Adicionar nova Vaga</Typography>
       </Button>
     </Stack>
   )
