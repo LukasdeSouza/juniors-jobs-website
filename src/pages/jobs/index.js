@@ -120,7 +120,6 @@ const JobsPage = observer(() => {
               <TextField size='small'
                 // placeholder='www.vagaparainscricao.com'
                 onChange={(e) => jobsStore.setState('link', e.target.value)} />
-              <Typography variant='caption' mt={1}>Página</Typography>
               <Button variant='contained'
                 onClick={onSave}
                 sx={{ backgroundColor: '#363535', mt: 2 }}>Salvar</Button>
