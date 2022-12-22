@@ -7,14 +7,14 @@ import '../../styles/global.css'
 const JobsRegister = ({ onClick }) => {
   return (
     <Stack alignItems={'center'}>
-      <Box sx={{ width: 550, height: 130, mb: 2, backgroundColor: "#ddd", borderRadius: 2, textAlign: 'center' }}>
+      <Box sx={{ width: 790, height: 130, mb: 2, backgroundColor: "#5e5ff0", borderRadius: 2, textAlign: 'center' }}>
         <br />Filters 👷🚧
         <br />Em construção
         <br /><Button
           variant='contained'
           onClick={onClick}
-          sx={{ backgroundColor: '#363535' }}>
-          <Typography variant sx={{ fontFamily: 'Poppins' }}>Adicionar nova Vaga</Typography>
+          sx={{ backgroundColor: '#eee' }}>
+          <Typography variant sx={{ fontFamily: 'Poppins', color: "#111" }}>Adicionar nova Vaga</Typography>
         </Button>
       </Box>
     </Stack >
