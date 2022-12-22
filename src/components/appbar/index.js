@@ -2,7 +2,7 @@ import React from 'react'
 
 import { AppBar, Avatar, Link, Stack } from '@mui/material'
 
-import Logo from '../../assets/logo_size_invert.jpg'
+import Logo from '../../assets/logo_size-removebg.png'
 
 const AppBarNavigation = () => {
   return (
@@ -22,21 +22,21 @@ const AppBarNavigation = () => {
       <Stack flexDirection={'row'} alignItems={'center'}>
         <Link href='/jobs'
           underline='hover'
-          color={'#fff'}
+          color={'#5e5ff0'}
           fontSize={14}
           ml={2}>
           Vagas
         </Link>
         <Link href='/register'
           underline='hover'
-          color={'#fff'}
+          color={'#5e5ff0'}
           fontSize={14}
           ml={2}>
           Cadastro
         </Link>
         <Link href='/'
           underline='hover'
-          color={'#fff'}
+          color={'#5e5ff0'}
           fontSize={14}
           ml={2}
           mr={2}>

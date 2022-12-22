@@ -22,9 +22,9 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
         sx={{
           mt: 2,
           p: 2,
-          minWidth: '524px',
-          height: '125px',
-          borderRadius: 6,
+          minWidth: 790,
+          height: 130,
+          borderRadius: 4,
           border: '0.8px solid lightgrey',
           backgroundColor: "#eff3f3",
         }}>
@@ -34,7 +34,7 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           src={urlImage ? urlImage : PicProfile} />
         <Stack
           flexDirection={'column'}
-          minWidth={'424px'}>
+          minWidth={744}>
           <Typography
             className='default-font'
             sx={{ fontWeight: 700 }}>
@@ -72,8 +72,7 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           </Stack>
           <Button
             variant='contained'
-            fullWidth
-            sx={{ backgroundColor: '#4f4f4f', mt: 1 }}>
+            sx={{ backgroundColor: '#5e5ff0', mt: 1, width: 250 }}>
             <Link
               href={link}
               underline='none'

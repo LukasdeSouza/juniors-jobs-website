@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import { observer } from 'mobx-react-lite'
 
 import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
-import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 import JobsBox from '../../components/box'
 import NavMenu from '../../components/navMenu'
@@ -15,7 +13,7 @@ import JobsRegister from '../../components/register'
 import JobsController from '../../controller/jobsController'
 
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
-import Logo from '../../assets/logo_size.jpg'
+import Logo from '../../assets/logo_size-removebg.png'
 
 import '../../styles/global.css'
 
@@ -26,6 +24,15 @@ const JobsPage = observer(() => {
 
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
+
+  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const pages = Math.ceil(jobsStore.state.jobsList.length / itemsPerPage)
+  const startIndex = currentPage * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
+
 
   useEffect(() => {
     controller.getAllJobs()
@@ -76,7 +83,7 @@ const JobsPage = observer(() => {
       <JobsRegister onClick={clearFields} />
       {jobsStore.state.error && < ErrorImage />}
       {jobsStore.loading ? <JobsSkeleton /> :
-        jobsStore.state.jobsList.map((job) => (
+        currentItems.map((job) => (
           <JobsBox
             urlImage={job.urlImage !== '' ? job.urlImage : ''}
             title={job.title}
@@ -87,13 +94,21 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      {/* <PaginationJobs page={jobsStore.state.page} onChange={() => {
-        jobsStore.state.page(jobsStore.state.page++)
-        controller.getAllJobs()
-      }
-      }
-      /> */}
-      {jobsStore.state.openDrawer &&
+      {Array.from(Array(pages), (item, index) => {
+        return (
+          <React.Fragment>
+            <Button value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index}</Button>
+          </React.Fragment>
+        )
+      })}
+
+      {/* // <PaginationJobs page={jobsStore.state.page} onChange={() => {
+        //   jobsStore.state.page(jobsStore.state.page++)
+        //   controller.getAllJobs()
+        // }}
+        /> */}
+      {
+        jobsStore.state.openDrawer &&
         <motion.div
           initial={{ x: '-100vw' }}
           transition={{
