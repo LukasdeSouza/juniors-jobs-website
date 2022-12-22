@@ -94,13 +94,13 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      {Array.from(Array(pages), (item, index) => {
-        return (
-          <React.Fragment>
+      <Stack flexDirection={'row'} justifyContent={'center'}>
+        {Array.from(Array(pages), (item, index) => {
+          return (
             <Button value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index}</Button>
-          </React.Fragment>
-        )
-      })}
+          )
+        })}
+      </Stack>
 
       {/* // <PaginationJobs page={jobsStore.state.page} onChange={() => {
         //   jobsStore.state.page(jobsStore.state.page++)
