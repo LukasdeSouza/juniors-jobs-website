@@ -15,7 +15,8 @@ class JobsStore {
     pagination: 0,
     page: 0,
     openDrawer: false,
-    error: false
+    error: false,
+    alert: false
   }
   loading = false
 

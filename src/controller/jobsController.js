@@ -15,7 +15,6 @@ class JobsController {
         this.store.setState('jobsList', data))
       .catch(() =>
         this.store.setState('error', true))
-
       .finally(() =>
         this.store.setLoading(false))
   }
@@ -25,9 +24,14 @@ class JobsController {
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/jobs', body)
       .then((response) => {
-        console.log(response);
+        this.store.setState('alert', true)
+        this.store.setState('openDrawer', false)
+        console.log(response)
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        this.store.setState('openDrawer', true)
+        console.log(error)
+      })
       .finally(() =>
         this.store.setLoading(false)
       )

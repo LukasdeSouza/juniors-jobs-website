@@ -16,21 +16,21 @@ const NavMenu = () => {
       mr={2}
     >
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <PlaceIcon sx={{ mr: 0.5 }} color='info' />
+        <PlaceIcon sx={{ mr: 0.5 }} color='action' />
         <Typography
           className='default-font'
           sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>
           Vagas Presenciais</Typography>
       </Stack>
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <PublicIcon sx={{ mr: 0.5 }} color='warning' />
+        <PublicIcon sx={{ mr: 0.5 }} color='action' />
         <Typography
           className='default-font'
           sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>
           Vagas Remotas</Typography>
       </Stack>
       <Stack flexDirection={'row'} alignItems={'center'}>
-        <FlightIcon sx={{ mr: 0.5 }} color='secondary' />
+        <FlightIcon sx={{ mr: 0.5 }} color='action' />
         <Typography
           className='default-font'
           sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>

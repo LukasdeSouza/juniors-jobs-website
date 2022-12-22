@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { observer } from 'mobx-react-lite'
 
-import { Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
+import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 import JobsBox from '../../components/box'
@@ -42,11 +42,21 @@ const JobsPage = observer(() => {
     pagination: jobsStore.state.pagination
   }
 
+  const clearFields = () => {
+    jobsStore.setState('urlImage', '')
+    jobsStore.setState('title', '')
+    jobsStore.setState('description', '')
+    jobsStore.setState('tecnologies', '')
+    jobsStore.setState('salary', '')
+    jobsStore.setState('local', '')
+    jobsStore.setState('link', '')
+    jobsStore.setState('pagination', '')
+    jobsStore.setState('openDrawer', true)
+  }
+
   const onSave = () => {
     controller.postNewJob(postNewJobObj)
-    jobsStore.setState('openDrawer', false)
     controller.getAllJobs()
-    alert('Nova Vaga Criada com Sucesso')
   }
 
   return (
@@ -55,7 +65,15 @@ const JobsPage = observer(() => {
         <img src={Logo} alt="" style={{ width: '100px' }} />
         <NavMenu />
       </Stack>
-      <JobsRegister onClick={() => jobsStore.setState('openDrawer', true)} />
+      <Stack alignItems={'center'} >
+        {jobsStore.state.alert &&
+          <Alert color='success'
+            variant='outlined'
+            onClose={() => jobsStore.setState('alert', false)}
+            sx={{ width: '300px' }}>Vaga Criada com Sucesso!
+          </Alert>}
+      </Stack>
+      <JobsRegister onClick={clearFields} />
       {jobsStore.state.error && < ErrorImage />}
       {jobsStore.loading ? <JobsSkeleton /> :
         jobsStore.state.jobsList.map((job) => (
@@ -141,7 +159,6 @@ const JobsPage = observer(() => {
           </Drawer>
         </motion.div>
       }
-
     </>
   )
 }
