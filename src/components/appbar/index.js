@@ -1,8 +1,10 @@
 import React from 'react'
 
-import { AppBar, Avatar, Link, Stack } from '@mui/material'
+import { AppBar, Avatar, Button, Link, Stack } from '@mui/material'
 
-import Logo from '../../assets/logo_size-removebg.png'
+import Logo from '../../assets/logo_size.jpg'
+
+import '../../styles/global.css'
 
 const AppBarNavigation = () => {
   return (
@@ -15,7 +17,7 @@ const AppBarNavigation = () => {
         justifyContent: 'space-between',
         width: '100vw',
         height: '80px',
-        backgroundColor: '#141414',
+        backgroundColor: '#fff',
         boxShadow: 0
       }}>
       <img src={Logo} width={'80px'} />
@@ -24,16 +26,20 @@ const AppBarNavigation = () => {
           underline='hover'
           color={'#5e5ff0'}
           fontSize={14}
-          ml={2}>
+          ml={2}
+          mr={2}>
           Vagas
         </Link>
-        <Link href='/register'
-          underline='hover'
-          color={'#5e5ff0'}
-          fontSize={14}
-          ml={2}>
-          Cadastro
-        </Link>
+        <Button variant='contained' ml={2}>
+          <Link href='/register'
+            underline='hover'
+            color={'#fff'}
+            fontSize={12}
+            sx={{ fontFamily: 'Poppins' }}
+          >
+            Me Cadastrar
+          </Link>
+        </Button>
         <Link href='/'
           underline='hover'
           color={'#5e5ff0'}
