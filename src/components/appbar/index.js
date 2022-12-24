@@ -17,6 +17,7 @@ const AppBarNavigation = () => {
         justifyContent: 'space-between',
         width: '100vw',
         height: '80px',
+        pl: 21,
         backgroundColor: '#fff',
         boxShadow: 0
       }}>
@@ -29,6 +30,14 @@ const AppBarNavigation = () => {
           ml={2}
           mr={2}>
           Vagas
+        </Link>
+        <Link href='/contributors'
+          underline='hover'
+          color={'#5e5ff0'}
+          fontSize={14}
+          ml={2}
+          mr={2}>
+          Seja um Colaborador
         </Link>
         <Button variant='contained' ml={2}>
           <Link href='/register'
@@ -48,7 +57,7 @@ const AppBarNavigation = () => {
           mr={2}>
           Login
         </Link>
-        <Avatar sx={{ mr: 2, cursor: 'pointer' }} />
+        {/* <Avatar sx={{ mr: 2, cursor: 'pointer' }} /> */}
       </Stack>
     </AppBar>
   )
