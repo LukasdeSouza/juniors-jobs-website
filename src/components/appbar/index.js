@@ -15,6 +15,7 @@ const AppBarNavigation = () => {
     <AppBar
       elevation={'none'}
       sx={{
+        position: "static",
         display: "flex",
         flexDirection: 'row',
         alignItems: 'center',
@@ -35,6 +36,15 @@ const AppBarNavigation = () => {
           mr={2}>
           Vagas
         </Link>
+        <Button variant='contained' ml={2}>
+          <Link href='/register'
+            underline='hover'
+            color={'#fff'}
+            fontSize={12}
+          >
+            Me Cadastrar
+          </Link>
+        </Button>
         <Link href='/contributors'
           underline='hover'
           color={'#5e5ff0'}
