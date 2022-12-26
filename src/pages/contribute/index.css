@@ -1,0 +1,5 @@
+@import url(../../styles/global.css);
+
+h4,h6,p,span{
+    color:var(--black-scale-300);
+}
