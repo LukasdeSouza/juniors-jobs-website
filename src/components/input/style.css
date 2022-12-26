@@ -1,0 +1,9 @@
+@import '../../styles/global.css';
+@import '../../styles/utility-classes.css';
+
+imput {
+    border: 2px solid var(--black-scale-100);
+    border-radius: 4px;
+    height: 51px;
+    width: 420px;
+}
