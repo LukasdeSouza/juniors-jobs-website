@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { AppBar, Avatar, Button, Link, Stack } from '@mui/material'
 
 import Logo from '../../assets/logo_size.jpg'
 
 import '../../styles/global.css'
+import RootStoreContext from '../../store/rootStore'
 
 const AppBarNavigation = () => {
+
+  const { userStore, jobsStore } = useContext(RootStoreContext)
+
   return (
     <AppBar
       elevation={'none'}
@@ -18,6 +22,7 @@ const AppBarNavigation = () => {
         justifyContent: 'space-between',
         width: '100vw',
         height: '80px',
+        pl: 21,
         backgroundColor: '#fff',
         boxShadow: 0
       }}>
@@ -40,15 +45,41 @@ const AppBarNavigation = () => {
             Me Cadastrar
           </Link>
         </Button>
-        <Link href='/'
+        <Link href='/contributors'
           underline='hover'
           color={'#5e5ff0'}
           fontSize={14}
           ml={2}
           mr={2}>
-          Login
+          Seja um Colaborador
         </Link>
-        <Avatar sx={{ mr: 2, cursor: 'pointer' }} />
+        {userStore.state._id === '' ?
+          <>
+            <Button variant='contained' ml={2}>
+              <Link href='/register'
+                underline='hover'
+                color={'#fff'}
+                fontSize={12}
+                sx={{ fontFamily: 'Poppins' }}
+              >
+                Me Cadastrar
+              </Link>
+            </Button>
+            <Link href='/'
+              underline='hover'
+              color={'#5e5ff0'}
+              fontSize={14}
+              ml={2}
+              mr={2}>
+              Login
+            </Link>
+          </>
+          :
+          <>
+            <Button onClick={() => jobsStore.setState('openDrawer', true)}>Adicionar Vaga</Button>
+            <Avatar sx={{ mr: 2, cursor: 'pointer' }} />
+          </>
+        }
       </Stack>
     </AppBar>
   )
