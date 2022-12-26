@@ -15,6 +15,7 @@ const AppBarNavigation = () => {
     <AppBar
       elevation={'none'}
       sx={{
+        position: "static",
         display: "flex",
         flexDirection: 'row',
         alignItems: 'center',

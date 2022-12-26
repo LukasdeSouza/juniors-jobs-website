@@ -10,35 +10,27 @@ import '../../styles/global.css'
 
 const NavMenu = () => {
   return (
-    <Stack
-      flexDirection={'row'}
-      justifyContent={'space-evenly'}
-      mr={2}
-    >
-      <Stack flexDirection={'row'} alignItems={'center'}>
-        <PlaceIcon sx={{ mr: 0.5 }} color='action' />
-        <Typography
-          className='default-font'
-          sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>
-          Vagas Presenciais</Typography>
+    <Stack flexDirection={"row"} justifyContent={"space-evenly"} mr={2}>
+      <Stack flexDirection={"row"} alignItems={"center"}>
+        <PlaceIcon sx={{ mr: 0.5 }} color="action" />
+        <Typography sx={{ fontSize: 14, fontFamily: "Montserrat", mr: 2 }}>
+          Vagas Presenciais
+        </Typography>
       </Stack>
-      <Stack flexDirection={'row'} alignItems={'center'}>
-        <PublicIcon sx={{ mr: 0.5 }} color='action' />
-        <Typography
-          className='default-font'
-          sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>
-          Vagas Remotas</Typography>
+      <Stack flexDirection={"row"} alignItems={"center"}>
+        <PublicIcon sx={{ mr: 0.5 }} color="action" />
+        <Typography sx={{ fontSize: 14, fontFamily: "Montserrat", mr: 2 }}>
+          Vagas Remotas
+        </Typography>
       </Stack>
-      <Stack flexDirection={'row'} alignItems={'center'}>
-        <FlightIcon sx={{ mr: 0.5 }} color='action' />
-        <Typography
-          className='default-font'
-          sx={{ fontSize: 14, fontFamily: "Poppins", mr: 2 }}>
-          Vagas Exterior</Typography>
+      <Stack flexDirection={"row"} alignItems={"center"}>
+        <FlightIcon sx={{ mr: 0.5 }} color="action" />
+        <Typography sx={{ fontSize: 14, fontFamily: "Montserrat", mr: 2 }}>
+          Vagas Exterior
+        </Typography>
       </Stack>
-
     </Stack>
-  )
+  );
 }
 
 export default NavMenu

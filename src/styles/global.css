@@ -5,30 +5,30 @@
   --black-scale-200: #606060;
   --black-scale-100: #808080;
 
-  --white-scale-500: #9C9C9C;
-  --white-scale-400: #BDBDBD;
-  --white-scale-300: #DADADA;
-  --white-scale-200: #EDEDED;
-  --white-scale-100: #FFFFFF;
+  --white-scale-500: #9c9c9c;
+  --white-scale-400: #bdbdbd;
+  --white-scale-300: #dadada;
+  --white-scale-200: #ededed;
+  --white-scale-100: #ffffff;
 
-  --blue-scale-500: #042F67;
+  --blue-scale-500: #042f67;
   --blue-scale-400: #014297;
-  --blue-scale-300: #0651B3;
-  --blue-scale-200: #0D68DF;
-  --blue-scale-100: #368DFF;
+  --blue-scale-300: #0651b3;
+  --blue-scale-200: #0d68df;
+  --blue-scale-100: #368dff;
 
-  --green-scale-500: #026D51;
-  --green-scale-400: #028C68;
-  --green-scale-300: #00AB7E;
-  --green-scale-200: #01CB96;
-  --green-scale-100: #02EEB0;
+  --green-scale-500: #026d51;
+  --green-scale-400: #028c68;
+  --green-scale-300: #00ab7e;
+  --green-scale-200: #01cb96;
+  --green-scale-100: #02eeb0;
 
   /*assistance colors*/
-  --color-success: #62FF7B;
-  --color-warning: #FFF280;
-  --color-danger: #FF6969;
+  --color-success: #62ff7b;
+  --color-warning: #fff280;
+  --color-danger: #ff6969;
 }
 
 .default-font {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
