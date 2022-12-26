@@ -1,24 +1,39 @@
-import React from 'react'
+import React from "react";
 
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Button, Stack, Typography } from "@mui/material";
 
-import '../../styles/global.css'
+import "../../styles/global.css";
 
 const JobsRegister = ({ onClick }) => {
   return (
-    <Stack alignItems={'center'}>
-      <Box sx={{ width: 790, height: 130, mb: 2, backgroundColor: "#5e5ff0", borderRadius: 2, textAlign: 'center' }}>
-        <br />Filters 👷🚧
-        <br />Em construção
-        <br /><Button
-          variant='contained'
+    <Stack alignItems={"center"}>
+      <Box
+        sx={{
+          width: 790,
+          height: 130,
+          mb: 2,
+          backgroundColor: "var(--white-scale-300)",
+          borderRadius: 2,
+          textAlign: "center",
+        }}
+      >
+        <br />
+        Filters 👷🚧
+        <br />
+        Em construção
+        <br />
+        <Button
+          variant="contained"
           onClick={onClick}
-          sx={{ backgroundColor: '#eee' }}>
-          <Typography variant sx={{ fontFamily: 'Poppins', color: "#111" }}>Adicionar nova Vaga</Typography>
+          sx={{ backgroundColor: "var(--blue-scale-300)" }}
+        >
+          <Typography variant sx={{ color: "var(--white-scale-100)" }}>
+            Adicionar nova Vaga
+          </Typography>
         </Button>
       </Box>
-    </Stack >
-  )
-}
+    </Stack>
+  );
+};
 
-export default JobsRegister
+export default JobsRegister;

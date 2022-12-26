@@ -36,7 +36,6 @@ const AppBarNavigation = () => {
             underline='hover'
             color={'#fff'}
             fontSize={12}
-            sx={{ fontFamily: 'Poppins' }}
           >
             Me Cadastrar
           </Link>
