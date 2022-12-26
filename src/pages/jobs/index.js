@@ -6,7 +6,6 @@ import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } fro
 
 import JobsBox from '../../components/box'
 import AppBarNavigation from '../../components/appbar'
-import NavMenu from '../../components/navMenu'
 import PaginationJobs from '../../components/pagination'
 import RootStoreContext from '../../store/rootStore'
 import JobsSkeleton from '../../components/skeleton'
@@ -70,7 +69,6 @@ const JobsPage = observer(() => {
   return (
     <>
       <Stack flexDirection={'row'} justifyContent={'space-between'}>
-        <img src={Logo} alt="" style={{ width: '100px' }} />
         <AppBarNavigation />
       </Stack>
       <Stack alignItems={'center'} >

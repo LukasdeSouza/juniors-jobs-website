@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 
+import RootStoreContext from '../../store/rootStore'
+
 import { AppBar, Avatar, Button, Link, Stack } from '@mui/material'
 
 import Logo from '../../assets/logo_size.jpg'
 
 import '../../styles/global.css'
-import RootStoreContext from '../../store/rootStore'
 
 const AppBarNavigation = () => {
 
@@ -50,27 +51,17 @@ const AppBarNavigation = () => {
           color={'#5e5ff0'}
           fontSize={14}
           ml={2}
-          mr={2}>
+        >
           Seja um Colaborador
         </Link>
         {userStore.state._id === '' ?
           <>
-            <Button variant='contained' ml={2}>
-              <Link href='/register'
-                underline='hover'
-                color={'#fff'}
-                fontSize={12}
-                sx={{ fontFamily: 'Poppins' }}
-              >
-                Me Cadastrar
-              </Link>
-            </Button>
             <Link href='/'
               underline='hover'
               color={'#5e5ff0'}
               fontSize={14}
               ml={2}
-              mr={2}>
+              mr={4}>
               Login
             </Link>
           </>
