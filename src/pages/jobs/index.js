@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite'
 import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
 
 import JobsBox from '../../components/box'
+import AppBarNavigation from '../../components/appbar'
 import NavMenu from '../../components/navMenu'
 import PaginationJobs from '../../components/pagination'
 import RootStoreContext from '../../store/rootStore'
@@ -70,7 +71,7 @@ const JobsPage = observer(() => {
     <>
       <Stack flexDirection={'row'} justifyContent={'space-between'}>
         <img src={Logo} alt="" style={{ width: '100px' }} />
-        <NavMenu />
+        <AppBarNavigation />
       </Stack>
       <Stack alignItems={'center'} >
         {jobsStore.state.alert &&
