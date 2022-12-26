@@ -14,6 +14,7 @@ const JobsRegister = ({ onClick }) => {
           mb: 2,
           backgroundColor: "var(--white-scale-300)",
           borderRadius: 2,
+          boxShadow: "var(--bs-shadow-100)",
           textAlign: "center",
         }}
       >
