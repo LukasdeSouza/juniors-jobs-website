@@ -23,7 +23,18 @@
   --green-scale-200: #01cb96;
   --green-scale-100: #02eeb0;
 
-  /*assistance colors*/
+  --bg-linear-blue: linear-gradient(
+    221.45deg,
+    var(--blue-scale-300) 23.45%,
+    var(--blue-scale-500) 94.19%
+  );
+
+  /* BOX-SHADOWS */
+  --bs-shadow-100: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  --bs-shadow-200: 4px 4px 12px rgba(0, 0, 0, 0.35);
+  --bs-shadow-300: 4px 4px 12px rgba(0, 0, 0, 0.55);
+
+  /*ASSISTANCE COLORS*/
   --color-success: #62ff7b;
   --color-warning: #fff280;
   --color-danger: #ff6969;
@@ -31,4 +42,46 @@
 
 .default-font {
   font-family: "Montserrat", sans-serif;
+}
+
+.title-h1 {
+  font-weight: 500;
+  font-size: 4.5em;
+  letter-spacing: 2%;
+}
+
+.title-h2 {
+  font-weight: 500;
+  font-size: 3.5em;
+  letter-spacing: 1.5%;
+}
+
+.title-h3 {
+  font-weight: 500;
+  font-size: 3em;
+  letter-spacing: 1.25%;
+}
+
+.title-h4 {
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 1%;
+}
+
+.title-h5 {
+  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: 0.75%;
+}
+
+.subtitle-01 {
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 2%;
+}
+
+.subtitle-02 {
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 2%;
 }
