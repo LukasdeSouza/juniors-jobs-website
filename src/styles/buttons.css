@@ -1,0 +1,16 @@
+
+.btn {
+  cursor: pointer;
+  background-color: var(--blue-scale-300);
+  border: none;
+  height: 3.5rem;
+  width: 26.25rem;
+  border-radius: 4px;
+  box-shadow: var(--bs-shadow-200);
+}
+
+.btn a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: var(--white-scale-200);
+}
