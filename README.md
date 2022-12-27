@@ -30,64 +30,66 @@ yarn start
 ## Contrubuidores 🤟
 
 <!--
-    todos os avatares devem seguir esse padrão
 
+ TODOS OS AVATARES DEVEM SEGUIR ESSE PADRÃO
 
-    <td style="text-align:center">
-        <img height="90" width="90" style="border-radius: 50%;" 
-            src="<url do avatar>"
-        >
-        <br>
-        <a href="https://github.com/LukasdeSouza">
-            <nickname>
-        </a>
-        <p style="font-weight:bold">
-            <função no projeto>
-        </p>
-        <pode haver mais de uma função>
-    </td>
+<td align="center">
+    <img height="90" width="90" 
+        src="<URL do avatar>"
+    >
+    <br>
+    <a href="<link do github>">
+        <p><nickname></p>
+    </a>
+    <b>
+        <função no projeto>
+        <pode haver mais de uma, separada por "<br>">
+    </b>
+</td>
+
 -->
 <br>
 <table>
     <tr>
         <!--Lucas de Souza-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90"
                 src="https://avatars.githubusercontent.com/u/99886292?v=4"
             >
             <br>
             <a href="https://github.com/LukasdeSouza">
-                LukasdeSouza
+                <p>LukasdeSouza</p>
             </a>
-            <p style="font-weight:bold">
+            <b>
                 Autor
-            </p>
+            </b>
         </td>
         <!--Vitor Hugo-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90"
                 src="https://avatars.githubusercontent.com/u/100080203?v=4"
             >
             <br>
-            <a href="https://github.com/LukasdeSouza">
-                Victorprog4
+            <a href="https://github.com/Victorprog4">
+                <p>Victorprog4</p>
             </a>
-            <p style="font-weight:bold">
-                Front-end
-            </p>
+            <b>
+                Front-end <br>
+                UI / UX
+            </b>
         </td>
         <!--Andersson Gonçalves-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90" 
                 src="https://avatars.githubusercontent.com/u/94249557?s=400&u=72f47fb4e4ed4bb314de7ddae4eee7d033106348&v=4"
             >
             <br>
-            <a href="https://github.com/LukasdeSouza">
-                Andersson793
+            <a href="https://github.com/Andersson793">
+                <p>Andersson793</p>
             </a>
-            <p style="font-weight:bold">
+            <b>
                 Front-end
-            </p>
+            </b>
         </td>
     </tr>
 </table>
