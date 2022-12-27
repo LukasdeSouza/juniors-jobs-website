@@ -2,6 +2,13 @@
 
 O projeto visa desenvolver uma aplicaçao capaz de unificar todas as vagas de tecnologia do mercado, propondo assim um local onde qualquer profissional seja capaz de encontrar a vaga perfeita. Nosso objetivo é agrupar todas as vagas de tech em um só lugar, chega de ficar indo em vários sites e perdendo tempo procurando uma vaga que se encaixe no seu perfil, tempo este que poderia estar sendo aplicado em outras vagas. Nossa plataforma promete um boa experiência para todos os usuários, um ambiente fluido e objetivo!
 
+## Tecnologias 🛠
+
+- [Reactjs](https://pt-br.reactjs.org/)
+- [MUI](https://mui.com/)
+- [Axios](https://axios-http.com/)
+- [Nodejs](https://nodejs.org/)
+
 ## Status 👀
 
 EM CONSTRUÇÃO...  🚧
@@ -96,3 +103,7 @@ yarn start
         </td>
     </tr>
 </table>
+
+## Licença
+
+_indefinida_
