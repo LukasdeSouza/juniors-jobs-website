@@ -40,48 +40,69 @@
   --color-danger: #ff6969;
 }
 
-.default-font {
-  font-family: "Montserrat", sans-serif;
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+span, 
+p, 
+a,
+option, 
+strong{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title-h1 {
   font-weight: 500;
-  font-size: 4.5em;
+  font-size: 4.5em; /*72px*/
   letter-spacing: 2%;
+  line-height: auto;
 }
 
 .title-h2 {
   font-weight: 500;
-  font-size: 3.5em;
+  font-size: 3.5em; /*56px*/
   letter-spacing: 1.5%;
+  line-height: auto;
 }
 
 .title-h3 {
   font-weight: 500;
-  font-size: 3em;
+  font-size: 3em; /*48px*/
   letter-spacing: 1.25%;
+  line-height: auto;
 }
 
 .title-h4 {
   font-weight: 400;
   font-size: 2em;
   letter-spacing: 1%;
+  line-height: auto;
 }
 
 .title-h5 {
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.5em; /*32px*/
   letter-spacing: 0.75%;
+  line-height: auto;
 }
 
 .subtitle-01 {
-  font-weight: 600;
-  font-size: 1em;
+  font-weight: 700;
+  font-size: 1em; /*16px*/
   letter-spacing: 2%;
+  line-height: auto;
+  color: var(--blue-scale-300);
 }
 
 .subtitle-02 {
-  font-weight: 400;
-  font-size: 1em;
+  font-weight: 500;
+  font-size: 1em; /*16px*/
   letter-spacing: 2%;
+  line-height: auto;
 }
