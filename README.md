@@ -34,17 +34,17 @@ yarn start
  TODOS OS AVATARES DEVEM SEGUIR ESSE PADRÃO
 
 <td align="center">
-    <img height="90" width="90" 
-        src="<URL do avatar>"
+    <img height="90" width="90"
+        src="<url para a imagem do avatar>"
     >
     <br>
-    <a href="<link do github>">
-        <p><nickname></p>
+    <a href="<url para o github pessoal>">
+        <nickname>
     </a>
-    <b>
-        <função no projeto>
-        <pode haver mais de uma, separada por "<br>">
-    </b>
+    <br>
+    <sub>
+        <b> <função no projeto, separada por "<br>"> </b>
+    </sub>
 </td>
 
 -->
@@ -58,11 +58,12 @@ yarn start
             >
             <br>
             <a href="https://github.com/LukasdeSouza">
-                <p>LukasdeSouza</p>
+                LukasdeSouza
             </a>
-            <b>
-                Autor
-            </b>
+            <br>
+            <sub>
+                <b>Autor</b>
+            </sub>
         </td>
         <!--Vitor Hugo-->
         <td align="center">
@@ -71,12 +72,13 @@ yarn start
             >
             <br>
             <a href="https://github.com/Victorprog4">
-                <p>Victorprog4</p>
+                Victorprog4
             </a>
-            <b>
-                Front-end <br>
-                UI / UX
-            </b>
+            <br>
+            <sub>
+                <b>Front-end</b> <br>
+                <b>UI/UX</b>
+            </sub>
         </td>
         <!--Andersson Gonçalves-->
         <td align="center">
@@ -85,11 +87,12 @@ yarn start
             >
             <br>
             <a href="https://github.com/Andersson793">
-                <p>Andersson793</p>
+                Andersson793
             </a>
-            <b>
-                Front-end
-            </b>
+            <br>
+            <sub>
+                <b>Front-end</b>
+            </sub>
         </td>
     </tr>
 </table>
