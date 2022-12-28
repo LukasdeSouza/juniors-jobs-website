@@ -2,6 +2,13 @@
 
 O projeto visa desenvolver uma aplicaçao capaz de unificar todas as vagas de tecnologia do mercado, propondo assim um local onde qualquer profissional seja capaz de encontrar a vaga perfeita. Nosso objetivo é agrupar todas as vagas de tech em um só lugar, chega de ficar indo em vários sites e perdendo tempo procurando uma vaga que se encaixe no seu perfil, tempo este que poderia estar sendo aplicado em outras vagas. Nossa plataforma promete um boa experiência para todos os usuários, um ambiente fluido e objetivo!
 
+## Tecnologias 🛠
+
+- [Reactjs](https://pt-br.reactjs.org/)
+- [MUI](https://mui.com/)
+- [Axios](https://axios-http.com/)
+- [Nodejs](https://nodejs.org/)
+
 ## Status 👀
 
 EM CONSTRUÇÃO...  🚧
@@ -30,64 +37,73 @@ yarn start
 ## Contrubuidores 🤟
 
 <!--
-    todos os avatares devem seguir esse padrão
 
+ TODOS OS AVATARES DEVEM SEGUIR ESSE PADRÃO
 
-    <td style="text-align:center">
-        <img height="90" width="90" style="border-radius: 50%;" 
-            src="<url do avatar>"
-        >
-        <br>
-        <a href="https://github.com/LukasdeSouza">
-            <nickname>
-        </a>
-        <p style="font-weight:bold">
-            <função no projeto>
-        </p>
-        <pode haver mais de uma função>
-    </td>
+<td align="center">
+    <img height="90" width="90"
+        src="<url para a imagem do avatar>"
+    >
+    <br>
+    <a href="<url para o github pessoal>">
+        <nickname>
+    </a>
+    <br>
+    <sub>
+        <b> <função no projeto, separada por "<br>"> </b>
+    </sub>
+</td>
+
 -->
 <br>
 <table>
     <tr>
         <!--Lucas de Souza-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90"
                 src="https://avatars.githubusercontent.com/u/99886292?v=4"
             >
             <br>
             <a href="https://github.com/LukasdeSouza">
                 LukasdeSouza
             </a>
-            <p style="font-weight:bold">
-                Autor
-            </p>
+            <br>
+            <sub>
+                <b>Autor</b>
+            </sub>
         </td>
         <!--Vitor Hugo-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90"
                 src="https://avatars.githubusercontent.com/u/100080203?v=4"
             >
             <br>
-            <a href="https://github.com/LukasdeSouza">
+            <a href="https://github.com/Victorprog4">
                 Victorprog4
             </a>
-            <p style="font-weight:bold">
-                Front-end
-            </p>
+            <br>
+            <sub>
+                <b>Front-end</b> <br>
+                <b>UI/UX</b>
+            </sub>
         </td>
         <!--Andersson Gonçalves-->
-        <td style="text-align:center">
-            <img height="90" width="90" style="border-radius: 50%;" 
+        <td align="center">
+            <img height="90" width="90" 
                 src="https://avatars.githubusercontent.com/u/94249557?s=400&u=72f47fb4e4ed4bb314de7ddae4eee7d033106348&v=4"
             >
             <br>
-            <a href="https://github.com/LukasdeSouza">
+            <a href="https://github.com/Andersson793">
                 Andersson793
             </a>
-            <p style="font-weight:bold">
-                Front-end
-            </p>
+            <br>
+            <sub>
+                <b>Front-end</b>
+            </sub>
         </td>
     </tr>
 </table>
+
+## Licença
+
+_indefinida_
