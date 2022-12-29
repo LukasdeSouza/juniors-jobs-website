@@ -34,7 +34,7 @@ yarn install
 yarn start
 ```
 
-## Contrubuidores 🤟
+## Contribuidores 🤟
 
 <!--
 
