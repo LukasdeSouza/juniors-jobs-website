@@ -1,5 +1,3 @@
-import { Container, Box, Typography, Button, Link } from "@mui/material";
-
 import AppBarNavigation from "../../components/appbar";
 
 import contribuir_img from "../../assets/img-sec-contribuicao.png";
@@ -7,6 +5,7 @@ import contribuir_img from "../../assets/img-sec-contribuicao.png";
 import "./index.css";
 
 import "../../styles/utility-classes.css";
+import "../../styles/responsive.css";
 
 //página de como contribuir
 export default function ContributesPage() {
@@ -15,7 +14,7 @@ export default function ContributesPage() {
       <AppBarNavigation />
       <section className="contain-contributions py-8">
         <div>
-          <img src={contribuir_img} />
+          <img src={contribuir_img} alt="" />
         </div>
 
         <div className="area-text-contributions">
@@ -24,10 +23,10 @@ export default function ContributesPage() {
             <span className="subtitle-02 mt-1 ml-1">Ajude nos a mantê-lo!</span>
           </div>
           <p className="title-h5 mt-6">
-            <span className="subtitle-01">Seek Jobs</span> é um Projeto
+            <span className="subtitle-01 --color-blue-300">Seek Jobs</span> é um Projeto
             Open-Source
           </p>
-          <p className="pt-3 subtitle-02">
+          <p className="pt-3 subtitle-02 responsive-p">
             O seek jobs é um site gratuito de código aberto construído pela
             comunidade, nosso objetivo é ajudar a comunidade de desenvolvedores
             a encontrar emprego na área de forma simples e sem burocracia. Nosso
@@ -35,13 +34,23 @@ export default function ContributesPage() {
             ajudar.
           </p>
 
-          <button className="btn mt-4">
-            <a href="#">Quero contribuir!</a>
+          <button className="btn btn-primary mt-4">
+            <a
+              href="https://www.vakinha.com.br/3344996"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quero contribuir!
+            </a>
           </button>
 
           <p className="subtitle-02 link-da-vakinha mt-4">
             ou pelo pix da nossa Vakinha online <br></br>
-            <a href="https://www.vakinha.com.br/3344996" target="_blank">
+            <a
+              href="https://www.vakinha.com.br/3344996"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               3344996@vakinha.com.br
             </a>
           </p>
