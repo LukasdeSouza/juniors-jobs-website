@@ -68,9 +68,6 @@ const JobsPage = observer(() => {
 
   return (
     <>
-      <Stack flexDirection={'row'} justifyContent={'space-between'}>
-        <AppBarNavigation />
-      </Stack>
       <Stack alignItems={'center'} >
         {jobsStore.state.alert &&
           <Alert color='success'
