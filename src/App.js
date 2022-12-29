@@ -1,18 +1,22 @@
 import { AppBar, Avatar, Link, Stack } from '@mui/material';
 import './App.css';
-import AppBarNavigation from './components/appbar';
-import JobsPage from './pages/jobs';
 
 //routes imports
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import RegisterPage from './pages/register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import AppBarNavigation from './components/appbar';
+
+//pages
+import JobsPage from './pages/jobs';
 import ContributesPage from './pages/contribute';
+import RegisterPage from './pages/register';
 
 
 export default function App() {
   return (
     <>
       <AppBarNavigation />
+      {/* rota das páginas */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<JobsPage />} />
