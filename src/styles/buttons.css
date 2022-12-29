@@ -1,15 +1,39 @@
 
 .btn {
   cursor: pointer;
-  background-color: var(--blue-scale-300);
+  max-width: 25em;
+  width: 100%;
   border: none;
-  height: 3.5rem;
-  width: 26.25rem;
+  padding: .9rem;
   border-radius: 4px;
-  box-shadow: var(--bs-shadow-200);
 }
 
-.btn a {
+.btn-primary {
+  cursor: pointer;
+  background-color: var(--blue-scale-300);
+  border: none;
+  box-shadow: var(--bs-shadow-200);
+  transition: .5s all;
+}
+
+.btn-primary:hover{
+  transform: scale(1.01);
+  background-color: var(--blue-scale-200);
+}
+
+.btn-secundary {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--blue-scale-300);
+  transition: .5s all;
+}
+
+.btn-secundary:hover{
+  transform: scale(1.01);
+  box-shadow: var(--bs-shadow-100);
+}
+
+.btn-primary a {
   font-size: 1.5em;
   text-decoration: none;
   color: var(--white-scale-200);
