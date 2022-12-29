@@ -13,14 +13,7 @@ import ContributesPage from './pages/contribute';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/jobs" element={<JobsPage />} />
-        <Route path="/contributors" element={<ContributesPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
-    </BrowserRouter>
+    <App/>
   </React.StrictMode>
 );
 
