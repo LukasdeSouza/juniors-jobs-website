@@ -1,1 +1,103 @@
-.team-member{}
+.footer {
+    display: flex;
+    background-color: var(--blue-scale-300);
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.footer__list-contribution-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: max-content;
+    padding: 3rem 0;
+}
+
+.footer__list-contribution-link>a {
+    color: var(--white-scale-100);
+    display: block;
+    text-decoration: none;
+}
+
+.member-section {
+    display: flex;
+    align-items: flex-end;
+}
+
+.member-section__see-all {
+    color: var(--white-scale-200);
+}
+
+.member-section__see-all::after {
+    content: url('../../assets/icon-arrow.svg');
+    margin-left: 7px;
+}
+
+.member-section__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 0.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.footer .member-section__title {
+    text-align: center;
+    color: var(--white-scale-200);
+}
+
+.team-member {
+    display: flex;
+    color: var(--white-scale-300);
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+@media screen and (max-width: 1230px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        max-height: auto;
+        align-items: center;
+    }
+
+    .footer__list-contribution-link {
+        flex-direction: row;
+        gap: 8rem;
+        padding: 0px;
+        margin-bottom: 2rem;
+    }
+
+    .footer__list-contribution-link>a {
+        display: inline-block;
+    }
+
+    .member-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 832px) {
+    .member-section__list{
+        grid-template-columns: 1fr;
+    }
+    .footer__list-contribution-link{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+@media screen and (max-width: 394px) {
+    .team-member{
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member>img{
+        width: 30px;
+    }
+}
