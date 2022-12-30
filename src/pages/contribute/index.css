@@ -33,12 +33,16 @@
 }
 
 .link-da-vakinha {
-    text-align: center;
+    text-align: start;
     font-size: 1em;
 }
 
 .link-da-vakinha a {
     font-size: 1em;
     text-decoration: none;
+    color: var(--blue-scale-300);
+}
+
+.--color-blue-300{
     color: var(--blue-scale-300);
 }

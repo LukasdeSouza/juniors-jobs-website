@@ -21,14 +21,14 @@ const AppBarNavigation = () => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        width: "100vw",
+        maxWidth: '1440',
+        width: "100%",
         height: "80px",
-        pl: 20,
         backgroundColor: "#fff",
         boxShadow: "var(--bs-shadow-100)",
       }}
     >
-      <img src={Logo} width={"80px"} />
+      <img src={Logo} width={"80px"} alt=""/>
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
           href="/jobs"
