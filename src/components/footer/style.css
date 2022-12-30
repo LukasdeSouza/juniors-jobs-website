@@ -1,8 +1,10 @@
 .footer {
-    display: flex;
     background-color: var(--blue-scale-300);
+    
+    display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
     padding: 1.5rem 6rem;
 }
 
@@ -10,19 +12,52 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    
     width: max-content;
+    
     padding: 3rem 0;
 }
 
-.footer__list-contribution-link>a {
+.footer__list-contribution-link > a {
     color: var(--white-scale-100);
+    
     display: block;
+    
     text-decoration: none;
 }
 
-.member-section {
+.footer__member-section {
     display: flex;
     align-items: flex-end;
+}
+
+.footer .member-section__title {
+    color: var(--white-scale-200);
+    text-align: center;
+}
+
+.member-section__member-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 0.5em;
+    
+    padding: 0;
+    margin: 0;
+    
+    list-style-type: none;
+}
+
+.member-list__team-member {
+    color: var(--white-scale-300);
+    text-decoration: none;
+    
+    display: flex;
+    gap: 0.5rem;
+}
+.member-list__team-member > img{
+    width: 20px;
+    height: 23px;
 }
 
 .member-section__see-all {
@@ -31,46 +66,28 @@
 
 .member-section__see-all::after {
     content: url('../../assets/icon-arrow.svg');
+   
     margin-left: 7px;
-}
-
-.member-section__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1em;
-    row-gap: 0.5em;
-    margin: 0;
-    padding: 0;
-}
-
-.footer .member-section__title {
-    text-align: center;
-    color: var(--white-scale-200);
-}
-
-.team-member {
-    display: flex;
-    color: var(--white-scale-300);
-    text-decoration: none;
-    gap: 0.5rem;
 }
 
 @media screen and (max-width: 1230px) {
     .footer {
         flex-direction: column;
+        align-items: center;
+        
         height: auto;
         max-height: auto;
-        align-items: center;
     }
 
     .footer__list-contribution-link {
         flex-direction: row;
         gap: 8rem;
-        padding: 0px;
+        
         margin-bottom: 2rem;
+        padding: 0px;
     }
 
-    .footer__list-contribution-link>a {
+    .footer__list-contribution-link > a {
         display: inline-block;
     }
 
@@ -83,13 +100,13 @@
 }
 
 @media screen and (max-width: 832px) {
-    .member-section__list{
-        grid-template-columns: 1fr;
-    }
     .footer__list-contribution-link{
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+    }
+    .member-section__list{
+        grid-template-columns: 1fr;
     }
 }
 @media screen and (max-width: 394px) {
@@ -97,7 +114,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .team-member>img{
+    .team-member > img{
         width: 30px;
     }
 }
