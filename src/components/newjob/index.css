@@ -1,0 +1,105 @@
+body:has(.modal.active) {
+  overflow: hidden;
+}
+
+.modal.active {
+  visibility: visible;
+
+  animation: show 0.2s ease-in-out normal;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  padding: 25px;
+
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  box-sizing: border-box;
+
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+.modal__container {
+  background-color: var(--white-scale-100);
+  padding: 25px 50px;
+  border-radius: 5px;
+  height: fit-content;  
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal__checkbox-container {
+  display: flex;
+  gap: 16px;
+}
+
+.modal__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__input,
+.modal__input--textbox {
+  all: unset;
+
+  border: 2px solid var(--black-scale-200);
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+.modal__input--textbox {
+  width: 100%;
+}
+
+.modal__input--checkbox {
+  position: relative;
+  scale: 1.3; /* i dont know how scale up the button*/
+  margin: 5px;
+}
+
+.modal__button {
+  all: unset;
+
+  width: 50%;
+  padding: 15px;
+  border-radius: 4px;
+
+  text-align: center;
+  cursor: pointer;
+
+  background-color: var(--blue-scale-300);
+  color: var(--white-scale-100);
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
