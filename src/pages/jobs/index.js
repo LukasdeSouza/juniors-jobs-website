@@ -68,9 +68,6 @@ const JobsPage = observer(() => {
 
   return (
     <>
-      <Stack flexDirection={'row'} justifyContent={'space-between'}>
-        <AppBarNavigation />
-      </Stack>
       <Stack alignItems={'center'} >
         {jobsStore.state.alert &&
           <Alert color='success'
@@ -96,7 +93,7 @@ const JobsPage = observer(() => {
       <Stack flexDirection={'row'} justifyContent={'center'}>
         {Array.from(Array(pages), (item, index) => {
           return (
-            <Button value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index}</Button>
+            <Button value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index + 1}</Button>
           )
         })}
       </Stack>
