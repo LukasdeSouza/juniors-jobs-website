@@ -1,8 +1,10 @@
 import React from 'react'
 
 import './style.css'
+import '../../styles/global.css'
 
-import { Avatar, Button, Link, Stack, Typography } from '@mui/material'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Avatar, Button, Link, Stack, Typography, Chip } from '@mui/material'
 
 import PicProfile from '../../assets/undraw_pic_profile_re_7g2h.svg'
 
@@ -23,10 +25,11 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           mt: 2,
           p: 2,
           minWidth: 790,
-          height: 130,
-          borderRadius: 4,
-          border: '0.8px solid lightgrey',
-          backgroundColor: "#eff3f3",
+          maxWidth: 1090,
+          height: 150,
+          borderRadius: 1,
+          backgroundColor: "var(--white-scale-100)",
+          boxShadow: 4
         }}>
         <Avatar sx={{
           mr: 3, height: "69px", width: "69px"
@@ -43,24 +46,29 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           <Typography variant
             color={'#656273'}
             className='default-font'
-            sx={{ fontWeight: 500, fontSize: 12 }}>
+            sx={{ fontWeight: 500, fontSize: 12, mt: 1 }}>
             {description}
           </Typography>
           <Stack flexDirection={'row'}
             justifyContent={'space-between'}
             mt={1} >
-            <Typography variant
+            <Chip label={tecnologies}
+              size='small'
+              color='default'
+            // sx={{ backgroundColor: "var(--black-scale-100)", color: "(--white-scale-100)" }} 
+            />
+            {/* <Typography variant
               color={'#504e4d'}
               className='default-font'
               sx={{ fontSize: 12, color: 'green' }}>
               {tecnologies}
-            </Typography>
+            </Typography> */}
             <Stack alignItems={'flex-end'}>
               <Typography variant
                 color={'#4e4f4d'}
                 className='default-font'
                 sx={{ fontSize: 12, color: 'green' }}>
-                R${salary}
+                {salary}
               </Typography>
               <Typography variant
                 color={'#656273'}
@@ -72,13 +80,14 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           </Stack>
           <Button
             variant='contained'
-            sx={{ backgroundColor: '#5e5ff0', mt: 1, width: 250 }}>
+            endIcon={<ArrowForwardIcon />}
+            sx={{ backgroundColor: 'var(--blue-scale-200)', mt: 3, width: 170, height: 40 }}>
             <Link
               href={link}
               underline='none'
               color={'#fff'}
-              sx={{ fontSize: 12, fontWeight: 700 }}>
-              <Typography variant className='default-font'>Me Candidatar</Typography>
+              sx={{ fontSize: 12, textTransform: 'capitalize' }}>
+              <Typography variant className='default-font'>Candidatar-se</Typography>
             </Link>
           </Button>
         </Stack>

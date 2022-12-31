@@ -6,7 +6,6 @@ import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } fro
 
 import JobsBox from '../../components/box'
 import AppBarNavigation from '../../components/appbar'
-import PaginationJobs from '../../components/pagination'
 import RootStoreContext from '../../store/rootStore'
 import JobsSkeleton from '../../components/skeleton'
 import JobsRegister from '../../components/register'
@@ -28,6 +27,7 @@ const JobsPage = observer(() => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  //Pagination rule
   const [itemsPerPage, setItemsPerPage] = useState(10)
   const [currentPage, setCurrentPage] = useState(0)
 
@@ -51,7 +51,6 @@ const JobsPage = observer(() => {
     link: jobsStore.state.link,
     pagination: jobsStore.state.pagination
   }
-
 
 
   const clearFields = () => {
@@ -96,19 +95,18 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      <Stack flexDirection={'row'} justifyContent={'center'}>
+      <Stack flexDirection={'row'} justifyContent={'center'} mt={2} mb={4}>
         {Array.from(Array(pages), (item, index) => {
           return (
-            <Button value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index + 1}</Button>
+            <Button
+              value={index}
+              onClick={(e) => setCurrentPage(Number(e.target.value))}
+              sx={{ borderRadius: "50%" }}
+            >{index + 1}</Button>
           )
         })}
       </Stack>
 
-      {/* // <PaginationJobs page={jobsStore.state.page} onChange={() => {
-        //   jobsStore.state.page(jobsStore.state.page++)
-        //   controller.getAllJobs()
-        // }}
-        /> */}
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
     </>
   )

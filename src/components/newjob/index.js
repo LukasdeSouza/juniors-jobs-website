@@ -21,7 +21,7 @@ const NewJobModal = ({ setIsModalOpen, isModalOpen, controller }) => {
   return (
     <div className={"modal" + modalOpenClass} onClick={handleClick}>
       <div className="modal__container">
-        <h1>Cadastre uma nova vaga</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 500 }}>Cadastre uma nova vaga</h1>
         <form className="modal__form" onSubmit={handleSubmit(onSubmit)}>
           <div className="modal__input-container">
             <span>Logo da Empresa (URL)</span>

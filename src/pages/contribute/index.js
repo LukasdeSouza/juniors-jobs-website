@@ -11,7 +11,6 @@ import "../../styles/responsive.css";
 export default function ContributesPage() {
   return (
     <>
-      <AppBarNavigation />
       <section className="contain-contributions py-8">
         <div>
           <img src={contribuir_img} alt="" />
