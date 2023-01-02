@@ -55,6 +55,7 @@ strong{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
 
 .title-h1 {
@@ -80,14 +81,14 @@ strong{
 
 .title-h4 {
   font-weight: 400;
-  font-size: 2em;
+  font-size: 2em; /*32px*/
   letter-spacing: 1%;
   line-height: auto;
 }
 
 .title-h5 {
   font-weight: 300;
-  font-size: 1.5em; /*32px*/
+  font-size: 1.5em; /*24px*/
   letter-spacing: 0.75%;
   line-height: auto;
 }
@@ -97,7 +98,6 @@ strong{
   font-size: 1em; /*16px*/
   letter-spacing: 2%;
   line-height: auto;
-  color: var(--blue-scale-300);
 }
 
 .subtitle-02 {
