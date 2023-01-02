@@ -6,11 +6,15 @@
     justify-content: space-between;
 
     padding: 1.5rem 6rem;
+
+    height: 170px;
+    box-sizing: border-box;
 }
 
-.footer__list-contribution-link {
+.footer__list-contribution {
     display: flex;
     flex-direction: column;
+    align-self: center;
     gap: 2rem;
     
     width: max-content;
@@ -18,7 +22,7 @@
     padding: 3rem 0;
 }
 
-.footer__list-contribution-link > a {
+.footer__list-contribution > a {
     color: var(--white-scale-100);
     
     display: block;
@@ -79,7 +83,7 @@
         max-height: auto;
     }
 
-    .footer__list-contribution-link {
+    .footer__list-contribution {
         flex-direction: row;
         gap: 8rem;
         
@@ -87,11 +91,11 @@
         padding: 0px;
     }
 
-    .footer__list-contribution-link > a {
+    .footer__list-contribution > a {
         display: inline-block;
     }
 
-    .member-section {
+    .footer__member-section {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
@@ -100,21 +104,25 @@
 }
 
 @media screen and (max-width: 832px) {
-    .footer__list-contribution-link{
+    .footer__list-contribution {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
-    .member-section__list{
+    .member-section__member-list {
         grid-template-columns: 1fr;
     }
 }
 @media screen and (max-width: 394px) {
-    .team-member{
+    .footer{
+        padding: 1.5rem 0px;
+    }
+    .member-list__team-member {
         flex-direction: column;
         align-items: center;
     }
-    .team-member > img{
+    .member-list__team-member > img {
         width: 30px;
     }
+
 }

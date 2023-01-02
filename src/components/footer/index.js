@@ -28,7 +28,7 @@ const TeamMember = ({ menberOffice, memberGitHubLink = '', img = '', alt='Foto d
 const Footer = () => {
     return (
         <footer className="footer">
-            <section className="footer__list-contribution-link">
+            <section className="footer__list-contribution">
                 <a href="./" rel='external' /* target='_blank' */ className="subtitle-01">Ajude nosso projeto a evoluir</a>
                 <a href="./" rel='external' /* target='_blank' */ className="subtitle-01">Contribuições e Parceiras</a>
             </section>
