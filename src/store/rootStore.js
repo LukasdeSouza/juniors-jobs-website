@@ -1,9 +1,12 @@
 import { createContext } from "react";
+
 import JobsStore from "./jobsStore";
+import UserStore from "./userStore";
 
 class RootStore {
   constructor() {
     this.jobsStore = new JobsStore()
+    this.userStore = new UserStore()
   }
 }
 

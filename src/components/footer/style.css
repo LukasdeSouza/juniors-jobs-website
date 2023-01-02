@@ -1,0 +1,128 @@
+.footer {
+    background-color: var(--blue-scale-300);
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 1.5rem 6rem;
+
+    height: 170px;
+    box-sizing: border-box;
+}
+
+.footer__list-contribution {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 2rem;
+    
+    width: max-content;
+    
+    padding: 3rem 0;
+}
+
+.footer__list-contribution > a {
+    color: var(--white-scale-100);
+    
+    display: block;
+    
+    text-decoration: none;
+}
+
+.footer__member-section {
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer .member-section__title {
+    color: var(--white-scale-200);
+    text-align: center;
+}
+
+.member-section__member-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 0.5em;
+    
+    padding: 0;
+    margin: 0;
+    
+    list-style-type: none;
+}
+
+.member-list__team-member {
+    color: var(--white-scale-300);
+    text-decoration: none;
+    
+    display: flex;
+    gap: 0.5rem;
+}
+.member-list__team-member > img{
+    width: 20px;
+    height: 23px;
+}
+
+.member-section__see-all {
+    color: var(--white-scale-200);
+}
+
+.member-section__see-all::after {
+    content: url('../../assets/icon-arrow.svg');
+   
+    margin-left: 7px;
+}
+
+@media screen and (max-width: 1230px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        
+        height: auto;
+        max-height: auto;
+    }
+
+    .footer__list-contribution {
+        flex-direction: row;
+        gap: 8rem;
+        
+        margin-bottom: 2rem;
+        padding: 0px;
+    }
+
+    .footer__list-contribution > a {
+        display: inline-block;
+    }
+
+    .footer__member-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 832px) {
+    .footer__list-contribution {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .member-section__member-list {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 394px) {
+    .footer{
+        padding: 1.5rem 0px;
+    }
+    .member-list__team-member {
+        flex-direction: column;
+        align-items: center;
+    }
+    .member-list__team-member > img {
+        width: 30px;
+    }
+
+}

@@ -1,3 +1,108 @@
-.default-font {
-  font-family: "Poppins", sans-serif;
+:root {
+  --black-scale-500: #101010;
+  --black-scale-400: #202020;
+  --black-scale-300: #303030;
+  --black-scale-200: #606060;
+  --black-scale-100: #808080;
+
+  --white-scale-500: #9c9c9c;
+  --white-scale-400: #bdbdbd;
+  --white-scale-300: #dadada;
+  --white-scale-200: #ededed;
+  --white-scale-100: #ffffff;
+
+  --blue-scale-500: #042f67;
+  --blue-scale-400: #014297;
+  --blue-scale-300: #0651b3;
+  --blue-scale-200: #0d68df;
+  --blue-scale-100: #368dff;
+
+  --green-scale-500: #026d51;
+  --green-scale-400: #028c68;
+  --green-scale-300: #00ab7e;
+  --green-scale-200: #01cb96;
+  --green-scale-100: #02eeb0;
+
+  --bg-linear-blue: linear-gradient(
+    221.45deg,
+    var(--blue-scale-300) 23.45%,
+    var(--blue-scale-500) 94.19%
+  );
+
+  /* BOX-SHADOWS */
+  --bs-shadow-100: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  --bs-shadow-200: 4px 4px 12px rgba(0, 0, 0, 0.35);
+  --bs-shadow-300: 4px 4px 12px rgba(0, 0, 0, 0.55);
+
+  /*ASSISTANCE COLORS*/
+  --color-success: #62ff7b;
+  --color-warning: #fff280;
+  --color-danger: #ff6969;
+}
+
+h1,
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+span, 
+p, 
+a,
+option, 
+strong{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-h1 {
+  font-weight: 500;
+  font-size: 4.5em; /*72px*/
+  letter-spacing: 2%;
+  line-height: auto;
+}
+
+.title-h2 {
+  font-weight: 500;
+  font-size: 3.5em; /*56px*/
+  letter-spacing: 1.5%;
+  line-height: auto;
+}
+
+.title-h3 {
+  font-weight: 500;
+  font-size: 3em; /*48px*/
+  letter-spacing: 1.25%;
+  line-height: auto;
+}
+
+.title-h4 {
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 1%;
+  line-height: auto;
+}
+
+.title-h5 {
+  font-weight: 300;
+  font-size: 1.5em; /*32px*/
+  letter-spacing: 0.75%;
+  line-height: auto;
+}
+
+.subtitle-01 {
+  font-weight: 700;
+  font-size: 1em; /*16px*/
+  letter-spacing: 2%;
+  line-height: auto;
+  color: var(--blue-scale-300);
+}
+
+.subtitle-02 {
+  font-weight: 500;
+  font-size: 1em; /*16px*/
+  letter-spacing: 2%;
+  line-height: auto;
 }

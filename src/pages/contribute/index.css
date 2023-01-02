@@ -1,0 +1,44 @@
+@import url(../../styles/global.css);
+@import url(../../styles/buttons.css);
+
+.contain-contributions {
+    max-width: 1080px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.contain-contributions img {
+    max-width: 490px;
+    width: 100%;
+}
+
+.area-text-contributions {
+    max-width: 490px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.area-text-contributions .separador-blue {
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid var(--blue-scale-300);
+}
+
+.area-text-contributions .separador-blue span{
+    color: var(--blue-scale-300);
+}
+
+.link-da-vakinha {
+    text-align: center;
+    font-size: 1em;
+}
+
+.link-da-vakinha a {
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--blue-scale-300);
+}

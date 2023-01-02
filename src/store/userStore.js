@@ -1,22 +1,13 @@
 import { action, makeAutoObservable, observable } from "mobx";
 
-class JobsStore {
 
+class UserStore {
   state = {
-    jobsList: [],
-    postJobsList: [],
-    urlImage: '',
-    title: '',
-    description: '',
-    tecnologies: '',
-    salary: '',
-    local: '',
-    link: '',
-    pagination: 0,
-    page: 0,
-    openDrawer: false,
-    error: false,
-    alert: false
+    _id: "",
+    name: '',
+    email: "",
+    type: "",
+    cnpj: ""
   }
   loading = false
 
@@ -36,6 +27,8 @@ class JobsStore {
   setLoading(value) {
     this.loading = value
   }
+
+
 }
 
-export default JobsStore
+export default UserStore

@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Seek Jobs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O projeto visa desenvolver uma aplicaçao capaz de unificar todas as vagas de tecnologia do mercado, propondo assim um local onde qualquer profissional seja capaz de encontrar a vaga perfeita. Nosso objetivo é agrupar todas as vagas de tech em um só lugar, chega de ficar indo em vários sites e perdendo tempo procurando uma vaga que se encaixe no seu perfil, tempo este que poderia estar sendo aplicado em outras vagas. Nossa plataforma promete um boa experiência para todos os usuários, um ambiente fluido e objetivo!
 
-## Available Scripts
+## Tecnologias 🛠
 
-In the project directory, you can run:
+- [Reactjs](https://pt-br.reactjs.org/)
+- [MUI](https://mui.com/)
+- [Axios](https://axios-http.com/)
+- [Nodejs](https://nodejs.org/)
 
-### `npm start`
+## Status 👀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+EM CONSTRUÇÃO...  🚧
+<!--EM PRODUÇÃO... 🚀--> 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como rodar localmente ⚙️
 
-### `npm test`
+1. clone o repositório:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/LukasdeSouza/seek-jobs-website.git
+```
+2. acesse o diretório raiz:
+```bash
+cd seek-jobs-website
+```
+3. instale as dependências:
+```bash
+yarn install
+```
+4. inicie o servidor:
+```bash
+yarn start
+```
 
-### `npm run build`
+## Contribuidores 🤟
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!--
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ TODOS OS AVATARES DEVEM SEGUIR ESSE PADRÃO
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<td align="center">
+    <img height="90" width="90"
+        src="<url para a imagem do avatar>"
+    >
+    <br>
+    <a href="<url para o github pessoal>">
+        <nickname>
+    </a>
+    <br>
+    <sub>
+        <b> <função no projeto, separada por "<br>"> </b>
+    </sub>
+</td>
 
-### `npm run eject`
+-->
+<br>
+<table>
+    <tr>
+        <!--Lucas de Souza-->
+        <td align="center">
+            <img height="90" width="90"
+                src="https://avatars.githubusercontent.com/u/99886292?v=4"
+            >
+            <br>
+            <a href="https://github.com/LukasdeSouza">
+                LukasdeSouza
+            </a>
+            <br>
+            <sub>
+                <b>Autor</b>
+            </sub>
+        </td>
+        <!--Vitor Hugo-->
+        <td align="center">
+            <img height="90" width="90"
+                src="https://avatars.githubusercontent.com/u/100080203?v=4"
+            >
+            <br>
+            <a href="https://github.com/Victorprog4">
+                Victorprog4
+            </a>
+            <br>
+            <sub>
+                <b>Front-end</b> <br>
+                <b>UI/UX</b>
+            </sub>
+        </td>
+        <!--Andersson Gonçalves-->
+        <td align="center">
+            <img height="90" width="90" 
+                src="https://avatars.githubusercontent.com/u/94249557?s=400&u=72f47fb4e4ed4bb314de7ddae4eee7d033106348&v=4"
+            >
+            <br>
+            <a href="https://github.com/Andersson793">
+                Andersson793
+            </a>
+            <br>
+            <sub>
+                <b>Front-end</b>
+            </sub>
+        </td>
+    </tr>
+</table>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Licença
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_indefinida_
