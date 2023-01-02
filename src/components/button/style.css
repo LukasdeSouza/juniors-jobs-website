@@ -1,0 +1,8 @@
+@import '../../styles/global.css';
+@import '../../styles/utility-classes.css';
+@import '../../styles/button.css';
+
+.btn-text {
+  font-size: 1.5em;
+  color: var(--white-scale-200);
+}
