@@ -10,6 +10,28 @@
 8 == 6rem -> 96px
 */
 
+/* FLEX ELEMENTS */
+
+.flex{
+  display: flex;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
 /*padding top e bottom*/
 .py-1 {
   padding: .5rem 0;
