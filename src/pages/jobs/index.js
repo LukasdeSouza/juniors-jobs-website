@@ -14,7 +14,11 @@ import JobsController from '../../controller/jobsController'
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
 import Logo from '../../assets/logo_size-removebg.png'
 
+// global css
 import '../../styles/global.css'
+
+//local css
+import "./styles.css"
 
 import { motion } from "framer-motion"
 import NewJobModal from '../../components/newjob';
@@ -98,11 +102,14 @@ const JobsPage = observer(() => {
       <Stack flexDirection={'row'} justifyContent={'center'} mt={2} mb={4}>
         {Array.from(Array(pages), (item, index) => {
           return (
-            <Button
-              value={index}
-              onClick={(e) => setCurrentPage(Number(e.target.value))}
-              sx={{ borderRadius: "50%" }}
-            >{index + 1}</Button>
+            <span className="bg-pagination">
+              <a
+                className="pagination"
+                onClick={(e) => setCurrentPage(Number(e.target.value))}
+              >
+                {index + 1}
+              </a>
+            </span>
           )
         })}
       </Stack>

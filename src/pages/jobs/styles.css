@@ -1,3 +1,25 @@
+@import url(../../styles/global.css);
+
 .default-font {
   font-family: "Montserrat", sans-serif;
+}
+
+.bg-pagination{
+	position: relative;
+	border-radius: 100%;
+	height: 35px;
+	width: 35px;
+	margin: 0 .5rem;
+}
+
+.bg-pagination:hover{
+	background-color: rgba(100,200,100,0.3);
+}
+
+.pagination{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin: auto;
 }
