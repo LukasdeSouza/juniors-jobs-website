@@ -20,7 +20,6 @@ import '../../styles/global.css'
 //local css
 import "./styles.css"
 
-import { motion } from "framer-motion"
 import NewJobModal from '../../components/newjob';
 
 
@@ -99,20 +98,21 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      <Stack flexDirection={'row'} justifyContent={'center'} mt={2} mb={4}>
+
+      {/* paginação */}
+      <div className='flex flex-row justify-center my-4'>
         {Array.from(Array(pages), (item, index) => {
           return (
-            <span className="bg-pagination">
-              <a
-                className="pagination"
-                onClick={(e) => setCurrentPage(Number(e.target.value))}
-              >
-                {index + 1}
-              </a>
-            </span>
+            <div
+              key={index}
+              onClick={(e) => setCurrentPage(Number(index))}
+              className="bg-pagination"
+            >
+              {index + 1}
+            </div>
           )
         })}
-      </Stack>
+      </div>
 
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
     </>

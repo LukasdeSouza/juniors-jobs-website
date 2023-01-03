@@ -32,6 +32,10 @@
   flex-direction: column;
 }
 
+.justify-center{
+  justify-content: center;
+}
+
 /*padding top e bottom*/
 .py-1 {
   padding: .5rem 0;
