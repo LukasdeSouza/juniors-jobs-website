@@ -53,6 +53,16 @@ export default function ContributesPage() {
               3344996@vakinha.com.br
             </a>
           </p>
+          <p className="subtitle-02 link-da-vakinha mt-4">
+            Buy me a Coffee! <br></br>
+            <a
+              href="https://www.buymeacoffee.com/seekjobs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.buymeacoffee.com/seekjobs
+            </a>
+          </p>
         </div>
       </section>
     </>
