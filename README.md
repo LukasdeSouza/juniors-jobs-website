@@ -27,11 +27,11 @@ cd seek-jobs-website
 ```
 3. instale as dependências:
 ```bash
-yarn install
+npm install
 ```
 4. inicie o servidor:
 ```bash
-yarn start
+npm run start
 ```
 
 ## Contribuidores 🤟
