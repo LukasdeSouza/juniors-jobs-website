@@ -101,6 +101,35 @@ npm run start
                 <b>Front-end</b>
             </sub>
         </td>
+        <!--Arthur Fabris-->
+        <td align="center">
+            <img height="90" width="90" 
+                src="https://avatars.githubusercontent.com/u/82186586?v=4"
+            >
+            <br>
+            <a href="https://github.com/arthurfp16">
+                arthurfp16
+            </a>
+            <br>
+            <sub>
+                <b>Front-end</b><br>
+                <b>Back-end</b>
+            </sub>
+        </td>
+        <!--richaardev-->
+        <td align="center">
+            <img height="90" width="90" 
+                src="https://avatars.githubusercontent.com/u/16388439?v=4"
+            >
+            <br>
+            <a href="https://github.com/richaardev">
+                richaardev
+            </a>
+            <br>
+            <sub>
+                <b>Front-end</b><br>
+            </sub>
+        </td>
     </tr>
 </table>
 
