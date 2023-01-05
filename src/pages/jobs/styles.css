@@ -12,10 +12,14 @@
 	border-radius: 100%;
 	height: 35px;
 	width: 35px;
-	margin: 0 .5rem;
+	margin: 0 .4rem;
 	cursor: pointer;
 }
 
 .bg-pagination:hover{
-	background-color: #368dff2d;
+	background-color: #368dff28;
+}
+
+.pagina-atual{
+	background-color: #368dff41;
 }

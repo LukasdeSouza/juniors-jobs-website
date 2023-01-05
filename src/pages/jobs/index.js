@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, componentDidMount, componentDidUpdate } from 'react'
 
 import { observer } from 'mobx-react-lite'
 
@@ -99,25 +99,48 @@ const JobsPage = observer(() => {
           />
         ))}
 
-      {/* paginação */}
-      <div className='flex flex-row justify-center my-4'>
-        {Array.from(Array(pages), (item, index) => {
-          return (
-            <div
-              key={index}
-              onClick={(e) => setCurrentPage(Number(index))}
-              className="bg-pagination"
-            >
-              {index + 1}
-            </div>
-          )
-        })}
-      </div>
+      <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
 
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
     </>
   )
 }
 )
+
+//paginação
+class Pagination extends React.Component {
+  constructor(props){
+    super(props)
+
+  }
+
+  allElements = document.getElementsByClassName('bg-pagination')
+
+  componentDidUpdate(){
+
+    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
+
+  }
+
+
+  render() {
+    return(
+      <div className='flex flex-row justify-center my-4'>
+        {Array.from(Array(this.props.pages), (item, index) => {
+          return (
+            <div
+              id={index}
+              key={index}
+              className='bg-pagination'
+              onClick={() => this.props.setCurrentPage(Number(index))}
+            >
+              {index + 1}
+            </div>
+          )
+        })}
+      </div>
+    );
+  }
+}
 
 export default JobsPage
