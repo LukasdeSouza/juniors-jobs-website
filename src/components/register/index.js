@@ -7,7 +7,7 @@ import "../../styles/global.css";
 const JobsRegister = ({ onClick }) => {
   return (
     <Stack alignItems={"center"}>
-      <Box
+      {/* <Box
         sx={{
           width: 790,
           height: 130,
@@ -23,7 +23,7 @@ const JobsRegister = ({ onClick }) => {
         <br />
         Em construção
         <br />
-        {/* <Button
+        <Button
           variant="contained"
           onClick={onClick}
           sx={{ backgroundColor: "var(--blue-scale-300)" }}
@@ -31,8 +31,8 @@ const JobsRegister = ({ onClick }) => {
           <Typography variant sx={{ color: "var(--white-scale-100)" }}>
             Adicionar nova Vaga
           </Typography>
-        </Button> */}
-      </Box>
+        </Button>
+      </Box> */}
     </Stack>
   );
 };
