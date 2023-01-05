@@ -2,18 +2,13 @@ import React from 'react';
 import './style.css';
 import logoGoogle from '../../assets/icon-google.png';
 
-const GoogleButton = () => {
-    return (
-        <button className='pl-5'>
-            <img
-            src={logoGoogle}
-            alt="Logo do Google"
-            />
-            <span className="default-font">
-                Continuar com Google
-            </span>
-        </button>
-    );
-}
+const GoogleButton = ({ onClick }) => {
+  return (
+    <button className="pl-3 google-button" onClick={onClick}>
+      <img src={logoGoogle} alt="Logo do Google" />
+      <span className="google-btn-text">Continuar com Google</span>
+    </button>
+  );
+};
 
 export default GoogleButton;
