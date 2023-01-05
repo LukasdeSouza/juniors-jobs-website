@@ -19,14 +19,14 @@ export default function ContributesPage() {
 
         <div className="area-text-contributions">
           <div className="separador-blue">
-            <h2 className="title-h3 ml-1">Curtiu o Site ?</h2>
+            <h2 className="title-h4 ml-1" style={{ color: "var(--black-scale-300)" }}>Curtiu o Site ?</h2>
             <span className="subtitle-02 mt-1 ml-1">Ajude nos a mantê-lo!</span>
           </div>
           <p className="title-h5 mt-6">
             <span className="subtitle-01 --color-blue-300">Seek Jobs</span> é um Projeto
             Open-Source
           </p>
-          <p className="pt-3 subtitle-02 responsive-p">
+          <p className="pt-3 subtitle-02 responsive-p" style={{ color: "var(--black-scale-300)", fontWeight: 400 }}>
             O seek jobs é um site gratuito de código aberto construído pela
             comunidade, nosso objetivo é ajudar a comunidade de desenvolvedores
             a encontrar emprego na área de forma simples e sem burocracia. Nosso

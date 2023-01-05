@@ -23,7 +23,7 @@ const JobsRegister = ({ onClick }) => {
         <br />
         Em construção
         <br />
-        <Button
+        {/* <Button
           variant="contained"
           onClick={onClick}
           sx={{ backgroundColor: "var(--blue-scale-300)" }}
@@ -31,7 +31,7 @@ const JobsRegister = ({ onClick }) => {
           <Typography variant sx={{ color: "var(--white-scale-100)" }}>
             Adicionar nova Vaga
           </Typography>
-        </Button>
+        </Button> */}
       </Box>
     </Stack>
   );
