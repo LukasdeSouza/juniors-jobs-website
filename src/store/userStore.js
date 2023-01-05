@@ -4,10 +4,14 @@ import { action, makeAutoObservable, observable } from "mobx";
 class UserStore {
   state = {
     _id: "",
-    name: '',
+    name: "",
     email: "",
-    type: "",
+    password: "",
+    confirmpassword: "",
+    type: "person",
     cnpj: "",
+    token: "",
+    imageUrl: "",
     error: "",
     success: ""
   }

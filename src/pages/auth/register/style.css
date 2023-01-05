@@ -1,0 +1,21 @@
+@import '../../../styles/global.css';
+@import '../../../styles/utility-classes.css';
+
+ .register-container {
+    background: var(--bg-linear-blue);
+    box-shadow: var(--bs-shadow-200);
+    border-radius: 0px 0px 55px 0px;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 852px;
+ }
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
