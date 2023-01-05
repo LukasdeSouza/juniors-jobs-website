@@ -4,11 +4,11 @@
 .input-container {
     display: flex;
     flex-direction: column;
-    gap: 2.25rem;
+    gap: 1rem;
     align-items: center;
-    max-width: 25em;
-    width: 100%;
-    margin-bottom: 2.25rem;
+    max-width: 23em;
+    width: 60vw;
+    height: 220px;
 }
 
 .google-container {
@@ -16,30 +16,27 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 110px;
-    max-width: 25em;
-    width: 100%;
-    margin-bottom: 2.5rem;
+    height: 50px;
+    max-width: 23em;
+    width: 70%;
+    margin-bottom: 24px;
 }
 
 .google-container-text {
     color: var(--black-scale-300);
-    font-family: 'Montserrat';
-    font-size: 1rem;
     font-weight: 500;
     line-height: 1.25rem;
     text-align: left;
-
 }
 
 .button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    height: 128px;
+    gap: 1rem;
     max-width: 25em;
-    width: 100%;
+    width: 80%;
+    font-size: 14px;
 }
 
 .form-container {
@@ -50,6 +47,6 @@
     align-items: center;
     justify-content: center;
     max-width: 25em;
-    width: 100%;
-    height: 852px;
+    width: 60vw;
+    height: 522px;
 }
