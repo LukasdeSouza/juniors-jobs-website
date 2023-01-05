@@ -1,19 +1,18 @@
 import React from 'react';
-import Input from '../../../components/input/index';
-import GoogleButton from '../../../components/googleButton';
+import RegisterBackground from '../../../components/registerBackground';
+import RegisterForm from '../../../components/registerForm';
 import '../../../styles/utility-classes.css';
+import './style.css';
 
 const RegisterUser = () => {
-
-    return(
-        <div>
-            <GoogleButton />
-            <Input 
-              type='text'
-              placeHolder='Nome'              
-            />
-        </div>
-    )
-}
+  return (
+    <main className="main-container">
+      <div className="register-container my-5">
+        <RegisterBackground />
+        <RegisterForm />
+      </div>
+    </main>
+  );
+};
 
 export default RegisterUser;
