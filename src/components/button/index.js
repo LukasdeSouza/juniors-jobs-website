@@ -1,14 +1,16 @@
 import React from 'react';
 import './style.css';
 
-const Button = ({ handleButton }) => {
+const Button = ({ handleClick, text }) => {
     return (
         <button
-        className="btn btn-primary btn-text"
+        className="btn btn-primary"
         type="button"
-        onClick={ handleButton }
+        onClick={handleClick}
         >
-            Próximo
+            <span className="btn-text">
+                {text}
+            </span>
         </button>
     );
 }
