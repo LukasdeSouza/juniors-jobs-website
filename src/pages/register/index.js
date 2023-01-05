@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { Box, Container, Link, Stack, Typography } from '@mui/material'
 
 import RegisterImg from '../../assets/sj-img-cadastro.svg'
+import UserController from '../../controller/userController'
+import RootStoreContext from '../../store/rootStore'
 
 import '../../styles/global.css'
 
 const RegisterPage = () => {
 
+  const { userStore } = useContext(RootStoreContext)
+  const controller = new UserController(userStore)
 
   return (
     <Stack mt={4} alignItems={'center'}>

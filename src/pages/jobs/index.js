@@ -73,7 +73,8 @@ const JobsPage = observer(() => {
 
   return (
     <>
-      <Stack alignItems={'center'} >
+      <AppBarNavigation />
+      <Stack alignItems={'center'} mt={4}>
         {jobsStore.state.alert &&
           <Alert color='success'
             variant='outlined'

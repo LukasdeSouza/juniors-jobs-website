@@ -28,7 +28,7 @@ const AppBarNavigation = () => {
         boxShadow: "var(--bs-shadow-100)",
       }}
     >
-      <img src={Logo} width={"80px"} alt=""/>
+      <img src={Logo} width={"80px"} alt="" />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
           href="/jobs"
@@ -58,7 +58,7 @@ const AppBarNavigation = () => {
         {userStore.state._id === "" ? (
           <>
             <Link
-              href="/"
+              href="/login"
               underline="hover"
               color={"#5e5ff0"}
               fontSize={14}

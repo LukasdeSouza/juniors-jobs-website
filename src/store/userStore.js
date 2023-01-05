@@ -7,7 +7,9 @@ class UserStore {
     name: '',
     email: "",
     type: "",
-    cnpj: ""
+    cnpj: "",
+    error: "",
+    success: ""
   }
   loading = false
 

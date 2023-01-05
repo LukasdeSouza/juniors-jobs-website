@@ -1,6 +1,6 @@
 import AppBarNavigation from "../../components/appbar";
 
-import contribuir_img from "../../assets/img-sec-contribuicao.png";
+import ContributeImg from "../../assets/img-sec-contribuicao.png";
 
 import "./index.css";
 
@@ -11,9 +11,10 @@ import "../../styles/responsive.css";
 export default function ContributesPage() {
   return (
     <>
+      <AppBarNavigation />
       <section className="contain-contributions py-8">
         <div>
-          <img src={contribuir_img} alt="" />
+          <img src={ContributeImg} alt="" />
         </div>
 
         <div className="area-text-contributions">
