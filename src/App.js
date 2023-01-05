@@ -5,7 +5,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { gapi } from 'gapi-script';
 
-
 //pages
 import JobsPage from './pages/jobs';
 import ContributesPage from './pages/contribute';
