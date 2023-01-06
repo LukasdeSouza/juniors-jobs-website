@@ -81,11 +81,14 @@ const JobsStack = ({ urlImage, title, description, tecnologies, salary, local, l
           <Button
             variant='contained'
             endIcon={<ArrowForwardIcon />}
+            href={link}
+            target="_blank"
+            rel="noopener"
             sx={{ backgroundColor: 'var(--blue-scale-200)', mt: 3, width: 170, height: 40 }}>
             <Link
-              href={link}
-              target="_blank"
-              rel="noopener"
+              // href={link}
+              // target="_blank"
+              // rel="noopener"
               underline='none'
               color={'#fff'}
               sx={{ fontSize: 12, textTransform: 'capitalize' }}>
