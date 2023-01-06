@@ -9,7 +9,7 @@ import { gapi } from 'gapi-script';
 import JobsPage from './pages/jobs';
 import ContributesPage from './pages/contribute';
 import RegisterUser from './pages/auth/register';
-import LoginPage from './pages/login'
+import LoginPage from './pages/auth/login';
 
 export default function App() {
 

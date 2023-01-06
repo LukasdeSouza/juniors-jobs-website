@@ -12,8 +12,11 @@ class UserStore {
     cnpj: "",
     token: "",
     imageUrl: "",
-    error: "",
-    success: ""
+  }
+  alert = {
+    open: false,
+    message: "",
+    type: "",
   }
   loading = false
 
@@ -28,6 +31,15 @@ class UserStore {
 
   setState(key, value) {
     this.state[key] = value
+  }
+
+  setAlert(open, type, message) {
+    this.alert.open = open;
+
+    if (type) {
+      this.alert.type = type;
+      this.alert.message = message;
+    }
   }
 
   setLoading(value) {

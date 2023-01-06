@@ -28,13 +28,12 @@ class UserController {
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/auth', body)
       .then((response) => {
-        this.store.setState('alert', true)
+        this.store.setAlert(true, 'success', response.data.msg)
         this.store.setState('openDrawer', false)
-        this.store.setState('success', response.data.msg)
       })
       .catch((error) => {
+        this.store.setState(true, 'error', error.response.data.msg)
         this.store.setState('openDrawer', true)
-        this.store.setState('error', error.response.data.msg)
       })
       .finally(() =>
         this.store.setLoading(false)
