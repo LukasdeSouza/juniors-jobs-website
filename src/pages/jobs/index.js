@@ -107,23 +107,26 @@ const JobsPage = observer(() => {
 }
 )
 
-//paginação
 class Pagination extends React.Component {
   constructor(props){
     super(props)
-
+  
   }
 
-  allElements = document.getElementsByClassName('bg-pagination')
+  p() {
+    console.log("call function")
+  }
+
+  componentDidMount(){
+    this.p()
+  }
 
   componentDidUpdate(){
 
-    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
-
   }
 
 
-  render() {
+  render() {  
     return(
       <div className='flex flex-row justify-center my-4'>
         {Array.from(Array(this.props.pages), (item, index) => {
