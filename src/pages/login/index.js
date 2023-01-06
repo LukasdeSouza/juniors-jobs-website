@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
-import { Button, Container, Stack, TextField, Typography } from '@mui/material'
+import { Alert, Button, Container, Stack, TextField, Typography } from '@mui/material'
 
 import '../../styles/global.css'
 
@@ -9,8 +9,9 @@ import IconGoogle from '../../assets/icon-google.svg'
 
 import UserController from '../../controller/userController'
 import RootStoreContext from '../../store/rootStore'
+import { observer } from 'mobx-react-lite'
 
-const LoginPage = () => {
+const LoginPage = observer(() => {
 
   const { userStore } = useContext(RootStoreContext)
   const controller = new UserController(userStore)
@@ -18,12 +19,12 @@ const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+
   const doLogin = () => {
     const body = {
       email: email,
       password: password
     }
-
     controller.userLogin(body)
     setEmail('')
     setPassword('')
@@ -46,6 +47,11 @@ const LoginPage = () => {
         <img src={LoginImg} alt="" width={250} style={{ marginTop: 32 }} />
       </Stack>
       <Stack alignItems={'center'} mt={8} sx={{ mr: 0, width: 494, backgroundColor: "var(--white-scale-100)" }}>
+        {userStore.alert.open &&
+          <Alert severity={userStore.alert.type}
+            onClose={() => userStore.setAlert(false)}
+            sx={{ position: 'absolute' }}>{userStore.alert.message}</Alert>
+        }
         <Typography fontFamily={'Montserrat'} fontWeight={700} fontSize={24}>
           Acesse sua Conta
         </Typography>
@@ -65,7 +71,8 @@ const LoginPage = () => {
         <Typography fontFamily={'Montserrat'}
           fontSize={12}
           color={"var(--blue-scale-300)"}
-          mt={1}>
+          mt={1}
+          sx={{ cursor: "pointer" }}>
           Esqueceu a senha?
         </Typography>
         <Button variant='contained'
@@ -84,7 +91,8 @@ const LoginPage = () => {
           height={36}
           width={320}
           mt={4}
-          border={'1px solid black'} borderRadius={4}>
+          border={'1px solid black'} borderRadius={4}
+          sx={{ cursor: 'pointer' }}>
           <img src={IconGoogle} alt="Google Logo" width={24} style={{ marginRight: 16 }} />
           <Typography fontFamily={'Montserrat'} fontSize={12}>
             Continuar com Google
@@ -92,10 +100,11 @@ const LoginPage = () => {
         </Stack>
         <Typography fontFamily={'Montserrat'} fontSize={12} mt={4}>
           Não tem Login?
-          <b style={{ color: "var(--blue-scale-300)" }}> Cadastre-se</b></Typography>
+          <b style={{ color: "var(--blue-scale-300)", cursor: 'pointer' }}> Cadastre-se</b></Typography>
       </Stack>
     </Container >
   )
 }
+)
 
 export default LoginPage

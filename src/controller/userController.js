@@ -10,13 +10,12 @@ class UserController {
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/auth/register', body)
       .then((response) => {
-        this.store.setState('alert', true)
+        this.store.setAlert(true, 'success', 'Te enviamos um email para confirmar seu Cadastro')
         this.store.setState('openDrawer', false)
-        console.log(response)
       })
       .catch((error) => {
+        this.store.setAlert(true, 'warning', error.response.data.msg,)
         this.store.setState('openDrawer', true)
-        console.log(error)
       })
       .finally(() =>
         this.store.setLoading(false)
@@ -28,13 +27,14 @@ class UserController {
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/auth', body)
       .then((response) => {
-        this.store.setState('alert', true)
+        this.store.setAlert(true, 'success', response.data.msg,)
         this.store.setState('openDrawer', false)
-        this.store.setState('success', response.data.msg)
+        console.log(response)
       })
       .catch((error) => {
+        this.store.setAlert(true, 'warning', error.response.data.msg)
         this.store.setState('openDrawer', true)
-        this.store.setState('error', error.response.data.msg)
+        console.log(error.response.data.msg)
       })
       .finally(() =>
         this.store.setLoading(false)

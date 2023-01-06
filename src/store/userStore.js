@@ -11,10 +11,14 @@ class UserStore {
     type: "person",
     cnpj: "",
     token: "",
-    imageUrl: "",
-    error: "",
-    success: ""
+    imageUrl: ""
   }
+  alert = {
+    open: false,
+    type: 'success',
+    message: '',
+  }
+
   loading = false
 
   constructor() {
@@ -22,12 +26,22 @@ class UserStore {
       state: observable,
 
       setState: action,
+      setAlert: action,
       setLoading: action,
     })
   }
 
   setState(key, value) {
     this.state[key] = value
+  }
+
+  setAlert(open, type, message) {
+    this.alert.open = open;
+
+    if (type) {
+      this.alert.type = type;
+      this.alert.message = message;
+    }
   }
 
   setLoading(value) {
