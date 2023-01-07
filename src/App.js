@@ -1,4 +1,3 @@
-// import { AppBar, Avatar, Link, Stack } from '@mui/material';
 import './App.css';
 
 //routes imports
@@ -11,6 +10,7 @@ import ContributesPage from './pages/contribute';
 import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
+import UserLoggedPage from './pages/splash/userLogged';
 
 export default function App() {
 
@@ -31,6 +31,7 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
 
           <Route path="/splash/userRegistered" element={<UserRegisteredPage />} />
+          <Route path="/splash/userLogged" element={<UserLoggedPage />} />
         </Routes>
       </BrowserRouter>
     </>

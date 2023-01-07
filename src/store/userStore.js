@@ -14,7 +14,7 @@ class UserStore {
     imageUrl: "",
   }
   alert = {
-    open: false,
+    open: true,
     message: "",
     type: "",
   }

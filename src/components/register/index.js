@@ -22,17 +22,17 @@ const JobsRegister = ({ onClick }) => {
         Filters 👷🚧
         <br />
         Em construção
-        <br />
-        <Button
-          variant="contained"
-          onClick={onClick}
-          sx={{ backgroundColor: "var(--blue-scale-300)" }}
-        >
-          <Typography variant sx={{ color: "var(--white-scale-100)" }}>
-            Adicionar nova Vaga
-          </Typography>
-        </Button>
-      </Box> */}
+        <br /> */}
+      <Button
+        variant="contained"
+        onClick={onClick}
+        sx={{ backgroundColor: "var(--blue-scale-300)" }}
+      >
+        <Typography variant sx={{ color: "var(--white-scale-100)" }}>
+          Adicionar nova Vaga
+        </Typography>
+      </Button>
+      {/* </Box> */}
     </Stack>
   );
 };

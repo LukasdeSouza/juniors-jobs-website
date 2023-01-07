@@ -69,7 +69,7 @@ const AppBarNavigation = () => {
           </Link>
           :
           <Avatar src={userStore.state.imageUrl !== '' ? userStore.state.imageUrl : userStore.state.name}
-            alt={userStore.state.name} />
+            alt={userStore.state.name} sx={{ mr: 4, ml: 4 }} />
         }
       </Stack>
     </AppBar>

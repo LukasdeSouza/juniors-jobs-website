@@ -11,6 +11,7 @@ import IconGoogle from '../../../assets/icon-google.svg'
 
 import UserController from '../../../controller/userController'
 import RootStoreContext from '../../../store/rootStore'
+import { LoadingButton } from '@mui/lab'
 
 const LoginPage = () => {
 
@@ -41,9 +42,6 @@ const LoginPage = () => {
         boxShadow: "var(--bs-shadow-300)",
         mt: 6
       }}>
-      {userStore.alert &&
-        <Alert severity={userStore.alert.type}>{userStore.alert.message}</Alert>
-      }
       <Stack alignItems={'center'} sx={{ ml: -9, width: "50%", backgroundColor: "var(--blue-scale-400)" }}>
         <Typography fontFamily={'Montserrat'} fontSize={22} color={"var(--white-scale-100)"} mt={8}>
           Seek Jobs, todas as <br /> Vagas Tech
@@ -51,6 +49,11 @@ const LoginPage = () => {
         <img src={LoginImg} alt="" width={250} style={{ marginTop: 32 }} />
       </Stack>
       <Stack alignItems={'center'} mt={8} sx={{ ml: 4, width: "50%", backgroundColor: "var(--white-scale-100)" }}>
+        {userStore.alert.open &&
+          <Alert severity={userStore.alert.type}
+            onClose={() => userStore.setAlert(false)}
+            sx={{ position: 'absolute' }}>{userStore.alert.message}</Alert>
+        }
         <Typography fontFamily={'Montserrat'} fontWeight={700} fontSize={24}>
           Acesse sua Conta
         </Typography>
@@ -66,7 +69,13 @@ const LoginPage = () => {
         <TextField label='Senha' size='small' type='password'
           required
           sx={{ width: 320, mt: 2 }}
-          onChange={(event) => setPassword(event.target.value)} />
+          onChange={(event) => setPassword(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              doLogin()
+            }
+          }}
+        />
         <Typography fontFamily={'Montserrat'}
           fontSize={12}
           color={"var(--blue-scale-300)"}
@@ -74,14 +83,14 @@ const LoginPage = () => {
           sx={{ cursor: "pointer" }}>
           Esqueceu a senha?
         </Typography>
-        <Button variant='contained'
+        <LoadingButton loading={userStore.loading} variant='contained'
           sx={{
             width: 320, backgroundColor: "var(--blue-scale-300)",
             textTransform: "capitalize", fontFamily: "Montserrat", mt: 4
           }}
           onClick={doLogin}>
           Entrar
-        </Button>
+        </LoadingButton>
         <Typography mt={4}>Ou</Typography>
         <Stack
           flexDirection={'row'}
