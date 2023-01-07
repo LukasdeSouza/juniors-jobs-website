@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { GoogleLogin } from '@leecheuk/react-google-login';
 
+import LoadingButton from '@mui/lab/LoadingButton';
+
 import Input from '../input/index';
 import GoogleButton from '../googleButton/index';
 import Checkbox from '../checkbox/index';
@@ -13,6 +15,7 @@ import RootStoreContext from '../../store/rootStore';
 import UserController from '../../controller/userController';
 
 import './style.css';
+import { Alert } from '@mui/material';
 
 const RegisterForm = observer(() => {
   const navigate = useNavigate();
@@ -52,25 +55,26 @@ const RegisterForm = observer(() => {
   };
 
   const saveUser = () => {
-    if (isValid) {
-      const newUser = {
-        name: userStore.state.name,
-        email: userStore.state.email,
-        password: userStore.state.password,
-        confirmpassword: userStore.state.confirmpassword,
-        type: userStore.state.type,
-        cnpj: userStore.state.cnpj,
-      };
-      controller.postNewUser(newUser);
-      navigate('/jobs');
-    } else {
-      alert('Preencha todos os campos corretamente')
-    }
+    const newUser = {
+      name: userStore.state.name,
+      email: userStore.state.email,
+      password: userStore.state.password,
+      confirmpassword: userStore.state.confirmpassword,
+      type: userStore.state.type,
+      cnpj: userStore.state.cnpj,
+    };
+    controller.userRegister(newUser);
+
   };
 
   return (
     <form className="form-container">
-      <h3 className="mb-2 title-h6" style={{ color: '#444', fontSize: 22, marginTop: "48px" }}> Crie sua conta </h3>
+      {userStore.alert.open &&
+        <Alert severity={userStore.alert.type}
+          onClose={() => userStore.setAlert(false)}
+          sx={{ position: 'absolute' }}>{userStore.alert.message}</Alert>
+      }
+      <h3 className="mb-2 title-h6" style={{ color: '#444', fontSize: 22, marginTop: "24px" }}> Crie sua conta </h3>
       <div className="google-container">
         <GoogleLogin
           clientId="842128105172-82qtuinhishq32q8nhrrbsqu0v301a24.apps.googleusercontent.com"
@@ -90,7 +94,10 @@ const RegisterForm = observer(() => {
       </div>
       <div className="button-container">
         <Checkbox text="Sou empresa" id="choose-user" handleChange={chooseType} />
-        <Button text="Próximo" handleClick={saveUser} />
+        <LoadingButton loading={userStore.loading} fullWidth variant="contained"
+          onClick={() => saveUser()}>
+          Cadastrar
+        </LoadingButton>
       </div>
     </form>
   );

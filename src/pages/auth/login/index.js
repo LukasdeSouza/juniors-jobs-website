@@ -37,20 +37,20 @@ const LoginPage = () => {
         display: "flex",
         flexDirection: "row",
         height: 522,
-        width: 788,
+        width: "60vw",
         boxShadow: "var(--bs-shadow-300)",
         mt: 6
       }}>
       {userStore.alert &&
         <Alert severity={userStore.alert.type}>{userStore.alert.message}</Alert>
       }
-      <Stack alignItems={'center'} sx={{ ml: -3, width: 494, backgroundColor: "var(--blue-scale-400)" }}>
+      <Stack alignItems={'center'} sx={{ ml: -9, width: "50%", backgroundColor: "var(--blue-scale-400)" }}>
         <Typography fontFamily={'Montserrat'} fontSize={22} color={"var(--white-scale-100)"} mt={8}>
           Seek Jobs, todas as <br /> Vagas Tech
         </Typography>
         <img src={LoginImg} alt="" width={250} style={{ marginTop: 32 }} />
       </Stack>
-      <Stack alignItems={'center'} mt={8} sx={{ mr: 0, width: 494, backgroundColor: "var(--white-scale-100)" }}>
+      <Stack alignItems={'center'} mt={8} sx={{ ml: 4, width: "50%", backgroundColor: "var(--white-scale-100)" }}>
         <Typography fontFamily={'Montserrat'} fontWeight={700} fontSize={24}>
           Acesse sua Conta
         </Typography>
@@ -70,7 +70,8 @@ const LoginPage = () => {
         <Typography fontFamily={'Montserrat'}
           fontSize={12}
           color={"var(--blue-scale-300)"}
-          mt={1}>
+          mt={1}
+          sx={{ cursor: "pointer" }}>
           Esqueceu a senha?
         </Typography>
         <Button variant='contained'
@@ -89,7 +90,8 @@ const LoginPage = () => {
           height={36}
           width={320}
           mt={4}
-          border={'1px solid black'} borderRadius={4}>
+          border={'1px solid black'} borderRadius={4}
+          sx={{ cursor: 'pointer' }}>
           <img src={IconGoogle} alt="Google Logo" width={24} style={{ marginRight: 16 }} />
           <Typography fontFamily={'Montserrat'} fontSize={12}>
             Continuar com Google
@@ -97,7 +99,7 @@ const LoginPage = () => {
         </Stack>
         <Typography fontFamily={'Montserrat'} fontSize={12} mt={4}>
           Não tem Login?
-          <b style={{ color: "var(--blue-scale-300)" }}> Cadastre-se</b></Typography>
+          <b style={{ color: "var(--blue-scale-300)", cursor: 'pointer' }}> Cadastre-se</b></Typography>
       </Stack>
     </Container >
   )

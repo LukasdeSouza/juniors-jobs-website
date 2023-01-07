@@ -25,7 +25,6 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<JobsPage />} />
-          <Route path="/jobs" element={<JobsPage />} />
           <Route path="/contributors" element={<ContributesPage />} />
           <Route path="/register" element={<RegisterUser />} />
           <Route path="/login" element={<LoginPage />} />

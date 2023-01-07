@@ -10,7 +10,7 @@ import '../../styles/global.css'
 
 const AppBarNavigation = () => {
 
-  const { userStore, jobsStore } = useContext(RootStoreContext)
+  const { userStore } = useContext(RootStoreContext)
 
   return (
     <AppBar
@@ -31,7 +31,7 @@ const AppBarNavigation = () => {
       <img src={Logo} width={"80px"} alt="" />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
-          href="/jobs"
+          href="/"
           underline="hover"
           color={"#5e5ff0"}
           fontSize={14}
@@ -40,11 +40,12 @@ const AppBarNavigation = () => {
         >
           Vagas
         </Link>
-        <Button variant="contained" ml={2}>
-          <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
-            Me Cadastrar
-          </Link>
-        </Button>
+        {userStore.state.token === '' &&
+          <Button variant="contained" ml={2}>
+            <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
+              Me Cadastrar
+            </Link>
+          </Button>}
         <Link
           href="/contributors"
           underline="hover"
@@ -54,28 +55,21 @@ const AppBarNavigation = () => {
         >
           Seja um Colaborador
         </Link>
-
-        {userStore.state._id === "" ? (
-          <>
-            <Link
-              href="/login"
-              underline="hover"
-              color={"#5e5ff0"}
-              fontSize={14}
-              ml={2}
-              mr={4}
-            >
-              Login
-            </Link>
-          </>
-        ) : (
-          <>
-            <Button onClick={() => jobsStore.setState("openDrawer", true)}>
-              Adicionar Vaga
-            </Button>
-            <Avatar sx={{ mr: 2, cursor: "pointer" }} />
-          </>
-        )}
+        {userStore.state.token === '' ?
+          <Link
+            href="/login"
+            underline="hover"
+            color={"#5e5ff0"}
+            fontSize={14}
+            ml={2}
+            mr={4}
+          >
+            Login
+          </Link>
+          :
+          <Avatar src={userStore.state.imageUrl !== '' ? userStore.state.imageUrl : userStore.state.name}
+            alt={userStore.state.name} />
+        }
       </Stack>
     </AppBar>
   );
