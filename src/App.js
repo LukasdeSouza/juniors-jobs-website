@@ -10,6 +10,7 @@ import JobsPage from './pages/jobs';
 import ContributesPage from './pages/contribute';
 import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
+import UserRegisteredPage from './pages/splash/userRegistered';
 
 export default function App() {
 
@@ -28,6 +29,8 @@ export default function App() {
           <Route path="/contributors" element={<ContributesPage />} />
           <Route path="/register" element={<RegisterUser />} />
           <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/splash/userRegistered" element={<UserRegisteredPage />} />
         </Routes>
       </BrowserRouter>
     </>

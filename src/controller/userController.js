@@ -10,7 +10,7 @@ class UserController {
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/auth/register', body)
       .then((response) => {
-        this.store.setAlert(true, 'success', response.data.msg)
+        this.store.setAlert(true, 'success', 'Te enviamos a confirmação de Cadastro no seu Email')
         console.log(response)
       })
       .catch((error) => {

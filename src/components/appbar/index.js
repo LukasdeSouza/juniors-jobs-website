@@ -29,6 +29,7 @@ const AppBarNavigation = () => {
       }}
     >
       <img src={Logo} width={"80px"} alt="" />
+      {userStore.state._id}
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
           href="/"

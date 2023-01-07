@@ -52,6 +52,8 @@ const RegisterForm = observer(() => {
     userStore.setState('token', googleId);
     userStore.setState('name', name);
     userStore.setState('email', email);
+
+    navigate('/splash/userRegistered')
   };
 
   const saveUser = () => {
@@ -64,7 +66,6 @@ const RegisterForm = observer(() => {
       cnpj: userStore.state.cnpj,
     };
     controller.userRegister(newUser);
-
   };
 
   return (
