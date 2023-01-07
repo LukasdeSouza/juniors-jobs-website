@@ -31,11 +31,8 @@ class UserController {
     return await axios.post('https://seek-jobs-website-api.onrender.com/auth', body)
       .then((response) => {
         this.store.setAlert(true, 'success', response.data.msg)
-        // this.store.setState('token', response.data.token)
         localStorage.setItem('token', response.data.token)
-        // this.store.setState('name', response.data.userInfo.name)
         localStorage.setItem('@sj-name', response.data.userInfo.name)
-        // this.store.setState('type', response.data.userInfo.type)
         localStorage.setItem('@sj-type', response.data.userInfo.type)
         this.store.setState('_id', response.data.userInfo._id)
         this.store.setState('cnpj', response.data.userInfo.cnpj)
@@ -43,7 +40,7 @@ class UserController {
         this.navigate('/splash/userLogged')
       })
       .catch((error) => {
-        this.store.setState(true, 'warning', error.response.data.msg)
+        this.store.setAlert(true, 'warning', error.response.data.msg)
         console.log(error)
         this.store.setLoading(false)
       })

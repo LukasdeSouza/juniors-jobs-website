@@ -13,7 +13,9 @@ import UserController from '../../../controller/userController'
 import RootStoreContext from '../../../store/rootStore'
 import { LoadingButton } from '@mui/lab'
 
-const LoginPage = () => {
+import { observer } from 'mobx-react-lite'
+
+const LoginPage = observer(() => {
 
   const { userStore } = useContext(RootStoreContext)
   const controller = new UserController(userStore)
@@ -22,6 +24,9 @@ const LoginPage = () => {
   const [password, setPassword] = useState('')
 
   const doLogin = () => {
+    // if (email === '' || password === '') {
+    //   userStore.setAlert(true, 'warning', 'Preencha os campos para fazer Login')
+    // }
     const body = {
       email: email,
       password: password
@@ -38,11 +43,11 @@ const LoginPage = () => {
         display: "flex",
         flexDirection: "row",
         height: 522,
-        width: "60vw",
+        width: "50vw",
         boxShadow: "var(--bs-shadow-300)",
         mt: 6
       }}>
-      <Stack alignItems={'center'} sx={{ ml: -9, width: "50%", backgroundColor: "var(--blue-scale-400)" }}>
+      <Stack alignItems={'center'} sx={{ ml: -9, width: "55vw", backgroundColor: "var(--blue-scale-400)" }}>
         <Typography fontFamily={'Montserrat'} fontSize={22} color={"var(--white-scale-100)"} mt={8}>
           Seek Jobs, todas as <br /> Vagas Tech
         </Typography>
@@ -113,5 +118,6 @@ const LoginPage = () => {
     </Container >
   )
 }
+)
 
 export default LoginPage
