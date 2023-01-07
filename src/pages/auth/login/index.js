@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import { Alert, Button, Container, Stack, TextField, Typography } from '@mui/material'
 
-import '../../styles/global.css'
+import '../../../styles/global.css'
+import IconGoogle from '../../../assets/icon-google.svg'
 
-import LoginImg from '../../assets/img-sec-login.svg'
-import IconGoogle from '../../assets/icon-google.svg'
+import LoginImg from '../../../assets/img-sec-login.svg'
 
 import UserController from '../../controller/userController'
 import RootStoreContext from '../../store/rootStore'
@@ -40,6 +40,9 @@ const LoginPage = observer(() => {
         boxShadow: "var(--bs-shadow-300)",
         mt: 6
       }}>
+      {userStore.alert &&
+        <Alert severity={userStore.alert.type}>{userStore.alert.message}</Alert>
+      }
       <Stack alignItems={'center'} sx={{ ml: -3, width: 494, backgroundColor: "var(--blue-scale-400)" }}>
         <Typography fontFamily={'Montserrat'} fontSize={22} color={"var(--white-scale-100)"} mt={8}>
           Seek Jobs, todas as <br /> Vagas Tech

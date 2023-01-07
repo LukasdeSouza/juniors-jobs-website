@@ -11,12 +11,12 @@ class UserStore {
     type: "person",
     cnpj: "",
     token: "",
-    imageUrl: ""
+    imageUrl: "",
   }
   alert = {
     open: false,
-    type: 'success',
-    message: '',
+    message: "",
+    type: "",
   }
 
   loading = false
