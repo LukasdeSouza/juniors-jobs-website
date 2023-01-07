@@ -82,7 +82,7 @@ const JobsPage = observer(() => {
             sx={{ width: '300px' }}>Vaga Criada com Sucesso!
           </Alert>}
       </Stack>
-      {userStore.state.type === 'company' &&
+      {localStorage.getItem('@sj-type') === 'company' &&
         <JobsRegister onClick={clearFields} />
       }
       {jobsStore.state.error &&

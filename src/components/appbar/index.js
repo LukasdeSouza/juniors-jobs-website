@@ -41,7 +41,7 @@ const AppBarNavigation = () => {
         >
           Vagas
         </Link>
-        {userStore.state.token === '' &&
+        {localStorage.getItem('token') === null &&
           <Button variant="contained" href='/register' ml={2}>
             <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
               Me Cadastrar
@@ -56,7 +56,7 @@ const AppBarNavigation = () => {
         >
           Seja um Colaborador
         </Link>
-        {userStore.state.token === '' ?
+        {localStorage.getItem('token') === null ?
           <Link
             href="/login"
             underline="hover"
@@ -68,8 +68,8 @@ const AppBarNavigation = () => {
             Login
           </Link>
           :
-          <Avatar src={userStore.state.imageUrl !== '' ? userStore.state.imageUrl : userStore.state.name}
-            alt={userStore.state.name} sx={{ mr: 4, ml: 4 }} />
+          <Avatar src={localStorage.getItem('@sj-name')}
+            alt={localStorage.getItem('@sj-name')} sx={{ mr: 4, ml: 4 }} />
         }
       </Stack>
     </AppBar>
