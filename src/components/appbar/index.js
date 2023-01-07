@@ -41,7 +41,7 @@ const AppBarNavigation = () => {
           Vagas
         </Link>
         {userStore.state.token === '' &&
-          <Button variant="contained" ml={2}>
+          <Button variant="contained" href='/register' ml={2}>
             <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
               Me Cadastrar
             </Link>
