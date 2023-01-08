@@ -1,0 +1,17 @@
+@import '../../styles/global.css';
+@import '../../styles/utility-classes.css';
+@import '../../styles/buttons.css';
+
+* {
+  padding:0;
+  margin:0;
+  }
+
+  button{
+    height:50
+  }
+
+.btn-text {
+  font-size: 1rem;
+  color: var(--white-scale-200);
+}

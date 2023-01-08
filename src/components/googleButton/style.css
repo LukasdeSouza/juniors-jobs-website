@@ -1,0 +1,28 @@
+@import '../../styles/global.css';
+@import '../../styles/utility-classes.css';
+
+.google-button {
+    background-color: var(--white-scale-100);
+    border: 1px solid var(--black-scale-100);
+    border-radius: 29px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 40px;
+    max-width: 25em;
+    width: 100%;
+}
+
+.google-button img{
+    height: 24px;
+    width: 24px;
+}
+
+.google-button span {
+    color: var(--black-scale-300);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+}

@@ -28,7 +28,7 @@ import NewJobModal from '../../components/newjob';
 
 const JobsPage = observer(() => {
 
-  const { jobsStore } = useContext(RootStoreContext)
+  const { jobsStore, userStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -79,7 +79,8 @@ const JobsPage = observer(() => {
 
   return (
     <>
-      <Stack alignItems={'center'} >
+      <AppBarNavigation />
+      <Stack alignItems={'center'} mt={4}>
         {jobsStore.state.alert &&
           <Alert color='success'
             variant='outlined'
@@ -87,9 +88,14 @@ const JobsPage = observer(() => {
             sx={{ width: '300px' }}>Vaga Criada com Sucesso!
           </Alert>}
       </Stack>
-      <JobsRegister onClick={clearFields} />
-      {jobsStore.state.error && < ErrorImage />}
-      {jobsStore.loading ? <JobsSkeleton /> :
+      {localStorage.getItem('@sj-type') === 'company' &&
+        <JobsRegister onClick={clearFields} />
+      }
+      {jobsStore.state.error &&
+        < ErrorImage />}
+      {jobsStore.loading ?
+        <JobsSkeleton />
+        :
         currentItems.map((job) => (
           <JobsBox
             urlImage={job.urlImage !== '' ? job.urlImage : ''}

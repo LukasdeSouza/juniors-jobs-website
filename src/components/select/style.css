@@ -1,0 +1,8 @@
+@import '../../styles/global.css';
+
+.register-select {
+    background-color: var(--white-scale-200);
+    border-radius: 5px;
+    height: 36px;
+    width: 351px;
+}

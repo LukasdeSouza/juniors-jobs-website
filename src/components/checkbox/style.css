@@ -1,0 +1,28 @@
+@import '../../styles/global.css';
+@import '../../styles/utility-classes.css';
+
+
+* {
+    padding:0;
+    margin:0;
+    }
+
+.input-checkbox {
+    width: 10px;
+    height: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    max-width: 25em;
+    width: 96%;
+    margin-top: 8px;
+}
+
+label{
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+

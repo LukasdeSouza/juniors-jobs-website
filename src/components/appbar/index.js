@@ -10,7 +10,7 @@ import '../../styles/global.css'
 
 const AppBarNavigation = () => {
 
-  const { userStore, jobsStore } = useContext(RootStoreContext)
+  const { userStore } = useContext(RootStoreContext)
 
   return (
     <AppBar
@@ -28,10 +28,11 @@ const AppBarNavigation = () => {
         boxShadow: "var(--bs-shadow-100)",
       }}
     >
-      <img src={Logo} width={"80px"} alt=""/>
+      <img src={Logo} width={"80px"} alt="" />
+      {userStore.state._id}
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
-          href="/jobs"
+          href="/"
           underline="hover"
           color={"#5e5ff0"}
           fontSize={14}
@@ -40,11 +41,12 @@ const AppBarNavigation = () => {
         >
           Vagas
         </Link>
-        <Button variant="contained" ml={2}>
-          <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
-            Me Cadastrar
-          </Link>
-        </Button>
+        {localStorage.getItem('token') === null &&
+          <Button variant="contained" href='/register' ml={2}>
+            <Link href="/register" underline="hover" color={"#fff"} fontSize={12}>
+              Me Cadastrar
+            </Link>
+          </Button>}
         <Link
           href="/contributors"
           underline="hover"
@@ -54,28 +56,21 @@ const AppBarNavigation = () => {
         >
           Seja um Colaborador
         </Link>
-
-        {userStore.state._id === "" ? (
-          <>
-            <Link
-              href="/"
-              underline="hover"
-              color={"#5e5ff0"}
-              fontSize={14}
-              ml={2}
-              mr={4}
-            >
-              Login
-            </Link>
-          </>
-        ) : (
-          <>
-            <Button onClick={() => jobsStore.setState("openDrawer", true)}>
-              Adicionar Vaga
-            </Button>
-            <Avatar sx={{ mr: 2, cursor: "pointer" }} />
-          </>
-        )}
+        {localStorage.getItem('token') === null ?
+          <Link
+            href="/login"
+            underline="hover"
+            color={"#5e5ff0"}
+            fontSize={14}
+            ml={2}
+            mr={4}
+          >
+            Login
+          </Link>
+          :
+          <Avatar src={localStorage.getItem('@sj-name')}
+            alt={localStorage.getItem('@sj-name')} sx={{ mr: 4, ml: 4 }} />
+        }
       </Stack>
     </AppBar>
   );
