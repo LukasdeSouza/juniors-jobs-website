@@ -14,6 +14,9 @@ import JobsController from '../../controller/jobsController'
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
 import Logo from '../../assets/logo_size-removebg.png'
 
+import Direita from '../../assets/seta-direita.png'
+import Esquerda from '../../assets/seta-esquerda.png'
+
 // global css
 import '../../styles/global.css'
 
@@ -110,37 +113,39 @@ const JobsPage = observer(() => {
 class Pagination extends React.Component {
   constructor(props){
     super(props)
-  
+
+    this.allElements = document.getElementsByClassName("bg-pagination")
   }
 
-  p() {
-    console.log("call function")
-  }
+  async componentDidUpdate(){  
+    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
+  } 
 
-  componentDidMount(){
-    this.p()
-  }
-
-  componentDidUpdate(){
-
-  }
-
-
-  render() {  
+  render() {
     return(
-      <div className='flex flex-row justify-center my-4'>
+      <div 
+        className='flex flex-row justify-center align-items my-4'
+      >
+        {(this.props.currentPage === 0)?
+          <img className='arrows-disabled' src={Esquerda}/> :
+          <img className='arrows' src={Esquerda} onClick={() => this.props.setCurrentPage(this.props.currentPage - 1)}/>
+        }
         {Array.from(Array(this.props.pages), (item, index) => {
           return (
             <div
               id={index}
               key={index}
-              className='bg-pagination'
               onClick={() => this.props.setCurrentPage(Number(index))}
+              className="bg-pagination"
             >
               {index + 1}
             </div>
           )
         })}
+        {(this.props.currentPage + 1 === this.props.pages)? 
+          <img className='arrows-disabled' src={Direita}/> :
+          <img className='arrows' src={Direita} onClick={() => this.props.setCurrentPage(this.props.currentPage + 1)}/>
+        }
       </div>
     );
   }
