@@ -1,3 +1,42 @@
+@import url(../../styles/global.css);
+
 .default-font {
   font-family: "Montserrat", sans-serif;
+}
+
+.bg-pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 100%;
+	height: 35px;
+	width: 35px;
+	margin: 0 .4rem;
+	cursor: pointer;
+}
+
+.bg-pagination:hover{
+	background-color: #368dff28;
+}
+
+.pagina-atual{
+	background-color: #368dff41;
+}
+
+.arrows-disabled{
+	opacity: 0.2;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	margin: 0 .4rem;
+	cursor: pointer;
+}
+
+.arrows{
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	margin: 0 .4rem;
+	cursor: pointer;
 }

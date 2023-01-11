@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, componentDidMount, componentDidUpdate } from 'react'
 
 import { observer } from 'mobx-react-lite'
 
@@ -14,9 +14,15 @@ import JobsController from '../../controller/jobsController'
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
 import Logo from '../../assets/logo_size-removebg.png'
 
+import Direita from '../../assets/seta-direita.png'
+import Esquerda from '../../assets/seta-esquerda.png'
+
+// global css
 import '../../styles/global.css'
 
-import { motion } from "framer-motion"
+//local css
+import "./styles.css"
+
 import NewJobModal from '../../components/newjob';
 
 
@@ -101,22 +107,54 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-      <Stack flexDirection={'row'} justifyContent={'center'} mt={2} mb={4}>
-        {Array.from(Array(pages), (item, index) => {
-          return (
-            <Button
-              value={index}
-              onClick={(e) => setCurrentPage(Number(e.target.value))}
-              sx={{ borderRadius: "50%" }}
-            >{index + 1}</Button>
-          )
-        })}
-      </Stack>
+
+      <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
 
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
     </>
   )
 }
 )
+
+class Pagination extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.allElements = document.getElementsByClassName("bg-pagination")
+  }
+
+  async componentDidUpdate(){  
+    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
+  } 
+
+  render() {
+    return(
+      <div 
+        className='flex flex-row justify-center align-items my-4'
+      >
+        {(this.props.currentPage === 0)?
+          <img className='arrows-disabled' src={Esquerda}/> :
+          <img className='arrows' src={Esquerda} onClick={() => this.props.setCurrentPage(this.props.currentPage - 1)}/>
+        }
+        {Array.from(Array(this.props.pages), (item, index) => {
+          return (
+            <div
+              id={index}
+              key={index}
+              onClick={() => this.props.setCurrentPage(Number(index))}
+              className="bg-pagination"
+            >
+              {index + 1}
+            </div>
+          )
+        })}
+        {(this.props.currentPage + 1 === this.props.pages)? 
+          <img className='arrows-disabled' src={Direita}/> :
+          <img className='arrows' src={Direita} onClick={() => this.props.setCurrentPage(this.props.currentPage + 1)}/>
+        }
+      </div>
+    );
+  }
+}
 
 export default JobsPage
