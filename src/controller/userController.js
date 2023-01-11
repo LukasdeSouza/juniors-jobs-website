@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router'
+import { baseUrl } from '../utils/constants'
 
 class UserController {
   constructor(store) {
@@ -11,7 +12,7 @@ class UserController {
   async userRegister(body) {
     this.store.setLoading(true)
 
-    return await axios.post('https://seek-jobs-website-api.onrender.com/auth/register', body)
+    return await axios.post(`${baseUrl}/auth/register`, body)
       .then((response) => {
         this.store.setAlert(true, 'success', 'Te enviamos a confirmação de Cadastro no seu Email')
         console.log(response)
@@ -28,7 +29,7 @@ class UserController {
   async userLogin(body) {
     this.store.setLoading(true)
 
-    return await axios.post('https://seek-jobs-website-api.onrender.com/auth', body)
+    return await axios.post(`${baseUrl}/auth`, body)
       .then((response) => {
         this.store.setAlert(true, 'success', response.data.msg)
         localStorage.setItem('token', response.data.token)
