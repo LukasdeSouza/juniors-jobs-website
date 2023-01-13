@@ -22,7 +22,6 @@ export default function App() {
   });
   return (
     <>
-      {/* rota das páginas */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<JobsPage />} />

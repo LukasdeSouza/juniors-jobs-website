@@ -16,7 +16,6 @@ export default function ContributesPage() {
         <div>
           <img src={ContributeImg} alt="" />
         </div>
-
         <div className="area-text-contributions">
           <div className="separador-blue">
             <h2 className="title-h4 ml-1" style={{ color: "var(--black-scale-300)" }}>Curtiu o Site ?</h2>
@@ -33,7 +32,6 @@ export default function ContributesPage() {
             site é mantido com a ajuda de pessoas como você, então considere nos
             ajudar.
           </p>
-
           <button className="btn btn-primary mt-4">
             <a
               href="https://www.vakinha.com.br/3344996"
@@ -43,7 +41,6 @@ export default function ContributesPage() {
               Quero contribuir!
             </a>
           </button>
-
           <p className="subtitle-02 link-da-vakinha mt-4">
             ou pelo pix da nossa Vakinha online <br></br>
             <a
