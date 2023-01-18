@@ -1,7 +1,0 @@
-@import '../../styles/global.css';
-
-.details-container {
-   display: flex;
-   flex-direction: column;
-   gap: 36px;
-}

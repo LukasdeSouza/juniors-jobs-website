@@ -1,4 +1,4 @@
-import AppBarNavigation from "../../components/appbar";
+import AppBarNavigation from "../../components/general/appbar";
 
 import ContributeImg from "../../assets/img-sec-contribuicao.png";
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import RegisterBackground from '../../../components/registerBackground';
-import RegisterForm from '../../../components/registerForm';
+import RegisterBackground from '../../../components/auth/register/registerBackground'
+import RegisterForm from '../../../components/auth/register/registerForm';
 import '../../../styles/utility-classes.css';
 import './style.css';
 

@@ -1,34 +1,31 @@
-import React, { useContext, useEffect, useState, componentDidMount, componentDidUpdate } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react-lite'
 
-import { Alert, Box, Button, Divider, Drawer, Stack, TextField, Typography } from '@mui/material'
+import { Alert, Stack } from '@mui/material'
 
-import JobsBox from '../../components/box'
-import AppBarNavigation from '../../components/appbar'
-import RootStoreContext from '../../store/rootStore'
-import JobsSkeleton from '../../components/skeleton'
-import JobsRegister from '../../components/register'
+import JobsBox from '../../components/jobs/box'
+import AppBarNavigation from '../../components/general/appbar'
+import JobsSkeleton from '../../components/jobs/skeleton'
+import JobsRegister from '../../components/auth/register/register'
+import NewJobModal from '../../components/jobs/newjob';
+
 import JobsController from '../../controller/jobsController'
+import RootStoreContext from '../../store/rootStore'
 
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
-import Logo from '../../assets/logo_size-removebg.png'
 
 import Direita from '../../assets/seta-direita.png'
 import Esquerda from '../../assets/seta-esquerda.png'
 
-// global css
 import '../../styles/global.css'
-
-//local css
 import "./styles.css"
 
-import NewJobModal from '../../components/newjob';
 
 
 const JobsPage = observer(() => {
 
-  const { jobsStore, userStore } = useContext(RootStoreContext)
+  const { jobsStore } = useContext(RootStoreContext)
 
   const controller = new JobsController(jobsStore)
 
