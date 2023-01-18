@@ -46,27 +46,19 @@ const JobsPage = observer(() => {
   }, [])
 
   const postNewJobObj = {
-    urlImage: jobsStore.state.urlImage,
-    title: jobsStore.state.title,
-    description: jobsStore.state.description,
-    tecnologies: jobsStore.state.tecnologies,
-    salary: jobsStore.state.salary,
-    local: jobsStore.state.local,
-    link: jobsStore.state.link,
-    pagination: jobsStore.state.pagination
+    urlImage: jobsStore.state.jobsList.urlImage,
+    title: jobsStore.state.jobsList.title,
+    description: jobsStore.state.jobsList.description,
+    tecnologies: jobsStore.state.jobsList.tecnologies,
+    salary: jobsStore.state.jobsList.salary,
+    local: jobsStore.state.jobsList.local,
+    link: jobsStore.state.jobsList.link,
+    pagination: jobsStore.state.jobsList.pagination
   }
 
 
   const clearFields = () => {
-    jobsStore.setState('urlImage', '')
-    jobsStore.setState('title', '')
-    jobsStore.setState('description', '')
-    jobsStore.setState('tecnologies', '')
-    jobsStore.setState('salary', '')
-    jobsStore.setState('local', '')
-    jobsStore.setState('link', '')
-    jobsStore.setState('pagination', '')
-
+    jobsStore.setState('jobsList', [])
     setIsModalOpen(true)
   }
 
@@ -84,7 +76,8 @@ const JobsPage = observer(() => {
             variant='outlined'
             onClose={() => jobsStore.setState('alert', false)}
             sx={{ width: '300px' }}>Vaga Criada com Sucesso!
-          </Alert>}
+          </Alert>
+        }
       </Stack>
       {localStorage.getItem('@sj-type') === 'company' &&
         <JobsRegister onClick={clearFields} />
