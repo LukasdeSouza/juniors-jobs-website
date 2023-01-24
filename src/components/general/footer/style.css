@@ -2,52 +2,51 @@
 @import url(../../../styles/utility-classes.css);
 
 .footer_container {
-  height: '325px';
-  width: '100%';
-  display: 'flex';
-  flex-direction: 'row';
-  align-items: 'center';
-  justify-content: 'space-around';
-  background-color: '#0651b3'
+  height: 325px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--blue-scale-300);
 }
 .footer_container .for_companies .for_candidates h3 {
-  color: "#ffff";
+  color: var(--white-scale-200);
 }
 .for_companies .for_candidates h3 {
-  color: "#ffff"
+  color: var(--white-scale-200);
 }
 .for_companies .for_candidates .for a {
-  color: "#dddd"
+  color: var(--white-scale-400);
 }
 .for_contributors {
-  display: 'flex';
-   flex-direction: 'column';
+  display: flex;
+   flex-direction: column;
 }
 .for_contributors h1 {
-  color: "#ffff"
+  color: var(--white-scale-200);
 }
 .for_contributors small {
-  color: "#dddd"
+  color: var(--white-scale-400);
 }
 .for_contributors small a {
-  color: "#dddd";
+  color: var(--white-scale-400);
 }
 .want_to_contribute {
-  margin-top: '24px';
-  background-color: '#01CB96';
-  width: '337px';
-  height: '40px';
-  border: 'none';
-  border-radius: '8px';
-  font-size: '16px';
-  color: '#ffff';
-  font-family: "Montserrat";
+  margin-top: 24px;
+  background-color: var(--green-scale-200);
+  width: 337px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--white-scale-300);
   font-weight: 600;
+  cursor: pointer;
 }
 .for_contributors h4 {
-  color: "#fff";
-   margin-top: '8px';
-    margin-bottom: '8px'
+  color: var(--white-scale-200);
+  margin: 8px 0;
 }
 .row_footer{
   height: 675px;
@@ -55,5 +54,28 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #0651b3;
+  background-color: var(--blue-scale-300);
+}
+
+.color-white {
+  color: var(--white-scale-200);
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+h3 {
+  color: var(--black-scale-500);
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+img {
+  width: 28px;
+  margin-right: 8px;
+  cursor: pointer;
 }
