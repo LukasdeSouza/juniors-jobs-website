@@ -20,6 +20,7 @@ import Esquerda from '../../assets/seta-esquerda.png'
 
 import '../../styles/global.css'
 import "./styles.css"
+import Footer from '../../components/general/footer'
 
 
 
@@ -71,7 +72,8 @@ const JobsPage = observer(() => {
     <>
       <AppBarNavigation />
       <Stack alignItems={'center'} mt={4}>
-        {jobsStore.state.alert &&
+        {jobsStore.state.alert
+          &&
           <Alert color='success'
             variant='outlined'
             onClose={() => jobsStore.setState('alert', false)}
@@ -79,12 +81,15 @@ const JobsPage = observer(() => {
           </Alert>
         }
       </Stack>
-      {localStorage.getItem('@sj-type') === 'company' &&
+      {localStorage.getItem('@sj-type') === 'company'
+        &&
         <JobsRegister onClick={clearFields} />
       }
-      {jobsStore.state.error &&
+      {jobsStore.state.error
+        &&
         < ErrorImage />}
-      {jobsStore.loading ?
+      {jobsStore.loading
+        ?
         <JobsSkeleton />
         :
         currentItems.map((job) => (
@@ -98,10 +103,9 @@ const JobsPage = observer(() => {
             link={job.link}
           />
         ))}
-
       <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
-
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
+      <Footer />
     </>
   )
 }
