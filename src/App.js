@@ -11,6 +11,7 @@ import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
 import UserLoggedPage from './pages/splash/userLogged';
+import RegisterJobs from './pages/jobs/registerJobs';
 
 export default function App() {
 
@@ -28,6 +29,8 @@ export default function App() {
           <Route path="/contributors" element={<ContributesPage />} />
           <Route path="/register" element={<RegisterUser />} />
           <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/register-jobs" element={<RegisterJobs />} />
 
           <Route path="/splash/userRegistered" element={<UserRegisteredPage />} />
           <Route path="/splash/userLogged" element={<UserLoggedPage />} />

@@ -29,7 +29,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="for_contributors">
-        <h1>Curtiu Nossa Proposta ?</h1>
+        <h2>Curtiu Nossa Proposta ?</h2>
         <small>
           <a href="">Ajude nos a mantê-lo</a>
         </small>
@@ -38,7 +38,7 @@ const Footer = () => {
         </h4>
         <small>
           O seek jobs é um site gratuito de código aberto <br /> construido pela
-          comunidade de desenvolvedores, nosso objetivo é ajudar a <br />
+          comunidade de desenvolvedores, nosso objetivo  <br /> é ajudar a
           comunidade de desenvolvedores a encontrar emprego <br /> na área de
           forma simples e sem burocraria. Nosso site <br /> é mantido com a
           ajude de pessoas como você, então <br /> considere nos ajudar.

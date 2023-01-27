@@ -1,0 +1,48 @@
+@import url('../../../styles/global.css');
+@import url('../../../styles/utility-classes.css');
+
+.container-text-image {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+margin-top: 77px;
+}
+.container-register-job {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white-scale-100);
+}
+.left-box-register-job {
+  display: flex;
+  flex-direction: column;
+  margin-top:32px;
+  width: 50%;
+}
+.right-box-register-job {
+  display: flex;
+  flex-direction: column;
+  margin-top:32px;
+  width: 50%;
+}
+.radio-button-right-box-register-job{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input-radio {
+  margin-left: 8px;
+}
+h3 {
+  color: var(--black-scale-300);
+}
+h2 {
+  color: var(--white-scale-200);
+  font-size: 36px;
+}
+p {
+  margin-top: 16px;
+  color: var(--white-scale-300);
+}

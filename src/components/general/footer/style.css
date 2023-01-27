@@ -23,11 +23,12 @@
   display: flex;
    flex-direction: column;
 }
-.for_contributors h1 {
+.for_contributors h2 {
   color: var(--white-scale-200);
 }
 .for_contributors small {
   color: var(--white-scale-400);
+  font-size:12px
 }
 .for_contributors small a {
   color: var(--white-scale-400);
@@ -66,12 +67,15 @@
 }
 
 h3 {
-  color: var(--black-scale-500);
+  color: var(--white-scale-200);
   margin-bottom: 8px;
 }
 
 h4 {
   font-weight: 500;
+}
+a {
+  font-size: 12px;
 }
 
 img {
