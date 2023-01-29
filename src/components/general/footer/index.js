@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="for_companies">
         <h3>Para Empresas</h3>
         <a href="" className="color-white">
-          Anunciar Vaga
+          Anunciar Vagas
         </a>
       </div>
       <div className="for_candidates">
