@@ -2,6 +2,7 @@
 @import url(../../../styles/utility-classes.css);
 
 .footer_container {
+  margin-top:32px;
   height: 325px;
   width: 100%;
   display: flex;
@@ -10,28 +11,35 @@
   justify-content: space-around;
   background-color: var(--blue-scale-300);
 }
-.footer_container .for_companies .for_candidates h3 {
+.footer_container h3 {
   color: var(--white-scale-200);
 }
-.for_companies .for_candidates h3 {
+.for_companies h3 {
   color: var(--white-scale-200);
 }
-.for_companies .for_candidates .for a {
-  color: var(--white-scale-400);
+.for_candidates h3 {
+  color: var(--white-scale-200)
+}
+.for_companies a {
+  color: var(--white-scale-300);
+}
+.for_candidates h3 {
+  color: var(--white-scale-200)
 }
 .for_contributors {
   display: flex;
    flex-direction: column;
 }
 .for_contributors h2 {
-  color: var(--white-scale-200);
+  color: var(--white-scale-300);
+  font-size:28px
 }
 .for_contributors small {
-  color: var(--white-scale-400);
+  color: var(--white-scale-300);
   font-size:12px
 }
 .for_contributors small a {
-  color: var(--white-scale-400);
+  color: var(--white-scale-300);
 }
 .want_to_contribute {
   margin-top: 24px;
@@ -67,7 +75,7 @@
 }
 
 h3 {
-  color: var(--white-scale-200);
+  color: var(--white-scale-300);
   margin-bottom: 8px;
 }
 

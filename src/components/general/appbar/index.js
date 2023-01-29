@@ -25,7 +25,7 @@ const AppBarNavigation = () => {
         backgroundColor: 'transparent',
       }}
     >
-      <img src={Logo} alt="Logo" style={{ width: '71px', marginLeft: '91px', marginRight: '91px' }} />
+      <img src={Logo} alt="Logo" style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }} />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
           href="/"

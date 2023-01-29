@@ -6,7 +6,6 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-evenly;
-margin-top: 77px;
 }
 .container-register-job {
   width: 100%;
@@ -20,11 +19,12 @@ margin-top: 77px;
   flex-direction: column;
   margin-top:32px;
   width: 50%;
+  margin-left:210px;
 }
 .right-box-register-job {
   display: flex;
   flex-direction: column;
-  margin-top:32px;
+  margin-top:64px;
   width: 50%;
 }
 .radio-button-right-box-register-job{
@@ -34,6 +34,16 @@ margin-top: 77px;
 }
 .input-radio {
   margin-left: 8px;
+}
+button {
+  margin-top:32px;
+  height: 40px;
+  background-color: var(--blue-scale-300);
+  color:var(--white-scale-300);
+  border-radius: 4px;
+  border: none;
+  width: 162%;
+  font-family: Montserrat;
 }
 h3 {
   color: var(--black-scale-300);

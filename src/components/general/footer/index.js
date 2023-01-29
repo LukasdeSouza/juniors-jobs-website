@@ -31,7 +31,7 @@ const Footer = () => {
       <div className="for_contributors">
         <h2>Curtiu Nossa Proposta ?</h2>
         <small>
-          <a href="">Ajude nos a mantê-lo</a>
+          <a href="">Ajude nos a mantê-la</a>
         </small>
         <h4>
           <strong>Seek Jobs</strong> é um projeto Open Source

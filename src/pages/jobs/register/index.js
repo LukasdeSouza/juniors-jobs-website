@@ -1,5 +1,6 @@
 import AppBarNavigation from '../../../components/general/appbar'
 import Input from '../../../components/general/input'
+import Footer from '../../../components/general/footer'
 import './style.css'
 
 import RegisterJobsImage from '../../../assets/register-jobs-image.svg'
@@ -26,13 +27,14 @@ const RegisterJobs = () => {
           <Input />
           <small>Link da Vaga</small>
           <Input />
+          <button>Adicionar Vaga</button>
         </div>
         <div className="right-box-register-job">
           <small>Descrição da Vaga</small>
           <Input />
           <small>Tecnologia</small>
           <Input />
-          <small>Local</small>
+          <small style={{ marginTop: '16px' }}>Local</small>
           <div className="radio-button-right-box-register-job">
             <input className='input-radio' type="radio" value='Remoto' />
             <label htmlFor="">Remoto</label>
@@ -41,7 +43,7 @@ const RegisterJobs = () => {
             <input className='input-radio' type="radio" value='Híbrido' />
             <label htmlFor="">Híbrido</label>
           </div>
-          <small>Nível do Cargo</small>
+          <small style={{ marginTop: '16px' }}>Nível do Cargo</small>
           <div className="radio-button-right-box-register-job">
             <input className='input-radio' type="radio" value='Estagiário' />
             <label htmlFor="">Estagiário</label>
@@ -54,7 +56,7 @@ const RegisterJobs = () => {
           </div>
         </div>
       </div>
-      <button>Adicionar Vaga</button>
+      <Footer />
     </div>
   )
 }

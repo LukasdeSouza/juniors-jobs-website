@@ -11,7 +11,7 @@ import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
 import UserLoggedPage from './pages/splash/userLogged';
-import RegisterJobs from './pages/jobs/registerJobs';
+import RegisterJobs from './pages/jobs/register'
 
 export default function App() {
 
