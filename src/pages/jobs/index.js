@@ -21,13 +21,14 @@ import Esquerda from '../../assets/seta-esquerda.png'
 import '../../styles/global.css'
 import "./styles.css"
 import Footer from '../../components/general/footer'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const JobsPage = observer(() => {
+  const navigate = useNavigate()
 
   const { jobsStore } = useContext(RootStoreContext)
-
   const controller = new JobsController(jobsStore)
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -60,7 +61,7 @@ const JobsPage = observer(() => {
 
   const clearFields = () => {
     jobsStore.setState('jobsList', [])
-    setIsModalOpen(true)
+    navigate('/register-jobs')
   }
 
   const onSave = () => {
