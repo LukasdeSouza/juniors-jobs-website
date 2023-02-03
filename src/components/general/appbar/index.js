@@ -3,12 +3,13 @@ import React, { useContext } from 'react'
 import RootStoreContext from '../../../store/rootStore'
 
 import { AppBar, Link, Stack } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 import Logo from '../../../assets/new-design-logo.svg'
-
 import '../../../styles/global.css'
 
 const AppBarNavigation = () => {
+  const navigate = useNavigate()
 
   const { userStore } = useContext(RootStoreContext)
 
@@ -25,7 +26,10 @@ const AppBarNavigation = () => {
         backgroundColor: 'transparent',
       }}
     >
-      <img src={Logo} alt="Logo" style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }} />
+      <img src={Logo} alt="Logo"
+        onClick={() => navigate('/')}
+        style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }}
+      />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
           href="/"
