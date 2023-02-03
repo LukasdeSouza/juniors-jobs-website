@@ -12,6 +12,7 @@ import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
 import UserLoggedPage from './pages/splash/userLogged';
 import RegisterJobs from './pages/jobs/register'
+import SplashChangePassword from './pages/splash/changedPassword';
 
 export default function App() {
 
@@ -32,8 +33,9 @@ export default function App() {
 
           <Route path="/register-jobs" element={<RegisterJobs />} />
 
-          <Route path="/splash/userRegistered" element={<UserRegisteredPage />} />
-          <Route path="/splash/userLogged" element={<UserLoggedPage />} />
+          <Route path="/splash/user-registered" element={<UserRegisteredPage />} />
+          <Route path="/splash/user-logged" element={<UserLoggedPage />} />
+          <Route path="/splash/changed-password" element={<SplashChangePassword />} />
         </Routes>
       </BrowserRouter>
     </>
