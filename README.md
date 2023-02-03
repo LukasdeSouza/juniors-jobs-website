@@ -16,7 +16,7 @@ EM CONSTRUÇÃO...  🚧
 
 ## Como rodar localmente ⚙️
 
-1. clone o repositório:
+1. clone o repositório do projeto:
 
 ```bash
 git clone https://github.com/LukasdeSouza/seek-jobs-website.git
