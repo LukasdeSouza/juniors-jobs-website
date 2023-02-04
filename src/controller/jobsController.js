@@ -20,7 +20,7 @@ class JobsController {
   }
 
   async postNewJob(body) {
-    this.store.setLoading(true)
+    // this.store.setState('loading', true)
 
     return await axios.post('https://seek-jobs-website-api.onrender.com/jobs', body)
       .then((response) => {
@@ -33,7 +33,8 @@ class JobsController {
         console.log(error)
       })
       .finally(() =>
-        this.store.setLoading(false)
+        // this.store.setLoading(false)
+        alert('finally')
       )
   }
 

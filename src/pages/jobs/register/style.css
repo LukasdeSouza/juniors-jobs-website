@@ -7,6 +7,14 @@ flex-direction: row;
 align-items: center;
 justify-content: space-evenly;
 }
+.input-component {
+    border: 1px solid var(--black-scale-100);
+    border-radius: 4px;
+    height: 40px;
+    max-width: 25em;
+    width: 80%;
+    margin-bottom:8px;
+}
 .container-register-job {
   width: 100%;
   height: 70vh;

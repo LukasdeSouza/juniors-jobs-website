@@ -15,7 +15,7 @@ const AppBarNavigation = () => {
 
   return (
     <AppBar
-      elevation={"none"}
+      elevation={0}
       sx={{
         position: "static",
         display: "flex",
@@ -32,7 +32,7 @@ const AppBarNavigation = () => {
       />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
-          href="/"
+          href="/register-jobs"
           underline="hover"
           color={'var(--white-scale-200)'}
           fontSize={14}

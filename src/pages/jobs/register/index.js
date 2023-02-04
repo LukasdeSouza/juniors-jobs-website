@@ -1,11 +1,24 @@
+import { useForm } from 'react-hook-form'
 import AppBarNavigation from '../../../components/general/appbar'
 import Input from '../../../components/general/input'
 import Footer from '../../../components/general/footer'
 import './style.css'
-
 import RegisterJobsImage from '../../../assets/register-jobs-image.svg'
+import { useState } from 'react'
+import JobsController from '../../../controller/jobsController'
 
 const RegisterJobs = () => {
+  const { register, handleSubmit } = useForm();
+  const controller = new JobsController();
+
+  const onSubmit = (e) => {
+    console.log(e)
+    controller.postNewJob(e)
+  };
+
+  const location = [{ place: 'Remoto', value: 'remote' }, { place: 'Híbrido', value: 'hybrid' }, { place: 'Presencial', value: 'presential' }]
+  const tier = [{ name: "Júnior", value: "junior" }, { name: "Pleno", value: "pleno" }, { name: "Sênior", value: "senior" }]
+
   return (
     <div>
       <AppBarNavigation />
@@ -16,46 +29,54 @@ const RegisterJobs = () => {
         </div>
         <img src={RegisterJobsImage} alt="" style={{ width: 255, height: 351 }} />
       </div>
-      <div className='container-register-job'>
+      <form className='container-register-job' onSubmit={handleSubmit(onSubmit)}>
         <div className="left-box-register-job">
           <h3>Cadastre uma nova Vaga</h3>
+
           <small>Logo da empresa (URL)</small>
-          <Input />
+          <input className="pl-2 input-component"  {...register("logo")} />
+
           <small>Tipo da Vaga</small>
-          <Input />
+          <input className="pl-2 input-component" {...register("title")} />
+
           <small>Salário</small>
-          <Input />
+          <input className="pl-2 input-component" {...register("salary")} />
+
           <small>Link da Vaga</small>
-          <Input />
+          <input className="pl-2 input-component" {...register("link")} />
           <button>Adicionar Vaga</button>
         </div>
+
         <div className="right-box-register-job">
           <small>Descrição da Vaga</small>
-          <Input />
+          <input className="pl-2 input-component" {...register("description")} />
+
           <small>Tecnologia</small>
-          <Input />
+          <input className="pl-2 input-component" {...register("technologies")} />
+
           <small style={{ marginTop: '16px' }}>Local</small>
           <div className="radio-button-right-box-register-job">
-            <input className='input-radio' type="radio" value='Remoto' />
-            <label htmlFor="">Remoto</label>
-            <input className='input-radio' type="radio" value='Presencial' />
-            <label htmlFor="">Presencial</label>
-            <input className='input-radio' type="radio" value='Híbrido' />
-            <label htmlFor="">Híbrido</label>
+            {location.map((local) => (
+              <>
+                <input className='input-radio' type="radio" value={local.value}
+                  {...register('local')}
+                />
+                <label>{local.place}</label>
+              </>
+            ))}
           </div>
           <small style={{ marginTop: '16px' }}>Nível do Cargo</small>
           <div className="radio-button-right-box-register-job">
-            <input className='input-radio' type="radio" value='Estagiário' />
-            <label htmlFor="">Estagiário</label>
-            <input className='input-radio' type="radio" value='Júnior' />
-            <label htmlFor="">Júnior</label>
-            <input className='input-radio' type="radio" value='Pleno' />
-            <label htmlFor="">Pleno</label>
-            <input className='input-radio' type="radio" value='Sênior' />
-            <label htmlFor="">Sênior</label>
+            {tier.map((tr) => (
+              <>
+                <input className='input-radio' type="radio" value={tr.value}
+                  {...register("tier")} />
+                <label>{tr.name}</label>
+              </>
+            ))}
           </div>
         </div>
-      </div>
+      </form>
       <Footer />
     </div>
   )
