@@ -1,10 +1,11 @@
 
 .btn {
+  margin:0;
+  padding:0;
   cursor: pointer;
   max-width: 25em;
   width: 100%;
   border: none;
-  padding: .9rem;
   border-radius: 4px;
 }
 

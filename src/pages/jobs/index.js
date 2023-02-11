@@ -9,19 +9,23 @@ import AppBarNavigation from '../../components/general/appbar'
 import JobsSkeleton from '../../components/jobs/skeleton'
 import JobsRegister from '../../components/auth/register/register'
 import NewJobModal from '../../components/jobs/newjob';
+import Input from '../../components/general/input'
+import Button from '../../components/general/button'
 
 import JobsController from '../../controller/jobsController'
 import RootStoreContext from '../../store/rootStore'
 
 import ErrorImage from '../../assets/undraw_cancel_re_pkdm.svg'
 
-import Direita from '../../assets/seta-direita.png'
-import Esquerda from '../../assets/seta-esquerda.png'
-
+import SitGuy from '../../assets/sit-in-a-char-man-jobs-page.svg'
 import '../../styles/global.css'
 import "./styles.css"
 import Footer from '../../components/general/footer'
 import { useNavigate } from 'react-router-dom'
+import CheckboxFilter from './components/checkbox'
+import BoxJobs from './components/box'
+import FilterJobs from './components/filter'
+import PaginationJobs from './components/pagination'
 
 
 
@@ -48,14 +52,17 @@ const JobsPage = observer(() => {
   }, [])
 
   const postNewJobObj = {
+    _id_empresa: jobsStore.state.jobsList._id,
     urlImage: jobsStore.state.jobsList.urlImage,
+    name: jobsStore.state.jobsList.name,
     title: jobsStore.state.jobsList.title,
     description: jobsStore.state.jobsList.description,
     tecnologies: jobsStore.state.jobsList.tecnologies,
     salary: jobsStore.state.jobsList.salary,
     local: jobsStore.state.jobsList.local,
     link: jobsStore.state.jobsList.link,
-    pagination: jobsStore.state.jobsList.pagination
+    tier: jobsStore.state.jobsList.tier,
+    type: jobsStore.state.jobsList.tier
   }
 
 
@@ -72,39 +79,67 @@ const JobsPage = observer(() => {
   return (
     <>
       <AppBarNavigation />
-      <Stack alignItems={'center'} mt={4}>
+      <div className='header-jobs-page'>
+        <div className='header-jobs-page-column'>
+          <h2>Buscar Emprego nunca <br /> foi tão fácil</h2>
+          <p>Seek Jobs é uma nova maneira de encontrar <br />
+            empregos na área de tecnologia sem burocracias <br />
+            e dores de cabeça, e com mais praticidade</p>
+          <div className='filter-input-container'>
+            <Input placeHolder={'Busca geral'}
+            />
+            <Input placeHolder={'Buscar por localidade'} />
+            <Button text={'Buscar Vagas'} style={{ padding: 0 }} />
+          </div>
+        </div>
+        <img src={SitGuy} alt="Homem sentado em um cadeira"
+          style={{ width: 238, height: 350 }}
+        />
+      </div>
+
+      <div className='filter-jobs-main-container'>
+        <FilterJobs />
+        <div className='jobs-grid'>
+          {jobsStore.state.jobsList.map((job) => (
+            <BoxJobs
+              img={job.urlImage}
+              name={job.name ?? 'Empresa Contrata'}
+              location={job.local === 'A combinar' ? 'Presencial' : job.local}
+              title={job.title}
+              type={job.type ?? 'CLT'}
+              tier={job.tier ?? 'Júnior'}
+              salary={job.salary}
+              description={job.description}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* <Stack alignItems={'center'} mt={4}>
         {jobsStore.state.alert
           &&
           <Alert color='success'
             variant='outlined'
             onClose={() => jobsStore.setState('alert', false)}
-            sx={{ width: '300px' }}>Vaga Criada com Sucesso!
+            sx={{ width: '300px' }}>
+            Vaga Criada com Sucesso!
           </Alert>
         }
-      </Stack>
-      {localStorage.getItem('@sj-type') === 'company'
+      </Stack> */}
+
+      {/* {localStorage.getItem('@sj-type') === 'company'
         &&
         <JobsRegister onClick={clearFields} />
       }
       {jobsStore.state.error
         &&
-        < ErrorImage />}
-      {jobsStore.loading
-        ?
-        <JobsSkeleton />
-        :
-        currentItems.map((job) => (
-          <JobsBox
-            urlImage={job.urlImage !== '' ? job.urlImage : ''}
-            title={job.title}
-            description={job.description}
-            local={job.local}
-            tecnologies={job.tecnologies !== '' ? job.tecnologies : ''}
-            salary={job.salary}
-            link={job.link}
-          />
-        ))}
-      <Pagination pages={pages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
+        < ErrorImage />
+      } */}
+
+      <PaginationJobs pages={pages}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
       <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
       <Footer />
     </>
@@ -112,45 +147,5 @@ const JobsPage = observer(() => {
 }
 )
 
-class Pagination extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.allElements = document.getElementsByClassName("bg-pagination")
-  }
-
-  async componentDidUpdate() {
-    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
-  }
-
-  render() {
-    return (
-      <div
-        className='flex flex-row justify-center align-items my-4'
-      >
-        {(this.props.currentPage === 0) ?
-          <img className='arrows-disabled' src={Esquerda} /> :
-          <img className='arrows' src={Esquerda} onClick={() => this.props.setCurrentPage(this.props.currentPage - 1)} />
-        }
-        {Array.from(Array(this.props.pages), (item, index) => {
-          return (
-            <div
-              id={index}
-              key={index}
-              onClick={() => this.props.setCurrentPage(Number(index))}
-              className="bg-pagination"
-            >
-              {index + 1}
-            </div>
-          )
-        })}
-        {(this.props.currentPage + 1 === this.props.pages) ?
-          <img className='arrows-disabled' src={Direita} /> :
-          <img className='arrows' src={Direita} onClick={() => this.props.setCurrentPage(this.props.currentPage + 1)} />
-        }
-      </div>
-    );
-  }
-}
 
 export default JobsPage

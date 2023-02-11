@@ -74,7 +74,7 @@ const AppBarNavigation = () => {
           <Link
             href="/login"
             underline="hover"
-            color={"#5e5ff0"}
+            color={'var(--white-scale-400)'}
             fontSize={14}
             ml={2}
             mr={2}
