@@ -1,18 +1,17 @@
 import './App.css';
 
-//routes imports
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { gapi } from 'gapi-script';
 
-//pages
 import JobsPage from './pages/jobs';
-import ContributesPage from './pages/contribute';
 import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
 import UserLoggedPage from './pages/splash/userLogged';
 import RegisterJobs from './pages/jobs/register'
 import SplashChangePassword from './pages/splash/changedPassword';
+import ContributorsPage from './pages/contributors';
+import OurTeamPage from './pages/team';
 
 export default function App() {
 
@@ -27,7 +26,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<JobsPage />} />
-          <Route path="/contributors" element={<ContributesPage />} />
+          <Route path="/contributors" element={<ContributorsPage />} />
+          <Route path="/our-team" element={<OurTeamPage />} />
           <Route path="/register" element={<RegisterUser />} />
           <Route path="/login" element={<LoginPage />} />
 

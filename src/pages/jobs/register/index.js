@@ -16,8 +16,12 @@ const RegisterJobs = () => {
     controller.postNewJob(e)
   };
 
-  const location = [{ place: 'Remoto', value: 'remote' }, { place: 'Híbrido', value: 'hybrid' }, { place: 'Presencial', value: 'presential' }]
-  const tier = [{ name: "Júnior", value: "junior" }, { name: "Pleno", value: "pleno" }, { name: "Sênior", value: "senior" }]
+  const location = [{ place: 'Remoto', value: 'remote' },
+  { place: 'Híbrido', value: 'hybrid' },
+  { place: 'Presencial', value: 'presential' }]
+  const tier = [{ name: "Júnior", value: "junior" },
+  { name: "Pleno", value: "pleno" },
+  { name: "Sênior", value: "senior" }]
 
   return (
     <div>
