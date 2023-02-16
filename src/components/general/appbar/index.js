@@ -42,7 +42,7 @@ const AppBarNavigation = () => {
         >  Anunciar Vaga
         </Link>
         <Link
-          href="/"
+          href="/our-team"
           underline="hover"
           color={'var(--white-scale-400)'}
           fontSize={14}

@@ -1,7 +1,6 @@
 import Button from '../../../../components/general/button'
 import ButtonOutlined from '../../../../components/general/buttonOutlined'
 
-import Logo from '../../../../assets/foto-footer-menbro-equipe.svg'
 import './style.css'
 
 const BoxJobs = ({ img, name, location, title, type, tier, salary, description }) => {

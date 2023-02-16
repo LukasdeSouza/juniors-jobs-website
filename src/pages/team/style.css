@@ -4,3 +4,16 @@
   align-items: center;
   justify-content: space-evenly;
 }
+.grid-our-team-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.grid-our-team-boxes-secondary {
+  display: flex;
+flex-direction: row;
+justify-content: space-around;
+  align-items: center;
+  margin-top:24px
+}

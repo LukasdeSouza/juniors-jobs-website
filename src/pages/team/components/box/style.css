@@ -1,0 +1,31 @@
+.jobs-grid-object {
+	background-color: var(--white-scale-100);
+	border-radius: 16px;
+	box-shadow: var(--bs-shadow-200);
+	height: 180px;
+	width: 250px;
+	padding:24px
+}
+.jobs-grid-object small {
+	font-size: 12px;
+}
+.jobs-grid-object p {
+	color: #000;
+	font-weight: 600;
+}
+.jobs-grid-object-header {
+	display: flex;
+	flex-direction: row;
+	align-items:center;
+}
+.jobs-grid-object-header-title-location {
+	display: flex;
+	flex-direction: column;
+}
+
+.jobs-grid-object-button-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top:32px
+}

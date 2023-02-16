@@ -4,11 +4,7 @@ import { observer } from 'mobx-react-lite'
 
 import { Alert, Stack } from '@mui/material'
 
-import JobsBox from '../../components/jobs/box'
 import AppBarNavigation from '../../components/general/appbar'
-import JobsSkeleton from '../../components/jobs/skeleton'
-import JobsRegister from '../../components/auth/register/register'
-import NewJobModal from '../../components/jobs/newjob';
 import Input from '../../components/general/input'
 import Button from '../../components/general/button'
 
@@ -140,7 +136,6 @@ const JobsPage = observer(() => {
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
-      <NewJobModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} controller={controller} />
       <Footer />
     </>
   )
