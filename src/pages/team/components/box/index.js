@@ -1,7 +1,7 @@
 import './style.css'
 import GitHubLogo from '../../../../assets/github-icon.svg'
 
-const BoxTeams = ({ img, name, role, description }) => {
+const BoxTeams = ({ img, name, role, description, githubLink }) => {
   return (
     <div className='jobs-grid-object'>
       <div className='jobs-grid-object-header'>
@@ -15,7 +15,9 @@ const BoxTeams = ({ img, name, role, description }) => {
         {description}
       </small>
       <div className='jobs-grid-object-button-row'>
-        <img src={GitHubLogo} alt="" style={{ width: 24 }} />
+        <a href={githubLink}>
+          <img src={GitHubLogo} alt="" style={{ width: 24 }} />
+        </a>
       </div>
     </div>
   )

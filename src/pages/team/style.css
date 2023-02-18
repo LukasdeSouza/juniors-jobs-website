@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-top:48px;
 }
 .grid-our-team-boxes-secondary {
   display: flex;
