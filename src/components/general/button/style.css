@@ -8,10 +8,10 @@
   }
 
   button{
-    height:50
+    height:40px;
   }
 
 .btn-text {
-  font-size: 1rem;
+  font-size: 14px;
   color: var(--white-scale-200);
 }

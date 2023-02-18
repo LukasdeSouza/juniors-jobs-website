@@ -1,0 +1,4 @@
+.filter-jobs-checkbox-container small {
+	color: var(--white-scale-500);
+	margin-left:8px;
+}

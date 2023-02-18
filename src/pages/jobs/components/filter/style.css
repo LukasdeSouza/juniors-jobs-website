@@ -1,0 +1,28 @@
+@import url(../../../../styles/global.css);
+
+.filter-jobs-container {
+	display: flex;
+	flex-direction: column;
+	background-color: #F5FAFF;
+	width: 20%;
+	border-radius: 16px;
+	padding: 24px;
+}
+.filter-jobs-container p {
+	color: var(--black-scale-500);
+	font-weight: 700;
+}
+.filter-jobs-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.filter-jobs-header button {
+	width: 85px;
+	border-radius: 8px;
+}
+.filter-jobs-header h4 {
+	color: var(--black-scale-500);
+	font-weight: 700;
+}

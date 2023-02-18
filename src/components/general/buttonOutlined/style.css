@@ -1,0 +1,6 @@
+@import '../../../styles/global.css';
+@import '../../../styles/buttons.css';
+
+.btn-outlined-text {
+  color: var(--blue-scale-300);
+}

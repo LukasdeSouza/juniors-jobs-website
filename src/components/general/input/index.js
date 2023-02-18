@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Input = ({ type, placeHolder, name, handleChange }) => {
+const Input = ({ type, placeHolder, name, handleChange, style }) => {
     return (
         <input
             className="pl-2 input-component"

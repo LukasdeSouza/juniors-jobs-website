@@ -7,8 +7,7 @@ import "./index.css";
 import "../../styles/utility-classes.css";
 import "../../styles/responsive.css";
 
-//página de como contribuir
-export default function ContributesPage() {
+export default function ContributorsPage() {
   return (
     <>
       <AppBarNavigation />
