@@ -50,15 +50,15 @@ const AppBarNavigation = () => {
           mr={2}
         > Nossa Equipe
         </Link>
-        <Link
-          href="/"
+        {/* <Link
+          href="/register-cv"
           underline="hover"
           color={'var(--white-scale-400)'}
           fontSize={14}
           ml={2}
           mr={2}
         >  Cadastrar CV
-        </Link>
+        </Link> */}
         <Link
           href="/"
           underline="hover"
@@ -69,7 +69,7 @@ const AppBarNavigation = () => {
         >
           Vagas
         </Link>
-        {localStorage.getItem('token') === null
+        {/* {localStorage.getItem('token') === null
           &&
           <Link
             href="/login"
@@ -81,8 +81,8 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
-        }
-        <Link
+        } */}
+        {/* <Link
           href="/"
           underline="hover"
           color={'var(--white-scale-400)'}
@@ -91,7 +91,7 @@ const AppBarNavigation = () => {
           mr={2}
         >
           Perfil
-        </Link>
+        </Link> */}
       </Stack>
     </AppBar>
   );

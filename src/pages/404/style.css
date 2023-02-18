@@ -1,0 +1,13 @@
+@import url(../../styles/global.css);
+@import url(../../styles/buttons.css);
+
+h1 {
+  color: var(--white-scale-200);
+}
+.main-content-404page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 82px;
+}
