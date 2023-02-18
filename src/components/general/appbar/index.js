@@ -32,11 +32,20 @@ const AppBarNavigation = () => {
       />
       <Stack flexDirection={"row"} alignItems={"center"}>
         <Link
+          href="/"
+          underline="hover"
+          color={'var(--white-scale-300)'}
+          fontSize={14}
+          ml={2}
+          mr={2}
+        >
+          Vagas
+        </Link>
+        <Link
           href="/register-jobs"
           underline="hover"
-          color={'var(--white-scale-200)'}
+          color={'var(--white-scale-300)'}
           fontSize={14}
-          fontWeight={600}
           ml={2}
           mr={2}
         >  Anunciar Vaga
@@ -44,32 +53,22 @@ const AppBarNavigation = () => {
         <Link
           href="/our-team"
           underline="hover"
-          color={'var(--white-scale-400)'}
+          color={'var(--white-scale-300)'}
           fontSize={14}
           ml={2}
           mr={2}
         > Nossa Equipe
         </Link>
-        <Link
-          href="/"
+        {/* <Link
+          href="/register-cv"
           underline="hover"
           color={'var(--white-scale-400)'}
           fontSize={14}
           ml={2}
           mr={2}
         >  Cadastrar CV
-        </Link>
-        <Link
-          href="/"
-          underline="hover"
-          color={'var(--white-scale-400)'}
-          fontSize={14}
-          ml={2}
-          mr={2}
-        >
-          Vagas
-        </Link>
-        {localStorage.getItem('token') === null
+        </Link> */}
+        {/* {localStorage.getItem('token') === null
           &&
           <Link
             href="/login"
@@ -81,8 +80,8 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
-        }
-        <Link
+        } */}
+        {/* <Link
           href="/"
           underline="hover"
           color={'var(--white-scale-400)'}
@@ -91,7 +90,7 @@ const AppBarNavigation = () => {
           mr={2}
         >
           Perfil
-        </Link>
+        </Link> */}
       </Stack>
     </AppBar>
   );

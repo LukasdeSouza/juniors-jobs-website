@@ -43,7 +43,9 @@ const Footer = () => {
           forma simples e sem burocraria. Nosso site <br /> é mantido com a
           ajude de pessoas como você, então <br /> considere nos ajudar.
         </small>
-        <button class="want_to_contribute">Quero contribuir!</button>
+        <a href="https://www.vakinha.com.br/3344996" target="_blank">
+          <button class="want_to_contribute">Quero contribuir!</button>
+        </a>
         <small>
           <p className="mt-2">Ou pelo pix da nossa vaquinha online: </p>
         </small>

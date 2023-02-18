@@ -31,15 +31,11 @@ export default function ContributorsPage() {
             site é mantido com a ajuda de pessoas como você, então considere nos
             ajudar.
           </p>
-          <button className="btn btn-primary mt-4">
-            <a
-              href="https://www.vakinha.com.br/3344996"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <a href="https://www.vakinha.com.br/3344996" target="_blank" >
+            <button className="btn btn-primary mt-4">
               Quero contribuir!
-            </a>
-          </button>
+            </button>
+          </a>
           <p className="subtitle-02 link-da-vakinha mt-4">
             ou pelo pix da nossa Vakinha online <br></br>
             <a

@@ -13,6 +13,7 @@ import OurTeamPage from './pages/team';
 import RegisterCVPage from './pages/register-cv';
 import RegisterJobsPage from './pages/jobs/register';
 import SplashChangePasswordPage from './pages/splash/changedPassword';
+import Page404 from './pages/404';
 
 export default function App() {
 
@@ -29,15 +30,17 @@ export default function App() {
           <Route path="/" element={<JobsPage />} />
           <Route path="/contributors" element={<ContributorsPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
-          <Route path="/register" element={<RegisterUser />} />
-          <Route path="/login" element={<LoginPage />} />
+          {/* <Route path="/register" element={<RegisterUser />} /> */}
+          {/* <Route path="/login" element={<LoginPage />} /> */}
 
           <Route path="/register-jobs" element={<RegisterJobsPage />} />
-          <Route path="/register-cv" element={<RegisterCVPage />} />
+          {/* <Route path="/register-cv" element={<RegisterCVPage />} /> */}
 
-          <Route path="/splash/user-registered" element={<UserRegisteredPage />} />
+          {/* <Route path="/splash/user-registered" element={<UserRegisteredPage />} />
           <Route path="/splash/user-logged" element={<UserLoggedPage />} />
-          <Route path="/splash/changed-password" element={<SplashChangePasswordPage />} />
+          <Route path="/splash/changed-password" element={<SplashChangePasswordPage />} /> */}
+
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </>
