@@ -3,7 +3,7 @@ import Checked from './assets/icon3d-sucess 1.svg'
 
 import './styles.css'
 
-const SplashChangePassword = () => {
+const SplashChangePasswordPage = () => {
 
   const navigate = useNavigate()
 
@@ -20,4 +20,4 @@ const SplashChangePassword = () => {
   )
 }
 
-export default SplashChangePassword
+export default SplashChangePasswordPage

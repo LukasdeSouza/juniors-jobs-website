@@ -8,10 +8,11 @@ import RegisterUser from './pages/auth/register';
 import LoginPage from './pages/auth/login';
 import UserRegisteredPage from './pages/splash/userRegistered';
 import UserLoggedPage from './pages/splash/userLogged';
-import RegisterJobs from './pages/jobs/register'
-import SplashChangePassword from './pages/splash/changedPassword';
 import ContributorsPage from './pages/contributors';
 import OurTeamPage from './pages/team';
+import RegisterCVPage from './pages/register-cv';
+import RegisterJobsPage from './pages/jobs/register';
+import SplashChangePasswordPage from './pages/splash/changedPassword';
 
 export default function App() {
 
@@ -31,11 +32,12 @@ export default function App() {
           <Route path="/register" element={<RegisterUser />} />
           <Route path="/login" element={<LoginPage />} />
 
-          <Route path="/register-jobs" element={<RegisterJobs />} />
+          <Route path="/register-jobs" element={<RegisterJobsPage />} />
+          <Route path="/register-cv" element={<RegisterCVPage />} />
 
           <Route path="/splash/user-registered" element={<UserRegisteredPage />} />
           <Route path="/splash/user-logged" element={<UserLoggedPage />} />
-          <Route path="/splash/changed-password" element={<SplashChangePassword />} />
+          <Route path="/splash/changed-password" element={<SplashChangePasswordPage />} />
         </Routes>
       </BrowserRouter>
     </>
