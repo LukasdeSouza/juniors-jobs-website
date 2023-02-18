@@ -7,7 +7,7 @@ import RegisterJobsImage from '../../../assets/register-jobs-image.svg'
 import { useState } from 'react'
 import JobsController from '../../../controller/jobsController'
 
-const RegisterJobs = () => {
+const RegisterJobsPage = () => {
   const { register, handleSubmit } = useForm();
   const controller = new JobsController();
 
@@ -86,4 +86,4 @@ const RegisterJobs = () => {
   )
 }
 
-export default RegisterJobs
+export default RegisterJobsPage
