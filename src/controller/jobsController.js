@@ -21,20 +21,16 @@ class JobsController {
 
   async postNewJob(body) {
     // this.store.setState('loading', true)
-
     return await axios.post('https://seek-jobs-website-api.onrender.com/jobs', body)
       .then((response) => {
         this.store.setState('alert', true)
-        this.store.setState('openDrawer', false)
         console.log(response)
       })
       .catch((error) => {
-        this.store.setState('openDrawer', true)
         console.log(error)
       })
       .finally(() =>
-        // this.store.setLoading(false)
-        alert('finally')
+        alert('Somente é possível cadastrar nova vaga caso seja uma empresa')
       )
   }
 

@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router-dom'
 import CheckboxFilter from './components/checkbox'
 import BoxJobs from './components/box'
 import FilterJobs from './components/filter'
-import PaginationJobs from './components/pagination'
+// import PaginationJobs from './components/pagination'
 
 
 
@@ -81,12 +81,12 @@ const JobsPage = observer(() => {
           <p>Seek Jobs é uma nova maneira de encontrar <br />
             empregos na área de tecnologia sem burocracias <br />
             e dores de cabeça, e com mais praticidade</p>
-          <div className='filter-input-container'>
+          {/* <div className='filter-input-container'>
             <Input placeHolder={'Busca geral'}
             />
             <Input placeHolder={'Buscar por localidade'} />
             <Button text={'Buscar Vagas'} style={{ padding: 0 }} />
-          </div>
+          </div> */}
         </div>
         <img src={SitGuy} alt="Homem sentado em um cadeira"
           style={{ width: 238, height: 350 }}
@@ -132,10 +132,10 @@ const JobsPage = observer(() => {
         < ErrorImage />
       } */}
 
-      <PaginationJobs pages={pages}
+      {/* <PaginationJobs pages={pages}
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
-      />
+      /> */}
       <Footer />
     </>
   )
