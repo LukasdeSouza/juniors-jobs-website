@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import Checked from './assets/icon3d-sucess 1.svg'
+import Checked from '../../../assets/icon3d-sucess 1.svg'
 
 import './styles.css'
 
