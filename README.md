@@ -136,3 +136,5 @@ npm run start
 ## Licença
 
 _indefinida_
+
+Coautoria do Readm.me Anderson
