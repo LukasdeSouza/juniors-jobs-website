@@ -94,21 +94,25 @@ const JobsPage = observer(() => {
       </div>
 
       <div className='filter-jobs-main-container'>
-        <FilterJobs />
-        <div className='jobs-grid'>
-          {jobsStore.state.jobsList.map((job) => (
-            <BoxJobs
-              img={job.urlImage}
-              name={job.name ?? 'Empresa Contrata'}
-              location={job.local === 'A combinar' ? 'Presencial' : job.local}
-              title={job.title}
-              type={job.type ?? 'CLT'}
-              tier={job.tier ?? 'Júnior'}
-              salary={job.salary}
-              description={job.description}
-            />
-          ))}
-        </div>
+        {/* <FilterJobs /> */}
+        {jobsStore.loading ?
+          <span class="loader"></span>
+          :
+          <div className='jobs-grid'>
+            {jobsStore.state.jobsList.map((job) => (
+              <BoxJobs
+                img={job.urlImage}
+                name={job.name ?? 'Empresa Contrata'}
+                location={job.local === 'A combinar' ? 'Presencial' : job.local}
+                title={job.title}
+                type={job.type ?? 'CLT'}
+                tier={job.tier ?? 'Júnior'}
+                salary={job.salary}
+                description={job.description}
+              />
+            ))}
+          </div>
+        }
       </div>
 
       {/* <Stack alignItems={'center'} mt={4}>
