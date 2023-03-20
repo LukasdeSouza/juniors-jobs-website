@@ -25,9 +25,6 @@ const LoginPage = observer(() => {
 
 
   const doLogin = () => {
-    // if (email === '' || password === '') {
-    //   userStore.setAlert(true, 'warning', 'Preencha os campos para fazer Login')
-    // }
     const body = {
       email: email,
       password: password
