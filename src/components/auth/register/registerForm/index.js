@@ -3,13 +3,11 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { GoogleLogin } from '@leecheuk/react-google-login';
-
 import LoadingButton from '@mui/lab/LoadingButton';
 
 import Input from '../../../general/input';
 import GoogleButton from '../../googleButton'
 import Checkbox from '../../../general/checkbox';
-import Button from '../../../general/button';
 
 import RootStoreContext from '../../../../store/rootStore';
 import UserController from '../../../../controller/userController';
@@ -55,6 +53,11 @@ const RegisterForm = observer(() => {
 
     navigate('/splash/userRegistered')
   };
+
+  const cleanAllFields = () => {
+    const input = document.getElementsByTagName('input')
+    input.value = ''
+  }
 
   const saveUser = () => {
     const newUser = {

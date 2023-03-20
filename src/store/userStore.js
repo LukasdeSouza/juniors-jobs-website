@@ -18,6 +18,7 @@ class UserStore {
     message: "",
     type: "",
   }
+
   loading = false
 
   constructor() {
@@ -25,6 +26,7 @@ class UserStore {
       state: observable,
 
       setState: action,
+      setAlert: action,
       setLoading: action,
     })
   }

@@ -1,19 +1,19 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { Alert, Button, Container, Stack, TextField, Typography } from '@mui/material'
 
 import '../../../styles/global.css'
+import IconGoogle from '../../../assets/icon-google.svg'
 
 import LoginImg from '../../../assets/img-sec-login.svg'
 
-import IconGoogle from '../../../assets/icon-google.svg'
+import UserController from '../../controller/userController'
+import RootStoreContext from '../../store/rootStore'
+import { observer } from 'mobx-react-lite'
 
 
-import UserController from '../../../controller/userController'
-import RootStoreContext from '../../../store/rootStore'
 import { LoadingButton } from '@mui/lab'
 
-import { observer } from 'mobx-react-lite'
 
 const LoginPage = observer(() => {
 
@@ -23,6 +23,7 @@ const LoginPage = observer(() => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+
   const doLogin = () => {
     // if (email === '' || password === '') {
     //   userStore.setAlert(true, 'warning', 'Preencha os campos para fazer Login')
@@ -31,7 +32,6 @@ const LoginPage = observer(() => {
       email: email,
       password: password
     }
-
     controller.userLogin(body)
     setEmail('')
     setPassword('')
