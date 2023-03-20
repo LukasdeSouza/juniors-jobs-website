@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { baseUrl } from '../utils/constants'
 
 class JobsController {
   constructor(store) {
@@ -8,7 +9,7 @@ class JobsController {
   async getAllJobs() {
     this.store.setLoading(true)
 
-    return await fetch('https://seek-jobs-website-api.onrender.com/jobs')
+    return await fetch(`${baseUrl}/jobs`)
       .then(response =>
         response.json())
       .then(data =>
@@ -21,7 +22,7 @@ class JobsController {
 
   async postNewJob(body) {
     // this.store.setState('loading', true)
-    return await axios.post('https://seek-jobs-website-api.onrender.com/jobs', body)
+    return await axios.post(`${baseUrl}/jobs`, body)
       .then((response) => {
         this.store.setState('alert', true)
         console.log(response)
@@ -35,7 +36,7 @@ class JobsController {
   }
 
   async deleteJob(id) {
-    return await axios.delete(`https://seek-jobs-website-api.onrender.com/jobs/${id}`)
+    return await axios.delete(`${baseUrl}/jobs/${id}`)
       .then((response) => {
         console.log(response);
       })

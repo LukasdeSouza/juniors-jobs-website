@@ -1,3 +1,3 @@
-const baseUrl = 'https://seek-jobs-website-api.onrender.com'
+const baseUrl = 'https://busy-teal-crocodile-hat.cyclic.app'
 
 export { baseUrl }
