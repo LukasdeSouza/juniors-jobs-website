@@ -3,7 +3,7 @@ import ButtonOutlined from '../../../../components/general/buttonOutlined'
 
 import './style.css'
 
-const BoxJobs = ({ img, name, location, title, type, tier, salary, description }) => {
+const BoxJobs = ({ img, name, location, title, type, tier, salary, description, link }) => {
   return (
     <div className='jobs-grid-object'>
       <div className='jobs-grid-object-header'>
