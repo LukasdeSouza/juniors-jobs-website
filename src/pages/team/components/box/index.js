@@ -5,7 +5,7 @@ const BoxTeams = ({ img, name, role, description, githubLink }) => {
   return (
     <div className='jobs-grid-object'>
       <div className='jobs-grid-object-header'>
-        <img src={img} alt='' style={{ width: 60 }} />
+        <img src={img} alt='' style={{ width: 60, borderRadius : "50%" }} />
         <div className='jobs-grid-object-header-title-location'>
           <p>{name}</p>
           <small>{role}</small>
