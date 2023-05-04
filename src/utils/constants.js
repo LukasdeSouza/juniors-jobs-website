@@ -21,7 +21,7 @@ const ourTeamInfo = [
 const OurTeamInfoSecondary = [
 
   {
-    img: User, name: "Anderson", role: "Frontend Developer",
+    img: "https://avatars.githubusercontent.com/u/94249557?s=400&u=72f47fb4e4ed4bb314de7ddae4eee7d033106348&v=4", name: "Anderson", role: "Frontend Developer",
     description: "Desenvolvedor Frontend que adicionou diversas contribuições ao projeto, aprimorou a páginação, corrigiu erros no código, adicionou também o footer e diversas outras funcionalidades relevantes.", githubLink: 'https://github.com/Andersson793'
   },
 ]
