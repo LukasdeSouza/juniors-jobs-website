@@ -7,8 +7,6 @@ import Footer from '../../components/general/footer'
 import { OurTeamInfoSecondary, ourTeamInfo, ourTeamInfoTertiary } from '../../utils/constants'
 
 const OurTeamPage = () => {
-  //vou refatorar o código, fiz na correria pois estou com pouco tempo e gostaria de ver pelo menos o MVP deste projeto
-
 
   return (
     <>
