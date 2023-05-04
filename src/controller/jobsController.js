@@ -21,7 +21,6 @@ class JobsController {
   }
 
   async postNewJob(body) {
-    // this.store.setState('loading', true)
     return await axios.post(`${baseUrl}/jobs`, body)
       .then((response) => {
         this.store.setState('alert', true)

@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/contributors" element={<ContributorsPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           {/* <Route path="/register" element={<RegisterUser />} /> */}
-          {/* <Route path="/login" element={<LoginPage />} /> */}
+          <Route path="/login" element={<LoginPage />} />
 
           <Route path="/register-jobs" element={<RegisterJobsPage />} />
           {/* <Route path="/register-cv" element={<RegisterCVPage />} /> */}

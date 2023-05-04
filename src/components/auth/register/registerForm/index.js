@@ -17,7 +17,6 @@ import { Alert } from '@mui/material';
 
 const RegisterForm = observer(() => {
   const navigate = useNavigate();
-
   const { userStore } = useContext(RootStoreContext);
   const controller = new UserController(userStore);
 

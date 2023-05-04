@@ -9,7 +9,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background: linear-gradient(221.45deg, #0D68DF 23.45%, #042F67 94.19%);
 }
 .footer_container h3 {
   color: var(--white-scale-200);

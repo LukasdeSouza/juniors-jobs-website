@@ -2,7 +2,7 @@
 @import '../../../styles/utility-classes.css';
 
  .register-container {
-    background: var(--bg-linear-blue);
+    background-color: #ffff;
     box-shadow: var(--bs-shadow-200);
     border-radius: 0px 0px 55px 0px;    
     background-repeat: no-repeat;
