@@ -42,7 +42,7 @@ class UserController {
       })
       .catch((error) => {
         this.store.setAlert(true, 'warning', error.response.data.msg)
-        console.log(error)
+        alert(error.response.data.msg)
         this.store.setLoading(false)
       })
       .finally(() =>

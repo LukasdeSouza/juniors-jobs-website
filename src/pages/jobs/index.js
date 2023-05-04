@@ -95,8 +95,7 @@ const JobsPage = observer(() => {
       <Footer />
     </>
   )
-}
-)
+})
 
 
 export default JobsPage
