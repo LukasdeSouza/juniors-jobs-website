@@ -1,6 +1,6 @@
-import './style.css';
+import './style.css'
 
-import GoogleLogo from '../../../assets/icon-google.png';
+import GoogleLogo from '../../../assets/icon-google.png'
 
 const GoogleButton = ({ onClick }) => {
   return (
@@ -8,7 +8,7 @@ const GoogleButton = ({ onClick }) => {
       <img src={GoogleLogo} alt="Logo do Google" />
       <span className="google-btn-text">Continuar com Google</span>
     </button>
-  );
-};
+  )
+}
 
-export default GoogleButton;
+export default GoogleButton

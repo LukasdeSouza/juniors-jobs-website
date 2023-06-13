@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { createContext } from 'react'
 
-import JobsStore from "./jobsStore";
-import UserStore from "./userStore";
+import JobsStore from './jobsStore'
+import UserStore from './userStore'
 
 class RootStore {
   constructor() {

@@ -8,12 +8,9 @@ const ButtonOutlined = ({ handleClick, text }) => {
       onClick={handleClick}
       style={{ marginLeft: '8px' }}
     >
-      <span className="btn-outlined-text">
-        {text}
-      </span>
+      <span className="btn-outlined-text">{text}</span>
     </button>
-  );
+  )
 }
-
 
 export default ButtonOutlined

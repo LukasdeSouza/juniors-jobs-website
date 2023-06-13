@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
 import RootStoreContext from '../../../store/rootStore'
 
@@ -17,20 +17,22 @@ const AppBarNavigation = () => {
     <AppBar
       elevation={0}
       sx={{
-        position: "static",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "100%",
+        position: 'static',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
         marginTop: 2,
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent'
       }}
     >
-      <img src={Logo} alt="Logo"
+      <img
+        src={Logo}
+        alt="Logo"
         onClick={() => navigate('/')}
         style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }}
       />
-      <Stack flexDirection={"row"} alignItems={"center"}>
+      <Stack flexDirection={'row'} alignItems={'center'}>
         <Link
           href="/"
           underline="hover"
@@ -48,7 +50,9 @@ const AppBarNavigation = () => {
           fontSize={14}
           ml={2}
           mr={2}
-        >  Anunciar Vaga
+        >
+          {' '}
+          Anunciar Vaga
         </Link>
         <Link
           href="/our-team"
@@ -57,7 +61,9 @@ const AppBarNavigation = () => {
           fontSize={14}
           ml={2}
           mr={2}
-        > Nossa Equipe
+        >
+          {' '}
+          Nossa Equipe
         </Link>
         {/* <Link
           href="/register-cv"
@@ -93,8 +99,7 @@ const AppBarNavigation = () => {
         </Link> */}
       </Stack>
     </AppBar>
-  );
+  )
 }
 
 export default AppBarNavigation
-

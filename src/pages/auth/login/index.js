@@ -1,19 +1,17 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 
-import { Alert, Container, Stack, TextField, Typography } from '@mui/material'
+import { Container, Stack, TextField, Typography } from '@mui/material'
 
 import '../../../styles/global.css'
-import IconGoogle from '../../../assets/icon-google.svg'
 
 import LoginImg from '../../../assets/img-sec-login.svg'
 
+import { observer } from 'mobx-react-lite'
 import UserController from '../../../controller/userController'
 import RootStoreContext from '../../../store/rootStore'
-import { observer } from 'mobx-react-lite'
 
 import { LoadingButton } from '@mui/lab'
 import { useNavigate } from 'react-router-dom'
-
 
 const LoginPage = observer(() => {
   const navigate = useNavigate()
@@ -25,8 +23,8 @@ const LoginPage = observer(() => {
 
   const doLogin = () => {
     const body = {
-      email: email,
-      password: password
+      email,
+      password
     }
     controller.userLogin(body)
   }
@@ -34,36 +32,52 @@ const LoginPage = observer(() => {
   return (
     <Container
       sx={{
-        display: "flex",
-        flexDirection: "row",
+        display: 'flex',
+        flexDirection: 'row',
         height: 522,
-        width: "50vw",
+        width: '50vw',
         backgroundColor: '#FFFF',
-        boxShadow: "var(--bs-shadow-300)",
+        boxShadow: 'var(--bs-shadow-300)',
         borderRadius: 3,
         mt: 6
-      }}>
-      <Stack alignItems={'center'}
+      }}
+    >
+      <Stack
+        alignItems={'center'}
         justifyContent={'center'}
-        sx={{ ml: -9, width: "60%" }}>
-        <img src={LoginImg} alt=""
+        sx={{ ml: -9, width: '60%' }}
+      >
+        <img
+          src={LoginImg}
+          alt=""
           style={{ width: '239px', height: '300px' }}
         />
       </Stack>
-      <Stack alignItems={'center'} mt={8}
-        sx={{ ml: 2, width: "50%", backgroundColor: "var(--white-scale-100)" }}
+      <Stack
+        alignItems={'center'}
+        mt={8}
+        sx={{ ml: 2, width: '50%', backgroundColor: 'var(--white-scale-100)' }}
       >
-        <Typography fontFamily={'Montserrat'} fontWeight={700} fontSize={24} color={'#272727'}>
+        <Typography
+          fontFamily={'Montserrat'}
+          fontWeight={700}
+          fontSize={24}
+          color={'#272727'}
+        >
           Olá, Bem Vindo
         </Typography>
-        <Typography fontFamily={'Montserrat'}
+        <Typography
+          fontFamily={'Montserrat'}
           textAlign={'center'}
           fontWeight={500}
           fontSize={14}
-          color={'#272727'}>
+          color={'#272727'}
+        >
           Seek Jobs é a maneira mais fácil de encontrar seu emprego Tech
         </Typography>
-        <TextField label='Email' size='small'
+        <TextField
+          label="Email"
+          size="small"
           required
           sx={{ width: '90%', mt: 4 }}
           onChange={(event) => setEmail(event.target.value)}
@@ -73,7 +87,10 @@ const LoginPage = observer(() => {
             }
           }}
         />
-        <TextField label='Senha' size='small' type='password'
+        <TextField
+          label="Senha"
+          size="small"
+          type="password"
           required
           sx={{ width: '90%', mt: 2 }}
           onChange={(event) => setPassword(event.target.value)}
@@ -83,39 +100,47 @@ const LoginPage = observer(() => {
             }
           }}
         />
-        <Stack direction={'row'}
+        <Stack
+          direction={'row'}
           alignItems={'center'}
           justifyContent={'space-evenly'}
           width={'90%'}
-          mt={4}>
-          <LoadingButton loading={userStore.loading}
-            variant='outlined'
-            sx={{ textTransform: "none", fontFamily: "Montserrat" }}
-            onClick={() => navigate('/register')}>
+          mt={4}
+        >
+          <LoadingButton
+            loading={userStore.loading}
+            variant="outlined"
+            sx={{ textTransform: 'none', fontFamily: 'Montserrat' }}
+            onClick={() => navigate('/register')}
+          >
             Cadastre-se
           </LoadingButton>
-          <LoadingButton loading={userStore.loading}
-            variant='contained'
+          <LoadingButton
+            loading={userStore.loading}
+            variant="contained"
             sx={{
               marginLeft: 1,
-              backgroundColor: "var(--blue-scale-300)",
-              textTransform: "capitalize", fontFamily: "Montserrat"
+              backgroundColor: 'var(--blue-scale-300)',
+              textTransform: 'capitalize',
+              fontFamily: 'Montserrat'
             }}
-            onClick={doLogin}>
+            onClick={doLogin}
+          >
             Entrar
           </LoadingButton>
         </Stack>
-        <Typography fontFamily={'Montserrat'}
+        <Typography
+          fontFamily={'Montserrat'}
           fontSize={11}
-          color={"var(--blue-scale-300)"}
+          color={'var(--blue-scale-300)'}
           mt={3}
-          sx={{ cursor: "pointer" }}>
+          sx={{ cursor: 'pointer' }}
+        >
           Esqueceu a senha?
         </Typography>
       </Stack>
-    </Container >
+    </Container>
   )
-}
-)
+})
 
 export default LoginPage
