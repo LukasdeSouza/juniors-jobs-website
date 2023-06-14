@@ -12,24 +12,28 @@ class UserController {
   async userRegister(body) {
     this.store.setLoading(true)
 
-    return await axios.post(`${baseUrl}/auth/register`, body)
+    return await axios
+      .post(`${baseUrl}/auth/register`, body)
       .then((response) => {
-        this.store.setAlert(true, 'success', 'Te enviamos a confirmação de Cadastro no seu Email')
+        this.store.setAlert(
+          true,
+          'success',
+          'Te enviamos a confirmação de Cadastro no seu Email'
+        )
         console.log(response)
       })
       .catch((error) => {
         this.store.setAlert(true, 'warning', error.response.data.msg)
         console.log(error)
       })
-      .finally(() =>
-        this.store.setLoading(false)
-      )
+      .finally(() => this.store.setLoading(false))
   }
 
   async userLogin(body) {
     this.store.setLoading(true)
 
-    return await axios.post(`${baseUrl}/auth`, body)
+    return await axios
+      .post(`${baseUrl}/auth`, body)
       .then((response) => {
         this.store.setAlert(true, 'success', response.data.msg)
         localStorage.setItem('token', response.data.token)
@@ -45,11 +49,8 @@ class UserController {
         alert(error.response.data.msg)
         this.store.setLoading(false)
       })
-      .finally(() =>
-        this.store.setLoading(false)
-      )
+      .finally(() => this.store.setLoading(false))
   }
-
 }
 
 export default UserController

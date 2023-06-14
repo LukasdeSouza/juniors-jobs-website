@@ -1,22 +1,22 @@
-import { action, makeAutoObservable, observable } from "mobx";
-
+import { action, makeAutoObservable, observable } from 'mobx'
 
 class UserStore {
   state = {
-    _id: "",
-    name: "",
-    email: "",
-    password: "",
-    confirmpassword: "",
-    type: "person",
-    cnpj: "",
-    token: "",
-    imageUrl: "",
+    _id: '',
+    name: '',
+    email: '',
+    password: '',
+    confirmpassword: '',
+    type: 'person',
+    cnpj: '',
+    token: '',
+    imageUrl: ''
   }
+
   alert = {
     open: false,
-    message: "",
-    type: "",
+    message: '',
+    type: ''
   }
 
   loading = false
@@ -27,7 +27,7 @@ class UserStore {
 
       setState: action,
       setAlert: action,
-      setLoading: action,
+      setLoading: action
     })
   }
 
@@ -36,19 +36,17 @@ class UserStore {
   }
 
   setAlert(open, type, message) {
-    this.alert.open = open;
+    this.alert.open = open
 
     if (type) {
-      this.alert.type = type;
-      this.alert.message = message;
+      this.alert.type = type
+      this.alert.message = message
     }
   }
 
   setLoading(value) {
     this.loading = value
   }
-
-
 }
 
 export default UserStore

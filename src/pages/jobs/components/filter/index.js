@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from '../../../../components/general/button'
 import CheckboxFilter from '../checkbox'
 
@@ -6,8 +5,8 @@ import './style.css'
 
 const FilterJobs = () => {
   return (
-    <div className='filter-jobs-container'>
-      <div className='filter-jobs-header'>
+    <div className="filter-jobs-container">
+      <div className="filter-jobs-header">
         <h4>Filtrar Vagas</h4>
         <Button text={'Limpar'} />
       </div>
