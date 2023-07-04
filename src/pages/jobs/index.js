@@ -87,6 +87,7 @@ const JobsPage = observer(() => {
                 tier={job.tier ?? 'Júnior'}
                 salary={job.salary}
                 description={job.description}
+                link={job.link}
               />
             ))}
           </div>
