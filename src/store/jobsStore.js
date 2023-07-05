@@ -1,7 +1,6 @@
-import { action, makeAutoObservable, observable } from "mobx";
+import { action, makeAutoObservable, observable } from 'mobx'
 
 class JobsStore {
-
   state = {
     jobsList: [],
     postJobsList: [],
@@ -11,6 +10,7 @@ class JobsStore {
     error: false,
     alert: false
   }
+
   loading = false
 
   constructor() {
@@ -18,7 +18,7 @@ class JobsStore {
       state: observable,
 
       setState: action,
-      setLoading: action,
+      setLoading: action
     })
   }
 

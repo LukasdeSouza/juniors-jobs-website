@@ -1,10 +1,10 @@
-import Facebook from "./assets/facebook.svg";
-import Instagram from "./assets/instagram.svg";
-import LinkedIn from "./assets/linkedin.svg";
-import Twitter from "./assets/twitter 1.svg";
+import Facebook from './assets/facebook.svg'
+import Instagram from './assets/instagram.svg'
+import LinkedIn from './assets/linkedin.svg'
+import Twitter from './assets/twitter 1.svg'
 
-import "../../../styles/utility-classes.css";
-import "./style.css";
+import '../../../styles/utility-classes.css'
+import './style.css'
 
 const Footer = () => {
   return (
@@ -38,13 +38,17 @@ const Footer = () => {
         </h4>
         <small>
           O seek jobs é um site gratuito de código aberto <br /> construido pela
-          comunidade de desenvolvedores, nosso objetivo  <br /> é ajudar a
+          comunidade de desenvolvedores, nosso objetivo <br /> é ajudar a
           comunidade de desenvolvedores a encontrar emprego <br /> na área de
           forma simples e sem burocraria. Nosso site <br /> é mantido com a
           ajude de pessoas como você, então <br /> considere nos ajudar.
         </small>
-        <a href="https://www.vakinha.com.br/3344996" target="_blank">
-          <button class="want_to_contribute">Quero contribuir!</button>
+        <a
+          href="https://www.vakinha.com.br/3344996"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button className="want_to_contribute">Quero contribuir!</button>
         </a>
         <small>
           <p className="mt-2">Ou pelo pix da nossa vaquinha online: </p>
@@ -53,12 +57,13 @@ const Footer = () => {
           href="https://www.vakinha.com.br/3344996"
           target="_blank"
           className="color-white text-underline mt-1"
+          rel="noreferrer"
         >
-          3344996@vakinha.com.br{" "}
+          3344996@vakinha.com.br{' '}
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

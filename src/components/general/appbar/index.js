@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
 import { AppBar, Link, Stack } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
@@ -13,16 +13,18 @@ const AppBarNavigation = () => {
     <AppBar
       elevation={0}
       sx={{
-        position: "static",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "100%",
+        position: 'static',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
         marginTop: 2,
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent'
       }}
     >
-      <img src={Logo} alt="Logo"
+      <img
+        src={Logo}
+        alt="Logo"
         onClick={() => navigate('/')}
         style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }}
       />
@@ -93,8 +95,7 @@ const AppBarNavigation = () => {
           Perfil
         </Link> */}
     </AppBar>
-  );
+  )
 }
 
 export default AppBarNavigation
-

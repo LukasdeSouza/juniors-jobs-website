@@ -1,30 +1,35 @@
-import './style.css'
-import User from '../../assets/our-team-img.svg'
-import AppBarNavigation from '../../components/general/appbar'
 import TeamImg from '../../assets/our-team-img.svg'
-import BoxTeams from './components/box'
+import AppBarNavigation from '../../components/general/appbar'
 import Footer from '../../components/general/footer'
-import { OurTeamInfoSecondary, ourTeamInfo, ourTeamInfoTertiary } from '../../utils/constants'
+import {
+  ourTeamInfo,
+  OurTeamInfoSecondary,
+  ourTeamInfoTertiary
+} from '../../utils/constants'
+import BoxTeams from './components/box'
+import './style.css'
 
 const OurTeamPage = () => {
-  //vou refatorar o código, fiz na correria pois estou com pouco tempo e gostaria de ver pelo menos o MVP deste projeto
-
-
   return (
     <>
       <AppBarNavigation />
-      <div className='container-header-ourteam'>
-        <div className='header-ourteam-text'>
+      <div className="container-header-ourteam">
+        <div className="header-ourteam-text">
           <h2>Nossa Equipe</h2>
-          <p>Aqui você encontra todos(a) integrantes que <br /> participam constantemente do Seek Jobs <br />
+          <p>
+            Aqui você encontra todos(a) integrantes que <br /> participam
+            constantemente do Seek Jobs <br />
             e colaboraram voluntáriamente com o aprimoramento do projeto. <br />
-            Abaixo também se encontra o Github de cada um deles.</p>
+            Abaixo também se encontra o Github de cada um deles.
+          </p>
         </div>
         <img src={TeamImg} alt="" style={{ width: 400 }} />
       </div>
-      <div className='grid-our-team-boxes'>
+      <div className="grid-our-team-boxes">
         {ourTeamInfo.map((info) => (
-          <BoxTeams img={info.img}
+          <BoxTeams
+            key={info.name}
+            img={info.img}
             name={info.name}
             role={info.role}
             description={info.description}
@@ -32,9 +37,11 @@ const OurTeamPage = () => {
           />
         ))}
       </div>
-      <div className='grid-our-team-boxes-secondary'>
+      <div className="grid-our-team-boxes-secondary">
         {OurTeamInfoSecondary.map((info) => (
-          <BoxTeams img={info.img}
+          <BoxTeams
+            key={info.name}
+            img={info.img}
             name={info.name}
             role={info.role}
             description={info.description}
@@ -42,9 +49,11 @@ const OurTeamPage = () => {
           />
         ))}
       </div>
-      <div className='grid-our-team-boxes-secondary'>
+      <div className="grid-our-team-boxes-secondary">
         {ourTeamInfoTertiary.map((info) => (
-          <BoxTeams img={info.img}
+          <BoxTeams
+            key={info.name}
+            img={info.img}
             name={info.name}
             role={info.role}
             description={info.description}

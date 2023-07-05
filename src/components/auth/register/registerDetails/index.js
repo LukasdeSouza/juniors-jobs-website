@@ -1,6 +1,5 @@
-import React from 'react';
-import Select from '../select';
-import './style.css';
+import Select from '../select'
+import './style.css'
 
 const RegisterDetails = () => {
   return (
@@ -12,7 +11,7 @@ const RegisterDetails = () => {
           '1 ano',
           '2 anos',
           '3 anos',
-          'Mais que 3 anos',
+          'Mais que 3 anos'
         ]}
         defaultValue={'Qual é o seu tempo de experiência?'}
       />
@@ -26,7 +25,7 @@ const RegisterDetails = () => {
           'UI/UX Design',
           'Product Maneger',
           'Product Owner',
-          'Product Design',
+          'Product Design'
         ]}
         defaultValue={'Qual a sua área de atuação?'}
       />
@@ -65,7 +64,7 @@ const RegisterDetails = () => {
         defaultValue={'Em qual estado você reside?'}
       />
     </div>
-  );
-};
+  )
+}
 
-export default RegisterDetails;
+export default RegisterDetails

@@ -1,28 +1,23 @@
-import './App.css';
+import './App.css'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { gapi } from 'gapi-script';
+import { gapi } from 'gapi-script'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import JobsPage from './pages/jobs';
-import RegisterUser from './pages/auth/register';
-import LoginPage from './pages/auth/login';
-import UserRegisteredPage from './pages/splash/userRegistered';
-import UserLoggedPage from './pages/splash/userLogged';
-import ContributorsPage from './pages/contributors';
-import OurTeamPage from './pages/team';
-import RegisterCVPage from './pages/register-cv';
-import RegisterJobsPage from './pages/jobs/register';
-import SplashChangePasswordPage from './pages/splash/changedPassword';
-import Page404 from './pages/404';
+import Page404 from './pages/404'
+import LoginPage from './pages/auth/login'
+import ContributorsPage from './pages/contributors'
+import JobsPage from './pages/jobs'
+import RegisterJobsPage from './pages/jobs/register'
+import OurTeamPage from './pages/team'
 
 export default function App() {
-
   gapi.load('client:auth2', () => {
     gapi.client.init({
-      clientId: '842128105172-82qtuinhishq32q8nhrrbsqu0v301a24.apps.googleusercontent.com',
-      plugin_name: 'chat',
-    });
-  });
+      clientId:
+        '842128105172-82qtuinhishq32q8nhrrbsqu0v301a24.apps.googleusercontent.com',
+      plugin_name: 'chat'
+    })
+  })
   return (
     <>
       <BrowserRouter>
@@ -44,5 +39,5 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import Direita from '../../../../assets/arrow-right.svg'
 import Esquerda from '../../../../assets/arrow-left.svg'
+import Direita from '../../../../assets/arrow-right.svg'
 
 import './style.css'
 
@@ -9,26 +9,29 @@ class PaginationJobs extends React.Component {
   constructor(props) {
     super(props)
 
-    this.allElements = document.getElementsByClassName("bg-pagination")
+    this.allElements = document.getElementsByClassName('bg-pagination')
   }
 
   async componentDidUpdate() {
-    this.allElements[this.props.currentPage].className = "bg-pagination pagina-atual"
+    this.allElements[this.props.currentPage].className =
+      'bg-pagination pagina-atual'
   }
 
   render() {
     return (
-      <div
-        className='flex flex-row justify-center align-items my-4'
-      >
-        {(this.props.currentPage === 0)
-          ?
-          <img className='arrows-disabled' src={Esquerda} />
-          :
-          <img className='arrows' src={Esquerda}
-            onClick={() => this.props.setCurrentPage(this.props.currentPage - 1)}
+      <div className="flex flex-row justify-center align-items my-4">
+        {this.props.currentPage === 0 ? (
+          <img className="arrows-disabled" src={Esquerda} alt="" />
+        ) : (
+          <img
+            className="arrows"
+            src={Esquerda}
+            onClick={() =>
+              this.props.setCurrentPage(this.props.currentPage - 1)
+            }
+            alt=""
           />
-        }
+        )}
         {Array.from(Array(this.props.pages), (item, index) => {
           return (
             <div
@@ -41,13 +44,20 @@ class PaginationJobs extends React.Component {
             </div>
           )
         })}
-        {(this.props.currentPage + 1 === this.props.pages) ?
-          <img className='arrows-disabled' src={Direita} /> :
-          <img className='arrows' src={Direita}
-            onClick={() => this.props.setCurrentPage(this.props.currentPage + 1)} />
-        }
+        {this.props.currentPage + 1 === this.props.pages ? (
+          <img className="arrows-disabled" src={Direita} alt="" />
+        ) : (
+          <img
+            className="arrows"
+            src={Direita}
+            onClick={() =>
+              this.props.setCurrentPage(this.props.currentPage + 1)
+            }
+            alt=""
+          />
+        )}
       </div>
-    );
+    )
   }
 }
 
