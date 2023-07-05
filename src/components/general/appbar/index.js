@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-
 import { AppBar, Link, Stack } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +26,7 @@ const AppBarNavigation = () => {
         onClick={() => navigate('/')}
         style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }}
       />
-      <Stack alignItems={"center"} justifyContent={'space-between'}>
+      <Stack alignItems={'center'} justifyContent={'space-between'}>
         <Stack direction={'row'}>
           <Link
             href="/"
@@ -47,7 +45,8 @@ const AppBarNavigation = () => {
             fontSize={14}
             ml={2}
             mr={2}
-          >  Anunciar Vaga
+          >
+            Anunciar Vaga
           </Link>
           <Link
             href="/our-team"
@@ -56,7 +55,9 @@ const AppBarNavigation = () => {
             fontSize={14}
             ml={2}
             mr={2}
-          > Nossa Equipe
+          >
+            {' '}
+            Nossa Equipe
           </Link>
         </Stack>
       </Stack>
@@ -70,8 +71,7 @@ const AppBarNavigation = () => {
         >  Cadastrar CV
         </Link> */}
       <Stack direction={'row'}>
-        {localStorage.getItem('token') === null
-          &&
+        {localStorage.getItem('token') === null && (
           <Link
             href="/login"
             underline="hover"
@@ -82,7 +82,7 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
-        }
+        )}
       </Stack>
       {/* <Link
           href="/"

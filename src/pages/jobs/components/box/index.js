@@ -2,12 +2,23 @@ import Button from '../../../../components/general/button'
 import ButtonOutlined from '../../../../components/general/buttonOutlined'
 import './style.css'
 
-
-const BoxJobs = ({ img, name, location, title, type, tier, salary, description, link }) => {
-
+const BoxJobs = ({
+  img,
+  name,
+  location,
+  title,
+  type,
+  tier,
+  salary,
+  description,
+  link
+}) => {
   const handleClick = () => {
     if (/^[0-9]+$/.test(link)) {
-      window.open(`https://wa.me/55${link}?text=Ol%C3%A1%2C+vim+pela+vaga+que+vi+na+Seek+Jobs$`, '_blank')
+      window.open(
+        `https://wa.me/55${link}?text=Ol%C3%A1%2C+vim+pela+vaga+que+vi+na+Seek+Jobs$`,
+        '_blank'
+      )
     } else if (link.includes('http')) {
       window.open(link, '_blank')
     }
@@ -30,10 +41,8 @@ const BoxJobs = ({ img, name, location, title, type, tier, salary, description, 
         <small className="jobs-grid-object-location">{location}</small>
         <small className="jobs-grid-object-salary">{salary}</small>
       </div>
-      <small className='jobs-grid-object-description'>
-        {description}
-      </small>
-      <div className='jobs-grid-object-button-row'>
+      <small className="jobs-grid-object-description">{description}</small>
+      <div className="jobs-grid-object-button-row">
         <Button text={'Aplicar'} handleClick={handleClick} />
         <ButtonOutlined text={'Detalhes'} />
       </div>
