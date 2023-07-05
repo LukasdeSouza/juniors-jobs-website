@@ -36,7 +36,7 @@ const BoxJobs = ({ img, name, location, title, type, tier, salary, description, 
         {description}
       </small>
       <div className='jobs-grid-object-button-row'>
-        <Button text={'Aplicar agora'} handleClick={handleClick} />
+        <Button text={'Aplicar'} handleClick={handleClick} />
         <ButtonOutlined text={'Detalhes'} />
       </div>
     </div>
