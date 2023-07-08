@@ -7,6 +7,7 @@ import AppBarNavigation from '../../components/general/appbar'
 import JobsController from '../../controller/jobsController'
 import RootStoreContext from '../../store/rootStore'
 
+import Logo from '../../assets/logo_size-removebg.png'
 import SitGuy from '../../assets/sit-in-a-char-man-jobs-page.svg'
 import Footer from '../../components/general/footer'
 import '../../styles/global.css'
@@ -76,15 +77,15 @@ const JobsPage = observer(() => {
           <div className="jobs-grid">
             {jobsStore.state.jobsList?.map((job) => (
               <BoxJobs
-                key={job.name ?? ''}
-                img={job.urlImage ?? ''}
+                key={job.name ?? 'N/A'}
+                img={job.urlImage ?? Logo}
                 name={job.name ?? 'Empresa Contrata'}
                 location={job.local === 'A combinar' ? 'Presencial' : job.local}
                 title={job.title ?? 'Sem Título'}
-                type={job.type ?? 'CLT'}
-                tier={job.tier ?? 'Júnior'}
-                salary={job.salary}
-                description={job.description}
+                type={job.type ?? 'N/A'}
+                tier={job.tier ?? 'N/A'}
+                salary={job.salary ?? 'N/A'}
+                description={job.description ?? 'Descrição não informada'}
                 link={job.link}
               />
             ))}
