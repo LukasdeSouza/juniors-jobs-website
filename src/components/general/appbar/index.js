@@ -24,12 +24,27 @@ const AppBarNavigation = () => {
         src={Logo}
         alt="Logo"
         onClick={() => navigate('/')}
-        style={{ width: '70px', marginLeft: '91px', marginRight: '91px' }}
+        style={{
+          width: '70px',
+          marginLeft: '91px',
+          marginRight: '91px',
+          cursor: 'pointer'
+        }}
       />
       <Stack alignItems={'center'} justifyContent={'space-between'}>
         <Stack direction={'row'}>
           <Link
             href="/"
+            underline="hover"
+            color={'var(--white-scale-300)'}
+            fontSize={14}
+            ml={2}
+            mr={2}
+          >
+            Home
+          </Link>
+          <Link
+            href="/jobs"
             underline="hover"
             color={'var(--white-scale-300)'}
             fontSize={14}

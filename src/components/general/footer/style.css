@@ -2,7 +2,7 @@
 @import url(../../../styles/utility-classes.css);
 
 .footer_container {
-  margin-top:32px;
+  margin-top:300px;
   height: 325px;
   width: 100%;
   display: flex;
@@ -85,8 +85,8 @@ a {
   font-size: 12px;
 }
 
-img {
-  width: 28px;
+.socialmedia-icon {
+   width: 28px;
   margin-right: 8px;
   cursor: pointer;
 }

@@ -11,10 +11,14 @@ const Footer = () => {
     <div className="footer_container">
       <div>
         <h3>Redes Sociais</h3>
-        <img src={Facebook} alt="Facebook Logo" />
-        <img src={Instagram} alt="Instagram Logo" />
-        <img src={LinkedIn} alt="LinkedIn Logo" />
-        <img src={Twitter} alt="Twitter Logo" />
+        <img className="socialmedia-icon" src={Facebook} alt="Facebook Logo" />
+        <img
+          className="socialmedia-icon"
+          src={Instagram}
+          alt="Instagram Logo"
+        />
+        <img className="socialmedia-icon" src={LinkedIn} alt="LinkedIn Logo" />
+        <img className="socialmedia-icon" src={Twitter} alt="Twitter Logo" />
       </div>
       <div className="for_companies">
         <h3>Para Empresas</h3>

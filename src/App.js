@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Page404 from './pages/404'
 import LoginPage from './pages/auth/login'
 import ContributorsPage from './pages/contributors'
+import HomePage from './pages/home'
 import JobsPage from './pages/jobs'
 import RegisterJobsPage from './pages/jobs/register'
 import OurTeamPage from './pages/team'
@@ -22,7 +23,8 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<JobsPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/jobs" element={<JobsPage />} />
           <Route path="/contributors" element={<ContributorsPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
           {/* <Route path="/register" element={<RegisterUser />} /> */}
