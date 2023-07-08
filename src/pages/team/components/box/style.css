@@ -1,29 +1,30 @@
-.jobs-grid-object {
+.jobs-grid-team-object {
 	background-color: var(--white-scale-100);
 	border-radius: 16px;
 	box-shadow: var(--bs-shadow-200);
-	height: 230px;
-	width: 250px;
+  height: 20%;
+	width: 20%;
+	min-width: 270;
 	padding:24px
 }
-.jobs-grid-object small {
+.jobs-grid-team-object small {
 	font-size: 12px;
 }
-.jobs-grid-object p {
+.jobs-grid-team-object p {
 	color: #000;
 	font-weight: 600;
 }
-.jobs-grid-object-header {
+.jobs-grid-team-object-header {
 	display: flex;
 	flex-direction: row;
 	align-items:center;
 }
-.jobs-grid-object-header-title-location {
+.jobs-grid-team-object-header-title-location {
 	display: flex;
 	flex-direction: column;
 }
 
-.jobs-grid-object-button-row {
+.jobs-grid-team-object-button-row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;

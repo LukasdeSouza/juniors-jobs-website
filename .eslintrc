@@ -3,5 +3,8 @@
   "rules": {
     "no-unused-vars": "off",
     "no-unused-expressions": "off"
-  }
+  },
+  "ignorePatterns": [
+    "**/*.css"
+  ]
 }

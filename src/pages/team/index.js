@@ -23,7 +23,7 @@ const OurTeamPage = () => {
             Abaixo também se encontra o Github de cada um deles.
           </p>
         </div>
-        <img src={TeamImg} alt="" style={{ width: 400 }} />
+        <img src={TeamImg} alt="" style={{ width: 300 }} />
       </div>
       <div className="grid-our-team-boxes">
         {ourTeamInfo.map((info) => (

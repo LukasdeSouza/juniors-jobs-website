@@ -29,10 +29,10 @@
 }
 
 .jobs-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 16px;
-	row-gap: 16px;
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+	height: 100%;
 }
 .loader {
 	width: 48px;

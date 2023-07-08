@@ -28,7 +28,7 @@ const JobsPage = observer(() => {
 
   useEffect(() => {
     controller.getAllJobs()
-  }, [])
+  })
 
   const postNewJobObj = {
     _id_empresa: jobsStore.state.jobsList._id,
@@ -59,7 +59,7 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Buscar Emprego nunca <br /> foi tão fácil
+            Buscar Emprego na área Tech <br /> nunca foi tão fácil
           </h2>
           <p>
             Seek Jobs é uma nova maneira de encontrar <br />

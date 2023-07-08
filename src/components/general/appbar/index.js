@@ -38,7 +38,7 @@ const AppBarNavigation = () => {
           >
             Vagas
           </Link>
-          <Link
+          {/* <Link
             href="/register-jobs"
             underline="hover"
             color={'var(--white-scale-300)'}
@@ -47,7 +47,7 @@ const AppBarNavigation = () => {
             mr={2}
           >
             Anunciar Vaga
-          </Link>
+          </Link> */}
           <Link
             href="/our-team"
             underline="hover"

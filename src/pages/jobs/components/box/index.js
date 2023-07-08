@@ -1,5 +1,3 @@
-import Button from '../../../../components/general/button'
-import ButtonOutlined from '../../../../components/general/buttonOutlined'
 import './style.css'
 
 const BoxJobs = ({
@@ -41,11 +39,11 @@ const BoxJobs = ({
         <small className="jobs-grid-object-location">{location}</small>
         <small className="jobs-grid-object-salary">{salary}</small>
       </div>
-      <small className="jobs-grid-object-description">{description}</small>
-      <div className="jobs-grid-object-button-row">
+      {/* <small className="jobs-grid-object-description">{description}</small> */}
+      {/* <div className="jobs-grid-object-button-row">
         <Button text={'Aplicar'} handleClick={handleClick} />
         <ButtonOutlined text={'Detalhes'} />
-      </div>
+      </div> */}
     </div>
   )
 }

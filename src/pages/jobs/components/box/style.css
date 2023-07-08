@@ -2,9 +2,17 @@
 	background-color: var(--white-scale-100);
 	border-radius: 16px;
 	box-shadow: var(--bs-shadow-200);
-	height: 250px;
-	width: 250px;
-	padding:24px
+	height: 140px ;
+	width: 100% ;
+	min-width: 250;
+	padding:16px ;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+.jobs-grid-object:hover {
+	transform: scale(0.97) translateY(-2px) ;
+	transition: ease-in-out 0.5s;
+	opacity: 0.9;
 }
 .jobs-grid-object small {
 	font-size: 12px;
@@ -66,5 +74,5 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-top:32px
+	margin-top: 16px
 }
