@@ -17,6 +17,10 @@ const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
 
+  const fetchList = async () => {
+    await controller.getAllJobs()
+  }
+
   // Pagination rule
   // const [itemsPerPage, setItemsPerPage] = useState(10)
   // const [currentPage, setCurrentPage] = useState(0)
@@ -27,8 +31,8 @@ const JobsPage = observer(() => {
   // const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
 
   useEffect(() => {
-    controller.getAllJobs()
-  })
+    fetchList()
+  }, [])
 
   const postNewJobObj = {
     _id_empresa: jobsStore.state.jobsList._id,
@@ -43,15 +47,6 @@ const JobsPage = observer(() => {
     tier: jobsStore.state.jobsList.tier,
     type: jobsStore.state.jobsList.tier
   }
-  // const clearFields = () => {
-  //   jobsStore.setState('jobsList', [])
-  //   navigate('/register-jobs')
-  // }
-
-  // const onSave = () => {
-  //   controller.postNewJob(postNewJobObj)
-  //   controller.getAllJobs()
-  // }
 
   return (
     <>
@@ -79,13 +74,13 @@ const JobsPage = observer(() => {
           <span className="loader"></span>
         ) : (
           <div className="jobs-grid">
-            {jobsStore.state.jobsList.map((job) => (
+            {jobsStore.state.jobsList?.map((job) => (
               <BoxJobs
-                key={job.name}
-                img={job.urlImage}
+                key={job.name ?? ''}
+                img={job.urlImage ?? ''}
                 name={job.name ?? 'Empresa Contrata'}
                 location={job.local === 'A combinar' ? 'Presencial' : job.local}
-                title={job.title}
+                title={job.title ?? 'Sem Título'}
                 type={job.type ?? 'CLT'}
                 tier={job.tier ?? 'Júnior'}
                 salary={job.salary}

@@ -1,3 +1,4 @@
+import Logo from '../../../../assets/logo_size-removebg.png'
 import './style.css'
 
 const BoxJobs = ({
@@ -25,7 +26,7 @@ const BoxJobs = ({
   return (
     <div className="jobs-grid-object">
       <div className="jobs-grid-object-header">
-        <img src={img} alt="" style={{ width: 60 }} />
+        <img src={Logo} alt="" style={{ width: 60 }} />
         <div className="jobs-grid-object-header-title-location">
           <p>{name}</p>
           <small>{location}</small>
