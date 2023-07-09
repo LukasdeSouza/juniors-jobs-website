@@ -25,7 +25,11 @@ const BoxJobs = ({
   return (
     <div className="jobs-grid-object" onClick={() => handleClick()}>
       <div className="jobs-grid-object-header">
-        <img src={img} alt="" style={{ width: 60 }} />
+        <img
+          src={img}
+          alt=""
+          style={{ width: 60, borderRadius: '16px', marginRight: '8px' }}
+        />
         <div className="jobs-grid-object-header-title-location">
           <p>{name}</p>
           <small>{location}</small>

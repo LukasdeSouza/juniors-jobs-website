@@ -18,7 +18,7 @@ const HomePage = () => {
             Encontre Vagas para Iniciantes <br /> na área Tech!
           </h2>
           <span className="left-container-span-text">
-            Nunca foi tão fácil encontrar estágios e vagas para júniores
+            Nunca foi tão fácil encontrar estágios e vagas para juniores
           </span>
           <Button
             text={'Ver Vagas'}
