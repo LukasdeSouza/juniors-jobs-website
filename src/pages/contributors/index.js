@@ -33,7 +33,7 @@ export default function ContributorsPage() {
             className="pt-3 subtitle-02 responsive-p"
             style={{ color: 'var(--black-scale-300)', fontWeight: 400 }}
           >
-            O seek jobs é um site gratuito de código aberto construído pela
+            A Junior Jobs é um site gratuito de código aberto construído pela
             comunidade, nosso objetivo é ajudar a comunidade de desenvolvedores
             a encontrar emprego na área de forma simples e sem burocracia. Nosso
             site é mantido com a ajuda de pessoas como você, então considere nos

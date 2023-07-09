@@ -73,7 +73,7 @@ const LoginPage = observer(() => {
           fontSize={14}
           color={'#272727'}
         >
-          Seek Jobs é a maneira mais fácil de encontrar seu emprego Tech
+          Junior Jobs é a maneira mais fácil de encontrar seu emprego Tech
         </Typography>
         <TextField
           label="Email"

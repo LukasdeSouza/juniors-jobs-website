@@ -41,8 +41,8 @@ const Footer = () => {
           <strong>Seek Jobs</strong> é um projeto Open Source
         </h4>
         <small>
-          O seek jobs é um site gratuito de código aberto <br /> construido pela
-          comunidade de desenvolvedores, nosso objetivo <br /> é ajudar a
+          A Junior Jobs é um site gratuito de código aberto <br /> construido
+          pela comunidade de desenvolvedores, nosso objetivo <br /> é ajudar a
           comunidade de desenvolvedores a encontrar emprego <br /> na área de
           forma simples e sem burocraria. Nosso site <br /> é mantido com a
           ajude de pessoas como você, então <br /> considere nos ajudar.
