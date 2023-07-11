@@ -123,9 +123,9 @@ const AppBarNavigation = () => {
           </Link>
         ) : (
           <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
-            <Typography>{user.firstName}</Typography>
+            <Typography>{user?.firstName}</Typography>
             <Avatar
-              src={user.imageUrl}
+              src={user?.imageUrl}
               onClick={handleClick}
               sx={{ cursor: 'pointer', mx: 2 }}
             />
