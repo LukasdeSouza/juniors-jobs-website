@@ -25,6 +25,8 @@ const AppBarNavigation = () => {
     setAnchorEl(event.currentTarget)
   }
   const handleClose = () => {
+    localStorage.setItem('clerk-db-jwt', {})
+    window.location.reload()
     setAnchorEl(null)
   }
 

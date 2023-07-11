@@ -38,6 +38,8 @@ const JobsPage = observer(() => {
   // const endIndex = startIndex + itemsPerPage
   // const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
 
+  console.log(isSignedIn)
+
   useEffect(() => {
     if (isSignedIn === false) {
       navigate('/login')
