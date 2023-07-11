@@ -8,6 +8,8 @@ import AppBarNavigation from '../../components/general/appbar'
 import JobsController from '../../controller/jobsController'
 import RootStoreContext from '../../store/rootStore'
 
+import { useAuth, useUser } from '@clerk/clerk-react'
+import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/logo_size-removebg.png'
 import SitGuy from '../../assets/sit-in-a-char-man-jobs-page.svg'
 import Footer from '../../components/general/footer'
@@ -18,6 +20,10 @@ import './styles.css'
 const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
+  const navigate = useNavigate()
+
+  const { isLoaded, userId, sessionId, getToken, isSignedIn } = useAuth()
+  const { user } = useUser()
 
   const fetchList = async () => {
     await controller.getAllJobs()
@@ -33,7 +39,11 @@ const JobsPage = observer(() => {
   // const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
 
   useEffect(() => {
-    fetchList()
+    if (isSignedIn === false) {
+      navigate('/login')
+    } else {
+      fetchList()
+    }
   }, [])
 
   const postNewJobObj = {
@@ -56,12 +66,12 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Buscar Emprego na área Tech <br /> nunca foi tão fácil
+            Encontar sua Primeira Vaga Tech <br /> nunca foi tão fácil
           </h2>
           <p>
             Seek Jobs é uma nova maneira de encontrar <br />
             empregos na área de tecnologia sem burocracias <br />e dores de
-            cabeça, e com mais praticidade
+            cabeça, e com mais praticidade.
           </p>
         </div>
         <img

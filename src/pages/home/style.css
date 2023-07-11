@@ -14,3 +14,8 @@
 .left-container-span-text {
   color: var(--white-scale-300);
 }
+.container-description-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

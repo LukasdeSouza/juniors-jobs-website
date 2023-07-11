@@ -9,7 +9,7 @@ class JobsController {
   async getAllJobs() {
     this.store.setLoading(true)
 
-    return await fetch(`${baseUrl}/jobs`)
+    await fetch(`${baseUrl}/jobs`)
       .then((response) => response.json())
       .then((data) => this.store.setState('jobsList', data))
       .catch(() => this.store.setState('error', true))

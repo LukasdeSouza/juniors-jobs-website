@@ -1,11 +1,34 @@
-import { AppBar, Link, Stack } from '@mui/material'
+import {
+  AppBar,
+  Avatar,
+  Link,
+  Menu,
+  MenuItem,
+  Stack,
+  Typography
+} from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
+import { useAuth, useUser } from '@clerk/clerk-react'
+import { useState } from 'react'
 import Logo from '../../../assets/new-design-logo.svg'
 import '../../../styles/global.css'
 
 const AppBarNavigation = () => {
   const navigate = useNavigate()
+  const { isSignedIn } = useAuth()
+  const { user } = useUser()
+
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  console.log(user)
 
   return (
     <AppBar
@@ -15,6 +38,7 @@ const AppBarNavigation = () => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'space-between',
         width: '100%',
         marginTop: 2,
         backgroundColor: 'transparent'
@@ -85,8 +109,8 @@ const AppBarNavigation = () => {
           mr={2}
         >  Cadastrar CV
         </Link> */}
-      <Stack direction={'row'}>
-        {localStorage.getItem('token') === null && (
+      <Stack direction={'row'} mx={2}>
+        {isSignedIn === false ? (
           <Link
             href="/login"
             underline="hover"
@@ -97,7 +121,27 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
+        ) : (
+          <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
+            <Typography>{user.firstName}</Typography>
+            <Avatar
+              src={user.imageUrl}
+              onClick={handleClick}
+              sx={{ cursor: 'pointer', mx: 2 }}
+            />
+          </Stack>
         )}
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button'
+          }}
+        >
+          <MenuItem onClick={handleClose}>Sair</MenuItem>
+        </Menu>
       </Stack>
       {/* <Link
           href="/"
