@@ -1,5 +1,9 @@
+import './style.css'
+
 const PaymentPage = () => {
-  return <div>PaymentPage</div>
+  return (
+    <div className="container-payment-page">payment page coming soon...</div>
+  )
 }
 
 export default PaymentPage

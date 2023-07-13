@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react-lite'
 
@@ -30,15 +30,13 @@ const JobsPage = observer(() => {
   }
 
   // Pagination rule
-  // const [itemsPerPage, setItemsPerPage] = useState(10)
-  // const [currentPage, setCurrentPage] = useState(0)
+  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(0)
 
-  // const pages = Math.ceil(jobsStore.state.jobsList.length / itemsPerPage)
-  // const startIndex = currentPage * itemsPerPage
-  // const endIndex = startIndex + itemsPerPage
-  // const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
-
-  console.log(isSignedIn)
+  const pages = Math.ceil(jobsStore.state.jobsList.length / itemsPerPage)
+  const startIndex = currentPage * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
 
   useEffect(() => {
     if (isSignedIn === false) {
