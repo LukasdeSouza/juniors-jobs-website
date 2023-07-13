@@ -147,7 +147,9 @@ const AppBarNavigation = () => {
             'aria-labelledby': 'basic-button'
           }}
         >
-          <MenuItem onClick={handleClose}>Sair (Logout)</MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Link underline="none">Sair (Logout)</Link>
+          </MenuItem>
         </Menu>
       </Stack>
       {/* <Link

@@ -9,3 +9,20 @@
   align-items: center;
   padding: 20px;
 }
+.flex-container-plan-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-plan-card {
+  margin: 16px;
+  height: 200px;
+  width: 300px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color:var(--white-scale-200);
+}
+.container-plan-card p {
+  color: var(--black-scale-300);
+  font-weight: 600;
+}
