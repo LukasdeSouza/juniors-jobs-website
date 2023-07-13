@@ -25,7 +25,12 @@ const BoxJobs = ({
 
   return (
     <Tooltip
-      title={<Link color={'#fff'}> - Requisitos: {description} </Link>}
+      title={
+        <Link color={'#fff'} underline="none">
+          {' '}
+          💻 <b>Requisitos:</b> {description}. <b> 👆 Clique para saber mais</b>{' '}
+        </Link>
+      }
       placement="top-start"
       arrow={true}
       enterDelay={200}
