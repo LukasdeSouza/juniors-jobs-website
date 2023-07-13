@@ -10,7 +10,7 @@ import SignUpWithClerk from './pages/auth/signUpWithClerk'
 import ContributorsPage from './pages/contributors'
 import HomePage from './pages/home'
 import JobsPage from './pages/jobs'
-import RegisterJobsPage from './pages/jobs/register'
+import PaymentPage from './pages/payment'
 import OurTeamPage from './pages/team'
 
 function ClerkProviderWithRoutes() {
@@ -26,13 +26,16 @@ function ClerkProviderWithRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />} />
+        {/* <Route path="/register-jobs" element={<RegisterJobsPage />} /> */}
+
         <Route path="/contributors" element={<ContributorsPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
         {/* <Route path="/register" element={<RegisterUser />} /> */}
+        <Route path="/payment" element={<PaymentPage />} />
+
         <Route path="/login" element={<SignInWithClerk />} />
         <Route path="/signup" element={<SignUpWithClerk />} />
 
-        <Route path="/register-jobs" element={<RegisterJobsPage />} />
         {/* <Route path="/register-cv" element={<RegisterCVPage />} /> */}
 
         {/* <Route path="/splash/user-registered" element={<UserRegisteredPage />} />
