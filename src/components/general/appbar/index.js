@@ -79,16 +79,6 @@ const AppBarNavigation = () => {
           >
             Vagas
           </Link>
-          {/* <Link
-            href="/register-jobs"
-            underline="hover"
-            color={'var(--white-scale-300)'}
-            fontSize={14}
-            ml={2}
-            mr={2}
-          >
-            Anunciar Vaga
-          </Link> */}
           <Link
             href="/our-team"
             underline="hover"
@@ -112,7 +102,16 @@ const AppBarNavigation = () => {
         >  Cadastrar CV
         </Link> */}
       <Stack direction={'row'} mx={2}>
-        {isSignedIn === false ? (
+        {isSignedIn ? (
+          <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
+            <Typography>{user?.firstName}</Typography>
+            <Avatar
+              src={user?.imageUrl}
+              onClick={handleClick}
+              sx={{ cursor: 'pointer', mx: 2 }}
+            />
+          </Stack>
+        ) : (
           <Link
             href="/login"
             underline="hover"
@@ -123,15 +122,6 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
-        ) : (
-          <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
-            <Typography>{user?.firstName}</Typography>
-            <Avatar
-              src={user?.imageUrl}
-              onClick={handleClick}
-              sx={{ cursor: 'pointer', mx: 2 }}
-            />
-          </Stack>
         )}
         <Menu
           id="basic-menu"
