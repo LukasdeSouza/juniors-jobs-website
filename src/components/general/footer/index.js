@@ -38,32 +38,20 @@ const Footer = () => {
           <a href="">Ajude nos a mantê-la</a>
         </small>
         <h4>
-          <strong>Seek Jobs</strong> é um projeto Open Source
+          <strong>Seek Jobs</strong> é um projeto pessoal
         </h4>
         <small>
-          A Junior Jobs é um site gratuito de código aberto <br /> construido
-          pela comunidade de desenvolvedores, nosso objetivo <br /> é ajudar a
-          comunidade de desenvolvedores a encontrar emprego <br /> na área de
-          forma simples e sem burocraria. Nosso site <br /> é mantido com a
-          ajude de pessoas como você, então <br /> considere nos ajudar.
+          Diversas pessoas contribuiram no desenvolvimento dessa plataforma{' '}
+          <br /> ao assina-la você ajuda a comunidade de desenvolvedores a
+          encontrar emprego <br /> na área de tecnologia, de forma simples e sem
+          burocraria.
         </small>
         <a
           href="https://www.vakinha.com.br/3344996"
           target="_blank"
           rel="noreferrer"
         >
-          <button className="want_to_contribute">Quero contribuir!</button>
-        </a>
-        <small>
-          <p className="mt-2">Ou pelo pix da nossa vaquinha online: </p>
-        </small>
-        <a
-          href="https://www.vakinha.com.br/3344996"
-          target="_blank"
-          className="color-white text-underline mt-1"
-          rel="noreferrer"
-        >
-          3344996@vakinha.com.br{' '}
+          <button className="want_to_contribute">Quero Assinar!</button>
         </a>
       </div>
     </div>
