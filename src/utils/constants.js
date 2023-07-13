@@ -14,7 +14,7 @@ const ourTeamInfo = [
   {
     img: User,
     name: 'Arthur',
-    role: '',
+    role: 'Recrutador e Entusiasta do Projeto',
     description:
       'Ajudou na propagação do projeto desde o início, convidando outras pessoas a fazer parte deste projeto voluntário, recrutando outros desenvolvedor, criando documentação, auxiliando em todo o projeto Seek Jobs.',
     githubLink: 'https://github.com/arthurfp16'
@@ -44,7 +44,7 @@ const ourTeamInfoTertiary = [
   {
     img: User,
     name: 'Victor',
-    role: 'UX',
+    role: 'UX/UI',
     description:
       'UX Design, Code Reviewer, Product Manager do projeto Seek Jobs. Atualmente na criação de interfaces do projeto, gerenciamento do produto, inclusão de novidades e features na plataforma.',
     githubLink: 'https://github.com/Victorprog4'
