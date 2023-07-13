@@ -44,6 +44,14 @@
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
 	}
+	p {
+		margin-top:8px;
+		font-size: 14px;
+		color: var(--white-scale-300)
+	}
+	h2 {
+		font-size: 32px;
+	}
 
 	@keyframes rotation {
 	0% {

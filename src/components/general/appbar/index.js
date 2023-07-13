@@ -62,7 +62,7 @@ const AppBarNavigation = () => {
           <Link
             href="/"
             underline="hover"
-            color={'var(--white-scale-300)'}
+            color={'var(--white-scale-200)'}
             fontSize={14}
             ml={2}
             mr={2}
@@ -72,7 +72,7 @@ const AppBarNavigation = () => {
           <Link
             href="/jobs"
             underline="hover"
-            color={'var(--white-scale-300)'}
+            color={'var(--white-scale-200)'}
             fontSize={14}
             ml={2}
             mr={2}
@@ -82,7 +82,7 @@ const AppBarNavigation = () => {
           <Link
             href="/our-team"
             underline="hover"
-            color={'var(--white-scale-300)'}
+            color={'var(--white-scale-200)'}
             fontSize={14}
             ml={2}
             mr={2}
@@ -104,7 +104,9 @@ const AppBarNavigation = () => {
       <Stack direction={'row'} mx={2}>
         {isSignedIn ? (
           <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
-            <Typography>{user?.firstName}</Typography>
+            <Typography sx={{ color: 'var(--white-scale-200)' }}>
+              {user?.firstName}
+            </Typography>
             <Avatar
               src={user?.imageUrl}
               onClick={handleClick}
@@ -115,7 +117,7 @@ const AppBarNavigation = () => {
           <Link
             href="/login"
             underline="hover"
-            color={'var(--white-scale-400)'}
+            color={'var(--white-scale-200)'}
             fontSize={14}
             ml={2}
             mr={2}

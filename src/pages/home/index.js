@@ -51,12 +51,12 @@ const HomePage = () => {
           A primeira plataforma brasileira a reunir vagas para iniciantes e
           estagiários, <br /> da área de tecnologia, em um só lugar
         </h3>
-        <Button
+        {/* <Button
           text={'Ver Vagas'}
           handleClick={() => {
             navigate('/jobs')
           }}
-        />
+        /> */}
       </div>
       <Footer />
     </React.Fragment>
