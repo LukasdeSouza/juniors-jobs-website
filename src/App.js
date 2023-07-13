@@ -11,6 +11,7 @@ import ContributorsPage from './pages/contributors'
 import HomePage from './pages/home'
 import JobsPage from './pages/jobs'
 import PaymentPage from './pages/payment'
+import PlansPage from './pages/plans'
 import OurTeamPage from './pages/team'
 
 function ClerkProviderWithRoutes() {
@@ -31,6 +32,7 @@ function ClerkProviderWithRoutes() {
         <Route path="/contributors" element={<ContributorsPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
         {/* <Route path="/register" element={<RegisterUser />} /> */}
+        <Route path="/plans" element={<PlansPage />} />
         <Route path="/payment" element={<PaymentPage />} />
 
         <Route path="/login" element={<SignInWithClerk />} />

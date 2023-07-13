@@ -1,0 +1,11 @@
+@import url('../../styles/global.css');
+
+.container-plans-page {
+  /* width: 100%; */
+  height: 90vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

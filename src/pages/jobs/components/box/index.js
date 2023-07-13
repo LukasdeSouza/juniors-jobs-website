@@ -1,3 +1,4 @@
+import { Link, Tooltip } from '@mui/material'
 import './style.css'
 
 const BoxJobs = ({
@@ -23,32 +24,40 @@ const BoxJobs = ({
   }
 
   return (
-    <div className="jobs-grid-object" onClick={() => handleClick()}>
-      <div className="jobs-grid-object-header">
-        <img
-          src={img}
-          alt=""
-          style={{ width: 60, borderRadius: '16px', marginRight: '8px' }}
-        />
-        <div className="jobs-grid-object-header-title-location">
-          <p>{name}</p>
-          <small>{location}</small>
+    <Tooltip
+      title={<Link color={'#fff'}> - Requisitos: {description} </Link>}
+      placement="top-start"
+      arrow={true}
+      enterDelay={200}
+      followCursor={true}
+    >
+      <div className="jobs-grid-object" onClick={() => handleClick()}>
+        <div className="jobs-grid-object-header">
+          <img
+            src={img}
+            alt=""
+            style={{ width: 60, borderRadius: '16px', marginRight: '8px' }}
+          />
+          <div className="jobs-grid-object-header-title-location">
+            <p>{name}</p>
+            <small>{location}</small>
+          </div>
         </div>
-      </div>
-      <p className="jobs-grid-object-title">{title}</p>
+        <p className="jobs-grid-object-title">{title}</p>
 
-      <div className="jobs-grid-chips-info">
-        <small className="jobs-grid-object-type">{type}</small>
-        <small className="jobs-grid-object-tier">{tier}</small>
-        <small className="jobs-grid-object-location">{location}</small>
-        <small className="jobs-grid-object-salary">{salary}</small>
-      </div>
-      {/* <small className="jobs-grid-object-description">{description}</small> */}
-      {/* <div className="jobs-grid-object-button-row">
+        <div className="jobs-grid-chips-info">
+          <small className="jobs-grid-object-type">{type}</small>
+          <small className="jobs-grid-object-tier">{tier}</small>
+          <small className="jobs-grid-object-location">{location}</small>
+          <small className="jobs-grid-object-salary">{salary}</small>
+        </div>
+        {/* <small className="jobs-grid-object-description">{description}</small> */}
+        {/* <div className="jobs-grid-object-button-row">
         <Button text={'Aplicar'} handleClick={handleClick} />
         <ButtonOutlined text={'Detalhes'} />
       </div> */}
-    </div>
+      </div>
+    </Tooltip>
   )
 }
 

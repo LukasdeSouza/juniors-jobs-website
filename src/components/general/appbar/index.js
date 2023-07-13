@@ -5,7 +5,7 @@ import {
   Menu,
   MenuItem,
   Stack,
-  Typography
+  Tooltip
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -59,37 +59,44 @@ const AppBarNavigation = () => {
       />
       <Stack alignItems={'center'} justifyContent={'space-between'}>
         <Stack direction={'row'}>
-          <Link
-            href="/"
-            underline="hover"
-            color={'var(--white-scale-200)'}
-            fontSize={14}
-            ml={2}
-            mr={2}
-          >
-            Home
-          </Link>
-          <Link
-            href="/jobs"
-            underline="hover"
-            color={'var(--white-scale-200)'}
-            fontSize={14}
-            ml={2}
-            mr={2}
-          >
-            Vagas
-          </Link>
-          <Link
-            href="/our-team"
-            underline="hover"
-            color={'var(--white-scale-200)'}
-            fontSize={14}
-            ml={2}
-            mr={2}
-          >
-            {' '}
-            Nossa Equipe
-          </Link>
+          <Tooltip title={'Voltar para página Inicial'}>
+            <Link
+              href="/"
+              underline="hover"
+              color={'var(--white-scale-200)'}
+              fontSize={14}
+              ml={2}
+              mr={2}
+            >
+              Home
+            </Link>
+          </Tooltip>
+
+          <Tooltip title="Veja nossas Vagas">
+            <Link
+              href="/jobs"
+              underline="hover"
+              color={'var(--white-scale-200)'}
+              fontSize={14}
+              ml={2}
+              mr={2}
+            >
+              Vagas
+            </Link>
+          </Tooltip>
+          <Tooltip title={'A galera que fez essa idéia acontecer!'}>
+            <Link
+              href="/our-team"
+              underline="hover"
+              color={'var(--white-scale-200)'}
+              fontSize={14}
+              ml={2}
+              mr={2}
+            >
+              {' '}
+              Nossa Equipe
+            </Link>
+          </Tooltip>
         </Stack>
       </Stack>
       {/* <Link
@@ -103,16 +110,22 @@ const AppBarNavigation = () => {
         </Link> */}
       <Stack direction={'row'} mx={2}>
         {isSignedIn ? (
-          <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
-            <Typography sx={{ color: 'var(--white-scale-200)' }}>
-              {user?.firstName}
-            </Typography>
-            <Avatar
-              src={user?.imageUrl}
-              onClick={handleClick}
-              sx={{ cursor: 'pointer', mx: 2 }}
-            />
-          </Stack>
+          <Tooltip title={'Em breve configurações de Usuário'}>
+            <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
+              <Link
+                sx={{
+                  color: 'var(--white-scale-200)'
+                }}
+              >
+                {user?.firstName}
+              </Link>
+              <Avatar
+                src={user?.imageUrl}
+                onClick={handleClick}
+                sx={{ cursor: 'pointer', mx: 2 }}
+              />
+            </Stack>
+          </Tooltip>
         ) : (
           <Link
             href="/login"
