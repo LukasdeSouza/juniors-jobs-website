@@ -41,7 +41,7 @@ const JobsPage = observer(() => {
 
   useEffect(() => {
     if (isSignedIn === false) {
-      navigate('/login')
+      navigate('/signin')
     } else {
       fetchList()
     }

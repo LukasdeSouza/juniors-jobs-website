@@ -14,6 +14,7 @@ import JobsPage from './pages/jobs'
 import PaymentPage from './pages/payment'
 import PlansPage from './pages/plans'
 import OurTeamPage from './pages/team'
+import UserProfilePage from './pages/profile'
 
 function ClerkProviderWithRoutes() {
   const navigate = useNavigate()
@@ -36,8 +37,9 @@ function ClerkProviderWithRoutes() {
         <Route path="/plans" element={<PlansPage />} />
         <Route path="/payment" element={<PaymentPage />} />
 
-        <Route path="/login" element={<SignInWithClerk />} />
+        <Route path="/signin" element={<SignInWithClerk />} />
         <Route path="/signup" element={<SignUpWithClerk />} />
+        <Route path="/user-profile" element={<UserProfilePage />} />
 
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
 
