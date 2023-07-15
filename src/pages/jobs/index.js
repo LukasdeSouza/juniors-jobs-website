@@ -91,11 +91,15 @@ const JobsPage = observer(() => {
           </div>
         )}
       </div>
-      <PaginationComponent
-        totalPost={jobsStore.state.jobsList.length}
-        postsPerPage={postsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage} />
+      {isSignedIn &&
+        <PaginationComponent
+          totalPost={jobsStore.state.jobsList.length}
+          postsPerPage={postsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      }
+      <p className='text-description-see-other-jobs'>Deseja ver o restante das vagas? <br />Faça Login com seu Usuário e senha</p>
       <Footer />
     </>
   )

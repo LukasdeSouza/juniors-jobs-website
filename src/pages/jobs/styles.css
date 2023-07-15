@@ -49,6 +49,9 @@
 		font-size: 14px;
 		color: var(--white-scale-300)
 	}
+	.text-description-see-other-jobs {
+		text-align: center;
+	}
 	h2 {
 		font-size: 32px;
 	}
