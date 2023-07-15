@@ -30,8 +30,6 @@ const AppBarNavigation = () => {
     setAnchorEl(null)
   }
 
-  console.log(user)
-
   return (
     <AppBar
       elevation={0}
@@ -52,8 +50,7 @@ const AppBarNavigation = () => {
         onClick={() => navigate('/')}
         style={{
           width: '70px',
-          marginLeft: '91px',
-          marginRight: '91px',
+          marginLeft: '32px',
           cursor: 'pointer'
         }}
       />
@@ -110,7 +107,7 @@ const AppBarNavigation = () => {
         </Link> */}
       <Stack direction={'row'} mx={2}>
         {isSignedIn ? (
-          <Tooltip title={'Em breve configurações de Usuário'}>
+          <Tooltip title={'⚙️ Em breve, configurações de Usuário'}>
             <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
               <Link
                 sx={{

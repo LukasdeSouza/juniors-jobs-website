@@ -4,7 +4,7 @@ import './style.css'
 const SignUpWithClerk = () => {
   return (
     <div className="signInWithClerk-container">
-      <SignUp />
+      <SignUp signInUrl={'/signin'} redirectUrl={'/plans'} />
     </div>
   )
 }

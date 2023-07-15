@@ -46,11 +46,7 @@ const Footer = () => {
           encontrar emprego <br /> na área de tecnologia, de forma simples e sem
           burocraria.
         </small>
-        <a
-          href="https://www.vakinha.com.br/3344996"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="/plans" rel="noreferrer">
           <button className="want_to_contribute">Quero Assinar!</button>
         </a>
       </div>

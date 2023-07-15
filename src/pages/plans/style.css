@@ -1,9 +1,9 @@
-@import url('../../styles/global.css');
+@import url("../../styles/global.css");
 
 .container-plans-page {
   /* width: 100%; */
   height: 90vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -12,17 +12,60 @@
 .flex-container-plan-card {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
 }
 .container-plan-card {
   margin: 16px;
   height: 200px;
-  width: 300px;
+  width: 330px;
   border-radius: 16px;
   padding: 16px;
-  background-color:var(--white-scale-200);
+  background-color: var(--white-scale-200);
+  text-align: center;
+}
+.container-plan-card-recommended {
+  margin: 16px;
+  height: 240px;
+  width: 330px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--white-scale-200);
+  text-align: center;
+}
+.container-plan-card-recommended p {
+  color: var(--black-scale-300);
+  font-weight: 600;
+}
+.container-plan-card-premium {
+  margin: 16px;
+  height: 350px;
+  width: 330px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--white-scale-200);
+  text-align: center;
+}
+.container-plan-card-premium p {
+  color: var(--black-scale-300);
+  font-weight: 600;
 }
 .container-plan-card p {
   color: var(--black-scale-300);
   font-weight: 600;
+}
+.small-text-cents-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  /* margin-top: 4px; */
+  text-align: center;
+  color: green;
+}
+.small-text-description {
+  display: flex;
+  flex-direction: "column";
+  text-align: CENTER;
+  font-size: 11px;
+  margin-bottom: 12px;
 }
