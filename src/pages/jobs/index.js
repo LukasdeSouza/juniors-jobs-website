@@ -16,13 +16,14 @@ import Footer from '../../components/general/footer'
 import '../../styles/global.css'
 import BoxJobs from './components/box'
 import './styles.css'
+import PaginationComponent from '../../components/pagination'
 
 const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
 
-  const { isLoaded, userId, sessionId, getToken, isSignedIn } = useAuth()
+  const { getToken, isSignedIn } = useAuth()
   const { user } = useUser()
 
   const fetchList = async () => {
@@ -30,13 +31,13 @@ const JobsPage = observer(() => {
   }
 
   // Pagination rule
-  const [itemsPerPage, setItemsPerPage] = useState(10)
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage, setPostPerPage] = useState(6)
 
-  const pages = Math.ceil(jobsStore.state.jobsList.length / itemsPerPage)
-  const startIndex = currentPage * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const currentItems = jobsStore.state.jobsList.slice(startIndex, endIndex)
+  const lastPostIndex = currentPage * postsPerPage
+  const firstPostIndex = lastPostIndex - postsPerPage
+  const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
+
 
   useEffect(() => {
     if (isSignedIn === false) {
@@ -46,19 +47,6 @@ const JobsPage = observer(() => {
     }
   }, [])
 
-  const postNewJobObj = {
-    _id_empresa: jobsStore.state.jobsList._id,
-    urlImage: jobsStore.state.jobsList.urlImage,
-    name: jobsStore.state.jobsList.name,
-    title: jobsStore.state.jobsList.title,
-    description: jobsStore.state.jobsList.description,
-    tecnologies: jobsStore.state.jobsList.tecnologies,
-    salary: jobsStore.state.jobsList.salary,
-    local: jobsStore.state.jobsList.local,
-    link: jobsStore.state.jobsList.link,
-    tier: jobsStore.state.jobsList.tier,
-    type: jobsStore.state.jobsList.tier
-  }
 
   return (
     <>
@@ -86,9 +74,9 @@ const JobsPage = observer(() => {
           <span className="loader"></span>
         ) : (
           <div className="jobs-grid">
-            {jobsStore.state.jobsList?.map((job) => (
+            {currentPosts?.map((job) => (
               <BoxJobs
-                key={job.name ?? 'N/A'}
+                key={job._id ?? 'N/A'}
                 img={job.urlImage ?? Logo}
                 name={job.name ?? 'Empresa Contrata'}
                 location={job.local === 'A combinar' ? 'Presencial' : job.local}
@@ -103,6 +91,11 @@ const JobsPage = observer(() => {
           </div>
         )}
       </div>
+      <PaginationComponent
+        totalPost={jobsStore.state.jobsList.length}
+        postsPerPage={postsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage} />
       <Footer />
     </>
   )
