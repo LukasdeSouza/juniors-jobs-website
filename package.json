@@ -61,7 +61,6 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.42.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier-plugin-organize-imports": "^3.2.2"
   },

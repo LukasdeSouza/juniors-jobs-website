@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import AppBarNavigation from '../../components/general/appbar'
+import Button from '../../components/general/button'
 import './style.css'
 
 const Page404 = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
       <AppBarNavigation />
@@ -12,7 +16,10 @@ const Page404 = () => {
           procurando
         </p>
         <a href="/">
-          <button>Voltar para página de Vagas </button>
+          <Button
+            text={'Voltar para Vagas'}
+            handleClick={() => navigate('/jobs')}
+          />
         </a>
       </div>
     </div>

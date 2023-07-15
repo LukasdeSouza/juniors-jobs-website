@@ -7,6 +7,7 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import Page404 from './pages/404'
 import SignInWithClerk from './pages/auth/signInWithClerk'
 import SignUpWithClerk from './pages/auth/signUpWithClerk'
+import BuyedSuccessfullyPage from './pages/buyedSuccessfully'
 import ContributorsPage from './pages/contributors'
 import HomePage from './pages/home'
 import JobsPage from './pages/jobs'
@@ -37,6 +38,8 @@ function ClerkProviderWithRoutes() {
 
         <Route path="/login" element={<SignInWithClerk />} />
         <Route path="/signup" element={<SignUpWithClerk />} />
+
+        <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
 
         {/* <Route path="/register-cv" element={<RegisterCVPage />} /> */}
 
