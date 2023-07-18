@@ -9,15 +9,12 @@ import {
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-import { useAuth, useUser } from '@clerk/clerk-react'
 import { useState } from 'react'
 import Logo from '../../../assets/new-design-logo.svg'
 import '../../../styles/global.css'
 
 const AppBarNavigation = () => {
   const navigate = useNavigate()
-  const { isSignedIn } = useAuth()
-  const { user } = useUser()
 
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
@@ -106,7 +103,7 @@ const AppBarNavigation = () => {
         >  Cadastrar CV
         </Link> */}
       <Stack direction={'row'} mx={2}>
-        {isSignedIn ? (
+        {/* {isSignedIn ? (
           <Tooltip title={'⚙️ Em breve, configurações de Usuário'}>
             <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
               <Link
@@ -134,7 +131,7 @@ const AppBarNavigation = () => {
           >
             Login
           </Link>
-        )}
+        )} */}
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}

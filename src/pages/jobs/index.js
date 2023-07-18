@@ -8,7 +8,6 @@ import AppBarNavigation from '../../components/general/appbar'
 import JobsController from '../../controller/jobsController'
 import RootStoreContext from '../../store/rootStore'
 
-import { useAuth, useUser } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/logo_size-removebg.png'
 import SitGuy from '../../assets/sit-in-a-char-man-jobs-page.svg'
@@ -23,8 +22,6 @@ const JobsPage = observer(() => {
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
 
-  const { getToken, isSignedIn } = useAuth()
-  const { user } = useUser()
 
   const fetchList = async () => {
     await controller.getAllJobs()
@@ -40,11 +37,7 @@ const JobsPage = observer(() => {
 
 
   useEffect(() => {
-    if (isSignedIn === false) {
-      navigate('/signin')
-    } else {
-      fetchList()
-    }
+
   }, [])
 
 
@@ -91,15 +84,13 @@ const JobsPage = observer(() => {
           </div>
         )}
       </div>
-      {isSignedIn &&
-        <PaginationComponent
-          totalPost={jobsStore.state.jobsList.length}
-          postsPerPage={postsPerPage}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-      }
-      <p className='text-description-see-other-jobs'>Deseja ver o restante das vagas? <br />Faça Login com seu Usuário e senha</p>
+      <PaginationComponent
+        totalPost={jobsStore.state.jobsList.length}
+        postsPerPage={postsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
+      {/* <p className='text-description-see-other-jobs'>Deseja ver o restante das vagas? <br />Faça Login com seu Usuário e senha</p> */}
       <Footer />
     </>
   )

@@ -29,7 +29,7 @@ class UserController {
       .finally(() => this.store.setLoading(false))
   }
 
-  async userLogin(body) {
+  async userLogin(body, callBack) {
     this.store.setLoading(true)
 
     return await axios
@@ -38,11 +38,8 @@ class UserController {
         this.store.setAlert(true, 'success', response.data.msg)
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('@sj-name', response.data.userInfo.name)
-        localStorage.setItem('@sj-type', response.data.userInfo.type)
         this.store.setState('_id', response.data.userInfo._id)
-        this.store.setState('cnpj', response.data.userInfo.cnpj)
-        localStorage.setItem('@sj-cnpj', response.data.userInfo.cnpj)
-        this.navigate('/splash/userLogged')
+        callBack()
       })
       .catch((error) => {
         this.store.setAlert(true, 'warning', error.response.data.msg)

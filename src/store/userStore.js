@@ -12,13 +12,11 @@ class UserStore {
     token: '',
     imageUrl: ''
   }
-
   alert = {
     open: false,
     message: '',
     type: ''
   }
-
   loading = false
 
   constructor() {
