@@ -37,7 +37,7 @@ const JobsPage = observer(() => {
 
 
   useEffect(() => {
-
+    fetchList()
   }, [])
 
 
@@ -47,7 +47,7 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Encontar sua Primeira Vaga Tech <br /> nunca foi tão fácil
+            Encontrar sua Primeira Vaga Tech <br /> nunca foi tão fácil
           </h2>
           <p>
             Seek Jobs é uma nova maneira de encontrar <br />
