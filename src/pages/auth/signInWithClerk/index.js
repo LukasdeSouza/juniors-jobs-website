@@ -16,14 +16,14 @@ const SignInPage = observer(() => {
   const controller = new UserController(userStore)
   const navigate = useNavigate()
 
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false);
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  const handleClickShowPassword = () => {
+    setShowPassword((show) => !show)
+  }
 
   const handleLogin = () => {
     let body = { email, password }
@@ -35,8 +35,12 @@ const SignInPage = observer(() => {
       <AppBarNavigation />
       <div className='container-signin'>
         <h3 className='login-title'>Login de Usuário</h3>
-        <small className='login-text-description'>Entre com seu usuário e senha cadastrados</small>
-        <small className='login-text-description'>e tenha acesso as melhores vagas para iniciantes</small>
+        <small className='login-text-description'>
+          Entre com seu usuário e senha cadastrados
+        </small>
+        <small className='login-text-description'>
+          e tenha acesso as melhores vagas para iniciantes
+        </small>
         <div className='small-input-box'>
           <small>Email</small>
           <TextField

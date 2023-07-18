@@ -6,6 +6,7 @@
   border-radius: 32px;
   min-height: 320px;
   width: 25%;
+  min-width: 300px;
   padding: 16px;
   margin-top: 64px !important;
   display: flex;
