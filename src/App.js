@@ -29,6 +29,7 @@ function App() {
 
         <Route path="/signin" element={<SignInPage />} />
 
+        <Route path="/checkout" element={<PaymentPage />} />
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
 
         <Route path="*" element={<Page404 />} />

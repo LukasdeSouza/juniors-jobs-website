@@ -3,23 +3,33 @@ import { useNavigate } from 'react-router-dom'
 import AppBarNavigation from '../../components/general/appbar'
 import Button from '../../components/general/button'
 import './style.css'
+import { useContext } from 'react'
+import RootStoreContext from '../../store/rootStore'
+
 
 const PlansPage = () => {
+  const { paymentStore } = useContext(RootStoreContext)
+
   const navigate = useNavigate()
 
-  const navigateBack = () => {
-    navigate('/jobs', { replace: true })
+  const navigateToCheckout = () => {
+    navigate('/checkout')
   }
 
   const navigateToPlan = (e) => {
+    let priceId
     const textContentPlan = e.target.textContent
     if (textContentPlan.includes('Básico')) {
-      window.open('https://buy.stripe.com/cN200I1VRgJPdc48ww', '_blank').focus()
+      priceId = process.env.STRIPE_PRICE_ID_BASIC
+
     } else if (textContentPlan.includes('Recommended')) {
-      window.open('https://buy.stripe.com/bIY3cU583gJP3BuaEF', '_blank')
+      priceId = process.env.STRIPE_PRICE_ID_RECOMMENDED
+
     } else {
-      window.open('https://buy.stripe.com/bIYcNuasn9hnb3W8wy', '_blank')
+      priceId = process.env.STRIPE_PRICE_ID_PREMIUM
     }
+    paymentStore.setState('priceId', priceId)
+    navigateToCheckout()
   }
 
   return (
