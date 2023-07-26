@@ -12,7 +12,6 @@ import GoogleButton from '../../googleButton'
 import UserController from '../../../../controller/userController'
 import RootStoreContext from '../../../../store/rootStore'
 
-import { Alert } from '@mui/material'
 import './style.css'
 
 const RegisterForm = observer(() => {
@@ -79,15 +78,6 @@ const RegisterForm = observer(() => {
 
   return (
     <form className="form-container">
-      {userStore.alert.open && (
-        <Alert
-          severity={userStore.alert.type}
-          onClose={() => userStore.setAlert(false)}
-          sx={{ position: 'absolute' }}
-        >
-          {userStore.alert.message}
-        </Alert>
-      )}
       <h3
         className="mb-2 title-h6"
         style={{ color: '#444', fontSize: 22, marginTop: '24px' }}

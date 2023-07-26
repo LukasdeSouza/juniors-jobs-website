@@ -4,6 +4,7 @@ import React, { useContext } from 'react'
 import PaymentForm from '../../components/paymentForm';
 import PaymentController from '../../controller/paymentController'
 import RootStoreContext from '../../store/rootStore';
+import { toast } from 'react-hot-toast';
 
 const PaymentPage = () => {
   const { paymentStore } = useContext(RootStoreContext)
@@ -30,12 +31,12 @@ const PaymentPage = () => {
         paymentStore.state.checkoutPayment.clientSecret
       )
       if (confirm.error) {
-        return alert('Erro ao efetuar pagamento')
+        return toast.error('Erro ao efetuar pagamento')
       } else {
-        alert('Pagamento Efetuado com Sucesso!')
+        toast.success('Pagamento Efetuado com Sucesso!')
       }
     } else {
-      alert('erro ao efetuar pagamento')
+      toast.error('Erro ao efetuar pagamento')
     }
   }
 

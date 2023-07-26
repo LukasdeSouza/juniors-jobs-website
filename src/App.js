@@ -12,6 +12,7 @@ import PaymentPage from './pages/payment'
 import PlansPage from './pages/plans'
 import OurTeamPage from './pages/team'
 import SignInPage from './pages/auth/signInWithClerk'
+import ToastMain from './components/toast'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
         <Route path="*" element={<Page404 />} />
       </Routes>
+      <ToastMain />
     </BrowserRouter>
 
   )

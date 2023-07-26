@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router'
 import { baseUrl } from '../utils/constants'
+import { toast } from 'react-hot-toast'
 
 class UserController {
   constructor(store) {
@@ -15,16 +16,11 @@ class UserController {
     return await axios
       .post(`${baseUrl}/auth/register`, body)
       .then((response) => {
-        this.store.setAlert(
-          true,
-          'success',
-          'Te enviamos a confirmação de Cadastro no seu Email'
-        )
+        toast.success('Ótimo! Te enviamos a confirmação por email')
         console.log(response)
       })
       .catch((error) => {
-        this.store.setAlert(true, 'warning', error.response.data.msg)
-        console.log(error)
+        toast.error('Erro ao criar usuário')
       })
       .finally(() => this.store.setLoading(false))
   }
@@ -35,15 +31,14 @@ class UserController {
     return await axios
       .post(`${baseUrl}/auth`, body)
       .then((response) => {
-        this.store.setAlert(true, 'success', response.data.msg)
+        toast.success('Login efetuado com Sucesso!')
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('@sj-name', response.data.userInfo.name)
         this.store.setState('_id', response.data.userInfo._id)
         callBack()
       })
-      .catch((error) => {
-        this.store.setAlert(true, 'warning', error.response.data.msg)
-        alert(error.response.data.msg)
+      .catch(() => {
+        toast.error('Não foi possível efetuar o login. Tente novamente')
         this.store.setLoading(false)
       })
       .finally(() => this.store.setLoading(false))

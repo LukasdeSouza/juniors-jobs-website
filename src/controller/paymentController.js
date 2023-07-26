@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { baseUrl } from '../utils/constants'
+import { toast } from 'react-hot-toast'
 
 
 class PaymentController {
@@ -18,7 +19,7 @@ class PaymentController {
         this.store.setLoading(false)
       })
       .catch((error) => {
-        console.log(error)
+        toast.error('Erro ao efetuar pagamento')
         this.store.setLoading(false)
       })
 

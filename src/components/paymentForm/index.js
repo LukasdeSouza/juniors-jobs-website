@@ -6,6 +6,7 @@ import AppBarNavigation from "../general/appbar";
 import { LoadingButton } from "@mui/lab";
 import { observer } from "mobx-react-lite";
 import RootStoreContext from "../../store/rootStore";
+import { toast } from "react-hot-toast";
 
 const PaymentForm = observer(({ createSubscription }) => {
   const { paymentStore } = useContext(RootStoreContext)
@@ -28,7 +29,9 @@ const PaymentForm = observer(({ createSubscription }) => {
           <img src={Logo} alt="" style={{ width: '60px' }} />
           <h3>Concluir Inscrição - Seek Jobs</h3>
           <div className="payment-title-description-container">
-            <small>Você está a só alguns passos de completar sua inscrição na nossa plataforma. Preencha os dados abaixo conforme solicitado e garanta as melhores vagas de tecnologia para iniciantes.</small>
+            <small>Você está a só alguns passos de completar sua inscrição na nossa plataforma.
+              Preencha os dados abaixo conforme solicitado e garanta as melhores vagas de tecnologia para iniciantes.
+            </small>
           </div>
           <div className="payment-textfield-container">
             <label htmlFor="name">Nome Completo*</label>
@@ -64,7 +67,7 @@ const PaymentForm = observer(({ createSubscription }) => {
               value={paymentStore.state.cardExpMonth}
               onChange={(e) => {
                 if (!twoDigitRegex.test(e.target.value)) {
-                  alert('O campo Mês Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                  toast('O campo Mês Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
                 } else {
                   paymentStore.setState('cardExpMonth', parseInt(e.target.value))
                 }
@@ -82,7 +85,7 @@ const PaymentForm = observer(({ createSubscription }) => {
               value={paymentStore.state.cardExpYear}
               onChange={(e) => {
                 if (!twoDigitRegex.test(e.target.value)) {
-                  alert('O campo Ano Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                  toast('O campo Ano Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
                 } else {
                   paymentStore.setState('cardExpYear', parseInt(e.target.value))
                 }
