@@ -14,6 +14,9 @@ const PaymentForm = observer(({ createSubscription }) => {
     e.key === 'Enter' && createSubscription()
   }
 
+  const twoDigitRegex = /^\d{0,2}$/
+
+
   return (
     <>
       <AppBarNavigation />
@@ -59,7 +62,13 @@ const PaymentForm = observer(({ createSubscription }) => {
               placeholder="Um a Dois Dígitos"
               required
               value={paymentStore.state.cardExpMonth}
-              onChange={(e) => paymentStore.setState('cardExpMonth', e.target.value)}
+              onChange={(e) => {
+                if (!twoDigitRegex.test(e.target.value)) {
+                  alert('O campo Mês Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                } else {
+                  paymentStore.setState('cardExpMonth', parseInt(e.target.value))
+                }
+              }}
             />
           </div>
           <div className="payment-textfield-container">
@@ -71,7 +80,13 @@ const PaymentForm = observer(({ createSubscription }) => {
               placeholder="Dois Dígitos"
               required
               value={paymentStore.state.cardExpYear}
-              onChange={(e) => paymentStore.setState('cardExpYear', e.target.value)}
+              onChange={(e) => {
+                if (!twoDigitRegex.test(e.target.value)) {
+                  alert('O campo Ano Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                } else {
+                  paymentStore.setState('cardExpYear', parseInt(e.target.value))
+                }
+              }}
             />
           </div>
           <div className="payment-textfield-container">
