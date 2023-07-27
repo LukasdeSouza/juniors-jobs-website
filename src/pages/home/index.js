@@ -1,25 +1,16 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router'
 import HomePageImage from '../../assets/img-sec-contribuicao.png'
 import AppBarNavigation from '../../components/general/appbar'
 import Button from '../../components/general/button'
 import Footer from '../../components/general/footer'
-import JobsController from '../../controller/jobsController'
-import RootStoreContext from '../../store/rootStore'
 import './style.css'
+import BoxJobs from '../jobs/components/box'
+import { mockJobs } from '../../utils/mockJobs'
+
 
 const HomePage = () => {
-  const { jobsStore } = useContext(RootStoreContext)
-  const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
-
-  const fetchList = async () => {
-    await controller.getAllJobs()
-  }
-
-  useEffect(() => {
-    fetchList()
-  }, [])
 
   return (
     <React.Fragment>
@@ -35,7 +26,7 @@ const HomePage = () => {
           <Button
             text={'Ver Vagas'}
             handleClick={() => {
-              navigate('/jobs')
+              navigate('/auth/login')
             }}
           />
         </div>
@@ -51,12 +42,21 @@ const HomePage = () => {
           A primeira plataforma brasileira a reunir vagas para iniciantes e
           estagiários, <br /> da área de tecnologia, em um só lugar
         </h3>
-        {/* <Button
-          text={'Ver Vagas'}
-          handleClick={() => {
-            navigate('/jobs')
-          }}
-        /> */}
+      </div>
+      <div className='homepage-container-mock-jobs'>
+        {mockJobs.map((job) => (
+          <BoxJobs
+            img={job.img}
+            name={job.name}
+            tier={job.tier}
+            title={job.title}
+            salary={job.salary}
+            description={job.description}
+            location={job.location}
+            type={job.type}
+            link={job.link}
+          />
+        ))}
       </div>
       <Footer />
     </React.Fragment>

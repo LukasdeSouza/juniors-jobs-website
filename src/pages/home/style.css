@@ -2,7 +2,7 @@
 
 .container-header-homepage {
   width: 80%;
-  margin:64px;
+  margin: 64px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -19,7 +19,14 @@
   flex-direction: column;
   align-items: center;
 }
+.homepage-container-mock-jobs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 16px;
+}
 
 h2 {
-  color: var(--white-scale-200)
+  color: var(--white-scale-200);
 }

@@ -13,6 +13,8 @@ import PlansPage from './pages/plans'
 import OurTeamPage from './pages/team'
 import SignInPage from './pages/auth/signInWithClerk'
 import ToastMain from './components/toast'
+import LoginPage from './pages/auth/login'
+import RegisterUser from './pages/auth/register'
 
 function App() {
 
@@ -32,6 +34,9 @@ function App() {
 
         <Route path="/checkout" element={<PaymentPage />} />
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
+
+        <Route path="/auth/login" element={<LoginPage />} />
+        <Route path="/auth/register" element={<RegisterUser />} />
 
         <Route path="*" element={<Page404 />} />
       </Routes>

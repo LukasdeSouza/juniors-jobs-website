@@ -5,9 +5,10 @@ import Button from '../../components/general/button'
 import './style.css'
 import { useContext } from 'react'
 import RootStoreContext from '../../store/rootStore'
+import { observer } from 'mobx-react-lite'
 
 
-const PlansPage = () => {
+const PlansPage = observer(() => {
   const { paymentStore } = useContext(RootStoreContext)
 
   const navigate = useNavigate()
@@ -17,16 +18,16 @@ const PlansPage = () => {
   }
 
   const navigateToPlan = (e) => {
-    let priceId
+    let priceId = ''
     const textContentPlan = e.target.textContent
     if (textContentPlan.includes('Básico')) {
-      priceId = process.env.STRIPE_PRICE_ID_BASIC
+      priceId = 'price_1NU80VHC03jpzXbs8wRD1g0v'
 
     } else if (textContentPlan.includes('Recommended')) {
-      priceId = process.env.STRIPE_PRICE_ID_RECOMMENDED
+      priceId = 'price_1NU82nHC03jpzXbsNDKZzVIH'
 
     } else {
-      priceId = process.env.STRIPE_PRICE_ID_PREMIUM
+      priceId = 'price_1NU84THC03jpzXbsxg2F6xyu'
     }
     paymentStore.setState('priceId', priceId)
     navigateToCheckout()
@@ -125,5 +126,6 @@ const PlansPage = () => {
     </>
   )
 }
+)
 
 export default PlansPage

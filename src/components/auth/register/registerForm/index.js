@@ -123,11 +123,11 @@ const RegisterForm = observer(() => {
         />
       </div>
       <div className="button-container">
-        <Checkbox
+        {/* <Checkbox
           text="Sou empresa"
           id="choose-user"
           handleChange={chooseType}
-        />
+        /> */}
         <LoadingButton
           loading={userStore.loading}
           fullWidth

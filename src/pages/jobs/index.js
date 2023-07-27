@@ -16,6 +16,7 @@ import '../../styles/global.css'
 import BoxJobs from './components/box'
 import './styles.css'
 import PaginationComponent from '../../components/pagination'
+import { mockJobs } from '../../utils/mockJobs'
 
 const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
@@ -63,26 +64,40 @@ const JobsPage = observer(() => {
       </div>
 
       <div className="filter-jobs-main-container">
-        {jobsStore.loading ? (
-          <span className="loader"></span>
-        ) : (
-          <div className="jobs-grid">
-            {currentPosts?.map((job) => (
+        {jobsStore.loading ? (<span className="loader" />) :
+          localStorage.getItem('@token-skj') !== undefined ?
+            (
+              <div className="jobs-grid">
+                {currentPosts?.map((job) => (
+                  <BoxJobs
+                    key={job._id ?? 'N/A'}
+                    img={job.urlImage ?? Logo}
+                    name={job.name ?? 'Empresa Contrata'}
+                    location={job.local === 'A combinar' ? 'Presencial' : job.local}
+                    title={job.title ?? 'Sem Título'}
+                    type={job.type ?? 'N/A'}
+                    tier={job.tier ?? 'N/A'}
+                    salary={job.salary ?? 'N/A'}
+                    description={job.description ?? 'Descrição não informada'}
+                    link={job.link}
+                  />
+                ))}
+              </div>
+            ) :
+            mockJobs.map((job) => (
               <BoxJobs
-                key={job._id ?? 'N/A'}
-                img={job.urlImage ?? Logo}
-                name={job.name ?? 'Empresa Contrata'}
-                location={job.local === 'A combinar' ? 'Presencial' : job.local}
-                title={job.title ?? 'Sem Título'}
-                type={job.type ?? 'N/A'}
-                tier={job.tier ?? 'N/A'}
-                salary={job.salary ?? 'N/A'}
-                description={job.description ?? 'Descrição não informada'}
+                img={job.img}
+                name={job.name}
+                tier={job.tier}
+                title={job.title}
+                salary={job.salary}
+                description={job.description}
+                location={job.location}
+                type={job.type}
                 link={job.link}
               />
-            ))}
-          </div>
-        )}
+            ))
+        }
       </div>
       <PaginationComponent
         totalPost={jobsStore.state.jobsList.length}

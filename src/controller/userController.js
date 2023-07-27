@@ -32,8 +32,8 @@ class UserController {
       .post(`${baseUrl}/auth`, body)
       .then((response) => {
         toast.success('Login efetuado com Sucesso!')
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('@sj-name', response.data.userInfo.name)
+        localStorage.setItem('@token-skj', response.data.token)
+        localStorage.setItem('@skj-name', response.data.userInfo.name)
         this.store.setState('_id', response.data.userInfo._id)
         callBack()
       })

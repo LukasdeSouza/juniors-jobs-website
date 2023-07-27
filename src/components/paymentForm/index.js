@@ -7,14 +7,44 @@ import { LoadingButton } from "@mui/lab";
 import { observer } from "mobx-react-lite";
 import RootStoreContext from "../../store/rootStore";
 import { toast } from "react-hot-toast";
+import { useStripe } from "@stripe/react-stripe-js";
+import PaymentController from "../../controller/paymentController";
 
-const PaymentForm = observer(({ createSubscription }) => {
+const PaymentForm = observer(() => {
   const { paymentStore } = useContext(RootStoreContext)
+  const controller = new PaymentController(paymentStore)
+
+  const stripe = useStripe()
+
+  const createSubscription = async () => {
+    let dataObj = {
+      name: paymentStore.state.name,
+      email: paymentStore.state.email,
+      priceId: paymentStore.state.priceId,
+      cardExpMonth: paymentStore.state.cardExpMonth,
+      cardExpYear: paymentStore.state.cardExpYear,
+      cardNumber: paymentStore.state.cardNumber,
+      cvc: paymentStore.state.cardCVC
+    }
+    await controller.checkoutPayment(dataObj)
+
+    if (paymentStore.state.checkoutPayment?.clientSecret !== undefined) {
+      const confirm = await stripe.confirmCardPayment(
+        paymentStore.state.checkoutPayment.clientSecret
+      )
+      if (confirm.error) {
+        return toast.error('Erro ao efetuar pagamento')
+      } else {
+        toast.success('Pagamento Efetuado com Sucesso!')
+      }
+    } else {
+      toast.error('Erro ao efetuar pagamento')
+    }
+  }
 
   const onKeyDown = (e) => {
     e.key === 'Enter' && createSubscription()
   }
-
   const twoDigitRegex = /^\d{0,2}$/
 
 

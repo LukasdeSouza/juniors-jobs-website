@@ -11,17 +11,34 @@ class PaymentController {
 
   async checkoutPayment(body) {
     this.store.setLoading(true)
-    return await axios
-      .post(`${baseUrl}/payment/create-subscription`, body)
-      .then((response) => {
-        let data = response.json()
-        this.store.setState('checkoutPayment', data)
-        this.store.setLoading(false)
+    console.log(body)
+
+    await
+      fetch(`${baseUrl}/payment/create-subscription`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: "same-origin",
       })
-      .catch((error) => {
-        toast.error('Erro ao efetuar pagamento')
-        this.store.setLoading(false)
-      })
+        .then((response) => console.log(response))
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+    // axios
+    //   .post(`${baseUrl}/payment/create-subscription`, body)
+    //   .then((response) => {
+    //     alert('caiu no then')
+    //     console.log(response)
+    //     this.store.setState('checkoutPayment', data)
+    //     this.store.setLoading(false)
+    //   })
+    //   .catch((error) => {
+    //     alert('caiu no erro')
+    //     console.log(error)
+    //     toast.error('Erro ao efetuar pagamento')
+    //     this.store.setLoading(false)
+    //   })
 
   }
 

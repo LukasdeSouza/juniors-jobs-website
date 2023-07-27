@@ -21,12 +21,12 @@ const LoginPage = observer(() => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const doLogin = () => {
+  const doLogin = async () => {
     const body = {
       email,
       password
     }
-    controller.userLogin(body)
+    await controller.userLogin(body)
   }
 
   return (
@@ -73,7 +73,7 @@ const LoginPage = observer(() => {
           fontSize={14}
           color={'#272727'}
         >
-          Junior Jobs é a maneira mais fácil de encontrar seu emprego Tech
+          Seek Jobs é a maneira mais fácil de encontrar seu emprego Tech
         </Typography>
         <TextField
           label="Email"
@@ -100,35 +100,32 @@ const LoginPage = observer(() => {
             }
           }}
         />
-        <Stack
-          direction={'row'}
-          alignItems={'center'}
-          justifyContent={'space-evenly'}
-          width={'90%'}
-          mt={4}
+        <LoadingButton
+          loading={userStore.loading}
+          variant="outlined"
+          sx={{
+            textTransform: 'none',
+            fontFamily: 'Montserrat',
+            width: '90%',
+            mt: 3
+          }}
+          onClick={() => navigate('/auth/register')}
         >
-          <LoadingButton
-            loading={userStore.loading}
-            variant="outlined"
-            sx={{ textTransform: 'none', fontFamily: 'Montserrat' }}
-            onClick={() => navigate('/register')}
-          >
-            Cadastre-se
-          </LoadingButton>
-          <LoadingButton
-            loading={userStore.loading}
-            variant="contained"
-            sx={{
-              marginLeft: 1,
-              backgroundColor: 'var(--blue-scale-300)',
-              textTransform: 'capitalize',
-              fontFamily: 'Montserrat'
-            }}
-            onClick={doLogin}
-          >
-            Entrar
-          </LoadingButton>
-        </Stack>
+          Cadastre-se
+        </LoadingButton>
+        <LoadingButton
+          loading={userStore.loading}
+          variant="contained"
+          sx={{
+            backgroundColor: 'var(--blue-scale-300)',
+            textTransform: 'capitalize',
+            fontFamily: 'Montserrat',
+            width: '90%'
+          }}
+          onClick={doLogin}
+        >
+          Entrar
+        </LoadingButton>
         <Typography
           fontFamily={'Montserrat'}
           fontSize={11}

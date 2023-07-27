@@ -1,21 +1,21 @@
-@import '../../../styles/global.css';
-@import '../../../styles/utility-classes.css';
+@import "../../../styles/global.css";
+@import "../../../styles/utility-classes.css";
 
- .register-container {
-    background-color: #ffff;
-    box-shadow: var(--bs-shadow-200);
-    border-radius: 0px 0px 55px 0px;    
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 60vw;
-    height: 522px;
- }
+.register-container {
+  background-color: #ffff;
+  box-shadow: var(--bs-shadow-200);
+  border-radius: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55vw;
+  height: 480px;
+}
 
 .main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

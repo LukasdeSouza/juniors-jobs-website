@@ -1,12 +1,12 @@
-@import '../../../styles/global.css';
-@import '../../../styles/utility-classes.css';
+@import "../../../styles/global.css";
+@import "../../../styles/utility-classes.css";
 
 .input-component {
-    border: 1px solid var(--black-scale-100);
-    border-radius: 12px;
-    height: 40px;
-    max-width: 25em;
-    width: 80%;
-    margin-bottom:8px;
-    margin-right: 8px;
+  border: 1px solid var(--black-scale-100);
+  border-radius: 4px;
+  height: 40px;
+  max-width: 25em;
+  width: 80%;
+  margin-bottom: 2px;
+  margin-right: 8px;
 }
