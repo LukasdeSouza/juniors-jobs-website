@@ -154,6 +154,7 @@ const PaymentForm = observer(() => {
           </div>
           <LoadingButton
             variant="contained"
+            loading={paymentStore.loading}
             onClick={createSubscription}
             sx={{ width: "80%" }} >Concluir Inscrição</LoadingButton>
         </form>

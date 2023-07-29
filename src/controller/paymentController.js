@@ -20,6 +20,8 @@ class PaymentController {
       }
     })
       .then((data) => data.json())
+
+    this.store.setLoading(false)
     this.store.setState('clientSecret', response.clientSecret)
     this.store.setState('subscriptionId', response.subscriptionId)
     callback()
