@@ -8,8 +8,6 @@ class UserController {
     this.store = store
   }
 
-  navigate = useNavigate()
-
   async userRegister(body) {
     this.store.setLoading(true)
 
@@ -33,16 +31,15 @@ class UserController {
       .then((response) => {
         if (response.data.msg === 'Login Efetuado com Sucesso') {
           localStorage.setItem('@token-skj', response.data.token)
-          localStorage.setItem('@skj-name', response.data.userInfo.name)
-          this.store.setState('_id', response.data.userInfo._id)
+          this.store.setState('userInfo', response.data.userInfo)
           callBack()
           toast.success('Login Efetuado com Sucesso!')
         } else {
           toast(response.data.msg)
         }
       })
-      .catch(() => {
-        toast.error('Não foi possível efetuar o login. Tente novamente')
+      .catch((error) => {
+        toast.error(error.response.data?.msg)
         this.store.setLoading(false)
       })
       .finally(() => this.store.setLoading(false))

@@ -2,6 +2,7 @@ import { action, makeAutoObservable, observable } from 'mobx'
 
 class UserStore {
   state = {
+    userInfo: {},
     _id: '',
     name: '',
     email: '',

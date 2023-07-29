@@ -26,13 +26,13 @@ const RegisterForm = observer(() => {
     validateInputs()
   }
 
-  const chooseType = ({ target: { checked } }) => {
-    if (checked) {
-      userStore.setState('type', 'company')
-    } else {
-      userStore.setState('type', 'person')
-    }
-  }
+  // const chooseType = ({ target: { checked } }) => {
+  //   if (checked) {
+  //     userStore.setState('type', 'company')
+  //   } else {
+  //     userStore.setState('type', 'person')
+  //   }
+  // }
 
   const validateInputs = () => {
     const emptyField = userStore.state.name.length > 0
@@ -48,15 +48,12 @@ const RegisterForm = observer(() => {
     setIsValid(status)
   }
 
-  const responseGoogle = ({
-    profileObj: { googleId, name, email, imageUrl }
-  }) => {
-    userStore.setState('imageUrl', imageUrl)
-    userStore.setState('token', googleId)
-    userStore.setState('name', name)
-    userStore.setState('email', email)
+  const responseGoogle = ({ profileObj }) => {
+    localStorage.setItem('@token-skj', profileObj.googleId)
+    userStore.setState('email', profileObj.email)
 
-    navigate('/splash/userRegistered')
+
+    navigate('/plans')
   }
 
   const cleanAllFields = () => {

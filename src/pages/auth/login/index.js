@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 
-import { Container, Stack, TextField, Typography } from '@mui/material'
+import { Button, Container, Stack, TextField, Typography } from '@mui/material'
 
 import '../../../styles/global.css'
 
@@ -106,19 +106,6 @@ const LoginPage = observer(() => {
         />
         <LoadingButton
           loading={userStore.loading}
-          variant="outlined"
-          sx={{
-            textTransform: 'none',
-            fontFamily: 'Montserrat',
-            width: '90%',
-            mt: 3
-          }}
-          onClick={() => navigate('/auth/register')}
-        >
-          Cadastre-se
-        </LoadingButton>
-        <LoadingButton
-          loading={userStore.loading}
           variant="contained"
           sx={{
             backgroundColor: 'var(--blue-scale-300)',
@@ -130,6 +117,18 @@ const LoginPage = observer(() => {
         >
           Entrar
         </LoadingButton>
+        <Button
+          variant="outlined"
+          sx={{
+            textTransform: 'none',
+            fontFamily: 'Montserrat',
+            width: '90%',
+            mt: 3
+          }}
+          onClick={() => navigate('/auth/register')}
+        >
+          Não tenho Cadastro
+        </Button>
         <Typography
           fontFamily={'Montserrat'}
           fontSize={11}
@@ -137,7 +136,7 @@ const LoginPage = observer(() => {
           mt={3}
           sx={{ cursor: 'pointer' }}
         >
-          Esqueceu a senha?
+          Esqueceu sua senha?
         </Typography>
       </Stack>
     </Container>
