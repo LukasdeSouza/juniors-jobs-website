@@ -28,18 +28,20 @@ const PaymentForm = observer(() => {
     }
     await controller.checkoutPayment(dataObj)
 
-    if (paymentStore.state.checkoutPayment?.clientSecret !== undefined) {
-      const confirm = await stripe.confirmCardPayment(
-        paymentStore.state.checkoutPayment.clientSecret
-      )
-      if (confirm.error) {
-        return toast.error('Erro ao efetuar pagamento')
-      } else {
-        toast.success('Pagamento Efetuado com Sucesso!')
-      }
-    } else {
-      toast.error('Erro ao efetuar pagamento')
-    }
+    console.log(paymentStore.state.checkoutPayment?.clientSecret)
+
+    // if (paymentStore.state.checkoutPayment?.clientSecret !== undefined) {
+    //   const confirm = await stripe.confirmCardPayment(
+    //     paymentStore.state.checkoutPayment.clientSecret
+    //   )
+    //   if (confirm.error) {
+    //     return toast.error('Erro ao efetuar pagamento')
+    //   } else {
+    //     toast.success('Pagamento Efetuado com Sucesso!')
+    //   }
+    // } else {
+    //   toast.error('Erro ao efetuar pagamento')
+    // }
   }
 
   const onKeyDown = (e) => {
