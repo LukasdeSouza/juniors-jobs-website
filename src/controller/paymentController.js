@@ -11,20 +11,19 @@ class PaymentController {
 
   async checkoutPayment(body) {
     this.store.setLoading(true)
-    console.log(body)
 
-    await
-      fetch(`${baseUrl}/payment/create-subscription`, {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: "same-origin",
-      })
-        .then((response) => console.log(response))
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err))
+    await fetch(`${baseUrl}/payment/create-subscription`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Headers": "X-Api-Key, Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      }
+    })
+      .then((response) => console.log(response))
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err))
     // axios
     //   .post(`${baseUrl}/payment/create-subscription`, body)
     //   .then((response) => {
