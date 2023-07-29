@@ -9,35 +9,20 @@ class PaymentController {
     this.store = store
   }
 
-  async checkoutPayment(body) {
+  async checkoutPayment(body, callback) {
     this.store.setLoading(true)
 
-    await fetch(`${baseUrl}/payment/create-subscription`, {
+    const response = await fetch(`${baseUrl}/payment/create-subscription`, {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {
         'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "*",
-        // "Access-Control-Allow-Headers": "X-Api-Key, Origin, X-Requested-With, Content-Type, Accept, Authorization"
       }
     })
-      .then((response) => console.log(response))
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err))
-    // axios
-    //   .post(`${baseUrl}/payment/create-subscription`, body)
-    //   .then((response) => {
-    //     alert('caiu no then')
-    //     console.log(response)
-    //     this.store.setState('checkoutPayment', data)
-    //     this.store.setLoading(false)
-    //   })
-    //   .catch((error) => {
-    //     alert('caiu no erro')
-    //     console.log(error)
-    //     toast.error('Erro ao efetuar pagamento')
-    //     this.store.setLoading(false)
-    //   })
+      .then((data) => data.json())
+    this.store.setState('clientSecret', response.clientSecret)
+    this.store.setState('subscriptionId', response.subscriptionId)
+    callback()
 
   }
 

@@ -9,7 +9,9 @@ class PaymentStore {
     cardExpYear: 0,
     cardNumber: '',
     cardCVC: '',
-    checkoutPayment: {}
+    checkoutPayment: {},
+    clientSecret: '',
+    subscriptionId: ''
   }
   loading = false
 

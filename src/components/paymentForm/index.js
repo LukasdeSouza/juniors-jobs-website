@@ -28,8 +28,6 @@ const PaymentForm = observer(() => {
     }
     await controller.checkoutPayment(dataObj)
 
-    console.log(paymentStore.state.checkoutPayment?.clientSecret)
-
     // if (paymentStore.state.checkoutPayment?.clientSecret !== undefined) {
     //   const confirm = await stripe.confirmCardPayment(
     //     paymentStore.state.checkoutPayment.clientSecret
