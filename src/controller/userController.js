@@ -31,11 +31,15 @@ class UserController {
     return await axios
       .post(`${baseUrl}/auth`, body)
       .then((response) => {
-        toast.success('Login efetuado com Sucesso!')
-        localStorage.setItem('@token-skj', response.data.token)
-        localStorage.setItem('@skj-name', response.data.userInfo.name)
-        this.store.setState('_id', response.data.userInfo._id)
-        callBack()
+        if (response.data.msg === 'Login Efetuado com Sucesso') {
+          localStorage.setItem('@token-skj', response.data.token)
+          localStorage.setItem('@skj-name', response.data.userInfo.name)
+          this.store.setState('_id', response.data.userInfo._id)
+          callBack()
+          toast.success('Login Efetuado com Sucesso!')
+        } else {
+          toast(response.data.msg)
+        }
       })
       .catch(() => {
         toast.error('Não foi possível efetuar o login. Tente novamente')

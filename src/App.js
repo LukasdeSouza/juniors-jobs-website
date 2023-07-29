@@ -11,7 +11,6 @@ import JobsPage from './pages/jobs'
 import PaymentPage from './pages/payment'
 import PlansPage from './pages/plans'
 import OurTeamPage from './pages/team'
-import SignInPage from './pages/auth/signInWithClerk'
 import ToastMain from './components/toast'
 import LoginPage from './pages/auth/login'
 import RegisterUser from './pages/auth/register'
@@ -29,8 +28,6 @@ function App() {
 
         <Route path="/plans" element={<PlansPage />} />
         <Route path="/payment" element={<PaymentPage />} />
-
-        <Route path="/signin" element={<SignInPage />} />
 
         <Route path="/checkout" element={<PaymentPage />} />
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />

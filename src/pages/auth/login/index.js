@@ -21,12 +21,16 @@ const LoginPage = observer(() => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const goToPlansPage = () => {
+    navigate('/plans')
+  }
+
   const doLogin = async () => {
     const body = {
       email,
       password
     }
-    await controller.userLogin(body)
+    await controller.userLogin(body, goToPlansPage)
   }
 
   return (

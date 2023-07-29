@@ -47,7 +47,7 @@ const AppBarNavigation = () => {
         onClick={() => navigate('/')}
         style={{
           width: '70px',
-          marginLeft: '32px',
+          marginLeft: '16px',
           cursor: 'pointer'
         }}
       />
@@ -76,6 +76,19 @@ const AppBarNavigation = () => {
               mr={2}
             >
               Vagas
+            </Link>
+          </Tooltip>
+          <Tooltip title={'Veja os nossos planos'}>
+            <Link
+              href="/plans"
+              underline="hover"
+              color={'var(--white-scale-200)'}
+              fontSize={14}
+              ml={2}
+              mr={2}
+            >
+              {' '}
+              Planos
             </Link>
           </Tooltip>
           <Tooltip title={'A galera que fez essa idéia acontecer!'}>
