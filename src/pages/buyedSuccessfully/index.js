@@ -5,10 +5,9 @@ import './style.css'
 const BuyedSuccessfullyPage = () => {
   return (
     <div className="container-congratulations">
-      <h2>Boa!</h2>
+      <h2>🎉 Boa!</h2>
       <p>
-        Até o final do dia o seu acesso integral a plataforma será liberado,
-        belê?
+        Obrigado por assinar a plataforma. Volte para a página de Vagas para desfrutar do seu acesso!
       </p>
       <div className="container-congratulations-image">
         <img src={CongratsAnimation} alt="" />

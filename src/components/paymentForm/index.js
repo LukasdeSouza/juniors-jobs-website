@@ -9,12 +9,18 @@ import RootStoreContext from "../../store/rootStore";
 import { toast } from "react-hot-toast";
 import { useStripe } from "@stripe/react-stripe-js";
 import PaymentController from "../../controller/paymentController";
+import { useNavigate } from "react-router-dom";
 
 const PaymentForm = observer(() => {
   const { paymentStore } = useContext(RootStoreContext)
   const controller = new PaymentController(paymentStore)
+  const navigate = useNavigate()
 
   const stripe = useStripe()
+
+  const buyedSucessfully = () => {
+    navigate('/buyedsucessfully')
+  }
 
   const createSubscription = async () => {
     let dataObj = {
@@ -26,7 +32,7 @@ const PaymentForm = observer(() => {
       cardNumber: paymentStore.state.cardNumber,
       cvc: paymentStore.state.cardCVC
     }
-    await controller.checkoutPayment(dataObj)
+    await controller.checkoutPayment(dataObj, buyedSucessfully)
 
     // if (paymentStore.state.checkoutPayment?.clientSecret !== undefined) {
     //   const confirm = await stripe.confirmCardPayment(
