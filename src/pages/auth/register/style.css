@@ -2,7 +2,7 @@
 @import "../../../styles/utility-classes.css";
 
 .register-container {
-  background-color: #ffff;
+  background-color: var(--white-scale-100);
   box-shadow: var(--bs-shadow-200);
   border-radius: 24px;
   background-repeat: no-repeat;
@@ -10,8 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 55vw;
-  height: 480px;
+  width: 50vw;
+  height: 415px;
+  min-height: 415px;
 }
 
 .main-container {

@@ -103,7 +103,7 @@ const PaymentForm = observer(() => {
               value={paymentStore.state.cardExpMonth}
               onChange={(e) => {
                 if (!twoDigitRegex.test(e.target.value)) {
-                  toast('O campo Mês Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                  toast('O campo Mês Vencimento Cartão deve receber de 1 a 2 números e não iniciar com zero')
                 } else {
                   paymentStore.setState('cardExpMonth', parseInt(e.target.value))
                 }
@@ -121,7 +121,7 @@ const PaymentForm = observer(() => {
               value={paymentStore.state.cardExpYear}
               onChange={(e) => {
                 if (!twoDigitRegex.test(e.target.value)) {
-                  toast('O campo Ano Vencimento Cartão devem receber apenas dois números e não iniciar com zero')
+                  toast('O campo Ano Vencimento Cartão deve receber de 1 a 2 números e não iniciar com zero')
                 } else {
                   paymentStore.setState('cardExpYear', parseInt(e.target.value))
                 }

@@ -48,21 +48,21 @@ const RegisterForm = observer(() => {
     setIsValid(status)
   }
 
-  const responseGoogle = ({ profileObj }) => {
-    localStorage.setItem('@token-skj', profileObj.googleId)
-    userStore.setState('email', profileObj.email)
+  // const responseGoogle = ({ profileObj }) => {
+  //   localStorage.setItem('@token-skj', profileObj.googleId)
+  //   userStore.setState('email', profileObj.email)
 
 
-    navigate('/plans')
-  }
+  //   navigate('/plans')
+  // }
 
-  const cleanAllFields = () => {
-    const input = document.getElementsByTagName('input')
-    input.value = ''
-  }
+  // const cleanAllFields = () => {
+  //   const input = document.getElementsByTagName('input')
+  //   input.value = ''
+  // }
 
-  const saveUser = () => {
-    const newUser = {
+  const registerUser = () => {
+    let newUser = {
       name: userStore.state.name,
       email: userStore.state.email,
       password: userStore.state.password,
@@ -76,13 +76,16 @@ const RegisterForm = observer(() => {
   return (
     <form className="form-container">
       <h3
-        className="mb-2 title-h6"
-        style={{ color: '#444', fontSize: 22, marginTop: '24px' }}
+        className="title-h6"
+        style={{ color: '#444', fontSize: 22, }}
       >
         {' '}
-        Crie sua conta{' '}
+        👋 Cadastre seu Usuário
       </h3>
-      <div className="google-container">
+      <p className='form-container-text-description'>
+        Crie sua conta e comece já a utilizar nossa plataforma
+      </p>
+      {/* <div className="google-container">
         <GoogleLogin
           clientId="842128105172-82qtuinhishq32q8nhrrbsqu0v301a24.apps.googleusercontent.com"
           render={(renderProps) => (
@@ -92,23 +95,23 @@ const RegisterForm = observer(() => {
           onFailure={responseGoogle}
           cookiePolicy={'single_host_origin'}
         />
-      </div>
+      </div> */}
       <div className="input-container">
         <Input
           type="text"
-          placeHolder="Nome"
+          placeHolder="Nome Completo*"
           name="name"
           handleChange={handleChange}
         />
         <Input
           type="email"
-          placeHolder="Email"
+          placeHolder="Email*"
           name="email"
           handleChange={handleChange}
         />
         <Input
           type="password"
-          placeHolder="Senha"
+          placeHolder="Senha*"
           name="password"
           handleChange={handleChange}
         />
@@ -120,18 +123,14 @@ const RegisterForm = observer(() => {
         />
       </div>
       <div className="button-container">
-        {/* <Checkbox
-          text="Sou empresa"
-          id="choose-user"
-          handleChange={chooseType}
-        /> */}
         <LoadingButton
           loading={userStore.loading}
           fullWidth
           variant="contained"
-          onClick={() => saveUser()}
+          sx={{ textTransform: 'none', fontFamily: "montserrat" }}
+          onClick={() => registerUser()}
         >
-          Cadastrar
+          Pronto!
         </LoadingButton>
       </div>
     </form>

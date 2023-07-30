@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { useNavigate } from 'react-router'
 import { baseUrl } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
@@ -8,17 +7,25 @@ class UserController {
     this.store = store
   }
 
-  async userRegister(body) {
+  async userRegister(body, callBack) {
     this.store.setLoading(true)
 
     return await axios
-      .post(`${baseUrl}/auth/register`, body)
+      .post(`${baseUrl}/auth/register`, body, {
+        headers:
+        {
+          // 'content-type': 'text/json',
+          'Access-Control-Allow-Origin': "*"
+        },
+      })
       .then((response) => {
-        toast.success('Ótimo! Te enviamos a confirmação por email')
-        console.log(response)
+        localStorage.setItem('@token-skj', response.data.userInfo.token)
+        this.store.setState('userInfo', response.data.userInfo)
+        toast.success('Usuário Cadastrado com Sucesso')
+        callBack()
       })
       .catch((error) => {
-        toast.error('Erro ao criar usuário')
+        toast.error(error.response.data.msg)
       })
       .finally(() => this.store.setLoading(false))
   }
