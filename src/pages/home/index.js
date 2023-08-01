@@ -18,13 +18,15 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Estagiários e Juniors da área Tech, <br />
+            Nunca foi tão fácil encontrar, <br />
+            Vagas para Júniors e Estagiários na área Tech
           </h2>
           <span className="left-container-span-text">
-            Encontre as melhores vagas em nossa plataforma
+            Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
+            Chega de vasculhar site por site, ou ter que filtrar vagas que encaixem em um perfil iniciante
           </span>
           <Button
-            text={'Ver Vagas'}
+            text={'Quero ver as vagas'}
             handleClick={() => {
               navigate('/auth/login')
             }}

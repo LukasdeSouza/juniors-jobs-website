@@ -12,11 +12,7 @@ class UserController {
 
     return await axios
       .post(`${baseUrl}/auth/register`, body, {
-        headers:
-        {
-          // 'content-type': 'text/json',
-          'Access-Control-Allow-Origin': "*"
-        },
+        headers: { 'Access-Control-Allow-Origin': "*" },
       })
       .then((response) => {
         localStorage.setItem('@token-skj', response.data.userInfo.token)

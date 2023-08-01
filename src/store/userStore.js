@@ -8,8 +8,6 @@ class UserStore {
     email: '',
     password: '',
     confirmpassword: '',
-    type: 'person',
-    cnpj: '',
     token: '',
     imageUrl: ''
   }

@@ -61,16 +61,18 @@ const RegisterForm = observer(() => {
   //   input.value = ''
   // }
 
+  const navigateCallBack = () => {
+    navigate('/jobs')
+  }
+
   const registerUser = () => {
     let newUser = {
       name: userStore.state.name,
       email: userStore.state.email,
       password: userStore.state.password,
       confirmpassword: userStore.state.confirmpassword,
-      type: userStore.state.type,
-      cnpj: userStore.state.cnpj
     }
-    controller.userRegister(newUser)
+    controller.userRegister(newUser, navigateCallBack)
   }
 
   return (
