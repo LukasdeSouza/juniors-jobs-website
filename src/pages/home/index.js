@@ -39,7 +39,7 @@ const HomePage = () => {
         <h3
           style={{
             textAlign: 'center',
-            color: 'var(--white-scale-300)'
+            color: 'var(--white-scale-200)'
           }}
         >
           Dê uma olhada nessas vagas:
