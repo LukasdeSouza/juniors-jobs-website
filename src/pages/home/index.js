@@ -23,6 +23,7 @@ const HomePage = () => {
           </h2>
           <span className="left-container-span-text">
             Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
+            Chega de vasculhar site por site, ou ter que filtrar vagas que encaixem em um perfil iniciante
           </span>
           <br />
           <Button
