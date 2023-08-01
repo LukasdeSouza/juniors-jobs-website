@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { baseUrl } from '../utils/constants'
+import { baseUrlProd } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
 
@@ -12,7 +12,7 @@ class PaymentController {
   async checkoutPayment(body, callback) {
     this.store.setLoading(true)
 
-    const response = await fetch(`${baseUrl}/payment/create-subscription`, {
+    const response = await fetch(`${baseUrlProd}/payment/create-subscription`, {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {

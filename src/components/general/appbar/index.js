@@ -1,31 +1,24 @@
 import {
   AppBar,
-  Avatar,
   Link,
-  Menu,
-  MenuItem,
   Stack,
   Tooltip
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-import { useState } from 'react'
 import Logo from '../../../assets/new-design-logo.svg'
 import '../../../styles/global.css'
+import { getToken } from '../../../utils/getToken'
 
 const AppBarNavigation = () => {
   const navigate = useNavigate()
 
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
+  const onClickLogout = () => {
+    localStorage.clear();
+    navigate('/', { replace: true })
   }
-  const handleClose = () => {
-    localStorage.setItem('clerk-db-jwt', {})
-    window.location.reload()
-    setAnchorEl(null)
-  }
+
+  const token = getToken()
 
   return (
     <AppBar
@@ -106,69 +99,36 @@ const AppBarNavigation = () => {
           </Tooltip>
         </Stack>
       </Stack>
-      {/* <Link
-          href="/register-cv"
-          underline="hover"
-          color={'var(--white-scale-400)'}
-          fontSize={14}
-          ml={2}
-          mr={2}
-        >  Cadastrar CV
-        </Link> */}
-      <Stack direction={'row'} mx={2}>
-        {/* {isSignedIn ? (
-          <Tooltip title={'⚙️ Em breve, configurações de Usuário'}>
-            <Stack direction={'inherit'} sx={{ alignItems: 'center' }}>
-              <Link
-                sx={{
-                  color: 'var(--white-scale-200)'
-                }}
-              >
-                {user?.firstName}
-              </Link>
-              <Avatar
-                src={user?.imageUrl}
-                onClick={handleClick}
-                sx={{ cursor: 'pointer', mx: 2 }}
-              />
-            </Stack>
-          </Tooltip>
-        ) : (
+      {token === null ?
+        <Stack direction={'row'} alignItems={'center'}>
           <Link
-            href="/signin"
+            href='/auth/register'
             underline="hover"
-            color={'var(--white-scale-200)'}
             fontSize={14}
-            ml={2}
-            mr={2}
-          >
+            color={'var(--white-scale-200)'}>
+            Criar Conta
+          </Link>
+          <Link
+            href='/auth/login'
+            underline="hover"
+            fontSize={14}
+            color={'var(--white-scale-200)'}
+            sx={{ mx: 4 }}>
             Login
           </Link>
-        )} */}
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'basic-button'
-          }}
-        >
-          <MenuItem onClick={handleClose}>
-            <Link underline="none">Sair (Logout)</Link>
-          </MenuItem>
-        </Menu>
-      </Stack>
-      {/* <Link
-          href="/"
-          underline="hover"
-          color={'var(--white-scale-400)'}
-          fontSize={14}
-          ml={2}
-          mr={2}
-        >
-          Perfil
-        </Link> */}
+        </Stack> :
+        <Tooltip title='Sair da sua conta'>
+          <Link
+            underline="hover"
+            fontSize={14}
+            color={'var(--white-scale-200)'}
+            onClick={onClickLogout}
+            sx={{ mx: 4, cursor: 'pointer' }}
+          >
+            Sair
+          </Link>
+        </Tooltip>
+      }
     </AppBar>
   )
 }

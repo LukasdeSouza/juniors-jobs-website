@@ -18,7 +18,7 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Nunca foi tão fácil encontrar, <br />
+            Nunca foi tão fácil encontrar <br />
             Vagas para Júniors e Estagiários na área Tech
           </h2>
           <span className="left-container-span-text">

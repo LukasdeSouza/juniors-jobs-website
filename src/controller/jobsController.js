@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { baseUrl } from '../utils/constants'
+import { baseUrlProd } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
 class JobsController {
@@ -10,7 +10,7 @@ class JobsController {
   async getAllJobs() {
     this.store.setLoading(true)
 
-    await fetch(`${baseUrl}/jobs`)
+    await fetch(`${baseUrlProd}/jobs`)
       .then((response) => response.json())
       .then((data) => this.store.setState('jobsList', data))
       .catch(() => toast.error('Faça Login para ter acesso a todas as vagas'))
@@ -19,7 +19,7 @@ class JobsController {
 
   async postNewJob(body) {
     return await axios
-      .post(`${baseUrl}/jobs`, body)
+      .post(`${baseUrlProd}/jobs`, body)
       .then((response) => {
         toast.success('Vaga criada com Sucesso')
         console.log(response)
@@ -31,7 +31,7 @@ class JobsController {
 
   async deleteJob(id) {
     return await axios
-      .delete(`${baseUrl}/jobs/${id}`)
+      .delete(`${baseUrlProd}/jobs/${id}`)
       .then((response) => {
         console.log(response)
       })

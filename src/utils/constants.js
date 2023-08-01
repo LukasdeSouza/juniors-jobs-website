@@ -1,6 +1,7 @@
 import User from '../assets/our-team-img.svg'
 
-const baseUrl = 'https://busy-teal-crocodile-hat.cyclic.app'
+const baseUrlProd = 'https://busy-teal-crocodile-hat.cyclic.app'
+const baseUrlDev = 'http://localhost:4000'
 
 const ourTeamInfo = [
   {
@@ -67,4 +68,4 @@ const ourTeamInfoTertiary = [
   }
 ]
 
-export { baseUrl, ourTeamInfo, OurTeamInfoSecondary, ourTeamInfoTertiary }
+export { baseUrlProd, baseUrlDev, ourTeamInfo, OurTeamInfoSecondary, ourTeamInfoTertiary }

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { baseUrl } from '../utils/constants'
+import { baseUrlProd } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
 class UserController {
@@ -11,7 +11,7 @@ class UserController {
     this.store.setLoading(true)
 
     return await axios
-      .post(`${baseUrl}/auth/register`, body, {
+      .post(`${baseUrlProd}/auth/register`, body, {
         headers: { 'Access-Control-Allow-Origin': "*" },
       })
       .then((response) => {
@@ -30,7 +30,7 @@ class UserController {
     this.store.setLoading(true)
 
     return await axios
-      .post(`${baseUrl}/auth`, body)
+      .post(`${baseUrlProd}/auth`, body)
       .then((response) => {
         if (response.data.msg === 'Login Efetuado com Sucesso') {
           localStorage.setItem('@token-skj', response.data.token)
