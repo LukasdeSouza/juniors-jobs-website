@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className="left-container-head-home-page">
           <h2>
             Nunca foi tão fácil encontrar <br />
-            Vagas para Júniors e Estagiários na área Tech
+            Vagas Tech para Júniors e Estagiários
           </h2>
           <span className="left-container-span-text">
             Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
