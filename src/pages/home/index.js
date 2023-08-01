@@ -25,6 +25,7 @@ const HomePage = () => {
             Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
             Chega de vasculhar site por site, ou ter que filtrar vagas que encaixem em um perfil iniciante
           </span>
+          <br />
           <Button
             text={'Quero ver as vagas'}
             handleClick={() => {
