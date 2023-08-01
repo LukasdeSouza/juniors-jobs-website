@@ -42,8 +42,7 @@ const HomePage = () => {
             color: 'var(--white-scale-300)'
           }}
         >
-          A primeira plataforma brasileira a reunir vagas para iniciantes e
-          estagiários, <br /> da área de tecnologia, em um só lugar
+          Dê uma olhada nessas vagas:
         </h3>
       </div>
       <div className='homepage-container-mock-jobs'>
