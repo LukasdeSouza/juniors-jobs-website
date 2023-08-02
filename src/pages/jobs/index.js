@@ -65,7 +65,7 @@ const JobsPage = observer(() => {
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ? (<span className="loader" />) :
-          localStorage.getItem('@token-skj') !== undefined ?
+          localStorage.getItem('@token-skj') !== null ?
             (
               <div className="jobs-grid">
                 {currentPosts?.map((job) => (
