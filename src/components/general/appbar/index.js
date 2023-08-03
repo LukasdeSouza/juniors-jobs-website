@@ -24,14 +24,14 @@ const AppBarNavigation = () => {
     <AppBar
       elevation={0}
       sx={{
-        position: 'fixed',
+        position: 'relative',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%',
-        marginTop: 2,
-        backgroundColor: 'transparent'
+        padding: 1,
+        background: 'transparent'
       }}
     >
       <img

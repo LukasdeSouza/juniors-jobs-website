@@ -1,8 +1,11 @@
 import axios from 'axios'
-import { baseUrlProd } from '../utils/constants'
+import { baseUrlProd, baseUrlDev } from '../utils/constants'
 import { toast } from 'react-hot-toast'
+import { getToken } from '../utils/getToken'
 
+const token = getToken()
 class JobsController {
+  token = getToken()
   constructor(store) {
     this.store = store
   }
@@ -10,7 +13,11 @@ class JobsController {
   async getAllJobs() {
     this.store.setLoading(true)
 
-    await fetch(`${baseUrlProd}/jobs`)
+    await fetch(`${baseUrlDev}/jobs`, {
+      headers: {
+        'Authorization': token
+      }
+    })
       .then((response) => response.json())
       .then((data) => this.store.setState('jobsList', data))
       .catch(() => toast.error('Faça Login para ter acesso a todas as vagas'))
