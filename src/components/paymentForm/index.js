@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Box, Button, Modal, TextField } from "@mui/material";
 import React, { useContext } from 'react'
 import Logo from '../../assets/logo_size-removebg.png'
 import './style.css'
@@ -7,16 +7,14 @@ import { LoadingButton } from "@mui/lab";
 import { observer } from "mobx-react-lite";
 import RootStoreContext from "../../store/rootStore";
 import { toast } from "react-hot-toast";
-import { useStripe } from "@stripe/react-stripe-js";
 import PaymentController from "../../controller/paymentController";
 import { useNavigate } from "react-router-dom";
+import { dashRegex, ifBeginsWithZero, threeDigitRegex, twoDigitRegex } from "../../utils/regex";
 
 const PaymentForm = observer(() => {
   const { paymentStore } = useContext(RootStoreContext)
   const controller = new PaymentController(paymentStore)
   const navigate = useNavigate()
-
-  const stripe = useStripe()
 
   const buyedSucessfully = () => {
     navigate('/buyedsucessfully')
@@ -51,8 +49,6 @@ const PaymentForm = observer(() => {
   const onKeyDown = (e) => {
     e.key === 'Enter' && createSubscription()
   }
-  const twoDigitRegex = /^\d{0,2}$/
-
 
   return (
     <>
@@ -66,7 +62,7 @@ const PaymentForm = observer(() => {
           <h3>Concluir Inscrição - Seek Jobs</h3>
           <div className="payment-title-description-container">
             <small>Você está a só alguns passos de completar sua inscrição na nossa plataforma.
-              Preencha os dados abaixo conforme solicitado e garanta as melhores vagas de tecnologia para iniciantes.
+              Preencha os dados abaixo e garanta as melhores vagas de tecnologia para iniciantes.
             </small>
           </div>
           <div className="payment-textfield-container">
@@ -93,7 +89,7 @@ const PaymentForm = observer(() => {
           </div>
           <p>Informações de Pagamento -  Cartão</p>
           <div className="payment-textfield-container">
-            <label htmlFor="cardExpMonth">Mês Vencimento Cartão*</label>
+            <label htmlFor="cardExpMonth">Mês de Vencimento do Cartão*</label>
             <TextField
               id="cardExpMonth"
               type="number"
@@ -104,14 +100,17 @@ const PaymentForm = observer(() => {
               onChange={(e) => {
                 if (!twoDigitRegex.test(e.target.value)) {
                   toast('O campo Mês Vencimento Cartão deve receber de 1 a 2 números e não iniciar com zero')
-                } else {
+                } else if (ifBeginsWithZero.test(e.target.value)) {
+                  toast('Caso o mês de vencimento inicie com ZERO, remova o zero e coloque SOMENTE o segundo número')
+                }
+                else {
                   paymentStore.setState('cardExpMonth', parseInt(e.target.value))
                 }
               }}
             />
           </div>
           <div className="payment-textfield-container">
-            <label htmlFor="cardExpYear">Ano Vencimento Cartão*</label>
+            <label htmlFor="cardExpYear">Ano de Vencimento do Cartão*</label>
             <TextField
               id="cardExpYear"
               type="number"
@@ -123,7 +122,7 @@ const PaymentForm = observer(() => {
                 if (!twoDigitRegex.test(e.target.value)) {
                   toast('O campo Ano Vencimento Cartão deve receber de 1 a 2 números e não iniciar com zero')
                 } else {
-                  paymentStore.setState('cardExpYear', parseInt(e.target.value))
+                  paymentStore.setState('cardExpYear', e.target.value)
                 }
               }}
             />
@@ -137,11 +136,19 @@ const PaymentForm = observer(() => {
               placeholder="Número do Cartão sem Traço ou Espaço"
               required
               value={paymentStore.state.cardNumber}
-              onChange={(e) => paymentStore.setState('cardNumber', e.target.value)}
+              onChange={(e) => {
+                if (dashRegex.test(e.target.value)) {
+                  toast('Preencha o número do cartão somente com números, sem traços " - "')
+                } else if (e.target.value.length > 17) {
+                  toast('O número do cartão é inválido')
+                } else {
+                  paymentStore.setState('cardNumber', e.target.value)
+                }
+              }}
             />
           </div>
           <div className="payment-textfield-container">
-            <label htmlFor="cardCVC">CVC* (Código de segurança de 3 dígitos)</label>
+            <label htmlFor="cardCVC">CVC (Código de segurança de 3 dígitos)*</label>
             <TextField
               id="cardCVC"
               type="text"
@@ -149,7 +156,12 @@ const PaymentForm = observer(() => {
               placeholder="Três Números"
               required
               value={paymentStore.state.cardCVC}
-              onChange={(e) => paymentStore.setState('cardCVC', e.target.value)}
+              onChange={(e) => {
+                if (!threeDigitRegex.test(e.target.value)) {
+                  toast('O CVC deve possuir somente 3 números.')
+                }
+                paymentStore.setState('cardCVC', e.target.value)
+              }}
             />
           </div>
           <LoadingButton

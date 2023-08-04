@@ -5,7 +5,7 @@ const ToastMain = () => {
     <Toaster
       position="bottom-left"
       toastOptions={{
-        duration: 3000,
+        duration: 4000,
         success: {
           style: {
             borderLeft: '8px solid #369C86',

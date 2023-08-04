@@ -85,17 +85,19 @@ const JobsPage = observer(() => {
               </div>
             ) :
             mockJobs.map((job) => (
-              <BoxJobs
-                img={job.img}
-                name={job.name}
-                tier={job.tier}
-                title={job.title}
-                salary={job.salary}
-                description={job.description}
-                location={job.location}
-                type={job.type}
-                link={job.link}
-              />
+              <div className="jobs-grid">
+                <BoxJobs
+                  img={job.img}
+                  name={job.name}
+                  tier={job.tier}
+                  title={job.title}
+                  salary={job.salary}
+                  description={job.description}
+                  location={job.location}
+                  type={job.type}
+                  link={job.link}
+                />
+              </div>
             ))
         }
       </div>
