@@ -42,7 +42,7 @@ const HomePage = () => {
             color: 'var(--white-scale-200)'
           }}
         >
-          Dê uma olhada nessas vagas:
+          Dê uma olhada em algumas das vagas:
         </h3>
       </div>
       <div className='homepage-container-mock-jobs'>

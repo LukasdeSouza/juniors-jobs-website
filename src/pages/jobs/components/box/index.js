@@ -23,6 +23,7 @@ const BoxJobs = ({
     }
   }
 
+
   return (
     <Tooltip
       title={
@@ -36,7 +37,9 @@ const BoxJobs = ({
       enterDelay={200}
       followCursor={true}
     >
-      <div className="jobs-grid-object" onClick={() => handleClick()}>
+      <div className="jobs-grid-object"
+        onClick={() => handleClick()}
+      >
         <div className="jobs-grid-object-header">
           <img
             src={img}
@@ -51,10 +54,22 @@ const BoxJobs = ({
         <p className="jobs-grid-object-title">{title}</p>
 
         <div className="jobs-grid-chips-info">
-          <small className="jobs-grid-object-type">{type}</small>
-          <small className="jobs-grid-object-tier">{tier}</small>
+          {type !== '' &&
+            <small className="jobs-grid-object-type">
+              {type}
+            </small>
+          }
+          {tier !== '' &&
+            <small className="jobs-grid-object-tier">
+              {tier}
+            </small>
+          }
           <small className="jobs-grid-object-location">{location}</small>
-          <small className="jobs-grid-object-salary">{salary}</small>
+          {salary !== '' &&
+            <small className="jobs-grid-object-salary">
+              {salary}
+            </small>
+          }
         </div>
         {/* <small className="jobs-grid-object-description">{description}</small> */}
         {/* <div className="jobs-grid-object-button-row">

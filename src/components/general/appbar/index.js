@@ -18,7 +18,7 @@ import { toast } from 'react-hot-toast'
 
 const AppBarNavigation = observer(() => {
   const { mainStore } = useContext(RootStoreContext)
-
+  const token = getToken()
   const navigate = useNavigate()
 
   const onClickLogout = () => {
@@ -31,7 +31,6 @@ const AppBarNavigation = observer(() => {
     }, 1250)
   }
 
-  const token = getToken()
 
   return (
     <>

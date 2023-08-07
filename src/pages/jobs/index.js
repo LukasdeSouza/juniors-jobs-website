@@ -17,12 +17,12 @@ import BoxJobs from './components/box'
 import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
+import { getToken } from '../../utils/getToken'
 
 const JobsPage = observer(() => {
   const { jobsStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
-
 
   const fetchList = async () => {
     await controller.getAllJobs()
@@ -36,9 +36,10 @@ const JobsPage = observer(() => {
   const firstPostIndex = lastPostIndex - postsPerPage
   const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
 
+  const token = getToken()
 
   useEffect(() => {
-    fetchList()
+    fetchList().then((r) => { })
   }, [])
 
 
@@ -64,28 +65,29 @@ const JobsPage = observer(() => {
       </div>
 
       <div className="filter-jobs-main-container">
-        {jobsStore.loading ? (<span className="loader" />) :
-          localStorage.getItem('@token-skj') !== null ?
+        {jobsStore.loading ?
+          (<span className="loader" />) :
+          token !== null ?
             (
               <div className="jobs-grid">
                 {currentPosts?.map((job) => (
                   <BoxJobs
-                    key={job._id ?? 'N/A'}
+                    key={job._id}
                     img={job.urlImage ?? Logo}
                     name={job.name ?? 'Empresa Contrata'}
-                    location={job.local === 'A combinar' ? 'Presencial' : job.local}
+                    location={job.local ?? 'A combinar'}
                     title={job.title ?? 'Sem Título'}
-                    type={job.type ?? 'N/A'}
-                    tier={job.tier ?? 'N/A'}
-                    salary={job.salary ?? 'N/A'}
+                    type={job.type ?? ''}
+                    tier={job.tier ?? ''}
+                    salary={job.salary ?? ''}
                     description={job.description ?? 'Descrição não informada'}
                     link={job.link}
                   />
                 ))}
               </div>
             ) :
-            mockJobs.map((job) => (
-              <div className="jobs-grid">
+            <div className="jobs-grid">
+              {mockJobs.map((job) => (
                 <BoxJobs
                   img={job.img}
                   name={job.name}
@@ -97,8 +99,9 @@ const JobsPage = observer(() => {
                   type={job.type}
                   link={job.link}
                 />
-              </div>
-            ))
+              ))}
+            </div>
+
         }
       </div>
       <PaginationComponent

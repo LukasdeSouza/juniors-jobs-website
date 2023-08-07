@@ -1,78 +1,78 @@
 .jobs-grid-object {
-	background-color: var(--white-scale-100);
-	border-radius: 16px;
-	box-shadow: var(--bs-shadow-200);
-	height: 140px ;
-	width: 100% ;
-	min-width: 250;
-	padding:16px ;
-	margin-bottom: 8px;
-	cursor: pointer;
+  background-color: var(--white-scale-100);
+  border-radius: 16px;
+  box-shadow: var(--bs-shadow-200);
+  height: 120px;
+  width: 100%;
+  min-width: 250;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
 }
 .jobs-grid-object:hover {
-	transform: scale(0.97) translateY(-2px) ;
-	transition: ease-in-out 0.5s;
-	opacity: 0.9;
+  transform: scale(0.97) translateY(-2px);
+  transition: ease-in-out 0.5s;
+  opacity: 0.9;
 }
 .jobs-grid-object small {
-	font-size: 12px;
+  font-size: 12px;
 }
 .jobs-grid-object p {
-	color: #000;
-	font-weight: 600;
+  color: #000;
+  font-weight: 600;
 }
 .jobs-grid-object-header {
-	display: flex;
-	flex-direction: row;
-	align-items:center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .jobs-grid-object-header-title-location {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .jobs-grid-chips-info {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-top:8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
 }
 .jobs-grid-object-type {
-	border: 1px solid red;
-	border-radius: 8px;
-	padding:4px;
-	margin-right: 4px;
-	color: red;
-	font-weight: 600;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 4px;
+  margin-right: 4px;
+  color: red;
+  font-weight: 600;
 }
 .jobs-grid-object-tier {
-	border: 1px solid blue;
-	border-radius: 8px;
-	padding:4px;
-	margin-right: 4px;
-	color: blue;
-	font-weight: 600;
+  border: 1px solid blue;
+  border-radius: 8px;
+  padding: 4px;
+  margin-right: 4px;
+  color: blue;
+  font-weight: 600;
 }
 .jobs-grid-object-location {
-	border: 1px solid purple;
-	border-radius: 8px;
-	padding:4px;
-	margin-right: 4px;
-	color: purple;
-	font-weight: 600;
+  border: 1px solid purple;
+  border-radius: 8px;
+  padding: 4px;
+  margin-right: 4px;
+  color: purple;
+  font-weight: 600;
 }
 .jobs-grid-object-salary {
-	border: 1px solid green;
-	border-radius: 8px;
-	padding:4px;
-	color: green;
-	font-weight: 600;
+  border: 1px solid green;
+  border-radius: 8px;
+  padding: 4px;
+  color: green;
+  font-weight: 600;
 }
 .jobs-grid-object-description {
-	margin-top:8px
+  margin-top: 8px;
 }
 .jobs-grid-object-button-row {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-top: 16px
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16px;
 }

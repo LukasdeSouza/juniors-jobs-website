@@ -39,19 +39,19 @@ const PlansPage = observer(() => {
     <>
       <AppBarNavigation />
       <div className="container-plans-page">
-        <h2>Escolha o seu Plano de Assinatura</h2>
+        <h2>Mais barato que o seu Streaming Favorito</h2>
         <p>
-          Selecione aquele que vai complementar melhor a sua carreira e te
+          Selecione o plano que vai complementar melhor a sua carreira e te
           trazer mais oportunidades
         </p>
         <div className="flex-container-plan-card">
           <div className="container-plan-card">
             <p>Plano Básico - 1 Mês</p>
             <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-              R$ 15
+              R$ 12
             </Link>
             <small className="small-text-cents-description">
-              R$ 0.50 centavos por dia
+              R$ 0.43 centavos por dia
             </small>
             <br />
             <small className="small-text-description">
@@ -67,7 +67,7 @@ const PlansPage = observer(() => {
           <div className="container-plan-card-recommended">
             <p>Plano Medium - 3 Meses</p>
             <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-              R$ 30
+              R$ 29
             </Link>
             <small className="small-text-cents-description">
               R$ 1.00 por dia
@@ -91,7 +91,7 @@ const PlansPage = observer(() => {
           <div className="container-plan-card-premium">
             <p>Plano Premium - 6 Meses</p>
             <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-              R$ 69
+              R$ 59
             </Link>
             <small className="small-text-cents-description">
               R$ 2.96 centavos por dia
