@@ -11,25 +11,34 @@ import { useNavigate } from 'react-router-dom'
 import Logo from '../../../assets/new-design-logo.svg'
 import '../../../styles/global.css'
 import { getToken } from '../../../utils/getToken'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import RootStoreContext from '../../../store/rootStore'
 import { observer } from 'mobx-react-lite'
 import { toast } from 'react-hot-toast'
+import UserController from '../../../controller/userController'
 
 const AppBarNavigation = observer(() => {
-  const { mainStore } = useContext(RootStoreContext)
+  const { mainStore, userStore } = useContext(RootStoreContext)
+  const controller = new UserController(userStore)
+
   const token = getToken()
+  const userId = localStorage.getItem('@userid-skj')
   const navigate = useNavigate()
 
   const onClickLogout = () => {
     mainStore.setState('open', true)
     localStorage.clear();
+
     setTimeout(() => {
       mainStore.setState('open', false)
       toast.success('Logout realizado com Sucesso!')
       navigate('/', { replace: true })
     }, 1250)
   }
+
+  useEffect(() => {
+    controller.getUser(userId)
+  }, [])
 
 
   return (

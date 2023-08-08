@@ -31,7 +31,6 @@ const PlansPage = observer(() => {
       priceId = 'price_1NU84THC03jpzXbsxg2F6xyu'
     }
     paymentStore.setState('priceId', priceId)
-    console.log(priceId)
     navigateToCheckout()
   }
 

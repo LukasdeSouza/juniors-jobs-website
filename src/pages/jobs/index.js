@@ -20,7 +20,7 @@ import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
 
 const JobsPage = observer(() => {
-  const { jobsStore } = useContext(RootStoreContext)
+  const { jobsStore, paymentStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
 
@@ -37,6 +37,8 @@ const JobsPage = observer(() => {
   const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
 
   const token = getToken()
+
+  console.log(JSON.parse(JSON.stringify(paymentStore.state.subscripted)))
 
   useEffect(() => {
     fetchList().then((r) => { })
@@ -101,7 +103,6 @@ const JobsPage = observer(() => {
                 />
               ))}
             </div>
-
         }
       </div>
       <PaginationComponent

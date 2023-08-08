@@ -10,8 +10,7 @@ class PaymentStore {
     cardNumber: '',
     cardCVC: '',
     checkoutPayment: {},
-    clientSecret: '',
-    subscriptionId: ''
+    subscripted: {}
   }
   loading = false
 
