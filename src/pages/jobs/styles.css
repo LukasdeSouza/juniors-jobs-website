@@ -55,6 +55,12 @@ p {
 h2 {
   font-size: 32px;
 }
+.see-plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 @keyframes rotation {
   0% {

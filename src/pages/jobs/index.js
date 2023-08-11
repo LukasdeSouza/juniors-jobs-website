@@ -19,6 +19,7 @@ import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
 import { toast } from 'react-hot-toast'
+import { Button } from '@mui/material'
 
 const JobsPage = observer(() => {
   const { jobsStore, paymentStore, userStore } = useContext(RootStoreContext)
@@ -117,12 +118,28 @@ const JobsPage = observer(() => {
             </div>
         }
       </div>
-      <PaginationComponent
-        totalPost={jobsStore.state.jobsList.length}
-        postsPerPage={postsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {checkIfUserIsPaid !== null ?
+        <PaginationComponent
+          totalPost={jobsStore.state.jobsList.length}
+          postsPerPage={postsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        /> :
+        <div className='see-plans'>
+          <p>
+            Quer ter acesso a diversas outras vagas ?
+          </p>
+          <p>Conheça nossos planos!</p>
+          <Button
+            variant='contained'
+            onClick={() => navigate('/planos')}
+            sx={{ width: 200 }}
+          >
+            Ver Planos
+          </Button>
+        </div>
+      }
+
       <Footer />
     </>
   )
