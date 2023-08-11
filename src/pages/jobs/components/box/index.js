@@ -71,11 +71,6 @@ const BoxJobs = ({
             </small>
           }
         </div>
-        {/* <small className="jobs-grid-object-description">{description}</small> */}
-        {/* <div className="jobs-grid-object-button-row">
-        <Button text={'Aplicar'} handleClick={handleClick} />
-        <ButtonOutlined text={'Detalhes'} />
-      </div> */}
       </div>
     </Tooltip>
   )

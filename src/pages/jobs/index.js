@@ -19,12 +19,14 @@ import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
 import { toast } from 'react-hot-toast'
-import { Button } from '@mui/material'
+import { Button, TextField } from '@mui/material'
 
 const JobsPage = observer(() => {
-  const { jobsStore, paymentStore, userStore } = useContext(RootStoreContext)
+  const { jobsStore, userStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
+
+  const [filter, setFilter] = useState('')
 
   const fetchList = async () => {
     await controller.getAllJobs()
@@ -37,6 +39,10 @@ const JobsPage = observer(() => {
   const lastPostIndex = currentPage * postsPerPage
   const firstPostIndex = lastPostIndex - postsPerPage
   const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
+
+  const handleFilter = () => {
+    alert('filtrando')
+  }
 
   const checkUser = () => {
     const token = getToken()
@@ -77,6 +83,19 @@ const JobsPage = observer(() => {
           style={{ width: 238, height: 350 }}
         />
       </div>
+      <div className='filter-input-container'>
+        <div className='top-of-filter-input'>
+          <p>🔎 Filtro de Vagas - Busque pela sua favorita</p>
+        </div>
+        <input
+          className='filter-input'
+          type='text'
+          placeholder='Pesquisar... 🌟'
+          onKeyDown={(e) => e.code === 'Enter' && handleFilter()}
+          onChange={(e) => setFilter(e.target.value)}
+        />
+      </div>
+
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?
