@@ -25,12 +25,16 @@ const LoginPage = observer(() => {
     navigate('/plans')
   }
 
+  const goToJobsPage = () => {
+    navigate('/plans')
+  }
+
   const doLogin = async () => {
     const body = {
       email,
       password
     }
-    await controller.userLogin(body, goToPlansPage)
+    await controller.userLogin(body, goToPlansPage, goToJobsPage)
   }
 
   return (

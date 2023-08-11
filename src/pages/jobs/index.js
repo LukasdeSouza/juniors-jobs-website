@@ -18,9 +18,10 @@ import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
+import { toast } from 'react-hot-toast'
 
 const JobsPage = observer(() => {
-  const { jobsStore, paymentStore } = useContext(RootStoreContext)
+  const { jobsStore, paymentStore, userStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
 
@@ -36,12 +37,22 @@ const JobsPage = observer(() => {
   const firstPostIndex = lastPostIndex - postsPerPage
   const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
 
-  const token = getToken()
+  const checkUser = () => {
+    const token = getToken()
+    if (token !== null) {
+      setTimeout(() => {
+        return JSON.parse(JSON.stringify(userStore.state.userInfo))
+      }, [1000])
+    } else {
+      return null
+    }
+  }
 
-  console.log(JSON.parse(JSON.stringify(paymentStore.state.subscripted)))
+  let checkIfUserIsPaid = checkUser()
 
   useEffect(() => {
     fetchList().then((r) => { })
+    checkUser()
   }, [])
 
 
@@ -69,7 +80,7 @@ const JobsPage = observer(() => {
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?
           (<span className="loader" />) :
-          token !== null ?
+          checkIfUserIsPaid !== null ?
             (
               <div className="jobs-grid">
                 {currentPosts?.map((job) => (
@@ -91,6 +102,7 @@ const JobsPage = observer(() => {
             <div className="jobs-grid">
               {mockJobs.map((job) => (
                 <BoxJobs
+                  key={job.id}
                   img={job.img}
                   name={job.name}
                   tier={job.tier}
@@ -111,7 +123,6 @@ const JobsPage = observer(() => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      {/* <p className='text-description-see-other-jobs'>Deseja ver o restante das vagas? <br />Faça Login com seu Usuário e senha</p> */}
       <Footer />
     </>
   )

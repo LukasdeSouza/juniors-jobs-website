@@ -18,8 +18,7 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Nunca foi tão fácil encontrar <br />
-            Vagas Tech para Júniors e Estagiários
+            Vagas para Júniors e Estagiários <br /> em um só lugar
           </h2>
           <span className="left-container-span-text">
             Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
@@ -42,7 +41,7 @@ const HomePage = () => {
             color: 'var(--white-scale-200)'
           }}
         >
-          Dê uma olhada em algumas das vagas:
+          Dê uma olhada em algumas delas:
         </h3>
       </div>
       <div className='homepage-container-mock-jobs'>

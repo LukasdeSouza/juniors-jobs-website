@@ -106,19 +106,6 @@ const AppBarNavigation = observer(() => {
                 Planos
               </Link>
             </Tooltip>
-            <Tooltip title={'A galera que fez essa idéia acontecer!'}>
-              <Link
-                href="/our-team"
-                underline="hover"
-                color={'var(--white-scale-200)'}
-                fontSize={14}
-                ml={2}
-                mr={2}
-              >
-                {' '}
-                Nossa Equipe
-              </Link>
-            </Tooltip>
           </Stack>
         </Stack>
         {token === null ?

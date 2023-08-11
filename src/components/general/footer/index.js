@@ -11,14 +11,18 @@ const Footer = () => {
     <div className="footer_container">
       <div>
         <h3>Redes Sociais</h3>
-        <img className="socialmedia-icon" src={Facebook} alt="Facebook Logo" />
         <img
           className="socialmedia-icon"
           src={Instagram}
           alt="Instagram Logo"
+          onClick={() => window.open('https://www.instagram.com/seekjobsvagas/', '_blank')}
         />
-        <img className="socialmedia-icon" src={LinkedIn} alt="LinkedIn Logo" />
-        <img className="socialmedia-icon" src={Twitter} alt="Twitter Logo" />
+        <img
+          className="socialmedia-icon"
+          src={Twitter}
+          alt="Twitter Logo"
+          onClick={() => window.open('https://twitter.com/SeekJobsCompany', '_blank')}
+        />
       </div>
       <div className="for_companies">
         <h3>Para Empresas</h3>

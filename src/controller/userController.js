@@ -2,6 +2,7 @@ import axios from 'axios'
 import { baseUrlProd, baseUrlDev } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
+
 class UserController {
   constructor(store) {
     this.store = store
@@ -27,7 +28,7 @@ class UserController {
       .finally(() => this.store.setLoading(false))
   }
 
-  async userLogin(body, callBack) {
+  async userLogin(body, callBack, callBackJobs) {
     this.store.setLoading(true)
 
     return await axios
@@ -37,7 +38,14 @@ class UserController {
           localStorage.setItem('@token-skj', response.data.token)
           localStorage.setItem('@usermail-skj', response.data.userInfo.email)
           localStorage.setItem('@userid-skj', response.data.userInfo._id)
-          callBack()
+
+          console.log(!response.data?.userInfo?.subscripted.subscriptionId)
+
+          if (response.data?.userInfo?.subscripted.subscriptionId !== null) {
+            callBackJobs()
+          } else {
+            callBack()
+          }
           toast.success('Login Efetuado com Sucesso!')
         } else {
           toast(response.data.msg)
@@ -58,7 +66,7 @@ class UserController {
         }
       })
         .then((data) => data.json())
-        .then((response) => console.log(response))
+        .then((response) => this.store.setState('userInfo', response))
     }
   }
 }

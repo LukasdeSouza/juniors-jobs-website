@@ -2,7 +2,6 @@ import axios from 'axios'
 import { baseUrlProd, baseUrlDev } from '../utils/constants'
 import { toast } from 'react-hot-toast'
 
-
 class PaymentController {
   constructor(store) {
     this.store = store
@@ -30,13 +29,28 @@ class PaymentController {
     }
 
     await fetch(`${baseUrlDev}/auth/user`, {
-      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.getItem('@token-skj')
+      },
+      method: 'PATCH',
       body: JSON.stringify({
-        email: localStorage.getItem('@usermail-skj'),
-        subscripted: subscripted
+        'email': localStorage.getItem('@usermail-skj'),
+        'subscripted': subscripted
       })
     })
-      .then((data) => data.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(updatedData => {
+        console.log('Resource updated:', updatedData);
+      })
+      .catch(error => {
+        console.error('Error updating resource:', error);
+      });
 
     this.store.setLoading(false)
     callback()
