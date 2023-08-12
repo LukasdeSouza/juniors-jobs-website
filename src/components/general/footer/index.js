@@ -26,7 +26,10 @@ const Footer = () => {
       </div>
       <div className="for_companies">
         <h3>Para Empresas</h3>
-        <a href="" className="color-white">
+        <a href="https://wa.me/5534992461158?text=Ol%C3%A1%21+Gostaria+de+publicar+uma+vaga+na+Seek+Jobs"
+          target='_blank'
+          className="color-white"
+        >
           Anunciar Vagas
         </a>
       </div>

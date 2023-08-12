@@ -18,15 +18,12 @@ import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
-import { toast } from 'react-hot-toast'
-import { Button, TextField } from '@mui/material'
+import { Button } from '@mui/material'
 
 const JobsPage = observer(() => {
   const { jobsStore, userStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
   const navigate = useNavigate()
-
-  const [filter, setFilter] = useState('')
 
   const fetchList = async () => {
     await controller.getAllJobs()
@@ -40,18 +37,28 @@ const JobsPage = observer(() => {
   const firstPostIndex = lastPostIndex - postsPerPage
   const currentPosts = jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex)
 
-  const handleFilter = () => {
-    alert('filtrando')
-  }
+  // const handleFilter = () => {
+  //   console.log(filter)
+  //   if (currentPosts === null || currentPosts === '') {
+  //     alert('caiu no if')
+  //     setCurrentPage(jobsStore.state.jobsList?.slice(firstPostIndex, lastPostIndex))
+  //   } else {
+  //     alert('caiu no else')
+  //     setCurrentPosts(currentPosts.filter((post) => post.title.includes(filter)))
+  //   }
+  // }
 
   const checkUser = () => {
     const token = getToken()
+    console.log(userStore.state.userInfo?.user?.subscripted?.status === true)
     if (token !== null) {
-      setTimeout(() => {
-        return JSON.parse(JSON.stringify(userStore.state.userInfo))
-      }, [1000])
+      if (userStore.state.userInfo?.user?.subscripted?.status === true) {
+        return JSON.parse(JSON.stringify(userStore.state?.userInfo?.user?.subscripted))
+      } else {
+        return undefined
+      }
     } else {
-      return null
+      return undefined
     }
   }
 
@@ -83,7 +90,7 @@ const JobsPage = observer(() => {
           style={{ width: 238, height: 350 }}
         />
       </div>
-      <div className='filter-input-container'>
+      {/* <div className='filter-input-container'>
         <div className='top-of-filter-input'>
           <p>🔎 Filtro de Vagas - Busque pela sua favorita</p>
         </div>
@@ -94,13 +101,13 @@ const JobsPage = observer(() => {
           onKeyDown={(e) => e.code === 'Enter' && handleFilter()}
           onChange={(e) => setFilter(e.target.value)}
         />
-      </div>
+      </div> */}
 
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?
           (<span className="loader" />) :
-          checkIfUserIsPaid !== null ?
+          checkIfUserIsPaid !== undefined ?
             (
               <div className="jobs-grid">
                 {currentPosts?.map((job) => (
@@ -137,7 +144,7 @@ const JobsPage = observer(() => {
             </div>
         }
       </div>
-      {checkIfUserIsPaid !== null ?
+      {checkIfUserIsPaid !== undefined ?
         <PaginationComponent
           totalPost={jobsStore.state.jobsList.length}
           postsPerPage={postsPerPage}
