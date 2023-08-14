@@ -18,7 +18,7 @@ import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
-import { Button } from '@mui/material'
+import { Button, Link, Stack } from '@mui/material'
 
 const JobsPage = observer(() => {
   const { jobsStore, userStore } = useContext(RootStoreContext)
@@ -79,9 +79,7 @@ const JobsPage = observer(() => {
             Encontrar sua Primeira Vaga Tech <br /> nunca foi tão fácil
           </h2>
           <p>
-            Seek Jobs é uma nova maneira de encontrar <br />
-            empregos na área de tecnologia sem burocracias <br />e dores de
-            cabeça, e com mais praticidade.
+            Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
           </p>
         </div>
         <img
@@ -102,7 +100,20 @@ const JobsPage = observer(() => {
           onChange={(e) => setFilter(e.target.value)}
         />
       </div> */}
-
+      {checkIfUserIsPaid === undefined &&
+        <Stack direction={'column'} textAlign={'center'} padding={2}>
+          <p>
+            🚩 Listamos apenas algumas das diversas vagas, para ver todas, <b>conheça os nossos planos</b>
+          </p>
+          <Link
+            color={'#fff'}
+            href='/plans'
+            underline='hover'
+            sx={{ textAlign: 'center', fontWeight: 600, fontSize: 14 }}>
+            Ver Planos
+          </Link>
+        </Stack>
+      }
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?

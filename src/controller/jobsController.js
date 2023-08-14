@@ -20,7 +20,7 @@ class JobsController {
     })
       .then((response) => response.json())
       .then((data) => this.store.setState('jobsList', data))
-      .catch(() => toast.error('Faça Login para ter acesso a todas as vagas'))
+      .catch(() => console.log('error'))
       .finally(() => this.store.setLoading(false))
   }
 

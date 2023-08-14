@@ -18,15 +18,14 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Vagas para Júniors e Estagiários <br /> em um só lugar
+            Vagas de Tecnologia para Júniors <br /> e Estagiários em um só lugar
           </h2>
           <span className="left-container-span-text">
-            Reunimos diversas vagas de diferentes plataformas em um só lugar. <br />
-            Chega de vasculhar site por site, ou ter que filtrar vagas que encaixem em um perfil iniciante
+            Oportunidades para Programadores, DevOps, Pessoas de Produto, Designers, Suporte técnico, entre outros. <br />
           </span>
           <br />
           <Button
-            text={'Quero ver as vagas'}
+            text={'Quero Ver as Vagas 👆'}
             handleClick={() => {
               navigate('/auth/login')
             }}
@@ -41,8 +40,9 @@ const HomePage = () => {
             color: 'var(--white-scale-200)'
           }}
         >
-          Dê uma olhada em algumas delas:
+          Dê uma olhada em algumas das vagas: 👇
         </h3>
+        <p>Modelo Remoto, Híbrido e Presencial, oportunidades 🚩 Nacionais e 🌍 Internacionais</p>
       </div>
       <div className='homepage-container-mock-jobs'>
         {mockJobs.map((job) => (
