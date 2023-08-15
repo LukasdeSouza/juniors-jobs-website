@@ -27,7 +27,7 @@ const HomePage = () => {
           <Button
             text={'Quero Ver as Vagas 👆'}
             handleClick={() => {
-              navigate('/auth/login')
+              navigate('/jobs')
             }}
           />
         </div>
@@ -58,6 +58,13 @@ const HomePage = () => {
             link={job.link}
           />
         ))}
+      </div>
+      <div className='call-to-action-home-page'>
+        <h3>Tenha acesso a essas e muitas outras vagas através da nossa plataforma</h3>
+        <Button
+          text={'Conhecer os Planos'}
+          handleClick={() => navigate('/plans', { replace: true })}
+        />
       </div>
       <Footer />
     </React.Fragment>

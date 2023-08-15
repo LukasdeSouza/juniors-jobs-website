@@ -30,3 +30,10 @@
 h2 {
   color: var(--white-scale-200);
 }
+.call-to-action-home-page {
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

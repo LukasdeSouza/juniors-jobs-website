@@ -77,7 +77,7 @@ const AppBarNavigation = observer(() => {
                 ml={2}
                 mr={2}
               >
-                Home
+                Inicio
               </Link>
             </Tooltip>
 

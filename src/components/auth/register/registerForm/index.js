@@ -62,7 +62,7 @@ const RegisterForm = observer(() => {
   // }
 
   const navigateCallBack = () => {
-    navigate('/jobs')
+    navigate('/plans')
   }
 
   const registerUser = () => {

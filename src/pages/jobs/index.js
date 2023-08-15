@@ -103,7 +103,7 @@ const JobsPage = observer(() => {
       {checkIfUserIsPaid === undefined &&
         <Stack direction={'column'} textAlign={'center'} padding={2}>
           <p>
-            🚩 Listamos apenas algumas das diversas vagas, para ver todas, <b>conheça os nossos planos</b>
+            🚩 Listamos algumas das diversas vagas disponíveis, para ver todas <b style={{ color: '#fff' }}>conheça os nossos planos</b>
           </p>
           <Link
             color={'#fff'}
@@ -112,7 +112,7 @@ const JobsPage = observer(() => {
             sx={{ textAlign: 'center', fontWeight: 600, fontSize: 14 }}>
             Ver Planos
           </Link>
-        </Stack>
+        </Stack >
       }
 
       <div className="filter-jobs-main-container">

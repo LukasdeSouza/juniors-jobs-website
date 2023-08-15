@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 
-import { Button, Container, Stack, TextField, Typography } from '@mui/material'
+import { Button, Container, Link, Stack, TextField, Typography } from '@mui/material'
 
 import '../../../styles/global.css'
 
@@ -26,7 +26,7 @@ const LoginPage = observer(() => {
   }
 
   const goToJobsPage = () => {
-    navigate('/plans')
+    navigate('/')
   }
 
   const doLogin = async () => {
@@ -72,7 +72,7 @@ const LoginPage = observer(() => {
           fontSize={24}
           color={'#272727'}
         >
-          Olá, Bem Vindo
+          Login de Usuário
         </Typography>
         <Typography
           fontFamily={'Montserrat'}
@@ -81,7 +81,7 @@ const LoginPage = observer(() => {
           fontSize={14}
           color={'#272727'}
         >
-          Seek Jobs é a maneira mais fácil de encontrar seu emprego Tech
+          Faça login com seu email e senha cadastrados
         </Typography>
         <TextField
           label="Email"
@@ -133,7 +133,7 @@ const LoginPage = observer(() => {
         >
           Não tenho Cadastro
         </Button>
-        <Typography
+        {/* <Typography
           fontFamily={'Montserrat'}
           fontSize={11}
           color={'var(--blue-scale-300)'}
@@ -141,7 +141,13 @@ const LoginPage = observer(() => {
           sx={{ cursor: 'pointer' }}
         >
           Esqueceu sua senha?
-        </Typography>
+        </Typography> */}
+        <Link
+          underline='hover'
+          href='/jobs'
+          sx={{ mt: 4 }}>
+          Voltar para as vagas
+        </Link>
       </Stack>
     </Container>
   )
