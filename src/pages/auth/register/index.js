@@ -103,7 +103,13 @@ const RegisterUser = () => {
               >
                 Pronto!
               </LoadingButton>
-              <Link underline='hover' href='/auth/login' sx={{ my: 1 }}>Já tem Conta? Fazer Login</Link>
+              <Link
+                underline='hover'
+                href='/auth/login'
+                sx={{ my: 1.5 }}
+              >
+                Já tem Conta? Fazer Login
+              </Link>
             </Stack>
             :
             <>

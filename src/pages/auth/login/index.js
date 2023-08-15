@@ -47,6 +47,7 @@ const LoginPage = observer(() => {
         flexDirection: 'row',
         height: 522,
         width: '50vw',
+        minWidth: '320px',
         backgroundColor: '#FFFF',
         boxShadow: 'var(--bs-shadow-300)',
         borderRadius: 3,

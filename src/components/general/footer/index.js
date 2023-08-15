@@ -9,7 +9,7 @@ import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../../utils/breakpoints'
 
 const Footer = () => {
-  const { isMobile, isTablet, isDesktop } = useScreenSize({ breakpoints })
+  const { isDesktop } = useScreenSize({ breakpoints })
 
   return (
     <div className="footer_container">

@@ -108,7 +108,10 @@ const JobsPage = observer(() => {
       {checkIfUserIsPaid === undefined &&
         <Stack direction={'column'} textAlign={'center'} padding={2}>
           <p>
-            🚩 Listamos algumas das diversas vagas disponíveis, para ver todas <b style={{ color: '#fff' }}>conheça os nossos planos</b>
+            🚩 Listamos algumas das diversas vagas disponíveis, para ver todas
+            <b style={{ color: '#fff', marginLeft: '4px', cursor: 'pointer' }}>
+              conheça os nossos planos
+            </b>
           </p>
           <Link
             color={'#fff'}
@@ -170,7 +173,12 @@ const JobsPage = observer(() => {
           <p>
             Quer ter acesso a diversas outras vagas ?
           </p>
-          <p>Conheça nossos planos!</p>
+          <p
+            onClick={() => navigate('/plans')}
+            style={{ cursor: 'pointer', fontWeight: 600 }}
+          >
+            Conheça nossos planos!
+          </p>
           <Button
             variant='contained'
             onClick={() => navigate('/planos')}
