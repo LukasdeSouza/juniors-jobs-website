@@ -113,7 +113,6 @@ const JobsPage = observer(() => {
           <Link
             color={'#fff'}
             href='/plans'
-            underline='hover'
             sx={{ textAlign: 'center', fontWeight: 600, fontSize: 14, marginY: 2 }}>
             Ver Planos
           </Link>
