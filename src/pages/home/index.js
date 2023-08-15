@@ -9,6 +9,7 @@ import BoxJobs from '../jobs/components/box'
 import { mockJobs } from '../../utils/mockJobs'
 import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../utils/breakpoints'
+import { Divider } from '@mui/material'
 
 
 const HomePage = () => {
@@ -22,14 +23,14 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Vagas de Tecnologia para Júniors <br /> e Estagiários em um só lugar
+            Vagas de Tecnologia para Iniciantes
           </h2>
-          <span className="left-container-span-text">
-            Oportunidades para Programadores, DevOps, Pessoas de Produto, Designers, Suporte técnico, entre outros. <br />
-          </span>
+          <small className="left-container-span-text">
+            Oportunidades para Programadores, <br /> DevOps, Pessoas de Produto, Designers, Suporte técnico, entre outros. <br />
+          </small>
           <br />
           <Button
-            text={'Quero Ver as Vagas 👆'}
+            text={'Ver as Vagas 👆'}
             handleClick={() => {
               navigate('/jobs')
             }}
@@ -44,11 +45,15 @@ const HomePage = () => {
             color: 'var(--white-scale-200)'
           }}
         >
-          Dê uma olhada em algumas das vagas: 👇
+          👀 Dá uma olhada: 👇
         </h3>
-        {isDesktop &&
-          <p>Modelo Remoto, Híbrido e Presencial, oportunidades 🚩 Nacionais e 🌍 Internacionais</p>
-        }
+        <p
+          style={{ textAlign: 'center' }}
+        >
+          Modelo Remoto, Híbrido e Presencial, <br />
+          oportunidades <br />
+          🚩 Nacionais e 🌍 Internacionais
+        </p>
       </div>
       <div className='homepage-container-mock-jobs'>
         {mockJobs.map((job) => (
@@ -68,7 +73,7 @@ const HomePage = () => {
       <div className='call-to-action-home-page'>
         <h3>Tenha acesso a essas e muitas outras vagas através da nossa plataforma.</h3>
         <Button
-          text={'Ver Planos'}
+          text={'Ver Planos 💼'}
           handleClick={() => navigate('/plans', { replace: true })}
         />
       </div>

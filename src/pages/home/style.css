@@ -1,15 +1,16 @@
 @import url(../../styles/global.css);
 
 .container-header-homepage {
-  width: 80%;
-  margin: 64px;
+  width: 100%;
+  margin: 32px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
 }
 .left-container-head-home-page {
-  width: 60%;
+  width: 50%;
+  min-width: 320px;
 }
 .left-container-span-text {
   color: var(--white-scale-300);
@@ -22,8 +23,8 @@
 .homepage-container-mock-jobs {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   margin-top: 16px;
 }
 
@@ -36,4 +37,5 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }

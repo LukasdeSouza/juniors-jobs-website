@@ -110,20 +110,20 @@ const AppBarNavigation = observer(() => {
         </Stack>
         {token === null ?
           <Stack direction={'row'} alignItems={'center'}>
-            <Link
+            {/* <Link
               href='/auth/register'
               underline="hover"
               fontSize={14}
               color={'var(--white-scale-200)'}>
-              Criar Conta
-            </Link>
+              Cadastrar
+            </Link> */}
             <Link
               href='/auth/login'
               underline="hover"
               fontSize={14}
               color={'var(--white-scale-200)'}
               sx={{ mx: 4 }}>
-              Login
+              Entrar
             </Link>
           </Stack> :
           <Tooltip title='Sair da sua conta'>
