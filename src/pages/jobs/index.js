@@ -81,11 +81,11 @@ const JobsPage = observer(() => {
           <h2>
             Encontrar sua Primeira Vaga Tech <br /> nunca foi tão fácil
           </h2>
-          {isDesktop &&
-            <p>
-              Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
-            </p>
-          }
+          {/* {isDesktop && */}
+          <p>
+            Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
+          </p>
+          {/* } */}
         </div>
         <img
           src={SitGuy}

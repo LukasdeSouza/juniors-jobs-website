@@ -59,7 +59,7 @@ const PaymentForm = observer(() => {
           class='payment-middle-container'
           onKeyDown={(e) => onKeyDown(e)} >
           <img src={Logo} alt="Seek Jobs Logo" style={{ width: '60px' }} />
-          <h3>Concluir Inscrição - Seek Jobs</h3>
+          <h3>Concluir Inscrição 💼</h3>
           <div className="payment-title-description-container">
             <small>
               Preencha os dados abaixo e garanta as melhores vagas de tecnologia para iniciantes.

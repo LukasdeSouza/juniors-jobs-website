@@ -43,6 +43,7 @@
   /* box-shadow: 0 0 10px #719ECE; */
 }
 .filter-jobs-main-container {
+  margin-top: 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
