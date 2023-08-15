@@ -4,14 +4,14 @@
 .register-container {
   background-color: var(--white-scale-100);
   box-shadow: var(--bs-shadow-200);
-  border-radius: 24px;
+  border-radius: 16px;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50vw;
-  height: 415px;
+  height: 445px;
   min-height: 415px;
 }
 

@@ -13,12 +13,7 @@ import RootStoreContext from '../../../store/rootStore'
 import { LoadingButton } from '@mui/lab'
 import { useNavigate } from 'react-router-dom'
 import { useScreenSize } from 'react-screen-size-helper'
-
-const breakpoints = {
-  small: 500,
-  medium: 800,
-  large: 1600
-}
+import { breakpoints } from '../../../utils/breakpoints'
 
 const LoginPage = observer(() => {
   const navigate = useNavigate()
