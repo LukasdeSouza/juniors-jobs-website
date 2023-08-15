@@ -28,6 +28,7 @@
     "react-hook-form": "^7.41.2",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.4.5",
+    "react-screen-size-helper": "^1.0.3",
     "react-scripts": "5.0.1",
     "stripe": "^12.14.0",
     "web-vitals": "^2.1.4"

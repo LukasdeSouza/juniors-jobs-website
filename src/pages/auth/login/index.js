@@ -12,11 +12,19 @@ import RootStoreContext from '../../../store/rootStore'
 
 import { LoadingButton } from '@mui/lab'
 import { useNavigate } from 'react-router-dom'
+import { useScreenSize } from 'react-screen-size-helper'
+
+const breakpoints = {
+  small: 500,
+  medium: 800,
+  large: 1600
+}
 
 const LoginPage = observer(() => {
   const navigate = useNavigate()
   const { userStore } = useContext(RootStoreContext)
   const controller = new UserController(userStore)
+  const { isMobile, isTablet } = useScreenSize({ breakpoints })
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -50,105 +58,163 @@ const LoginPage = observer(() => {
         mt: 6
       }}
     >
-      <Stack
-        alignItems={'center'}
-        justifyContent={'center'}
-        sx={{ ml: -9, width: '60%' }}
-      >
-        <img
-          src={LoginImg}
-          alt=""
-          style={{ width: '239px', height: '300px' }}
-        />
-      </Stack>
-      <Stack
-        alignItems={'center'}
-        mt={8}
-        sx={{ ml: 2, width: '50%', backgroundColor: 'var(--white-scale-100)' }}
-      >
-        <Typography
-          fontFamily={'Montserrat'}
-          fontWeight={700}
-          fontSize={24}
-          color={'#272727'}
-        >
-          Login de Usuário
-        </Typography>
-        <Typography
-          fontFamily={'Montserrat'}
-          textAlign={'center'}
-          fontWeight={500}
-          fontSize={14}
-          color={'#272727'}
-        >
-          Faça login com seu email e senha cadastrados
-        </Typography>
-        <TextField
-          label="Email"
-          size="small"
-          required
-          sx={{ width: '90%', mt: 4 }}
-          onChange={(event) => setEmail(event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter') {
-              doLogin()
-            }
-          }}
-        />
-        <TextField
-          label="Senha"
-          size="small"
-          type="password"
-          required
-          sx={{ width: '90%', mt: 2 }}
-          onChange={(event) => setPassword(event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter') {
-              doLogin()
-            }
-          }}
-        />
-        <LoadingButton
-          loading={userStore.loading}
-          variant="contained"
-          sx={{
-            backgroundColor: 'var(--blue-scale-300)',
-            textTransform: 'capitalize',
-            fontFamily: 'Montserrat',
-            width: '90%'
-          }}
-          onClick={doLogin}
-        >
-          Entrar
-        </LoadingButton>
-        <Button
-          variant="outlined"
-          sx={{
-            textTransform: 'none',
-            fontFamily: 'Montserrat',
-            width: '90%',
-            mt: 3
-          }}
-          onClick={() => navigate('/auth/register')}
-        >
-          Não tenho Cadastro
-        </Button>
-        {/* <Typography
-          fontFamily={'Montserrat'}
-          fontSize={11}
-          color={'var(--blue-scale-300)'}
-          mt={3}
-          sx={{ cursor: 'pointer' }}
-        >
-          Esqueceu sua senha?
-        </Typography> */}
-        <Link
-          underline='hover'
-          href='/jobs'
-          sx={{ mt: 4 }}>
-          Voltar para as vagas
-        </Link>
-      </Stack>
+      {isMobile || isTablet ?
+        <Stack
+          sx={{ width: '100%', direction: 'column', alignItems: 'center', justifyContent: 'center' }} >
+          <h3 style={{ color: '#111' }}>Login</h3>
+          <p style={{ color: '#333' }}>Faça Login com seu email e senha</p>
+          <TextField
+            label="Email"
+            size="small"
+            required
+            sx={{ width: '90%', mt: 4 }}
+            onChange={(event) => setEmail(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                doLogin()
+              }
+            }}
+          />
+          <TextField
+            label="Senha"
+            size="small"
+            type="password"
+            required
+            sx={{ width: '90%', mt: 2 }}
+            onChange={(event) => setPassword(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                doLogin()
+              }
+            }}
+          />
+          <LoadingButton
+            loading={userStore.loading}
+            variant="contained"
+            sx={{
+              backgroundColor: 'var(--blue-scale-300)',
+              textTransform: 'capitalize',
+              fontFamily: 'Montserrat',
+              width: '90%'
+            }}
+            onClick={doLogin}
+          >
+            Entrar
+          </LoadingButton>
+          <Button
+            variant="outlined"
+            sx={{
+              textTransform: 'none',
+              fontFamily: 'Montserrat',
+              width: '90%',
+              mt: 3
+            }}
+            onClick={() => navigate('/auth/register')}
+          >
+            Me Cadastrar
+          </Button>
+          <Link
+            underline='hover'
+            href='/jobs'
+            sx={{ mt: 4 }}>
+            Voltar para as vagas
+          </Link>
+        </Stack>
+
+        :
+        <>
+          <Stack
+            alignItems={'center'}
+            justifyContent={'center'}
+            sx={{ ml: -9, width: '60%' }}
+          >
+            <img
+              src={LoginImg}
+              alt=""
+              style={{ width: '239px', height: '300px' }}
+            />
+          </Stack>
+          <Stack
+            alignItems={'center'}
+            mt={8}
+            sx={{ ml: 2, width: '50%', backgroundColor: 'var(--white-scale-100)' }}
+          >
+            <Typography
+              fontFamily={'Montserrat'}
+              fontWeight={700}
+              fontSize={24}
+              color={'#272727'}
+            >
+              Login de Usuário
+            </Typography>
+            <Typography
+              fontFamily={'Montserrat'}
+              textAlign={'center'}
+              fontWeight={500}
+              fontSize={14}
+              color={'#272727'}
+            >
+              Faça login com seu email e senha cadastrados
+            </Typography>
+            <TextField
+              label="Email"
+              size="small"
+              required
+              sx={{ width: '90%', mt: 4 }}
+              onChange={(event) => setEmail(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  doLogin()
+                }
+              }}
+            />
+            <TextField
+              label="Senha"
+              size="small"
+              type="password"
+              required
+              sx={{ width: '90%', mt: 2 }}
+              onChange={(event) => setPassword(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  doLogin()
+                }
+              }}
+            />
+            <LoadingButton
+              loading={userStore.loading}
+              variant="contained"
+              sx={{
+                backgroundColor: 'var(--blue-scale-300)',
+                textTransform: 'capitalize',
+                fontFamily: 'Montserrat',
+                width: '90%'
+              }}
+              onClick={doLogin}
+            >
+              Entrar
+            </LoadingButton>
+            <Button
+              variant="outlined"
+              sx={{
+                textTransform: 'none',
+                fontFamily: 'Montserrat',
+                width: '90%',
+                mt: 3
+              }}
+              onClick={() => navigate('/auth/register')}
+            >
+              Me Cadastrar
+            </Button>
+            <Link
+              underline='hover'
+              href='/jobs'
+              sx={{ mt: 4 }}>
+              Voltar para as vagas
+            </Link>
+          </Stack>
+        </>
+      }
     </Container>
   )
 })
