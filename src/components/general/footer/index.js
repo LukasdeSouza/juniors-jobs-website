@@ -47,6 +47,12 @@ const Footer = () => {
         <a href="https://wa.me/5534992461158?text=Precisava+de+Suporte+na+Plataforma" className="color-white">
           Suporte
         </a>
+        <a href="https://wa.me/5534992461158?text=Precisava+de+Suporte+na+Plataforma" className="color-white">
+          Esqueci minha senha
+        </a>
+        <a href="https://wa.me/5534992461158?text=Precisava+de+Suporte+na+Plataforma" style={{ color: 'red' }}>
+          Cancelar assinatura
+        </a>
       </div>
       {isDesktop &&
         <div className="for_contributors">
