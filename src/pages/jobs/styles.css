@@ -45,7 +45,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-inline: 85px;
+  /* margin-inline: 85px; */
 }
 
 

@@ -3,8 +3,8 @@
   border-radius: 16px;
   box-shadow: var(--bs-shadow-200);
   height: 120px;
-  width: 100%;
-  min-width: 250;
+  /* width: 100%; */
+  min-width: 300px;
   padding: 16px;
   margin-bottom: 12px;
   cursor: pointer;
