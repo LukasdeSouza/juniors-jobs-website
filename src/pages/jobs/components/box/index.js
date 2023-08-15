@@ -1,5 +1,7 @@
 import { Link, Tooltip } from '@mui/material'
 import './style.css'
+import { useScreenSize } from 'react-screen-size-helper'
+import { breakpoints } from '../../../../utils/breakpoints'
 
 const BoxJobs = ({
   img,
@@ -12,6 +14,8 @@ const BoxJobs = ({
   description,
   link
 }) => {
+  const { isDesktop } = useScreenSize({ breakpoints })
+
   const handleClick = () => {
     if (/^[0-9]+$/.test(link)) {
       window.open(
@@ -64,11 +68,15 @@ const BoxJobs = ({
               {tier}
             </small>
           }
-          <small className="jobs-grid-object-location">{location}</small>
-          {salary !== '' &&
-            <small className="jobs-grid-object-salary">
-              {salary}
-            </small>
+          {isDesktop &&
+            <>
+              <small className="jobs-grid-object-location">{location}</small>
+              {salary !== '' &&
+                <small className="jobs-grid-object-salary">
+                  {salary}
+                </small>
+              }
+            </>
           }
         </div>
       </div>

@@ -5,8 +5,12 @@ import Twitter from './assets/twitter 1.svg'
 
 import '../../../styles/utility-classes.css'
 import './style.css'
+import { useScreenSize } from 'react-screen-size-helper'
+import { breakpoints } from '../../../utils/breakpoints'
 
 const Footer = () => {
+  const { isMobile, isTablet, isDesktop } = useScreenSize({ breakpoints })
+
   return (
     <div className="footer_container">
       <div>
@@ -39,24 +43,27 @@ const Footer = () => {
           Buscar Vagas
         </a>
       </div>
-      <div className="for_contributors">
-        <h2>Curtiu Nossa Proposta ?</h2>
-        <small>
-          <a href="">Ajude nos a mantê-la</a>
-        </small>
-        <h4>
-          <strong>Seek Jobs</strong> é um projeto pessoal
-        </h4>
-        <small>
-          Diversas pessoas contribuiram no desenvolvimento dessa plataforma{' '}
-          <br /> ao assina-la você ajuda a comunidade de desenvolvedores a
-          encontrar emprego <br /> na área de tecnologia, de forma simples e sem
-          burocraria.
-        </small>
-        <a href="/plans" rel="noreferrer">
-          <button className="want_to_contribute">Quero Assinar!</button>
-        </a>
-      </div>
+      {isDesktop &&
+        <div className="for_contributors">
+          <h2>Curtiu Nossa Proposta ?</h2>
+          <small>
+            <a href="">Ajude nos a mantê-la</a>
+          </small>
+          <h4>
+            <strong>Seek Jobs</strong> é um projeto pessoal
+          </h4>
+          <small>
+            Diversas pessoas contribuiram no desenvolvimento dessa plataforma{' '}
+            <br /> ao assina-la você ajuda a comunidade de desenvolvedores a
+            encontrar emprego <br /> na área de tecnologia, de forma simples e sem
+            burocraria.
+          </small>
+          <a href="/plans" rel="noreferrer">
+            <button className="want_to_contribute">Quero Assinar!</button>
+          </a>
+        </div>
+      }
+
     </div>
   )
 }

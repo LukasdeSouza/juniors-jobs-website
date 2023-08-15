@@ -14,17 +14,17 @@ import RootStoreContext from '../../../../store/rootStore'
 
 import './style.css'
 
-const RegisterForm = observer(() => {
-  const navigate = useNavigate()
-  const { userStore } = useContext(RootStoreContext)
-  const controller = new UserController(userStore)
+const RegisterForm = observer(({ handleChange, validateInputs, navigateCallBack, loading, registerUser }) => {
+  // const navigate = useNavigate()
+  // const { userStore } = useContext(RootStoreContext)
+  // const controller = new UserController(userStore)
 
-  const [isValid, setIsValid] = useState(false)
+  // const [isValid, setIsValid] = useState(false)
 
-  const handleChange = ({ target: { name, value } }) => {
-    userStore.setState(name, value)
-    validateInputs()
-  }
+  // const handleChange = ({ target: { name, value } }) => {
+  //   userStore.setState(name, value)
+  //   validateInputs()
+  // }
 
   // const chooseType = ({ target: { checked } }) => {
   //   if (checked) {
@@ -34,19 +34,19 @@ const RegisterForm = observer(() => {
   //   }
   // }
 
-  const validateInputs = () => {
-    const emptyField = userStore.state.name.length > 0
-    const emailRegex = /[\w\-._]+@[\w\-._]+\.\w{2,10}/
-    const minLength = userStore.state.password.length >= 8
-    const comparePassword =
-      userStore.state.password === userStore.state.confirmpassword
-    const status =
-      emptyField &&
-      emailRegex.test(userStore.state.email) &&
-      minLength &&
-      comparePassword
-    setIsValid(status)
-  }
+  // const validateInputs = () => {
+  //   const emptyField = userStore.state.name.length > 0
+  //   const emailRegex = /[\w\-._]+@[\w\-._]+\.\w{2,10}/
+  //   const minLength = userStore.state.password.length >= 8
+  //   const comparePassword =
+  //     userStore.state.password === userStore.state.confirmpassword
+  //   const status =
+  //     emptyField &&
+  //     emailRegex.test(userStore.state.email) &&
+  //     minLength &&
+  //     comparePassword
+  //   setIsValid(status)
+  // }
 
   // const responseGoogle = ({ profileObj }) => {
   //   localStorage.setItem('@token-skj', profileObj.googleId)
@@ -61,19 +61,19 @@ const RegisterForm = observer(() => {
   //   input.value = ''
   // }
 
-  const navigateCallBack = () => {
-    navigate('/plans')
-  }
+  // const navigateCallBack = () => {
+  //   navigate('/plans')
+  // }
 
-  const registerUser = () => {
-    let newUser = {
-      name: userStore.state.name,
-      email: userStore.state.email,
-      password: userStore.state.password,
-      confirmpassword: userStore.state.confirmpassword,
-    }
-    controller.userRegister(newUser, navigateCallBack)
-  }
+  // const registerUser = () => {
+  //   let newUser = {
+  //     name: userStore.state.name,
+  //     email: userStore.state.email,
+  //     password: userStore.state.password,
+  //     confirmpassword: userStore.state.confirmpassword,
+  //   }
+  //   controller.userRegister(newUser, navigateCallBack)
+  // }
 
   return (
     <form className="form-container">
@@ -126,7 +126,7 @@ const RegisterForm = observer(() => {
       </div>
       <div className="button-container">
         <LoadingButton
-          loading={userStore.loading}
+          loading={loading}
           fullWidth
           variant="contained"
           sx={{ textTransform: 'none', fontFamily: "montserrat" }}

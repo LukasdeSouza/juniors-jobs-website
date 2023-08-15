@@ -67,8 +67,8 @@ const RegisterUser = () => {
                 width: '100%', direction: 'column', alignItems: 'center', justifyContent: 'center'
               }}
             >
-              <h3 style={{ color: '#111' }}>Cadastro de Usuário</h3>
-              <p style={{ color: '#333' }}>Crie sua conta e comece a navegar</p>
+              <h3 style={{ color: '#111' }}>👋 Cadastre seu Usuário</h3>
+              <small style={{ color: '#333' }}>Crie sua conta e comece a navegar</small>
               <div className="input-container">
                 <Input
                   type="text"
@@ -108,7 +108,13 @@ const RegisterUser = () => {
             :
             <>
               <RegisterBackground />
-              <RegisterForm />
+              <RegisterForm
+                handleChange={handleChange}
+                validateInputs={validateInputs}
+                navigateCallBack={navigateCallBack}
+                loading={userStore.loading}
+                registerUser={registerUser}
+              />
             </>
           }
         </div>

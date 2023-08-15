@@ -7,9 +7,13 @@ import Footer from '../../components/general/footer'
 import './style.css'
 import BoxJobs from '../jobs/components/box'
 import { mockJobs } from '../../utils/mockJobs'
+import { useScreenSize } from 'react-screen-size-helper'
+import { breakpoints } from '../../utils/breakpoints'
 
 
 const HomePage = () => {
+  const { isDesktop } = useScreenSize({ breakpoints })
+
   const navigate = useNavigate()
 
   return (
@@ -42,7 +46,9 @@ const HomePage = () => {
         >
           Dê uma olhada em algumas das vagas: 👇
         </h3>
-        <p>Modelo Remoto, Híbrido e Presencial, oportunidades 🚩 Nacionais e 🌍 Internacionais</p>
+        {isDesktop &&
+          <p>Modelo Remoto, Híbrido e Presencial, oportunidades 🚩 Nacionais e 🌍 Internacionais</p>
+        }
       </div>
       <div className='homepage-container-mock-jobs'>
         {mockJobs.map((job) => (
@@ -60,9 +66,9 @@ const HomePage = () => {
         ))}
       </div>
       <div className='call-to-action-home-page'>
-        <h3>Tenha acesso a essas e muitas outras vagas através da nossa plataforma</h3>
+        <h3>Tenha acesso a essas e muitas outras vagas através da nossa plataforma.</h3>
         <Button
-          text={'Conhecer os Planos'}
+          text={'Ver Planos'}
           handleClick={() => navigate('/plans', { replace: true })}
         />
       </div>

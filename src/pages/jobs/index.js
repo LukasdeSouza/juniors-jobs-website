@@ -19,10 +19,13 @@ import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
 import { Button, Link, Stack } from '@mui/material'
+import { useScreenSize } from 'react-screen-size-helper'
+import { breakpoints } from '../../utils/breakpoints'
 
 const JobsPage = observer(() => {
   const { jobsStore, userStore } = useContext(RootStoreContext)
   const controller = new JobsController(jobsStore)
+  const { isMobile, isTablet, isDesktop } = useScreenSize({ breakpoints })
   const navigate = useNavigate()
 
   const fetchList = async () => {
@@ -50,7 +53,7 @@ const JobsPage = observer(() => {
 
   const checkUser = () => {
     const token = getToken()
-    console.log(userStore.state.userInfo?.user?.subscripted?.status === true)
+
     if (token !== null) {
       if (userStore.state.userInfo?.user?.subscripted?.status === true) {
         return JSON.parse(JSON.stringify(userStore.state?.userInfo?.user?.subscripted))
@@ -78,14 +81,16 @@ const JobsPage = observer(() => {
           <h2>
             Encontrar sua Primeira Vaga Tech <br /> nunca foi tão fácil
           </h2>
-          <p>
-            Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
-          </p>
+          {isDesktop &&
+            <p>
+              Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
+            </p>
+          }
         </div>
         <img
           src={SitGuy}
           alt="Homem sentado em um cadeira"
-          style={{ width: 238, height: 350 }}
+          style={{ width: 218, height: 330 }}
         />
       </div>
       {/* <div className='filter-input-container'>
@@ -109,7 +114,7 @@ const JobsPage = observer(() => {
             color={'#fff'}
             href='/plans'
             underline='hover'
-            sx={{ textAlign: 'center', fontWeight: 600, fontSize: 14 }}>
+            sx={{ textAlign: 'center', fontWeight: 600, fontSize: 14, marginY: 2 }}>
             Ver Planos
           </Link>
         </Stack >
