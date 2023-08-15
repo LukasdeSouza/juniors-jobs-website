@@ -20,12 +20,14 @@ const Footer = () => {
           src={Instagram}
           alt="Instagram Logo"
           onClick={() => window.open('https://www.instagram.com/seekjobsvagas/', '_blank')}
+          style={{ width: '24px' }}
         />
         <img
           className="socialmedia-icon"
           src={Twitter}
           alt="Twitter Logo"
           onClick={() => window.open('https://twitter.com/SeekJobsCompany', '_blank')}
+          style={{ width: '24px' }}
         />
       </div>
       <div className="for_companies">
@@ -41,6 +43,9 @@ const Footer = () => {
         <h3>Para Candidatos</h3>
         <a href="" className="color-white">
           Buscar Vagas
+        </a>
+        <a href="https://wa.me/5534992461158?text=Precisava+de+Suporte+na+Plataforma" className="color-white">
+          Suporte
         </a>
       </div>
       {isDesktop &&

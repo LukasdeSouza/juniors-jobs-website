@@ -58,10 +58,10 @@ const PaymentForm = observer(() => {
           onSubmit={createSubscription}
           class='payment-middle-container'
           onKeyDown={(e) => onKeyDown(e)} >
-          <img src={Logo} alt="" style={{ width: '60px' }} />
+          <img src={Logo} alt="Seek Jobs Logo" style={{ width: '60px' }} />
           <h3>Concluir Inscrição - Seek Jobs</h3>
           <div className="payment-title-description-container">
-            <small>Você está a só alguns passos de completar sua inscrição na nossa plataforma.
+            <small>
               Preencha os dados abaixo e garanta as melhores vagas de tecnologia para iniciantes.
             </small>
           </div>

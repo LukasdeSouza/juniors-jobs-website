@@ -15,6 +15,7 @@ const PaymentPage = () => {
 
   useEffect(() => {
     const token = getToken()
+
     if (token === null) {
       navigate('/')
     }

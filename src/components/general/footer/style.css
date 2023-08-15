@@ -17,6 +17,10 @@
 .for_companies h3 {
   color: var(--white-scale-200);
 }
+.for_candidates {
+  display: flex;
+  flex-direction: column;
+}
 .for_candidates h3 {
   color: var(--white-scale-200)
 }
@@ -67,6 +71,7 @@
 }
 
 .color-white {
+  margin-bottom: 8px;
   color: var(--white-scale-200);
 }
 
