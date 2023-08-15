@@ -67,6 +67,7 @@ const JobsPage = observer(() => {
 
   let checkIfUserIsPaid = checkUser()
 
+
   useEffect(() => {
     fetchList().then((r) => { })
     checkUser()
@@ -181,10 +182,10 @@ const JobsPage = observer(() => {
           </p>
           <Button
             variant='contained'
-            onClick={() => navigate('/planos')}
+            onClick={() => navigate('/plans')}
             sx={{ width: 200 }}
           >
-            Ver Planos
+            Ver Planos 💼
           </Button>
         </div>
       }

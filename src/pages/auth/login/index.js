@@ -25,19 +25,17 @@ const LoginPage = observer(() => {
   const [password, setPassword] = useState('')
 
   const goToPlansPage = () => {
-    navigate('/plans')
+    navigate('/jobs')
   }
 
-  const goToJobsPage = () => {
-    navigate('/')
-  }
 
   const doLogin = async () => {
     const body = {
       email,
       password
     }
-    await controller.userLogin(body, goToPlansPage, goToJobsPage)
+    await controller.userLogin(body, goToPlansPage)
+    window.location.reload()
   }
 
   return (

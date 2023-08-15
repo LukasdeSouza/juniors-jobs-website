@@ -28,7 +28,7 @@ class UserController {
       .finally(() => this.store.setLoading(false))
   }
 
-  async userLogin(body, callBack, callBackJobs) {
+  async userLogin(body, callBack) {
     this.store.setLoading(true)
 
     return await axios
@@ -39,13 +39,7 @@ class UserController {
           localStorage.setItem('@usermail-skj', response.data.userInfo.email)
           localStorage.setItem('@userid-skj', response.data.userInfo._id)
 
-          console.log(!response.data?.userInfo?.subscripted.subscriptionId)
-
-          if (response.data?.userInfo?.subscripted.subscriptionId !== null) {
-            callBackJobs()
-          } else {
-            callBack()
-          }
+          callBack()
           toast.success('Login Efetuado com Sucesso!')
         } else {
           toast(response.data.msg)
