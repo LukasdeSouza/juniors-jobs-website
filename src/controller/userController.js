@@ -38,7 +38,6 @@ class UserController {
           localStorage.setItem('@token-skj', response.data.token)
           localStorage.setItem('@usermail-skj', response.data.userInfo.email)
           localStorage.setItem('@userid-skj', response.data.userInfo._id)
-
           callBack()
           toast.success('Login Efetuado com Sucesso!')
         } else {
