@@ -13,7 +13,7 @@ class JobsController {
   async getAllJobs() {
     this.store.setLoading(true)
 
-    await fetch(`${baseUrlDev}/jobs`, {
+    await fetch(`${baseUrlProd}/jobs`, {
       headers: {
         'Authorization': token
       }
@@ -36,15 +36,15 @@ class JobsController {
       })
   }
 
-  async deleteJob(id) {
-    return await axios
-      .delete(`${baseUrlProd}/jobs/${id}`)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => toast.error('Erro ao Deletar Vaga'))
-      .finally(() => this.store.setLoading(false))
-  }
+  // async deleteJob(id) {
+  //   return await axios
+  //     .delete(`${baseUrlProd}/jobs/${id}`)
+  //     .then((response) => {
+  //       console.log(response)
+  //     })
+  //     .catch((error) => toast.error('Erro ao Deletar Vaga'))
+  //     .finally(() => this.store.setLoading(false))
+  // }
 }
 
 export default JobsController

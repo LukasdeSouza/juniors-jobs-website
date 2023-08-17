@@ -10,7 +10,7 @@ class PaymentController {
   async checkoutPayment(body, callback) {
     this.store.setLoading(true)
 
-    const response = await fetch(`${baseUrlDev}/payment/create-subscription`, {
+    const response = await fetch(`${baseUrlProd}/payment/create-subscription`, {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {
@@ -28,7 +28,7 @@ class PaymentController {
       subscriptionId: response.subscriptionId
     }
 
-    await fetch(`${baseUrlDev}/auth/user`, {
+    await fetch(`${baseUrlProd}/auth/user`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('@token-skj')

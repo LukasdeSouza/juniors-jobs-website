@@ -12,7 +12,7 @@ class UserController {
     this.store.setLoading(true)
 
     return await axios
-      .post(`${baseUrlDev}/auth/register`, body, {
+      .post(`${baseUrlProd}/auth/register`, body, {
         headers: { 'Access-Control-Allow-Origin': "*" },
       })
       .then((response) => {
@@ -32,7 +32,7 @@ class UserController {
     this.store.setLoading(true)
 
     return await axios
-      .post(`${baseUrlDev}/auth`, body)
+      .post(`${baseUrlProd}/auth`, body)
       .then((response) => {
         if (response.data.msg === 'Login Efetuado com Sucesso') {
           localStorage.setItem('@token-skj', response.data.token)
@@ -54,7 +54,7 @@ class UserController {
 
   async getUser(userId) {
     if (userId !== null) {
-      await fetch(`${baseUrlDev}/auth/user/${userId}`, {
+      await fetch(`${baseUrlProd}/auth/user/${userId}`, {
         headers: {
           'Authorization': localStorage.getItem('@token-skj')
         }

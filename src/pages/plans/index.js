@@ -26,13 +26,13 @@ const PlansPage = observer(() => {
     const textContentPlan = e.target.textContent
     if (textContentPlan.includes('Básico')) {
       // priceId = 'price_1NU80VHC03jpzXbs8wRD1g0v'
-      priceId = 'price_1NU7mcHC03jpzXbsIFK3XyA0'
+      priceId = 'price_1NWS0bHC03jpzXbsd3pxoFuY'
 
     } else if (textContentPlan.includes('Recommended')) {
-      priceId = 'price_1NU82nHC03jpzXbsNDKZzVIH'
+      priceId = 'price_1NfUrFHC03jpzXbsmh1XvXSW'
 
     } else {
-      priceId = 'price_1NU84THC03jpzXbsxg2F6xyu'
+      priceId = 'price_1NfUsFHC03jpzXbsdyuZpW6X'
     }
     paymentStore.setState('priceId', priceId)
     navigateToCheckout()
