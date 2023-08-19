@@ -41,8 +41,8 @@ const HomePage = () => {
       </div>
 
       <div className='home-page-middle-text'>
-        <h3> Chega de buscar vagas de site em site 🙅‍♀️</h3>
-        <p>Nós otimizamos o seu tempo de procura!</p>
+        <h3> Nós otimizamos o seu tempo 🙅‍♀️</h3>
+        <p>Chega de buscar de site em site!</p>
         <img className='floating-image' src={TeamImagem} alt="" width={300} />
       </div>
 
