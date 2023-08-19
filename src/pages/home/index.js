@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import HomePageImage from '../../assets/img-sec-contribuicao.png'
+import TeamImagem from '../../assets/our-team-img.svg'
 import AppBarNavigation from '../../components/general/appbar'
 import Button from '../../components/general/button'
 import Footer from '../../components/general/footer'
@@ -36,8 +37,15 @@ const HomePage = () => {
             }}
           />
         </div>
-        <img src={HomePageImage} alt="" width={300} />
+        <img className='floating-image' src={HomePageImage} alt="" width={300} />
       </div>
+
+      <div className='home-page-middle-text'>
+        <h3> Chega de buscar vagas de site em site 🙅‍♀️</h3>
+        <p>Nós otimizamos o seu tempo de procura!</p>
+        <img className='floating-image' src={TeamImagem} alt="" width={300} />
+      </div>
+
       <div className="container-description-text">
         <h3
           style={{
@@ -55,6 +63,7 @@ const HomePage = () => {
           🚩 Nacionais e 🌍 Internacionais
         </p>
       </div>
+
       <div className='homepage-container-mock-jobs'>
         {mockJobs.map((job) => (
           <BoxJobs

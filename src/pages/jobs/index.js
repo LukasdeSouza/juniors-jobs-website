@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react-lite'
@@ -18,7 +17,7 @@ import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
-import { Button, Link, Stack } from '@mui/material'
+import { Box, Button, Link, Skeleton, Stack } from '@mui/material'
 import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../utils/breakpoints'
 
@@ -66,7 +65,6 @@ const JobsPage = observer(() => {
   }
 
   let checkIfUserIsPaid = checkUser()
-
 
   useEffect(() => {
     fetchList().then((r) => { })
@@ -125,7 +123,16 @@ const JobsPage = observer(() => {
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?
-          (<span className="loader" />) :
+          <Box width={'50%'}>
+            {currentPosts.map((index, _) => (
+              <Stack key={index} spacing={1}>
+                <Skeleton variant="circular" width={40} height={40} />
+                <Skeleton variant="rounded" width={'90%'} height={60} />
+                <Skeleton variant="text" width={80} sx={{ fontSize: '1rem' }} />
+              </Stack>
+            ))
+            }
+          </Box> :
           checkIfUserIsPaid !== undefined ?
             (
               <div className="jobs-grid">

@@ -20,6 +20,27 @@
   flex-direction: column;
   align-items: center;
 }
+.home-page-middle-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+}
+.floating-image {
+  animation: floatAnimation 3s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-8px);
+  }
+}
+
 .homepage-container-mock-jobs {
   display: flex;
   flex-direction: column;
