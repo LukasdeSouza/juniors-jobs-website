@@ -47,7 +47,7 @@ const BoxJobs = ({
         <div className="jobs-grid-object-header">
           <img
             src={img}
-            alt=""
+            alt="Logo da Empresa"
             style={{ width: 60, borderRadius: '16px', marginRight: '8px' }}
           />
           <div className="jobs-grid-object-header-title-location">

@@ -37,13 +37,13 @@ const HomePage = () => {
             }}
           />
         </div>
-        <img className='floating-image' src={HomePageImage} alt="" width={300} />
+        <img className='floating-image' src={HomePageImage} alt="Imagem casal sentado mexendo no computador" width={300} />
       </div>
 
       <div className='home-page-middle-text'>
         <h3> Nós otimizamos o seu tempo 🙅‍♀️</h3>
         <p>Chega de buscar de site em site!</p>
-        <img className='floating-image' src={TeamImagem} alt="" width={300} />
+        <img className='floating-image' src={TeamImagem} alt="Imagem para times" width={300} />
       </div>
 
       <div className="container-description-text">

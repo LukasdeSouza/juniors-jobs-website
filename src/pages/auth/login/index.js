@@ -121,7 +121,7 @@ const LoginPage = observer(() => {
           >
             <img
               src={LoginImg}
-              alt=""
+              alt="Imagem de Login"
               style={{ width: '239px', height: '300px' }}
             />
           </Stack>

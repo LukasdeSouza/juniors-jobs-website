@@ -10,7 +10,7 @@ const BuyedSuccessfullyPage = () => {
         Obrigado por assinar a plataforma. Volte para a página de Vagas para desfrutar do seu acesso!
       </p>
       <div className="container-congratulations-image">
-        <img src={CongratsAnimation} alt="" />
+        <img src={CongratsAnimation} alt="Imagem de Parabéns" />
       </div>
       <Link
         href="/jobs"

@@ -13,7 +13,7 @@ export default function ContributorsPage() {
       <AppBarNavigation />
       <section className="contain-contributions py-8">
         <div>
-          <img src={ContributeImg} alt="" />
+          <img src={ContributeImg} alt="Imagem para Times" />
         </div>
         <div className="area-text-contributions">
           <div className="separador-blue">

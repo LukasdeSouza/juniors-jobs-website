@@ -9,7 +9,7 @@ const SplashChangePasswordPage = () => {
   return (
     <section>
       <div className="splash-screen-container">
-        <img src={Checked} alt="" />
+        <img src={Checked} alt="Checkbox Imagem" />
         <h3>Senha Alterada com Sucesso</h3>
         <button onClick={() => navigate('/')}>Ir para a página de Vagas</button>
       </div>

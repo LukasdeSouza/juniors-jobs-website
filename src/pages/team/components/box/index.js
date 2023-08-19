@@ -15,7 +15,7 @@ const BoxTeams = ({ img, name, role, description, githubLink }) => {
     >
       <div className="jobs-grid-team-object">
         <div className="jobs-grid-team-object-header">
-          <img src={img} alt="" style={{ width: 60, borderRadius: '50%' }} />
+          <img src={img} alt="Logo da Empresa" style={{ width: 60, borderRadius: '50%' }} />
           <div className="jobs-grid-team-object-header-title-location">
             <p>{name}</p>
             <small>{role}</small>
@@ -26,7 +26,7 @@ const BoxTeams = ({ img, name, role, description, githubLink }) => {
         </small>
         <div className="jobs-grid-team-object-button-row">
           <a href={githubLink}>
-            <img src={GitHubLogo} alt="" style={{ width: 24 }} />
+            <img src={GitHubLogo} alt="Logo Github" style={{ width: 24 }} />
           </a>
         </div>
       </div>

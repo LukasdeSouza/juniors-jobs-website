@@ -58,7 +58,7 @@ const AppBarNavigation = observer(() => {
       >
         <img
           src={Logo}
-          alt="Logo"
+          alt="Logo da Seek Jobs"
           onClick={() => navigate('/')}
           style={{
             width: '70px',

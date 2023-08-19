@@ -29,7 +29,7 @@ class PaginationJobs extends React.Component {
             onClick={() =>
               this.props.setCurrentPage(this.props.currentPage - 1)
             }
-            alt=""
+            alt="Seta para a Esquerda"
           />
         )}
         {Array.from(Array(this.props.pages), (item, index) => {
@@ -53,7 +53,7 @@ class PaginationJobs extends React.Component {
             onClick={() =>
               this.props.setCurrentPage(this.props.currentPage + 1)
             }
-            alt=""
+            alt="Seta para a Direita"
           />
         )}
       </div>

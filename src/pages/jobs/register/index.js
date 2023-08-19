@@ -41,7 +41,7 @@ const RegisterJobsPage = () => {
         </div>
         <img
           src={RegisterJobsImage}
-          alt=""
+          alt="Imagem Mexendo em Computador"
           style={{ width: 255, height: 351 }}
         />
       </div>
