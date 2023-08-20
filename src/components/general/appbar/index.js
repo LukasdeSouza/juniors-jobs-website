@@ -17,6 +17,8 @@ import { observer } from 'mobx-react-lite'
 import { toast } from 'react-hot-toast'
 import UserController from '../../../controller/userController'
 
+import AccountMenu from '../../menu/index'
+
 const AppBarNavigation = observer(() => {
   const { mainStore, userStore } = useContext(RootStoreContext)
   const controller = new UserController(userStore)
@@ -126,17 +128,7 @@ const AppBarNavigation = observer(() => {
               Entrar
             </Link>
           </Stack> :
-          <Tooltip title='Sair da sua conta'>
-            <Link
-              underline="hover"
-              fontSize={14}
-              color={'var(--white-scale-200)'}
-              onClick={onClickLogout}
-              sx={{ mx: 4, cursor: 'pointer' }}
-            >
-              Sair
-            </Link>
-          </Tooltip>
+          <AccountMenu />
         }
       </AppBar>
       <Backdrop
