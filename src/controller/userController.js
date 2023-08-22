@@ -64,7 +64,7 @@ class UserController {
   }
 
   async newsLetterRegister(email, callBack) {
-    await axios.post(`${baseUrlDev}/newsletter/register`, {
+    await axios.post(`${baseUrlProd}/newsletter/register`, {
       email
     })
       .then((response) => {
