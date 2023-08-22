@@ -25,9 +25,13 @@ const HomePage = () => {
   let token = getToken()
 
   useEffect(() => {
+    let alreadyShowed = localStorage.getItem('@already-showed')
     const popupShown = localStorage.getItem('popupShown');
-    if (popupShown && token === null) {
+    if (popupShown === null && alreadyShowed === null) {
       setShowPopup(true)
+      localStorage.setItem('@already-showed', true)
+    } else {
+      localStorage.setItem('popupShown', false)
     }
 
   }, []);
