@@ -1,22 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import HomePageImage from '../../assets/img-sec-contribuicao.png'
 import TeamImagem from '../../assets/our-team-img.svg'
 import AppBarNavigation from '../../components/general/appbar'
-import Button from '../../components/general/button'
+import StyledButton from '../../components/general/button'
 import Footer from '../../components/general/footer'
 import './style.css'
 import BoxJobs from '../jobs/components/box'
 import { mockJobs } from '../../utils/mockJobs'
 import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../utils/breakpoints'
-import { Divider } from '@mui/material'
+import { Box, Divider, Modal, Stack, TextField, Typography, Button } from '@mui/material'
+import { getToken } from '../../utils/getToken'
+import UserController from '../../controller/userController'
 
 
 const HomePage = () => {
-  const { isDesktop } = useScreenSize({ breakpoints })
-
+  const controller = new UserController()
   const navigate = useNavigate()
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [email, setEmail] = useState()
+
+  let token = getToken()
+
+  useEffect(() => {
+    const popupShown = localStorage.getItem('popupShown');
+    if (popupShown && token === null) {
+      setShowPopup(true)
+    }
+
+  }, []);
+
+  const closePopup = () => {
+    localStorage.removeItem('popupShown')
+    setShowPopup(false);
+  };
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'var(--blue-scale-300)',
+    borderRadius: 2,
+    boxShadow: 2,
+    p: 4,
+  };
+
 
   return (
     <React.Fragment>
@@ -30,7 +62,7 @@ const HomePage = () => {
             Oportunidades para Programadores, <br /> DevOps, Pessoas de Produto, Designers, Suporte técnico, entre outros. <br />
           </small>
           <br />
-          <Button
+          <StyledButton
             text={'Ver as Vagas 👆'}
             handleClick={() => {
               navigate('/jobs')
@@ -81,12 +113,52 @@ const HomePage = () => {
       </div>
       <div className='call-to-action-home-page'>
         <h3>Tenha acesso a essas e muitas outras vagas através da nossa plataforma.</h3>
-        <Button
+        <StyledButton
           text={'Ver Planos 💼'}
           handleClick={() => navigate('/plans', { replace: true })}
         />
       </div>
+
       <Footer />
+      <Modal
+        open={showPopup}
+        onClose={closePopup}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Stack spacing={2} sx={style}>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            fontFamily={'Montserrat'}
+            fontWeight={500}>
+            👋 Receba Vagas para Iniciantes <br /> diretamente no seu email
+          </Typography>
+          <Typography variant='body2' fontFamily={'Montserrat'}>
+            Vagas Remotas, Presenciais, Híbridas, para Frontend, Backend, FullStack, Devops e outras áreas da tecnologia
+          </Typography>
+          <TextField
+            variant='filled'
+            label='Email'
+            size='small'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Button
+            variant='contained'
+            onClick={() => controller.newsLetterRegister(email, closePopup)}
+          >
+            Quero Receber as Vagas
+          </Button>
+          <Button
+            variant='outlined'
+            onClick={closePopup}
+            sx={{ color: '#fff' }}>
+            Fechar
+          </Button>
+        </Stack>
+      </Modal>
     </React.Fragment>
   )
 }

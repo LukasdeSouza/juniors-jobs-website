@@ -62,6 +62,20 @@ class UserController {
         .then((response) => this.store.setState('userInfo', response))
     }
   }
+
+  async newsLetterRegister(email, callBack) {
+    await axios.post(`${baseUrlDev}/newsletter/register`, {
+      email
+    })
+      .then((response) => {
+        console.log(response)
+        toast.success('Inscrito com Sucesso')
+        callBack()
+      })
+      .catch((error) => {
+        toast.error('Não foi possível realizar a inscrição')
+      })
+  }
 }
 
 export default UserController
