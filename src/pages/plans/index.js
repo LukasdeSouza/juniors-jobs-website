@@ -25,7 +25,6 @@ const PlansPage = observer(() => {
     let priceId = ''
     const textContentPlan = e.target.textContent
     if (textContentPlan.includes('Básico')) {
-      // priceId = 'price_1NU80VHC03jpzXbs8wRD1g0v'
       priceId = 'price_1NfUprHC03jpzXbshLNMGzZp'
 
     } else if (textContentPlan.includes('Recommended')) {

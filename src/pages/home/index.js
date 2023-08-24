@@ -46,7 +46,7 @@ const HomePage = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 300,
     bgcolor: 'var(--blue-scale-300)',
     borderRadius: 2,
     boxShadow: 2,
@@ -137,10 +137,10 @@ const HomePage = () => {
             component="h2"
             fontFamily={'Montserrat'}
             fontWeight={500}>
-            👋 Receba Vagas para Iniciantes <br /> diretamente no seu email
+            👋 Receba Vagas para Iniciantes <br />
           </Typography>
           <Typography variant='body2' fontFamily={'Montserrat'}>
-            Vagas Remotas, Presenciais, Híbridas, para Frontend, Backend, FullStack, Devops e outras áreas da tecnologia
+            Vagas Remotas, Presenciais, Híbridas
           </Typography>
           <TextField
             variant='filled'
@@ -153,7 +153,7 @@ const HomePage = () => {
             variant='contained'
             onClick={() => controller.newsLetterRegister(email, closePopup)}
           >
-            Quero Receber as Vagas
+            Quero Receber!
           </Button>
           <Button
             variant='outlined'
