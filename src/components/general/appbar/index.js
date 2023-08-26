@@ -126,7 +126,17 @@ const AppBarNavigation = observer(() => {
               Entrar
             </Link>
           </Stack> :
-          <Tooltip title='Sair da sua conta'>
+          <Stack direction={'row'} alignItems={'center'}>
+            <Link
+              underline='hover'
+              fontSize={14}
+              color={'var(--white-scale-200)'}
+              href='https://billing.stripe.com/p/login/eVa3fObvBeUYdtC7ss'
+              target='_blank'
+              sx={{ cursor: 'pointer' }}
+            >
+              Perfil
+            </Link>
             <Link
               underline="hover"
               fontSize={14}
@@ -136,7 +146,8 @@ const AppBarNavigation = observer(() => {
             >
               Sair
             </Link>
-          </Tooltip>
+          </Stack>
+
         }
       </AppBar>
       <Backdrop

@@ -10,7 +10,8 @@ class PaymentStore {
     cardNumber: '',
     cardCVC: '',
     checkoutPayment: {},
-    subscripted: {}
+    subscripted: {},
+    planName: ''
   }
   loading = false
 

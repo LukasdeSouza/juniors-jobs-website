@@ -24,8 +24,8 @@ const PlansPage = observer(() => {
   const navigateToPlan = (e) => {
     let priceId = ''
     const textContentPlan = e.target.textContent
-    if (textContentPlan.includes('Básico')) {
-      priceId = 'price_1NfUprHC03jpzXbshLNMGzZp'
+    if (textContentPlan.includes('Basic')) {
+      priceId = 'price_1NjOyDHC03jpzXbswPj50SbI'
 
     } else if (textContentPlan.includes('Recommended')) {
       priceId = 'price_1NfUrFHC03jpzXbsmh1XvXSW'
@@ -34,6 +34,7 @@ const PlansPage = observer(() => {
       priceId = 'price_1NfUsFHC03jpzXbsdyuZpW6X'
     }
     paymentStore.setState('priceId', priceId)
+    paymentStore.setState('planName', textContentPlan)
     navigateToCheckout()
   }
 
@@ -129,10 +130,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card">
               <p>Plano Básico - 1 Mês</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 12
+                R$ 5
               </Link>
               <small className="small-text-cents-description">
-                R$ 0.43 centavos por dia
+                R$ 0.16 centavos por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -148,10 +149,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-recommended">
               <p>Plano Medium - 3 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 29
+                R$ 12
               </Link>
               <small className="small-text-cents-description">
-                R$ 1.00 por dia
+                R$ 0.40 por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -172,10 +173,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-premium">
               <p>Plano Premium - 6 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 59
+                R$ 24
               </Link>
               <small className="small-text-cents-description">
-                R$ 2.96 centavos por dia
+                R$ 1.25 centavos por dia
               </small>
               <br />
               <small className="small-text-description">

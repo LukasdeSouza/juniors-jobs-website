@@ -64,6 +64,10 @@ const PaymentForm = observer(() => {
             <small>
               Preencha os dados abaixo e garanta as melhores vagas de tecnologia para iniciantes.
             </small>
+            <br />
+            <small>
+              <b>{paymentStore.state.planName ?? 'Confirmação de Pagamento'}</b>
+            </small>
           </div>
           <div className="payment-textfield-container">
             <label htmlFor="name">Nome Completo*</label>
