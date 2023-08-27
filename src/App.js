@@ -32,7 +32,7 @@ function App() {
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
 
         <Route path="/auth/login" element={<LoginPage />} />
-        <Route path="/auth/register" element={<RegisterUser />} />
+        {/* <Route path="/auth/register" element={<RegisterUser />} /> */}
 
         <Route path="*" element={<Page404 />} />
       </Routes>

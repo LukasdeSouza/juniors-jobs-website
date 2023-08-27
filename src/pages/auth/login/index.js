@@ -92,18 +92,31 @@ const LoginPage = observer(() => {
           >
             Entrar
           </LoadingButton>
-          <Button
-            variant="outlined"
-            sx={{
-              textTransform: 'none',
-              fontFamily: 'Montserrat',
-              width: '90%',
-              mt: 3
-            }}
-            onClick={() => navigate('/auth/register')}
-          >
-            Me Cadastrar
-          </Button>
+          <Stack sx={{ my: 2, textAlign: 'center', width: '90%' }}>
+            <Typography
+              color={'var(--blue-scale-200)'}
+              sx={{ fontFamily: 'montserrat', fontSize: 12, fontWeight: 500 }}
+            >
+              Não possui cadastro?
+            </Typography>
+            <Typography
+              color={'var(--blue-scale-200)'}
+              sx={{ fontFamily: 'montserrat', fontSize: 12, fontWeight: 500 }}
+            >
+              Seu cadastro é criado <b>pós assinatura</b>
+            </Typography>
+            <Button
+              variant='outlined'
+              onClick={() => window.open('https://checkout.stripe.com/c/pay/plink_1NjP05HC03jpzXbsqv0tvsmt#fidkdWxOYHwnPyd1blppbHNgWjA0SEhHaEdNRjU2b3V%2FXWd2bFVGcWJDNTY3NXdDXFJtYkpHYXZfUmtXUE59dXJXNExnUlxhUjFJZ2YxRktmbEx2ckFvbnFtTkRhZG9nMzxTbmtXb2dWRG5cNTUzVkNISUJBQycpJ3VpbGtuQH11anZgYUxhJz8nYFNkZktwMmJnYX1BYWYxY18wJykndXdgaWpkYUNqa3EnPydIamtxdmB3d2RxJ3gl', '_blank')}
+              sx={{
+                color: 'var(--blue-scale-300)',
+                textTransform: 'none',
+                fontFamily: 'montserrat'
+              }}
+            >
+              Assinar
+            </Button>
+          </Stack>
           <Link
             underline='hover'
             href='/jobs'
@@ -185,18 +198,31 @@ const LoginPage = observer(() => {
             >
               Entrar
             </LoadingButton>
-            <Button
-              variant="outlined"
-              sx={{
-                textTransform: 'none',
-                fontFamily: 'Montserrat',
-                width: '90%',
-                mt: 3
-              }}
-              onClick={() => navigate('/auth/register')}
-            >
-              Me Cadastrar
-            </Button>
+            <Stack sx={{ my: 2, textAlign: 'center', width: '90%' }}>
+              <Typography
+                color={'var(--blue-scale-200)'}
+                sx={{ fontFamily: 'montserrat', fontSize: 12, fontWeight: 500 }}
+              >
+                Não possui cadastro?
+              </Typography>
+              <Typography
+                color={'var(--blue-scale-200)'}
+                sx={{ fontFamily: 'montserrat', fontSize: 12, fontWeight: 500 }}
+              >
+                Seu cadastro é criado <b>pós assinatura</b>
+              </Typography>
+              <Button
+                variant='outlined'
+                onClick={() => window.open('https://checkout.stripe.com/c/pay/plink_1NjP05HC03jpzXbsqv0tvsmt#fidkdWxOYHwnPyd1blppbHNgWjA0SEhHaEdNRjU2b3V%2FXWd2bFVGcWJDNTY3NXdDXFJtYkpHYXZfUmtXUE59dXJXNExnUlxhUjFJZ2YxRktmbEx2ckFvbnFtTkRhZG9nMzxTbmtXb2dWRG5cNTUzVkNISUJBQycpJ3VpbGtuQH11anZgYUxhJz8nYFNkZktwMmJnYX1BYWYxY18wJykndXdgaWpkYUNqa3EnPydIamtxdmB3d2RxJ3gl', '_blank')}
+                sx={{
+                  color: 'var(--blue-scale-300)',
+                  textTransform: 'none',
+                  fontFamily: 'montserrat'
+                }}
+              >
+                Assinar
+              </Button>
+            </Stack>
             <Link
               underline='hover'
               href='/jobs'

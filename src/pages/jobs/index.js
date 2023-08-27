@@ -17,7 +17,7 @@ import './styles.css'
 import PaginationComponent from '../../components/pagination'
 import { mockJobs } from '../../utils/mockJobs'
 import { getToken } from '../../utils/getToken'
-import { Box, Button, Link, Skeleton, Stack } from '@mui/material'
+import { Backdrop, Box, Button, CircularProgress, Link, Skeleton, Stack } from '@mui/material'
 import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../utils/breakpoints'
 
@@ -54,11 +54,12 @@ const JobsPage = observer(() => {
     const token = getToken()
 
     if (token !== null) {
-      if (userStore.state.userInfo?.user?.subscripted?.status === true) {
-        return JSON.parse(JSON.stringify(userStore.state?.userInfo?.user?.subscripted))
-      } else {
-        return undefined
-      }
+      return token
+      // if (userStore.state.userInfo?.user?.subscripted?.status === true) {
+      //   return JSON.parse(JSON.stringify(userStore.state?.userInfo?.user?.subscripted))
+      // } else {
+      //   return undefined
+      // }
     } else {
       return undefined
     }
@@ -123,16 +124,24 @@ const JobsPage = observer(() => {
 
       <div className="filter-jobs-main-container">
         {jobsStore.loading ?
-          <Box width={'50%'}>
-            {currentPosts.map((index, _) => (
-              <Stack key={index} spacing={1}>
-                <Skeleton variant="circular" width={40} height={40} />
-                <Skeleton variant="rounded" width={'90%'} height={60} />
-                <Skeleton variant="text" width={80} sx={{ fontSize: '1rem' }} />
-              </Stack>
-            ))
-            }
-          </Box> :
+          <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={true}
+          // onClick={handleClose}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
+          // <Box width={'50%'}>
+          //   {currentPosts.map((index, _) => (
+          //     <Stack key={index} spacing={1}>
+          //       <Skeleton variant="circular" width={40} height={40} />
+          //       <Skeleton variant="rounded" width={'90%'} height={60} />
+          //       <Skeleton variant="text" width={80} sx={{ fontSize: '1rem' }} />
+          //     </Stack>
+          //   ))
+          //   }
+          // </Box>
+          :
           checkIfUserIsPaid !== undefined ?
             (
               <div className="jobs-grid">
