@@ -24,14 +24,14 @@ const PlansPage = observer(() => {
   const navigateToPlan = (e) => {
     let priceId = ''
     const textContentPlan = e.target.textContent
-    if (textContentPlan.includes('Basic')) {
-      priceId = 'price_1NjOyDHC03jpzXbswPj50SbI'
+    if (textContentPlan.includes('Inicial')) {
+      priceId = 'price_1NlJocHC03jpzXbs7VBHiTLa'
 
-    } else if (textContentPlan.includes('Recommended')) {
-      priceId = 'price_1NfUrFHC03jpzXbsmh1XvXSW'
+    } else if (textContentPlan.includes('Médio')) {
+      priceId = 'price_1NlJpSHC03jpzXbsSFlyut0W'
 
     } else {
-      priceId = 'price_1NfUsFHC03jpzXbsdyuZpW6X'
+      priceId = 'price_1NlJq7HC03jpzXbsK5T8Z7No'
     }
     paymentStore.setState('priceId', priceId)
     paymentStore.setState('planName', textContentPlan)
