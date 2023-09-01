@@ -52,10 +52,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card">
               <p>Plano Básico - 1 Mês</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 7
+                R$ 12
               </Link>
               <small className="small-text-cents-description">
-                R$ 0.23 centavos por dia
+                R$ 0.4 centavos por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -71,10 +71,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-recommended">
               <p>Plano Medium - 3 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 20
+                R$ 30
               </Link>
               <small className="small-text-cents-description">
-                R$ 0.66 por dia
+                R$ 1.00 por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -95,10 +95,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-premium">
               <p>Plano Premium - 6 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 42
+                R$ 50
               </Link>
               <small className="small-text-cents-description">
-                R$ 1.40 por dia
+                R$ 1.66 por dia
               </small>
               <br />
               <small className="small-text-description">
