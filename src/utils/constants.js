@@ -60,6 +60,14 @@ const ourTeamInfoTertiary = [
   },
   {
     img: User,
+    name: 'Diego Natalo',
+    role: 'Frontend Developer',
+    description:
+      'Desenvolvedor Frontend responsável pela implementação de diversas melhorias (features) e correções no projeto.',
+    githubLink: 'https://github.com/diegonatalo'
+  },
+  {
+    img: User,
     name: 'Raul',
     role: 'UX Design',
     description:
