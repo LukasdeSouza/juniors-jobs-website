@@ -93,6 +93,18 @@ const AppBarNavigation = observer(() => {
                 Vagas
               </Link>
             </Tooltip>
+            <Tooltip title="Conheça nossos Cursos">
+              <Link
+                href="/courses"
+                underline="hover"
+                color={'var(--white-scale-200)'}
+                fontSize={14}
+                ml={2}
+                mr={2}
+              >
+                Cursos
+              </Link>
+            </Tooltip>
             <Tooltip title={'Veja os nossos planos'}>
               <Link
                 href="/plans"

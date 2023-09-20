@@ -14,6 +14,7 @@ import OurTeamPage from './pages/team'
 import ToastMain from './components/toast'
 import LoginPage from './pages/auth/login'
 import RegisterUser from './pages/auth/register'
+import CoursesPage from './pages/courses'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/jobs" element={<JobsPage />} />
 
         <Route path="/contributors" element={<ContributorsPage />} />
+        <Route path="/courses" element={<CoursesPage />} />
         <Route path="/our-team" element={<OurTeamPage />} />
 
         <Route path="/plans" element={<PlansPage />} />

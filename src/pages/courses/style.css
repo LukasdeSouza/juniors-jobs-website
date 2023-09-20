@@ -1,0 +1,8 @@
+@import url('../../styles/global.css');
+@import url('../../styles/buttons.css');
+
+.header-container-courses-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
