@@ -79,11 +79,12 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Programador Junior <br />, encontre sua vaga!
+            Programador Junior <br /> encontre sua vaga!
           </h2>
           {/* {isDesktop && */}
           <p>
-            Frontend, Backend e Fullstack
+            Frontend, Backend e Fullstack <br />
+            Remoto, Híbrido e Presencial
           </p>
           {/* } */}
         </div>

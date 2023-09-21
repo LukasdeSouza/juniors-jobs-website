@@ -60,10 +60,10 @@ const HomePage = () => {
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
           <h2>
-            Vagas de Tecnologia para Iniciantes
+            Programador Junior
           </h2>
           <small className="left-container-span-text">
-            Oportunidades para Programadores, <br /> DevOps, Pessoas de Produto, Designers, Suporte técnico, entre outros. <br />
+            Encontre vagas para Frontend, Backend e Fullstack <br /> trabalhe Remoto, híbrido ou presencialmente. <br />
           </small>
           <br />
           <StyledButton
