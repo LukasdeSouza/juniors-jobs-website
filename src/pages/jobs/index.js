@@ -79,11 +79,11 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Encontrar sua Primeira Vaga Tech <br /> nunca foi tão fácil
+            Programador Junior <br />, encontre sua vaga!
           </h2>
           {/* {isDesktop && */}
           <p>
-            Oportunidades presenciais, remotas e híbridas, nacionais e internacionais.
+            Frontend, Backend e Fullstack
           </p>
           {/* } */}
         </div>
