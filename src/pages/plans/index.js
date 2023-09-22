@@ -25,14 +25,16 @@ const PlansPage = observer(() => {
     let priceId = ''
     const textContentPlan = e.target.textContent
     if (textContentPlan.includes('Inicial')) {
-      priceId = 'price_1NlJocHC03jpzXbs7VBHiTLa'
+      priceId = 'price_1NlJocHC03jpzXbs7VBHiTLa';
 
     } else if (textContentPlan.includes('Médio')) {
-      priceId = 'price_1NlJpSHC03jpzXbsSFlyut0W'
+      priceId = 'price_1NlJpSHC03jpzXbsSFlyut0W';
 
     } else {
-      priceId = 'price_1NlJq7HC03jpzXbsK5T8Z7No'
+      priceId = 'price_1NlJq7HC03jpzXbsK5T8Z7No';
     }
+    localStorage.setItem('@planChosen', textContentPlan)
+    localStorage.setItem('@priceIdChosen', priceId)
     paymentStore.setState('priceId', priceId)
     paymentStore.setState('planName', textContentPlan)
     navigateToCheckout()
@@ -130,10 +132,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card">
               <p>Plano Básico - 1 Mês</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 5
+                R$ 12
               </Link>
               <small className="small-text-cents-description">
-                R$ 0.16 centavos por dia
+                R$ 0.4 centavos por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -149,10 +151,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-recommended">
               <p>Plano Medium - 3 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 12
+                R$ 30
               </Link>
               <small className="small-text-cents-description">
-                R$ 0.40 por dia
+                R$ 1.00 por dia
               </small>
               <br />
               <small className="small-text-description">
@@ -173,10 +175,10 @@ const PlansPage = observer(() => {
             <div className="container-plan-card-premium">
               <p>Plano Premium - 6 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
-                R$ 24
+                R$ 50
               </Link>
               <small className="small-text-cents-description">
-                R$ 1.25 centavos por dia
+                R$ 1.66 por dia
               </small>
               <br />
               <small className="small-text-description">

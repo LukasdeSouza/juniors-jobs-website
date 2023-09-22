@@ -24,7 +24,7 @@ const PaymentForm = observer(() => {
     let dataObj = {
       name: paymentStore.state.name,
       email: paymentStore.state.email,
-      priceId: paymentStore.state.priceId,
+      priceId: paymentStore.state?.priceId ?? localStorage.getItem('@priceIdChosen'),
       cardExpMonth: paymentStore.state.cardExpMonth,
       cardExpYear: paymentStore.state.cardExpYear,
       cardNumber: paymentStore.state.cardNumber,
@@ -59,14 +59,13 @@ const PaymentForm = observer(() => {
           class='payment-middle-container'
           onKeyDown={(e) => onKeyDown(e)} >
           <img src={Logo} alt="Seek Jobs Logo" style={{ width: '60px' }} />
-          {/* <h3>Concluir Inscrição 💼</h3> */}
           <div className="payment-title-description-container">
             <small>
               Preencha os dados abaixo e garanta as melhores vagas de tecnologia para iniciantes.
             </small>
             <br />
             <small>
-              <b>{paymentStore.state.planName ?? 'Confirmação de Pagamento'}</b>
+              <b>{localStorage.getItem('@planChosen')}</b>
             </small>
           </div>
           <div className="payment-textfield-container">

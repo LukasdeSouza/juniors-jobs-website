@@ -152,7 +152,7 @@ const AppBarNavigation = observer(() => {
             </Link>
           </Stack> :
           <Stack direction={'row'} alignItems={'center'}>
-            <Link
+            {/* <Link
               underline='hover'
               fontSize={14}
               color={'var(--white-scale-200)'}
@@ -161,7 +161,7 @@ const AppBarNavigation = observer(() => {
               sx={{ cursor: 'pointer' }}
             >
               Perfil
-            </Link>
+            </Link> */}
             <Link
               underline="hover"
               fontSize={14}
