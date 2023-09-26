@@ -14,30 +14,32 @@ const PlansPage = observer(() => {
   const { paymentStore } = useContext(RootStoreContext)
   const { isMobile, isTablet, isDesktop } = useScreenSize({ breakpoints })
 
+  // const navigate = useNavigate()
 
-  const navigate = useNavigate()
-
-  const navigateToCheckout = () => {
-    navigate('/checkout')
-  }
+  // const navigateToCheckout = () => {
+  //   navigate('/checkout')
+  // }
 
   const navigateToPlan = (e) => {
     let priceId = ''
     const textContentPlan = e.target.textContent
-    if (textContentPlan.includes('Inicial')) {
-      priceId = 'price_1NlJocHC03jpzXbs7VBHiTLa';
+    console.log(textContentPlan)
+    if (textContentPlan.includes('Básico')) {
+      // priceId = 'price_1NlJocHC03jpzXbs7VBHiTLa';
+      window.open('https://pay.kiwify.com.br/sL5fHkQ', '_blank')
 
-    } else if (textContentPlan.includes('Médio')) {
-      priceId = 'price_1NlJpSHC03jpzXbsSFlyut0W';
+    } else if (textContentPlan.includes('Recommended')) {
+      // priceId = 'price_1NlJpSHC03jpzXbsSFlyut0W';
+      window.open('https://pay.kiwify.com.br/cCPpAnZ', '_blank')
 
     } else {
-      priceId = 'price_1NlJq7HC03jpzXbsK5T8Z7No';
+      window.open('https://pay.kiwify.com.br/r7pBCCm', '_blank')
     }
     localStorage.setItem('@planChosen', textContentPlan)
     localStorage.setItem('@priceIdChosen', priceId)
-    paymentStore.setState('priceId', priceId)
+    // paymentStore.setState('priceId', priceId)
     paymentStore.setState('planName', textContentPlan)
-    navigateToCheckout()
+    // navigateToCheckout()
   }
 
   return (
@@ -71,7 +73,7 @@ const PlansPage = observer(() => {
               />
             </div>
             <div className="container-plan-card-recommended">
-              <p>Plano Medium - 3 Meses</p>
+              <p>Plano Recommended - 3 Meses</p>
               <Link underline="none" sx={{ fontSize: 30, fontWeight: 700 }}>
                 R$ 30
               </Link>

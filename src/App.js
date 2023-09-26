@@ -15,6 +15,7 @@ import ToastMain from './components/toast'
 import LoginPage from './pages/auth/login'
 import RegisterUser from './pages/auth/register'
 import CoursesPage from './pages/courses'
+import CheckoutPage from './pages/payment'
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/plans" element={<PlansPage />} />
         <Route path="/team" element={<OurTeamPage />} />
         {/* <Route path="/payment" element={<PaymentPage />} /> */}
-        <Route path="/checkout" element={<PaymentPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/buyedsucessfully" element={<BuyedSuccessfullyPage />} />
 
         <Route path="/auth/login" element={<LoginPage />} />
