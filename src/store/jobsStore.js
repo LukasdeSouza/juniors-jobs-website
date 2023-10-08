@@ -3,6 +3,7 @@ import { action, makeAutoObservable, observable } from 'mobx'
 class JobsStore {
   state = {
     jobsList: [],
+    job: {},
     postJobsList: [],
     pagination: 0,
     page: 0,

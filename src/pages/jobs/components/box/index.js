@@ -4,6 +4,8 @@ import { useScreenSize } from 'react-screen-size-helper'
 import { breakpoints } from '../../../../utils/breakpoints'
 
 const BoxJobs = ({
+  key,
+  id,
   img,
   name,
   location,
@@ -17,11 +19,13 @@ const BoxJobs = ({
   const { isDesktop } = useScreenSize({ breakpoints })
 
   const handleClick = () => {
+    // // if it is phone
     if (/^[0-9]+$/.test(link)) {
       window.open(
         `https://wa.me/55${link}?text=Ol%C3%A1%2C+vim+pela+vaga+que+vi+na+Seek+Jobs$`,
         '_blank'
       )
+      //if it is website
     } else if (link.includes('http')) {
       window.open(link, '_blank')
     }

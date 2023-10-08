@@ -24,6 +24,20 @@ class JobsController {
       .finally(() => this.store.setLoading(false))
   }
 
+  async getJobById(id) {
+    this.store.setLoading(true)
+
+    await fetch(`${baseUrlProd}/jobs/${id}`, {
+      headers: {
+        'Authorization': token
+      }
+    })
+      .then((response) => response.json())
+      .then((data) => this.store.setState('job', data))
+      .catch(() => console.log('error'))
+      .finally(() => this.store.setLoading(false))
+  }
+
   async postNewJob(body) {
     return await axios
       .post(`${baseUrlProd}/jobs`, body)

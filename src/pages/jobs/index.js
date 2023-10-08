@@ -33,7 +33,7 @@ const JobsPage = observer(() => {
 
   // Pagination rule
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage, setPostPerPage] = useState(6)
+  const [postsPerPage, setPostPerPage] = useState(10)
 
   const lastPostIndex = currentPage * postsPerPage
   const firstPostIndex = lastPostIndex - postsPerPage
@@ -79,11 +79,11 @@ const JobsPage = observer(() => {
       <div className="header-jobs-page">
         <div className="header-jobs-page-column">
           <h2>
-            Programador Junior <br /> encontre sua vaga!
+            Programador Junior e Estagiário <br /> encontre sua vaga!
           </h2>
           {/* {isDesktop && */}
           <p>
-            Frontend, Backend e Fullstack <br />
+            🎉 Frontend, Backend e Fullstack, QA, Devops <br />
             Remoto, Híbrido e Presencial
           </p>
           {/* } */}
@@ -149,6 +149,7 @@ const JobsPage = observer(() => {
                 {currentPosts?.map((job) => (
                   <BoxJobs
                     key={job._id}
+                    id={job._id}
                     img={job.urlImage ?? Logo}
                     name={job.name ?? 'Empresa Contrata'}
                     location={job.local ?? 'A combinar'}
@@ -166,6 +167,7 @@ const JobsPage = observer(() => {
               {mockJobs.map((job) => (
                 <BoxJobs
                   key={job.id}
+                  id={job._id}
                   img={job.img}
                   name={job.name}
                   tier={job.tier}
