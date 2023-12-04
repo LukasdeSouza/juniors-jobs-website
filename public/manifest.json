@@ -18,6 +18,11 @@
       "sizes": "512x512"
     }
   ],
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ],
   "start_url": "https://seekjobs.site/",
   "display": "standalone",
   "theme_color": "#2010f3",
