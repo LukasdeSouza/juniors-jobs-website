@@ -18,8 +18,15 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://seekjobs.site/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#2010f3",
+  "background_color": "#ffffff",
+  "id": "seek_jobs_pwa",
+  "description": "Diversas vagas para programadores iniciantes reunidas em um só lugar",
+  "lang": "pt",
+  "orientation": "any",
+  "categories": [
+    "business"
+  ]
 }
