@@ -37,22 +37,7 @@ const HomePage = () => {
 
   }, []);
 
-  if (!("Notification" in window)) {
-    alert("Este navegador não suporta notificações de sistema");
-  }
 
-  Notification.requestPermission().then(permission => {
-    setNotificationPermited(permission)
-  });
-
-  const sendNotification = () => {
-    if (notificationPermited === "granted") {
-      new Notification("Notificação da Padaria", {
-        body: "Seu pedido está pronto!",
-      });
-    }
-  }
-  
   const closePopup = () => {
     localStorage.removeItem('popupShown')
     setShowPopup(false);
@@ -77,7 +62,6 @@ const HomePage = () => {
       <AppBarNavigation />
       <div className="container-header-homepage">
         <div className="left-container-head-home-page">
-          <Button onClick={sendNotification}>Enviar Notificação</Button>
           <h2>
             Programador Junior
           </h2>
